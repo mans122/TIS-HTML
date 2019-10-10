@@ -13,3 +13,8 @@ live server
 
 open in browser ¼³Ä¡
 
+TabOut - Albert Romkes
+
+Visual Studio IntelliCode
+
+Java dependency viewer
