@@ -1,0 +1,15 @@
+-- vs code 깃허브 연결
+https://demun.github.io/vscode-tutorial/git/
+ctrl+shift+p 를 눌러 명령팔렛트를 열어서 git clone 를 누릅니다.
+
+저장소 주소를 물어오고, 복사한 주소를 넣습니다.
+
+로컬컴퓨터의 위치를 물어오면 적당한 곳을 지정해줍니다.
+
+그럼 아래처럼 알림이 뜨고, 리포지토리 열기를 클릭합니다.
+
+live server 
+>> 확장프로그램 > live server 다운 > 알트 + L + O
+
+open in browser 설치
+
