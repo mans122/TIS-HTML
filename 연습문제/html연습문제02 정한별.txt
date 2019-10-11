@@ -16,6 +16,43 @@ div는 가로로 끝까지 공간을 차지한다.
 span은 내부 컨텐츠의 크기만큼 공간을 차지한다
 
 5. 제시한 형태의 테이블을 작성하시오.
+    <table border="1">
+        <tr>
+            <td>구분</td>
+            <td>10월7일</td>
+            <td>10월8일</td>
+            <td>10월9일</td>
+            <td>10월10일</td>
+            <td>10월11일</td>
+        </tr>
+        <tr>
+            <td rowspan="2">오전</td>
+            <td>HTML5</td>
+            <td>HTML5</td>
+            <td rowspan="4">휴강</td>
+            <td>css3</td>
+            <td rowspan="2">Javascript</td>
+        </tr>
+        <tr>
+            
+            <td>HTML5</td>
+            <td>HTML5</td>
+            <td>css3</td>
+        </tr>
+        <tr>
+            <td rowspan="2">오후</td>
+            <td>HTML5</td>
+            <td>HTML5</td>
+            <td>css3</td>
+            <td rowspan="2">javascript</td>
+        </tr>
+        <tr>
+            
+            <td>HTML5</td>
+            <td>HTML5</td>
+            <td>css3</td>
+        </tr>
+    </table>
 
 
 6. IE8 이하 버젼에서 html5가 인식되도록 도와주는 라이브러리
