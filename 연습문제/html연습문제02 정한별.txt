@@ -1,0 +1,48 @@
+1. 이름,주소,취미를 목록태그(ul)를 사용하여 출력하시오.
+   <ul>
+        <li>이름</li>
+        <li>주소</li>
+        <li>취미</li>
+    </ul>
+
+2. 에디터에서 emmet 플러그인의 역할을 간단히 적으시오.
+html을 쉽게 작성할 수 있도록 자동완성을 제공한다.
+
+3. utf-8로 인코딩하기 위한 meta 태그를 적으시오.
+<meta charset="UTF-8">
+
+4. div와 span의 차이를 적으시오.
+div는 가로로 끝까지 공간을 차지한다.
+span은 내부 컨텐츠의 크기만큼 공간을 차지한다
+
+5. 제시한 형태의 테이블을 작성하시오.
+
+
+6. IE8 이하 버젼에서 html5가 인식되도록 도와주는 라이브러리
+이름을 적으시오. 적용하는 코드도 작성하세요.
+HTML5shiv
+    <!--[if lt IE 8]>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+	<![endif]-->
+
+7. get 방식과 post방식의 차이점을 적으시오.
+submit시 
+get은 주소창에 넘어가는 정보가 모두 표시된다.
+post는 정보가 표시되지 않는다.
+
+
+8. input type 'button'과 'submit'의 차이점을 적으시오.
+button은 그냥 아무동작없는 버튼을 만들고
+submit은 action을 지정해준 곳으로 form내부의 값들을 넘겨준다
+
+
+9. css 코드를 작성할 때 사용하는 태그를 적으시오.
+<style>
+
+ 
+
+
+
+
+
+
