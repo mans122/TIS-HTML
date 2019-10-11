@@ -1,0 +1,14 @@
+css selector
+
+1.태그명
+ h1 { color:blue;}
+
+2. id (id는 딱 1개만)
+ #aa {color:red;}
+
+ <p id="aa">
+
+3. class (여러개 가능)
+ .class {color: blue;}
+
+ <p class="class">
