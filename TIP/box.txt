@@ -1,0 +1,3 @@
+box-sizing : border-box;
+=> 박스의 width에 padding이 포함됨
+=> 박스를 이용해서 화면을 분할할때 꼭 필요

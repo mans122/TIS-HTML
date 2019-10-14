@@ -1,0 +1,12 @@
+block level element
+1.줄이 바뀐다
+2. 기본적으로 가로폭이 화면 가로폭 전체
+3. width,height 지정 가능
+
+inline level element
+1.줄이 안바뀐다
+2. 기본적으로 가로폭이 컨텐츠길이만큼
+3. width,height 지정불가
+
+display: inline-block;
+=>inline인데 width,height지정 가능
