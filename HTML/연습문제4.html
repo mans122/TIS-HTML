@@ -11,9 +11,12 @@
             color: red;
             text-align: center;
         }
-        a{font-size: 30px;
-            background: red;}
-        a:hover{
+        button{
+            background: red;
+        }
+        a{font-size: 30px; text-decoration: none;
+            }
+        button:hover{
             background: green;
         }
 
@@ -24,9 +27,25 @@
             border-radius: 20px;
             box-shadow: 3px 3px 3px 3px rgb(82, 78, 78);
         }
+        #box1{
+            background: green;
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+        #box1:hover{
+            left:500px;
+        }
+        #box2{
+            background: blue;
+            width: 150px;
+            height: 150px;
+            position: absolute;
+        }
     </style>
 </head>
 <body>
+        <button><a href="http://www.naver.com">등록</a></button>
         <h1 style="text-align: center;">html5</h1>
     <h1 class="center">html5</h1>
     <p class="center">html5</p>
@@ -34,13 +53,11 @@
     <i class="far fa-calendar-alt" ></i>
     <img src="../img/img01.jpg" alt="이미지">
 
-    <div id="group">
         <div id="box1">
             box1
             <div id="box2">
                 box2
             </div>
         </div>
-    </div>
 </body>
 </html>
