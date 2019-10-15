@@ -31,13 +31,15 @@ p.center {
 
 5. 링크를 이용해서 빨간색 '등록' 버튼을 만들어서 마우스오버시 배경색이 
 녹색이 되게 하시오.
-        a{font-size: 30px;
-            background: red;}
-        a:hover{
+button{
+            background: red;
+        }
+        a{font-size: 30px; text-decoration: none;
+            }
+        button:hover{
             background: green;
         }
-
-<a href="http://www.naver.com">등록</a>
+<button><a href="http://www.naver.com">등록</a></button>
 
 
 6. 이미지의 모서리를 둥글게 만들고, 그림자가 생기게 하시오.
@@ -51,12 +53,18 @@ p.center {
 
 7. 다음 두개의 박스를 그룹핑해서 부모가 움직이면 자식도 움직이게 하시오.
 
-
-<div id="group">
-        <div id="box1">
-            box1
-            <div id="box2">
-                box2
-            </div>
-        </div>
-    </div>
+    #box1{
+            background: green;
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+        #box1:hover{
+            left:500px;
+        }
+        #box2{
+            background: blue;
+            width: 150px;
+            height: 150px;
+            position: absolute;
+        }
