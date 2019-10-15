@@ -1,0 +1,62 @@
+0. html5에 새로 도입된 레이아웃 설정을 위한 symantic 태그에 대해서
+적고 간단히 설명하시오.
+
+시맨틱태그란 단순하게 의미만 있는 태그를 의미함.
+
+1. font awesome아이콘 중 달력모양 아이콘을 출력하시오.
+스타일시트에 다음코드 추가
+ <script src="https://kit.fontawesome.com/0eb5e3b5fa.js" crossorigin="anonymous"></script>
+바디코드에 다음코드 추가
+<i class="far fa-calendar-alt" ></i>
+
+2. 다음 코드에서 p태그의 center클래스에만 글자색이 빨간색,
+글자가 가운데 정렬 되도록 css를 작성하시오.
+===>h1.center, p.center, .center의 차이 
+
+<h1 class="center">html5</h1>
+<p class="center">html5</p> 
+
+p.center {
+            color: red;
+            text-align: center;
+        }
+
+3. 다음 글씨가 가운데 정렬되도록 하시오.
+<h1>html5</h1>
+<h1 style="text-align: center;">html5</h1>
+
+4. 박스(div)가 가운데 정렬되도록 하시오.박스크기 300px.
+<div>html5</div>
+<div style="width:300px; height:100px;border: 1px solid black; margin:auto;">html5</div>
+
+5. 링크를 이용해서 빨간색 '등록' 버튼을 만들어서 마우스오버시 배경색이 
+녹색이 되게 하시오.
+        a{font-size: 30px;
+            background: red;}
+        a:hover{
+            background: green;
+        }
+
+<a href="http://www.naver.com">등록</a>
+
+
+6. 이미지의 모서리를 둥글게 만들고, 그림자가 생기게 하시오.
+        img{
+            width: 300px;
+            height: 300px;
+            border: 5px solid black;
+            border-radius: 20px;
+            box-shadow: 3px 3px 3px 3px rgb(82, 78, 78);
+        }
+
+7. 다음 두개의 박스를 그룹핑해서 부모가 움직이면 자식도 움직이게 하시오.
+
+
+<div id="group">
+        <div id="box1">
+            box1
+            <div id="box2">
+                box2
+            </div>
+        </div>
+    </div>
