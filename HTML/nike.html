@@ -17,11 +17,11 @@
 
         /*    Reset CSS  */
         * { margin: 0; padding: 0;}
-        ol,ul {list-style: none;}
         /* 리스트의 앞의 이미지를 없애줌 */
+        ol,ul {list-style: none;}
         a {outline: 0;text-decoration: none;color: #bbb;}
-        img {border: 0;}
         /* 링크를걸면 이미지의 보더가 나타나는데 그것을 없애주는 코드 */
+        img {border: 0;}
         body {position: fixed;width: 100%;height: 100%;background: #111;}
         
         /*배경 동영상*/
@@ -36,21 +36,49 @@
         /*1Depth*/
         #gnb {width: 220px; position: absolute; top: 150px; right: 0px;}
         #gnb li{position: relative;}
+        /*font : bold 속성 18px크기 줄간격 3 play폰트*/
+        #gnb>li>a { display:block; width:220px; height:50px; font:bold 18px/3 play; color:#222; box-sizing:border-box; padding-right:40px; text-align:right;}
         #gnb a{display: block; width: 220px; height: 50px;font-family: 'Play', sans-serif; color: #222; box-sizing: border-box; padding-right: 40px;text-align: right; }
         #gnb em{display: inline-block; transform:  skewX(40deg)!important;}
         #gnb em i{margin-right: 20px;}
-        #box2{
-            width:500px;
-            height:70%;
-            float: right;
-            position: fixed;
-            bottom: 0px;
-            right: -420px;
-            transform: skewX(-40deg);
-            opacity: 0.6;
-            background: #252525;
 
-        }
+        /* 2Depth */
+        #gnb ul {opacity: 0; position: absolute; left: 100px; top: 0; transition: 0.5s; }
+        #gnb>li:hover ul{opacity: 1; left:205px;}
+        #gnb ul a {display: block; width: 150px; height: 40px; background: #222; border-bottom: 2px solid #b9fb05; font: bold 16px/2.5 arial; color: #fff; box-sizing: border-box; padding-left: 50px; margin-bottom: 3px; transition: 0.2s;}
+        #gnb ul a:hover{background:  #b9fb05; color: #333;}
+        #gnb>li.on>a { background:#111; color:#fff;}
+        #gnb>li:hover>a { background:#111; color:#fff;}
+
+
+        /*sns버튼 모음 */
+        #sns{position: fixed; top: 60px; right: 50px;}
+        #sns li{float: left; margin-right: 30px;}
+        #sns .fa {font-size: 25px; color: #b9fb05; opacity: 0.5; transition: 0.3s; }
+        #sns .fa:hover{opacity: 1; transform: scale(1.8);}
+
+        /* 텍스트 박스 */
+        .txtBox { width:340px; height:280px; position:fixed; top:200px; right:70px; }
+        .txt { position:absolute; top:200px; right:0px; font-size:34px; font-family:play; color:#bbb; letter-spacing:-2px;}
+        .txt b { font:bold 34px arial; color:#b9fb05; 	margin-left:20px;}
+        .tit { position:absolute; top:0px; right:0px; font-size:160px; color:#b9fb05; font-family: 'Monoton', cursive; letter-spacing:-1px;}
+        .tit em { font-size:50px; font-family:play; color:#fff;}
+
+        /* 우하단 컨텐츠 */
+        #side{width:800px; height:100%; float: right; position: fixed; bottom: 0px; right: -800px; transform: skewX(-40deg); opacity: 0.5; background: #252525; transition: 0.5s;}
+        #side:hover{right: -500px; opacity: 0.8;}
+        #side .con{width: 400px; height: 100%; position: absolute; left: 150px; bottom: 0px; background: #111; transition: 1s;}
+        #side:hover .con{left:50px;}
+        
+        /* 컨텐츠 내부 썸네일*/
+        #side .con p {width: 300px; height: 100px; position: absolute;left: 50px;}
+        #side .con p em { display:inline-block; font:bold 16px/1.7 arial; color:#a0bd50; transform:skewX(40deg);}
+        #side .con img { width:300px; height:70px; opacity:0.3; transition:all 0.5s;}
+        #side .con img:hover { opacity:1;}
+        #side .con p:nth-child(1) {bottom: 290px; transform: translateX(200px); transition: 0.4s;}
+        #side .con p:nth-child(2) {bottom: 170px;transform: translateX(200px); transition: 0.8s;}
+        #side .con p:nth-child(3) {bottom: 50px;transform: translateX(200px); transition: 1.2s;}
+        #side:hover .con p{transform: translateX(0px);}
     </style>
 </head>
 
@@ -68,14 +96,60 @@
     <header>
         <!-- gnb = global navigation bar -->
         <ul id="gnb">
-                <li class="on"><a href="#"><em><i class="fa fa-refresh fa-spin"></i>About NIKE</em></a></li>
-                <li><a href="#"><em>Brand Info</em></a></li>
+                <li class="on">
+                    <a href="#"><em><i class="fa fa-refresh fa-spin"></i>About NIKE</em></a>
+                    <ul>
+                        <li><a href="#"><em><b> English</b></em></a></li>
+                        <li><a href="#"><em><b> 한국어</b></em></a></li>
+                        <li><a href="#"><em><b> 日本語</b></em></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><em>Brand Info</em></a>
+                    <ul>
+                        <li><a href="#"><em>sub</em></a></li>
+                        <li><a href="#"><em>sub</em></a></li>
+                        <li><a href="#"><em>sub</em></a></li>
+                        <li><a href="#"><em>sub</em></a></li>
+                        <li><a href="#"><em>sub</em></a></li>
+                    </ul>
+                </li>
                 <li><a href="#"><em> Community</em></a></li>
                 <li><a href="#"><em>Product Value</em></a></li>
                 <li><a href="#"><em>Company History</em></a></li>	
                 </ul>
     </header>
-    <div id="box2"></div>
-</body>
+    <!-- sns버튼모음  -->
+    <ul id="sns">
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+    </ul>
+   
+    
+    <!-- 웹폰트 텍스트박스 -->
+    <section class="txtBox">
+        <p class="txt">Best Qualified<b>AIR MAX</b></p>
+        <p class="tit">50<em>/ 24</em></p>
+    </section>
+    
+    <section id="side">
+        <div class="con">
+            <p>
+                <em>Event & Community</em>
+                <a href="#"><img src="../img/nike/pic1.png" /></a>
+            </p>
+            <p>
+                <em>News & Notice</em>
+                <a href="#"><img src="../img/nike/pic2.png" /></a>
+            </p>
+            <p>
+                <em>Product Review</em>
+                <a href="#"><img src="../img/nike/pic3.png" /></a>
+            </p>
+        </div>
+    </section>
+    </body>
 
 </html>
