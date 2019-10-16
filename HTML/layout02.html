@@ -6,45 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Layout</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            padding: 10px;
-            background: black;
-            color: white;
-            height: 120px;
-        }
-        nav {
-            background: #cccccc;
-            height: 30px;
-        }
-        aside {
-            width: 150px;
-            height: 700px;
-            background: lime;
-            float: left;
-        }
-        section {
-            padding: 20px;
-            float:left;
-            background: lightcyan;
-        }
-        footer{
-            clear: both;
-            background: lightcoral;
-            height: 50px;
-            text-align: center;
-        }
+        *{margin: 0;padding: 0;}
+        header {padding: 10px;background: black;color: white;height: 120px;}
+
+
+
+
+        #menu {width: 100%; height:30px;background: #cccccc; position: absolute; padding-left: 20px; }
+        #menu li{position: relative; display: block; width: 90px; height: 30px; box-sizing: border-box; float: left;}
+        #menu ul {opacity: 0; position: absolute;}
+        #menu>li:hover ul{opacity: 1; top: 30px; width: 300px;}
+        #menu>li:hover li {display: inline-block; width: 100px; height: 30px; font-size: 1.3em;}
+
+        aside {width: 150px;height: 700px;background: lime;float: left;}
+        section {padding: 20px;float:left;background: lightcyan;}
+        footer{clear: both;background: lightcoral;height: 50px;text-align: center;}
     </style>
 </head>
 <body>
     <header>
         <h1> TIS정보기술교육센터</h1>
     </header>
-    <nav>
-        회사소개 | 회사연혁 | 과정소개 | Contact | 오시는길
+    <nav id="nav">
+        <ul id="menu">
+            <li>회사소개</li>
+            <li>회사연혁</li>
+            <li>과정소개
+                <ul>
+                    <li>자바</li>
+                    <li>디자인</li>
+                    <li>네트워크</li>
+                </ul>
+            </li>
+            <li>Contact</li>
+            <li>오시는길</li>
+        </ul>
+        <!-- 회사소개 | 회사연혁 | 과정소개 | Contact | 오시는길 -->
+        
     </nav>
     <aside></aside>
     <section>

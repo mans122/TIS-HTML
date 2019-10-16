@@ -1,0 +1,26 @@
+1. layout02.html의 '교육과정'메뉴를 선택하면(hover), 
+서브메뉴가 출력되게 작성하시오.
+- 자바, 디자인, 네트워크
+  #menu {width: 100%; height:30px;background: #cccccc; position: absolute; padding-left: 20px; }
+        #menu li{position: relative; display: block; width: 90px; height: 30px; box-sizing: border-box; float: left;}
+        #menu ul {opacity: 0; position: absolute;}
+        #menu>li:hover ul{opacity: 1; top: 30px; width: 300px;}
+        #menu>li:hover li {display: inline-block; width: 100px; height: 30px; font-size: 1.3em;}
+
+
+  <ul id="menu">
+            <li>회사소개</li>
+            <li>회사연혁</li>
+            <li>과정소개
+                <ul>
+                    <li>자바</li>
+                    <li>디자인</li>
+                    <li>네트워크</li>
+                </ul>
+            </li>
+            <li>Contact</li>
+            <li>오시는길</li>
+        </ul>
+2. http://www.free-css-templates.com/preview/Simpatico/ 
+사이트와 비슷하게 만들기
+- 위 주소의 소스를 참고해서 비슷하게 만들기.
