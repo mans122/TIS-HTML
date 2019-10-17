@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>연습문제 6</title>
+    <style>
+        /* 1번문제 */
+        p:nth-child(1) {color: red;}
+
+        /* 2번문제 */
+        img {width: 200px; height: 100px; transition: 2s; opacity: 0.7;}
+        img:hover{transform: scale(1.5); opacity: 1;}
+
+        /* 3번문제 */
+        h1 {position: relative;animation: h1 2s;}
+        @keyframes h1{
+            0%{left: -200px;}
+            100%{left: 0px;}
+        }
+
+        /* 4번문제 */
+        div {width: 200px; height: 50px; background: lightcoral; line-height: 50px; font-size: 1em;}
+        li:hover{background: lightgreen; font-size: 1.2em;}
+        /* 6번문제 */
+        #box6{
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            height: 200px;
+            background: blue;
+            border-top: 10px solid black;
+            border-radius: 50%;
+            animation:rotate 0.1s linear infinite;
+            
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg);}	
+            100% { transform:rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+    <p>html5</p>
+    <p>html5</p>
+
+    <img src="../img/ex2img/pic2.jpg" alt="">
+
+    <h1>HTML5</h1>
+
+    <div><li>연습문제06-4번</li></div>
+
+    <div id="box6"></div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+1. 다음 중 첫번째 p태그만 글자색을 빨간색으로 작성하시오.
+- id, class 선택자를 사용하지 않고 작성.
+<p>html5</p>
+<p>html5</p>
+
+2. 이미지를 마우스오버하면 크기가 1.5배커지고, 
+opacity는 0.7에서 1로
+변하게 하시오. 트랜지션사용.
+
+3. 페이지가 로딩되면 <h1>HTML5</h1> 부분이 왼쪽에서 나타나게 하시오.
+애니메이션 사용. 
+
+4. 목록의 li를 마우스오버하면 글자가 1.2배 커지고, 배경색이
+바뀌게 하시오.트랜지션사용.
+
+5. 로딩바 만들기
+
+CSS를 사용해서 회전하는 로딩바 만들기.
+
+가. 박스를 만든다.
+나. 박스 윗쪽테두리만 색을 칠한다.
+다. 박스를 원으로 만듬
+라. 애니메이션을 이용해서 회전시킨다.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>연습문제 6</title>
+    <style>
+        /* 1번문제 */
+        p:nth-child(1) {color: red;}
+
+        /* 2번문제 */
+        img {width: 200px; height: 100px; transition: 2s; opacity: 0.7;}
+        img:hover{transform: scale(1.5); opacity: 1;}
+
+        /* 3번문제 */
+        h1 {position: relative;animation: h1 2s;}
+        @keyframes h1{
+            0%{left: -200px;}
+            100%{left: 0px;}
+        }
+
+        /* 4번문제 */
+        div {width: 200px; height: 50px; background: lightcoral; line-height: 50px; font-size: 1em;}
+        li:hover{background: lightgreen; font-size: 1.2em;}
+        /* 6번문제 */
+        #box6{
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            height: 200px;
+            background: blue;
+            border-top: 10px solid black;
+            border-radius: 50%;
+            animation:rotate 0.1s linear infinite;
+            
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg);}	
+            100% { transform:rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+    <p>html5</p>
+    <p>html5</p>
+
+    <img src="../img/ex2img/pic2.jpg" alt="">
+
+    <h1>HTML5</h1>
+
+    <div><li>연습문제06-4번</li></div>
+
+    <div id="box6"></div>
+</body>
+</html>

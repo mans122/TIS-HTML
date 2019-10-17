@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>반응형 웹</title>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="js/prefixfree.min.js"></script>
+    <style>
+        @charset "utf-8";
+        @import url(http://fonts.googleapis.com/css?family=Poiret+One);
+
+        * { margin:0;  padding:0;}
+        ol,ul { list-style: none; }
+        a { outline:0; text-decoration:none; color:#555; }
+        img { border:0;}
+        body { font:12px/1.6 'Poiret One'; color:#555; } 
+
+        header { position:fixed; width:15%; height:100%; background:#fff; top:0px; left:0px; transition:all 0.5s;}
+        nav { position:relative; width:85%; height:35px; background:#212121; margin-left:15%; transition:all 0.5s;}
+        section { width:85%; position:relative; margin-left:15%;}
+        article { float:left; height:260px; transition:all 0.5s; animation:scale 1s 1;}
+        /* article>div { position:relative; width:100%; height:100%; overflow:hidden; cursor:pointer; } */
+        .bg{background-size: cover !important; background-position: center center !important;}
+
+        .bg1 {background-image:url("../img/ex2img/pic1.jpg") !important;}
+        .bg2 { background-image:url("../img/ex2img/pic2.jpg") !important ;}
+        .bg3 { background-image:url("../img/ex2img/pic3.jpg") !important ;}
+        .bg4 { background-image:url("../img/ex2img/pic4.jpg") !important;}
+        .bg5 { background-image:url("../img/ex2img/pic5.jpg") !important;}
+        .bg6 { background-image:url("../img/ex2img/pic6.jpg") !important;}
+        .bg7 { background-image:url("../img/ex2img/pic7.jpg") !important;}
+      
+
+        @keyframes scale {
+            0% { transform:scale(0); opacity: 0; }	
+            100% { transform:scale(1); opacity: 1;}
+        }
+        
+        article:nth-child(1) { width:60%; height:520px; background:#ddd;}
+        article:nth-child(2) { width:40%; background:#ccc;}
+        article:nth-child(3) { width:20%; background:#bbb;}
+        article:nth-child(4) { width:20%; background:#aaa;}
+        article:nth-child(5) { width:20%; background:#999;}
+        article:nth-child(6) { width:40%; background:#888;}
+        article:nth-child(7) { width:20%; background:#777;}
+        article:nth-child(8) { width:20%; background:#666;}
+        article:nth-child(9) { width:40%; background:#555;}
+        article:nth-child(10) { width:20%;	background:#444;}
+        article:nth-child(11) { width:20%; background:#333;}
+        article:nth-child(12) { width:20%;	background:#222;}
+
+        @media screen and (min-width: 1200px) and (max-width: 1600px){
+            header{position: relative; width: 100%; height: 80px;}
+            nav {width: 100%; margin-left: 0;}
+            section {width: 100%; margin-left: 0;}
+        }
+
+        @media screen and (min-width:1024px) and (max-width:1279px) {  
+	
+            header { position:relative; width:100%; height:80px;}
+            nav { width:100%; margin-left:0%;}		
+            section { width:100%; margin-left:0px;}	
+            
+            article:nth-child(1) { width:75%;}	
+            article:nth-child(2) { width:25%;}	
+            article:nth-child(3) { width:25%;}	
+            article:nth-child(4) { width:25%;}	
+            article:nth-child(5) { width:25%;}	
+            article:nth-child(6) { width:50%;}	
+            article:nth-child(7) { width:50%;}	
+            article:nth-child(8) { width:25%;}	
+            article:nth-child(9) { width:25%;}	
+            article:nth-child(10) { width:50%;}	
+            article:nth-child(11) { width:25%;}	
+            article:nth-child(12) { width:25%;}
+            
+        }
+
+        @media screen and (min-width:780px) and (max-width:1023px) {  
+
+            header { position:relative; width:100%; height:80px;}
+            nav { width:100%; margin-left:0%;}		
+            section { width:100%; margin-left:0px;}	
+
+            article:nth-child(1) { width:100%;	height:400px;}	
+            article:nth-child(2) { width:66.6666%;}	
+            article:nth-child(3) { width:33.3333%;}	
+            article:nth-child(4) { width:33.3333%; display:none;}	
+            article:nth-child(5) { width:33.3333%;}	
+            article:nth-child(6) { width:66.6666%;}	
+            article:nth-child(7) { width:66.6666%; display:none;}	
+            article:nth-child(8) { width:33.3333%;}	
+            article:nth-child(9) { width:33.3333%;}	
+            article:nth-child(10) { width:66.6666%; display:none;}	
+            article:nth-child(11) { width:33.3333%;}	
+            article:nth-child(12) { width:33.3333%; display:none;}
+
+        }
+        @media screen and (min-width:640px) and (max-width:779px) {  
+
+            header { position:relative; width:100%; height:80px;}
+            nav { width:100%; margin-left:0%;}		
+            section { width:100%; margin-left:0px;}	
+
+            article:nth-child(1) { width:100%;	height:400px;}
+            article:nth-child(2) { width:100%;}	
+            article:nth-child(3) { width:33.3333%; display:none;}	
+            article:nth-child(4) { width:100%;	display:none;}	
+            article:nth-child(5) { width:50%;}	
+            article:nth-child(6) { width:50%;}	
+            article:nth-child(7) { width:66.6666%; display:none;}	
+            article:nth-child(8) { width:50%;}	
+            article:nth-child(9) { width:50%;}	
+            article:nth-child(10) { width:66.6666%; display:none;}	
+            article:nth-child(11) { width:50%;}	
+            article:nth-child(12) { width:50%;}	
+        }
+        
+            @media screen and (min-width:559) and (max-width:639px) {  
+
+            header { position:relative; width:100%; height:130px;}	
+            nav { display:none;}
+            section { width:100%; margin-left:0px;}
+            article { height:150px;}	
+
+            article:nth-child(1) { width:100%; height:300px;}		
+            article:nth-child(2) { width:100%;}	
+            article:nth-child(3) { width:33.3333%; display:none;}	
+            article:nth-child(4) { width:100%;	display:none;}	
+            article:nth-child(5) { width:50%;}	
+            article:nth-child(6) { width:50%;}	
+            article:nth-child(7) { width:66.6666%; display:none;}	
+            article:nth-child(8) { width:50%;}	
+            article:nth-child(9) { width:50%;}	
+            article:nth-child(10) { width:66.6666%; display:none;}	
+            article:nth-child(11) { width:50%;}	
+            article:nth-child(12) { width:50%;}	
+
+        }
+            @media screen and (max-width:560px){
+
+            header { position:fixed; width:100%; height:40px; background-color:transparent; z-index:5;}
+            nav { display:none;}	
+            section { width:100%; margin-left:0px; z-index:4;}		
+            article { display:none;}
+            article:nth-child(1) { display:block; position:fixed; width:100%; height:100%;}	
+                
+        }
+
+
+    </style>
+</head>
+<body>
+    <header></header>
+    <nav>
+        <a href=""><img src="../img/ex2img/util1.png" alt=""></a>
+        <a href=""><img src="../img/ex2img/util2.png" alt=""></a>
+        <a href=""><img src="../img/ex2img/util3.png" alt=""></a>
+        <a href=""><img src="../img/ex2img/util4.png" alt=""></a>
+    </nav>
+    <section>
+        <article class="bg bg1">
+            <!-- <div class="bg bg1"></div> -->
+        </article>
+        <article></article>
+        <article></article>
+        <article class="bg bg2"></article>
+        <article class="bg bg3"></article>
+        <article></article>
+        <article class="bg bg4"></article>
+        <article></article>
+        <article class="bg bg5"></article>
+        <article class="bg bg6"></article>
+        <article></article>
+        <article class="bg bg7"></article>
+    </section>
+</body>
+</html>
