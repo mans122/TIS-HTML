@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>연습문제 7</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        #box1{width: 250px; height: 245px; position: relative; left: 100px; top: 100px; background: url("../img/bg2.jpg"); overflow: hidden;}
+        .hidebox{position: relative;}
+        .hidebox img{visibility: hidden;}
+        
+        .hidebox{width: 100%; height: 100%; position: absolute; background: #3C4557; opacity: 0.8; top: 180px; transition: top 0.3s; color: white; text-align: center; line-height: 20px;}
+        .hidebox .before{width: 100%; height: 50px; margin-top: 10px;}
+        .hidebox:hover{top: 0px; color: white;}
+        .hidebox:hover .before{visibility: hidden;}
+        /* .hidebox .after p {font-size: 10px;} */
+        .hidebox:hover .after img{visibility: visible; border-radius: 50%; width: 20px; height: 20px; display: block; margin: 20px auto;}
+        .hidebox:hover .after em{ display: block; width: 100%; height: 20px; text-align: center; line-height:20px; margin-bottom: 20px;}
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <a href="#">
+            <div class="hidebox">
+                <div class="before"><p>  춘천으로 나들이떠나요 ~</p></div>
+                <p class="after"><img src="../img/icon.jpg" alt="이미지"><em>미주</em> 춘천 스카이워크 나들이 다녀왔는데~~</p>
+            </div>
+        </a>
+    </div>
+</body>
+</html>

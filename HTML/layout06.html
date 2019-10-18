@@ -18,21 +18,46 @@
         img { border:0;}
         body { font:12px/1.6 'Poiret One'; color:#555; } 
 
+/* Header */
         header { position:fixed; width:15%; height:100%; background:#fff; top:0px; left:0px; transition:all 0.5s;}
-        nav { position:relative; width:85%; height:35px; background:#212121; margin-left:15%; transition:all 0.5s;}
-        section { width:85%; position:relative; margin-left:15%;}
-        article { float:left; height:260px; transition:all 0.5s; animation:scale 1s 1;}
-        /* article>div { position:relative; width:100%; height:100%; overflow:hidden; cursor:pointer; } */
-        .bg{background-size: cover !important; background-position: center center !important;}
+        header h1 { width:180px; height:136px; background:url("../img/ex2img/logo1.png") no-repeat 0px 0px; background-size:contain; position:absolute; top:70px;	left:50%; margin-left:-90px;	text-indent:-99999px;}
+        #gnb { position:absolute; top:300px; right:57px;}
+        #gnb a { display:block; padding:8px 30px;	font-size:17px; font-weight:bold; color:#555; text-align:left; line-height:1.8; transition:all .5s;}
+        #gnb a:hover { color:skyblue;}
+        #gnb a i { margin-right:13px;}
+        .snsSet { width:90px;	height:47px;	position:absolute; bottom:50px; right:50%; margin-right:-45px;}
+        .snsSet a { float:left;}
 
+    /* nav */
+        nav { position:relative; width:85%; height:35px; background:#212121; margin-left:15%; transition:all 0.5s;}
+        nav a:nth-child(1) {	position:absolute; top:5px;	left:10px;}
+        nav a:nth-child(2) {	position:absolute; top:5px;	left:150px;}
+        nav a:nth-child(3) {	position:absolute; top:5px;	right:90px;}
+        nav a:nth-child(4) {	position:absolute; top:5px;	right:10px;}
+                section { width:85%; position:relative; margin-left:15%;}
+        article { float:left; height:260px; transition:all 0.5s; animation:scale 1s 1; position: relative;}
+        /* article>div { position:relative; width:100%; height:100%; overflow:hidden; cursor:pointer; } */
+
+        .bg {background-size: cover !important; background-position: center center !important;}
+        .bg span{position: absolute; font-size: 150px; color: white; right: 10px; bottom: -15px; transition: 1s; opacity: 0;}
+        .bg:hover span{font-size: 50px; opacity: 1;}
         .bg1 {background-image:url("../img/ex2img/pic1.jpg") !important;}
-        .bg2 { background-image:url("../img/ex2img/pic2.jpg") !important ;}
+        .bg2 { background-image:url("../img/ex2img/pic2.jpg") !important;}
         .bg3 { background-image:url("../img/ex2img/pic3.jpg") !important ;}
         .bg4 { background-image:url("../img/ex2img/pic4.jpg") !important;}
         .bg5 { background-image:url("../img/ex2img/pic5.jpg") !important;}
         .bg6 { background-image:url("../img/ex2img/pic6.jpg") !important;}
         .bg7 { background-image:url("../img/ex2img/pic7.jpg") !important;}
       
+        .bg1 span{position: absolute; right: 10px; bottom: -30px !important;  font-size: 90px !important; color: white; transition: 1s; opacity: 1 !important; }
+        .bg1:hover span{color: #000;}
+        
+        .txt {background: white !important; ; color: #000; text-align: center; box-sizing: border-box; padding: 40px 30px; overflow: hidden;}
+        .txt:hover{background: rgb(148, 245, 245) !important; color:white}
+        .txt i{ position: absolute; right: -1000px; bottom: 0; font-size: 250px;opacity: 0; transition: 1s; color: white;}
+        .txt:hover i{right:10px; opacity: 1;}
+        .txt Strong{color: #000; font-size: 30px;}
+        .txt em{color: #000; font-size: 15px;}
 
         @keyframes scale {
             0% { transform:scale(0); opacity: 0; }	
@@ -76,7 +101,10 @@
             article:nth-child(10) { width:50%;}	
             article:nth-child(11) { width:25%;}	
             article:nth-child(12) { width:25%;}
-            
+            header h1 { width:200px;	height:40px;	background-image:url("../img/ex2img/logo2.png");	top:20px;	left:20px;	margin-left:0px;}
+            #gnb { top:20px; right:30px;}	
+            #gnb li { float:left;}	
+            .snsSet {	display:none;}
         }
 
         @media screen and (min-width:780px) and (max-width:1023px) {  
@@ -154,7 +182,23 @@
     </style>
 </head>
 <body>
-    <header></header>
+    <header>
+        <h1>logo</h1>
+		<ul id="gnb">
+			<li><a href="#"><i class="fa fa-header"></i>Hotel</a></li>
+			<li><a href="#"><i class="fa fa-building-o"></i>Fucility</a></li>
+			<li><a href="#"><i class="fa fa-suitcase"></i>Business</a></li>
+			<li><a href="#"><i class="fa fa-cutlery"></i>Restaurant</a></li>	
+		</ul>		
+
+		<div class="snsSet">
+			<a href="#"><img src="../img/ex2img/sns1.png" alt="about" /></a>
+			<a href="#"><img src="../img/ex2img/sns2.png" alt="contact" /></a>
+			<a href="#"><img src="../img/ex2img/sns3.png" alt="facebook" /></a>
+			<a href="#"><img src="../img/ex2img/sns4.png" alt="twitter" /></a>
+			<a href="#"><img src="../img/ex2img/sns5.png" alt="etc" /></a>
+		</div>
+    </header>
     <nav>
         <a href=""><img src="../img/ex2img/util1.png" alt=""></a>
         <a href=""><img src="../img/ex2img/util2.png" alt=""></a>
@@ -164,18 +208,57 @@
     <section>
         <article class="bg bg1">
             <!-- <div class="bg bg1"></div> -->
+            <span>Maldives</span>
         </article>
-        <article></article>
-        <article></article>
-        <article class="bg bg2"></article>
-        <article class="bg bg3"></article>
-        <article></article>
-        <article class="bg bg4"></article>
-        <article></article>
-        <article class="bg bg5"></article>
-        <article class="bg bg6"></article>
-        <article></article>
-        <article class="bg bg7"></article>
+        <article class="txt">
+            <i class="fa fa-arrow-right"></i>
+				<strong>Hot spot</strong><br />
+				<em>a best place to have a vacation <br />
+				Tell me when you</em>
+        </article>
+        <article class="txt">
+            <i class="fa fa-spin fa-refresh"></i>
+            <p><strong>Reservation</strong></p>
+        </article>
+        <article class="bg bg2">
+            <span>Suite</span>
+        </article>
+        <article class="bg bg3">
+            <span>Surf</span>
+        </article>
+        <article class="txt">
+            <i class="fa fa-arrow-right"></i>
+            <p>
+                <strong>A Dazzling Place</strong><br />
+                <em>I can show you the world. Shining Shimmering Splended.<br />
+                Tell me when you decide .</em>
+            </p>
+        </article>
+        <article class="bg bg4">
+            <span>Sauna</span>
+        </article>
+        <article class="txt">
+            <i class="fa fa-arrow-right"></i>
+				<strong>Hot spot</strong><br />
+				<em>a best place to have a vacation <br />
+				Tell me when you</em>
+        </article>
+        <article class="bg bg5">
+            <span>Diner</span>
+        </article>
+        <article class="bg bg6">
+            <span>Spa</span>
+        </article>
+        <article class="txt">
+            <i class="fa fa-arrow-right"></i>
+				<p>
+					<strong>Open Space</strong><br />
+					<em>I Can show you the world</em>
+				</p>
+        </article>
+        <article class="bg bg7">
+            <span>Tour</span>
+        </article>
     </section>
 </body>
 </html>
