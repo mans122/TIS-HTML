@@ -11,12 +11,83 @@
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
     <style>
-        a {display: inline; width: 100px; height: 50px;}
-        div{width: 100px; height: 50px;}
+        /* a {display: inline; width: 100px; height: 50px;} */
+        /* div{width: 200px; height: 50px; }  */
+        ul{width: 150px;}
+/* Color Theme Swatches in Hex */
+.Baugasm-Season-#3---Month-1-1-hex { color: #F205CB; }
+.Baugasm-Season-#3---Month-1-2-hex { color: #7C05F2; }
+.Baugasm-Season-#3---Month-1-3-hex { color: #6204BF; }
+.Baugasm-Season-#3---Month-1-4-hex { color: #050259; }
+.Baugasm-Season-#3---Month-1-5-hex { color: #F23827; }
+
+/* Color Theme Swatches in RGBA */
+/* .Baugasm-Season-#3---Month-1-1-rgba { color: rgba(242, 4, 202, 1); }
+.Baugasm-Season-#3---Month-1-2-rgba { color: rgba(123, 4, 242, 1); }
+.Baugasm-Season-#3---Month-1-3-rgba { color: rgba(97, 3, 191, 1); }
+.Baugasm-Season-#3---Month-1-4-rgba { color: rgba(4, 1, 89, 1); }
+.Baugasm-Season-#3---Month-1-5-rgba { color: rgba(242, 55, 38, 1); } */
+
+/* Color Theme Swatches in HSLA */
+/* .Baugasm-Season-#3---Month-1-1-hsla { color: hsla(309, 96, 48, 1); }
+.Baugasm-Season-#3---Month-1-2-hsla { color: hsla(270, 96, 48, 1); }
+.Baugasm-Season-#3---Month-1-3-hsla { color: hsla(270, 96, 38, 1); }
+.Baugasm-Season-#3---Month-1-4-hsla { color: hsla(241, 96, 17, 1); }
+.Baugasm-Season-#3---Month-1-5-hsla { color: hsla(5, 88, 55, 1); } */
     </style>
 </head>
 <body>
         <a href="http://www.naver.com" target="_BLANK" class="ui-btn ui-corner-all">앵커~</a>
         <button class="ui-btn ui-corner-all">Button</button>
+
+        <form>
+            <label for="autoLogin">자동로그인 </label>
+                <input id="autoLogin" type="checkbox" name="checkbox-0 ">
+        </form>
+
+        <form>
+            <label>
+                    <input type="radio" name="radio-choice-0" id="radio-choice-0a">One
+                </label>
+            <label for="radio-choice-0b">Two</label>
+            <input type="radio" name="radio-choice-0" id="radio-choice-0b" class="custom">
+        </form>
+
+        <form>
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <legend>Horizontal:</legend>
+                <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="on" checked="checked">
+                <label for="radio-choice-h-2a">One</label>
+                <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="off">
+                <label for="radio-choice-h-2b">Two</label>
+                <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2c" value="other">
+                <label for="radio-choice-h-2c">Three</label>
+            </fieldset>
+        </form>
+
+<!-- collapsible -->
+        <div data-role="collapsible" data-theme="b">
+            <h4>공지사항</h4>
+            <p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
+        </div>
+
+        <div class="ui-grid-a">
+            <div class="ui-block-a">box1</div>
+            <div class="ui-block-b">box2</div>
+        </div>
+        <div class="ui-grid-b">
+            <div class="ui-block-a">box1</div>
+            <div class="ui-block-b">box2</div>
+            <div class="ui-block-c">box2</div>
+        </div>
+
+        <!-- List View -->
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#">Acura</a></li>
+            <li><a href="#">Audi</a></li>
+            <li><a href="#">BMW</a></li>
+            <li><a href="#">Cadillac</a></li>
+            <li><a href="#">Ferrari</a></li>
+        </ul>
 </body>
 </html>

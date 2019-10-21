@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Joker</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <style>
+        
+        .ui-block-a img,.ui-block-b img {
+            float: left;
+            padding-right: 10px;
+        }
+
+        .ui-block-a p,
+        .ui-block-b p {
+            font-size: 10px;
+        }
+
+
+        #footer {
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-------------- first page-------------->
+    <div data-role="page">
+        <!---- header ---->
+        <div data-role="header">
+            <a href="index.html" rel="external" data-icon="home" data-iconpos="notext">home</a>
+            <a href="index.html" rel="external" data-icon="back" data-iconpos="notext">prev</a>
+            <h3>영화소개</h3>
+            <div data-role="navbar">
+                    <ul>
+                    <li><a href="introduce.html" rel="external">영화줄거리</a></li>
+                    <li><a href="introduce2.html" class="ui-btn-active" rel="external">등장인물</a></li>
+                    <li><a href="introduce3.html" rel="external">영화평점</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+
+
+        <div data-role="content">
+            <h3>배우</h3>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <img src="img/people01.jpg" alt="영화">
+                    <div class="title"><a href="#">호아킨 피닉스</a></div>
+                    <p>Joaquin Phoenix</p>
+                    <p><strong>주연</strong>
+                        | 아서 플렉 / 조커 역</p>
+                    <p>시스터스 브라더스,2019</p>
+                    <p>조커,2019</p>
+                </div>
+
+                <div class="ui-block-b">
+                    <img src="img/people02.jpg" alt="영화">
+                    <div class="title"><a href="#">재지 비츠</a></div>
+                    <p>Zazie Beetz</p>
+                    <p><strong>주연</strong>
+                        | 소피 두몬드 역</p>
+                    <p>루시 인 더 스카이,2019</p>
+                    <p>세버그,2019</p>
+                </div>
+            </div>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a">                    
+                    <img src="img/people03.jpg" alt="배우">
+                    <div class="title"><a href="#">로버트 드 니로</a></div>
+                    <p>Robert De Niro</p>
+                    <p><strong>조연</strong> | 머레이 프랭클린 역</p>
+                    <p>아이리시맨,2019</p>
+                    <p>조커,2019</p>
+                </div>
+                <div class="ui-block-b">
+                    <img src="img/people04.jpg" alt="배우">
+                    <div class="title"><a href="#">프란시스 콘로이</a></div>
+                    <p>Frances Conroy</p>
+                    <p><strong>조연</strong> | 페니 플렌 역</p>
+                    <p>조커,2019</p>
+                    <p>이야기,2018</p>
+                </div>
+            </div>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a">                    
+                    <img src="img/people05.jpg" alt="배우">
+                    <div class="title"><a href="#"></a>브래트 컬렌</div>
+                    <p>Brett Cullen</p>
+                    <p><strong>조연</strong> | 토마스 웨인 역</p>
+                    <p>조커,2019</p>
+                    <p>라스트솔져,2016</p>
+                </div>
+                <div class="ui-block-b">
+                    <img src="img/people06.jpg" alt="배우">
+                    <div class="title"><a href="#">쉐어 위햄</a></div>
+                    <p>Shea Whigham</p>
+                    <p><strong>조연</strong> | 버크 형사 역</p>
+                    <p>투 더 스타스,2019</p>
+                    <p>조커,2019</p>
+                </div>
+            </div>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <img src="img/people07.jpg" alt="배우">
+                    <div class="title"><a href="#"></a>빌 캠프</div>
+                    <p>Bill Camp</p>
+                    <p><strong>조연</strong> | 개러티 형사 역</p>
+                    <p>스킨,2019</p>
+                    <p>조커,2019</p>
+                </div>
+                <div class="ui-block-b">
+                    <img src="img/people08.jpg" alt="배우">
+                    <div class="title"><a href="#">글렌 플레쉬러</a></div>
+                    <p>Glenn Fleshler</p>
+                    <p><strong>조연</strong> | 랜들 역</p>
+                    <p>조커,2019</p>
+                    <p>대체불가 당신,2018</p>
+                </div>
+            </div>
+
+            <h3>감독</h3>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <img src="img/people09.jpg" alt="감독">
+                    <div class="title"><a href="#">토드 필립스</a></div>
+                    <p>Todd Phillips</p>
+                    <p><strong></strong></p>
+                    <p></p>
+                    <p></p>
+                </div>
+                <!-- <div class="ui-block-b"></div> -->
+            </div>
+        <!-- footer -->
+        <div data-role="footer">
+            <h3>&copy; CGV All rights reserved.</h3>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

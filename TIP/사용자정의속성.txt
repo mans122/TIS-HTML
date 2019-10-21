@@ -1,0 +1,18 @@
+-- 사용자 정의 속성
+
+접두어 data-로 시작
+개발자가 임의로 만들어 사용하는 속성
+ ex)data_role="collapsible"
+
+JQueryui
+
+jquery 기반의 ui라이브러리를 한곳에 모아 공식적으로 발표
+
+-Single Page Web
+모든 컨텐츠를 하나의 html파일에 구현
+JQuery Mobile은 기본적으로 Single Page Web으로 설계됨
+여러개의 html로 구현할 경우 링크에 rel="external" 반드시 작성
+
+-Google Map
+=> WEB : 유료
+=> App : 무료

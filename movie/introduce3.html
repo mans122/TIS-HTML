@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Joker</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <style>
+        .ui-block-a img,
+        .ui-block-b img {
+            float: left;
+            padding-right: 10px;
+        }
+
+        .ui-block-a p,
+        .ui-block-b p {
+            font-size: 10px;
+        }
+
+
+        #footer {
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['평점', '포인트'],
+          ['연출',     20],
+          ['연기',      34],
+          ['스토리',  17],
+          ['영상미', 14],
+          ['OST',    14]
+        ]);
+        var options = {
+          title: '감상포인트',
+          pieHole: 0.4,
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+     <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ["Element", "Density", { role: "style" } ],
+            ["Copper", 8.94, "#b87333"],
+            ["Silver", 10.49, "silver"],
+            ["Gold", 19.30, "gold"],
+            ["Platinum", 21.45, "color: #e5e4e2"]
+          ]);
+    
+          var view = new google.visualization.DataView(data);
+          view.setColumns([0, 1,
+                           { calc: "stringify",
+                             sourceColumn: 1,
+                             type: "string",
+                             role: "annotation" },
+                           2]);
+    
+          var options = {
+            title: "Density of Precious Metals, in g/cm^3",
+            width: 600,
+            height: 400,
+            bar: {groupWidth: "95%"},
+            legend: { position: "none" },
+          };
+          var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+          chart.draw(view, options);
+      }
+      </script>
+</head>
+
+<body>
+    <!-------------- first page-------------->
+    <div data-role="page">
+        <!---- header ---->
+        <div data-role="header">
+            <a href="index.html" rel="external" data-icon="home" data-iconpos="notext">home</a>
+            <a href="index.html" rel="external" data-icon="back" data-iconpos="notext">prev</a>
+            <h3>영화소개</h3>
+            <div data-role="navbar">
+                    <ul>
+                    <li><a href="introduce.html" rel="external">영화줄거리</a></li>
+                    <li><a href="introduce2.html" rel="external">등장인물</a></li>
+                    <li><a href="introduce3.html" class="ui-btn-active" rel="external">영화평점</a></li>
+                        
+                </ul>
+            </div><!-- /navbar -->
+        </div>
+
+
+        <div data-role="content">
+            <h3></h3>
+            <div id="donutchart" style="width: 100%; height: 500px;"></div>
+            <div id="barchart_values" style="width: 100%; height: 300px;"></div>
+        </div>
+
+        <!-- footer -->
+        <div data-role="footer">
+            <h3>&copy; CGV All rights reserved.</h3>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
