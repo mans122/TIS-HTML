@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<products>
+    <product>
+        <name>coffee</name>
+        <price>2300</price>
+    </product>
+    <product>
+        <name>녹차</name>
+        <price>2700</price>
+    </product>
+    <product>
+        <name>cake</name>
+        <price>3400</price>
+    </product>
+</products>

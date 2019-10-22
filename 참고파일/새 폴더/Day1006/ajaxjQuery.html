@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> ajaxjQurery.html</title>
+
+    <style>
+        *{font-size:16pt; font-weight:bold; }
+        a{font-size:16pt; text-decoration:none; color:blue;}
+        a:hover{font-size:16pt; text-decoration:underline; color:blue;}
+    </style>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+</head>
+<body>
+<div id="demo">
+    <h2> jQuery ajax테스트  </h2>
+    <button id="callAjax"> jQuery ajax테스트  </button>
+</div>
+
+<img src="images/aaa.gif"><br>
+<img src="images/aaa.gif"><br>
+<img src="images/aaa.gif"><br>
+<img src="images/aaa.gif"><br>
+<script>
+   $('#callAjax').click(function () {
+      $.ajax({
+          url: "ajax.html",
+          success: function (result) {
+            $('#demo').empty(); //clear
+            $('#demo').html("<h1>"+ result +"</h1>");
+          }
+      });
+   });
+</script>
+</body>
+</html>

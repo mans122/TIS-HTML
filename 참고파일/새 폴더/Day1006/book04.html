@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> [book04.html] </title>
+
+    <style>
+        *{font-size:14pt; font-weight:bold; }
+        a{font-size:14pt; text-decoration:none; color:blue;}
+        a:hover{font-size:14pt; text-decoration:underline; color:blue;}
+        /* class="view" class="thumbnail"   */
+
+       .view img{ width: 580px; height: 320px; }
+
+       .thumbnail {
+           width: 145px; height: 100px;
+           float: left;  margin:0px; padding: 0px;
+       }
+
+        .thumbnail li {
+            width: 100px; height: 100px;
+            float: left; padding: 5px;
+        }
+
+       .thumbnail img {width: 130px; height: 100px; }
+
+       .thumbnail img:hover {border: 3px solid mediumvioletred; }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="css/room.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $( function() {  //.thumbnail  > a
+          $('.thumbnail > li > a').click(function(){
+              var path= $(this).attr("href");
+              //alert(path);
+              //$('.view > img').attr({ src:path});
+              $('#target').attr({ src:path});  //제일쉽게 접근하는 방법
+              //$(this).parent().prev().find('#target').attr({ src:path});
+              //$(this).parent().prev().find('img').attr({ src:path}).css("opacity","0.2").stop().animate({opacity:1}, 5000);
+              return false;
+          });
+        });
+    </script>
+</head>
+<body>
+
+
+ [book04.html도전] <p></p>
+ <ul class="thumbnail">
+     <li> <a href="images/bg02.jpg" style="margin-left:2px;"> <img src="images/bg02.jpg"></a> </li>
+     <li> <a href="images/bg03.jpg" style="margin-left:2px;"> <img src="images/bg03.jpg"></a> </li>
+     <li> <a href="images/nature.jpg" style="margin-left:2px;"> <img src="images/nature.jpg"></a> </li>
+ </ul>
+
+ <div class="view">
+     <img src="images/Tulips.jpg" id="target">
+ </div>
+
+
+
+<p></p><hr>
+ <p class="roomS">프레지덴셜 스위트 룸은 전세계 국빈과 VIP 전용 객실 및 품격 있는 장소로 MJ 호텔의 최고의 객실입니다.
+     <br>문의 02 - 2230 - 3310
+     <br>모든 객실과 레스토랑 에서 유, 무선 인터넷 사용이 가능합니다.
+ </p>
+
+ <p class="roomB">This Room</p>
+ <p class="roomS">대형 스마트 TV(위성 TV 52개 채널)위성채널정보 보기
+     <br>300Mbps 초고속 인터넷 유,무선 무료
+     <br>220V, 110V 전압 사용 가능
+     <br>커피,차 티백 무료 제공
+     <br>Extra Bed 추가 - 30,000/1개
+     <br>Baby Crib(무료)
+ </p>
+
+ <p class="roomB">Room Service</p>
+ <p class="roomS">객실에서 즐기실 수 있는 다양한 룸서비스 메뉴가 준비되어 있습니다.
+     <br>양식 및 음료 : 24시간 서비스
+     <br>한식, 일식 :
+     <br>- 조식 : 07:00~10:00
+     <br>- 점심 : 12:00~14:30
+     <br>- 저녁 : 18:00~22:00
+ </p>
+</body>
+</html>

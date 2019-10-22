@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{font-size:20pt; font-weight:bold; }
+        a{font-size:20pt; text-decoration:none; color:blue;}
+        a:hover{font-size:24pt; text-decoration:underline; color:blue;}
+    </style>
+
+
+</head>
+<body>
+
+<div id="demo">
+    <h2> AJAX xml문서 로드 테스트</h2>
+    <button type="button" onclick="loadDoc()"> ajax3번째 xml문서실습  </button>
+</div>
+
+<script>
+    var xhttp; //전역변수
+    var msg=""; //xml문서 데이터 가져오기
+
+    function loadDoc() {
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = display ;  //함수이름만 명시 = 처리할 이벤트핸들러 이름만 기술
+        xhttp.open("GET", "data.xml", true);
+        xhttp.send();
+    } //end
+
+
+    function display() {
+        if (this.readyState == 4) {
+            if (this.status == 200) {
+                //var data=xhttp.responseText; //xml,html,txt
+                var data=xhttp.responseXML; //XML문서는 태그이름으로접근후 속성으로 접근
+
+                for(var i=0; i<3; i++){
+                    var a=data.getElementsByTagName('name')[i].firstChild.nodeValue;
+                    var b=data.getElementsByTagName('price')[i].firstChild.nodeValue;
+                    msg += a +' ' + b + '<br>';
+                }
+                document.getElementById("demo").innerHTML = msg ;
+            }
+        }
+    }//end
+
+</script>
+</body>
+</html>

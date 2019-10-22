@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> test03.html </title>
+    <style>
+        *{font-size:20pt; font-weight:bold; }
+        a{font-size:20pt; text-decoration:none; color:blue;}
+        a:hover{font-size:24pt; text-decoration:underline; color:blue;}
+    </style>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <script>
+        $(function () {
+            $('#asp').click(function(){
+                $('#asp').text("asp 닷넷기반 서버페이지  3:24 3:31 3:35");
+                $('#asp').css('color', 'green');
+                $('#asp').css('margin', '5px');
+                $('#asp').css('background-color', 'yellow');
+                $('#asp').css('font-size', '45px');
+                $('#asp').css('border', '2px solid blue');
+            });
+
+            $('#jsp').click(function () {
+                $('#jsp').text("jsp 자바기반 서버페이지  3:45");
+                $('#jsp').css({
+                    'color':'pink' ,
+                    'margin': '5px' ,
+                    'background-color': 'green' ,
+                    'font-size': '50px',
+                    'border' : '2px dash red'
+                });
+            });
+
+            $("#php").on({click:function() {
+                    $("#php").text("php 페이스북 페북   3:54 6:10");
+                    $(this).css('color', 'yellow');
+                    $(this).css('margin', '5px');
+                    $(this).css('background-color', 'pink');
+                    $(this).css('font-size', '45px');
+                    $(this).css('border', '2px solid blue');
+                }});
+
+            $('#myp').click(function () {
+                $('#myp').text("기본p태그 여러 스타일적용 4:00");
+                $('#myp').css({
+                    'color':'yellow' ,
+                    'margin': '5px' ,
+                    'background-color': 'black' ,
+                    'font-size': '50px',
+                    'border' : '2px dash red'
+                });
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+   <div id="asp">[asp server page]</div>
+   <div id="jsp">[jsp server page]</div>
+   <div id="php">[php server page]</div>
+   <p  id="myp"> 한라인공백 라인개행처리</p>
+</body>
+</html>

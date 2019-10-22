@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> [main.html] </title>
+
+    <style>
+        *{font-size:20pt; font-weight:bold; }
+        a{font-size:20pt; text-decoration:none; color:blue;}
+        a:hover{font-size:24pt; text-decoration:underline; color:blue;}
+    </style>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script>
+        $( function() {
+          // <li class="second">내용10  second기준점</li>
+          // $('.second').next().css("border", "3px solid red")
+          // $('.second').nextAll().css({backgroundColor:"pink",border:"3px solid green"})
+          // $('.first').next().css("border", "3px solid green") ;
+          // $('.first').prev().css("border", "3px solid red") ;
+          // $('#myList').children().css("border", "3px solid  magenta");
+            //$('#myList li').css("border", "3px solid pink");
+            //$('#myList').css("border", "3px solid green");
+            $('#myList > li').css("border", "3px solid magenta ");
+            //비권장$('.second').parents().css("border", "3px solid red")
+            //$('.second').parent().css("border", "3px solid red")
+        });
+    </script>
+</head>
+<body>
+ <ul id="myList">
+     <li id="content1">
+         내용1
+         <ul>
+             <li>내용3 스프링</li>
+             <li>내용4 스프링 prev()</li>
+             <li class="first">내용5 first기준점 </li>
+             <li>내용6 스프링 next() </li>
+             <li>내용7 스프링</li>
+         </ul>
+     </li>
+
+     <li id="content2">
+         내용2
+         <ol>
+             <li>내용8 </li>
+             <li class="second">내용9  second기준점 </li>
+             <li>내용10 </li>
+             <li>내용11 </li>
+             <li>내용12 </li>
+         </ol>
+     </li>
+ </ul>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> test04.html </title>
+    <style>
+        *{font-size:20pt; font-weight:bold; }
+        a{font-size:20pt; text-decoration:none; color:blue;}
+        a:hover{font-size:24pt; text-decoration:underline; color:blue;}
+    </style>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+
+</head>
+<body>
+    <h1> jQuery장점 </h1>
+    <ol> <!--order List 기본순서 1 2 3 4 ~~ -->
+        <li>자바스크립트 크로스브라이징 힘들다 </li>
+        <li>자바스크립트 중첩태그 표현이 힘들다 </li>
+        <li>자바스크립트 반복문 for대신 속성으로 표현됩니다 </li>
+        <li>jQuery지원 라이브러리 다양합니다 </li>
+        <li>jQuery지원 라이브러리 가볍다 light </li>
+    </ol>
+
+    <script>
+        $("ol li").css({color:"yellow",backgroundColor:"black"})
+            .on({
+                  mouseenter:function(){$(this).css({color:"#000",background:"#fff"}); },
+                  mouseleave:function(){$(this).css({color:"#fff",background:"#000"}); }
+                }
+            );
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

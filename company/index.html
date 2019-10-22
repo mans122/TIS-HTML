@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TIS 정보기술교육센터</title>
+     <!-- Latest compiled and minified CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+     <!-- jQuery library -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <!-- Popper JS -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+     <!-- Latest compiled JavaScript -->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+     <!-- Font Awesome CDN -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<!-- mizz 사이트 -->
+     <link rel="stylesheet" href="C:\Users\1class-014\Desktop\etc\HTML\font-mfizz-2.4.1/font-mfizz.css">
+
+     <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
+     <style>
+         p {font-family: 'Jua', sans-serif;
+            font-size: 18px;}
+         .jumbotron {
+        background-color: #f4511e; /* Orange */
+        color: #ffffff;
+        padding: 100px 25px;
+        border-radius: 0 !important;
+        }
+        .bg-grey {
+            background-color: #cccccc;
+        }
+        .form-inline{width: 300px; margin: auto;}
+        .container-fluid{padding: 50px 0;}
+        .logo {color: #f4511e !important; font-size: 200px; color: #000;}
+        .logo:hover{transform: scale(1.2);}
+        
+        .logo-small {
+            color: #f4511e;
+            font-size: 50px;
+        }
+        .logo-small:hover{transform: scale(1.2);}
+
+        /* width가 작아지면 로고가 이쁘게 나오게하기위해 조절해줘야함, */
+        @media screen and (max-width: 768px) {
+            .jumbotron{padding: 30px 10px}
+            .col-sm-4 {text-align: center;
+                        margin: 50px 0;
+            }
+       }
+     </style>
+</head>
+<body>
+    <!-- Jumbotron Text Page -->
+    <div class="jumbotron text-center">
+        <h1>TIS 정보기술교육센터</h1>
+        <p>정부지원 IT 전문 교육기관</p>
+        <form class="form-inline" action="search.jsp">
+            <div class="input-group">
+                <input type="text" class="form-control" size="20" placeholder="검색어를 입력하세요" style="width: 200px !important;">
+                <div class="input-group-btn">
+                    <button class="btn btn-danger">검색</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--  -->
+
+    <!-- About Company Page -->
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2>교육센터 소개</h2>
+                    <h4>TIS정보기술교육센터는 정부지원 IT 전문 교육 기관입니다.</h4>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint, est nobis fuga at itaque veritatis
+                        laudantium distinctio ullam corporis doloribus? Nostrum enim, ratione velit numquam quam laudantium
+                        tempora! Blanditiis, ipsam.</p>
+                    <button class="btn btn-success btn-lg">more</button>
+                </div>
+                <div class="col-sm-4">
+                    <i class="fas fa-signal logo"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid bg-grey">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <i class="fas fa-globe logo"></i>
+                </div>
+                <div class="col-sm-8">
+                    <h2>교육센터 비전</h2>
+                    <h4>MISSION: Our mission lorem ipsum..</h4>
+                    <p>VISION: Our vision Lorem ipsum..</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid text-center">
+        <h2>개설 과목</h2>
+        <h4>What we teach</h4>
+        <br>
+        <div class="row">
+            <div class="col-sm-4">
+                <i class="fab fa-html5 logo-small"></i>
+                <h4>HTML5</h4>
+                <p>Lorem ipsum dolor sit amet..</p>
+            </div>
+
+            <div class="col-sm-4">
+                <i class="fab fa-css3 logo-small"></i>
+                <h4>CSS3</h4>
+                <p>Lorem ipsum dolor sit amet..</p>
+            </div>
+            <div class="col-sm-4">
+                <i class="fab fa-java logo-small"></i>
+                <h4>Java</h4>
+                <p>Lorem ipsum dolor sit amet..</p>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-sm-4">
+                <i class="fab fa-js logo-small"></i>
+                <h4>JavaScript</h4>
+                <p>Lorem ipsum dolor sit amet..</p>
+            </div>
+            <div class="col-sm-4">
+                <i class="fab fa-node logo-small"></i>
+                <h4>nodejs</h4>
+                <p>Lorem ipsum dolor sit amet..</p>
+            </div>
+            <div class="col-sm-4">
+                <i class="fas fa-database logo-small"></i>
+                <h4>Database</h4>
+                <p>Lorem ipsum dolor sit amet..</p>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    
+    <!-- Grid Container-fluid -->
+
+</body>
+</html>

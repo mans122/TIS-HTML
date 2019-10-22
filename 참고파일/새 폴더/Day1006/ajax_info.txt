@@ -1,0 +1,14 @@
+사이트: www.tis.co.kr<br>
+뉴스내용: Lorem ipsum dolor sit amet,<br>
+consectetuer adipiscing elit. <br>
+날씨: 청명한가을날씨 . <br>
+consectetuer adipiscing elit. <br>
+우리나라 좋은나라 <br>
+10:27 오전첫번째시간 <br>
+Aenean commodo ligula eget dolor.<br>
+Aenean massa. Cum sociis natoque penatibus<br>
+
+<news>
+  <subject> 태풍 </subject>
+  <name> 하비기스 </name>
+</news>

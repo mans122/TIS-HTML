@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> [book05.html] </title>
+
+    <style>
+        *{font-size:20pt; font-weight:bold; }
+        a{font-size:20pt; text-decoration:none; color:blue;}
+        a:hover{font-size:26pt; text-decoration:underline; color:blue;}
+    </style>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+</head>
+<body>
+  <p></p> <br>
+  [book05.html] <br>
+  <img src="images/bar2.gif">  <p></p> <hr>
+
+    <ul id="sList">
+      <li>사과나라</li>
+      <li>초록나라</li>
+    </ul>
+
+  <p></p> <hr>
+
+  <script>
+      var array = [
+          { name:"네이버", link:"https://www.naver.com" },
+          { name:"구글", link:"https://www.google.co.kr" },
+          { name:"다음", link:"https://www.daum.net" },
+          { name:"jQuery", link:"https://jquery.org" },
+          { name:"java", link:"https://www.oracle.com" }
+      ];
+
+      //array.forEach(
+        //  function(item) {
+              //document.write(item.name +" : " + item["link"] + "_" +index + "<br>");
+              //document.write(item.name +" : " + item["link"]+ "<br>");
+          //}
+      //);
+
+      //var searchList = $("#sList");
+      $.each(array,function(index, item) {
+        $("#sList").append("<li><a href='"+ item.link +"' >"+ item.name + "</a></li>");
+      });
+
+      $.ajax( //Ajax = ASynchronous  javascript XML
+
+      );
+
+
+  </script>
+</body>
+</html>

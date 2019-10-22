@@ -1,0 +1,425 @@
+강사컴퓨터 ip
+ \\192.168.0.13
+
+
+Vue시작 
+ 첫번째 nodejs프로그램삭제
+ 두번째 nodejs프로그램다운로드 설치
+        www.nodejs.org
+         |-path지정,path확인
+ 3번째 VScode설치
+         |-플러그인설치
+ 4번째 프로젝트 생성
+         |- 프로젝트 실행
+
+Vue기본문법 
+ 변수,제어, 반복 실습 CDN이용해서 프린트 실습
+
+ 
+ C:\Program Files\nodejs\node_modules\npm\bin;
+ C:\Program Files\nodejs;
+
+ 시작: cmd
+ C:\Users\calss2-00> npm  --version
+ 
+  cmd클릭후 명령프롬프트 -> 오.버=>관리자권한으로 실행 
+  
+ C:\windows\system32> cd C:\Users\calss2-00\Desktop
+    C:\Users\calss2-00\Desktop>
+    C:\Users\calss2-00\Desktop>
+
+
+
+ npm = node package manager
+ APM = apache+php+mysql
+
+
+================================================================
+jQuery시작
+www.jquery.org
+jquery.org/
+https://jqueryui.com/ ==>두번째ui
+
+참고사이트 
+https://www.w3schools.com
+
+
+이벤트
+ click
+ keyup 누르고 있다가 손을 떼는 순간 발생
+ keypress 영문적용/한글적용안됨
+ keydown  영문적용/한글적용
+
+
+자바스크립트에서 ajax사용을 위한 객체생성
+var xhttp = new  XMLHTTPRequest( );
+
+자바스크립트, jQuery, vue 
+ new키워드는 컴포넌트생성=객체화
+ ex) 자동차틀 => 찍어죠, 붕어빵틀 => 굽어내죠
+     기성복재단 => 공장에서 대량생산 
+var ob = new Date( );
+var my = new vue( ){ };
+
+
+ajax = Asynchronous  javascript and xml
+ |-자바스크립트 기술 var xhttp=new XMLHttpRequest()개체화작업
+ |-jQuery 기술  $.ajax({ k:vale, k:value } );
+ |-jQuery 기술  $.ajax({ url:vale, data:value, success:함수 } );
+
+
+xml태그 직접접근 
+ |- testXML.html 
+
+Server Side page접근할때  데이터베이스연동후 jQuery
+가장대표적인 경우 Login로그인처리
+
+ajax = Asynchronous  javascript and xml
+ |-자바스크립트 기술 var xhttp=new XMLHttpRequest()개체화작업
+ |-jQuery 기술  $.ajax({ k:vale, k:value } );
+ |-jQuery 기술  $.ajax({ url:vale, data:value, success:함수 } );
+
+이벤트
+ click
+ keyup 누르고 있다가 손을 떼는 순간 발생
+ keypress 영문적용/한글적용안됨
+ keydown  영문적용/한글적용
+
+
+xml문서 태그
+ 최상위
+   두번째태그 $(xmlDOC).find("product").each(function( ){
+                find함수로 name,price태그속성의 text( )
+   });
+
+readyState
+ 0: 비초기화
+ 1: loading
+ 2: loaded
+ 4: complete완료
+
+status
+ 200: complete성공
+ 400: Not found문서없다는 의미 
+ 505: Syntax에러 
+
+
+
+
+
+
+
+
+
+
+
+
+<products>
+  <product>
+     <name>커피</name>
+     <price>2300</price>
+  <product>
+  <product>
+     <name>녹차</name>
+     <price>2700</price>
+  <product>
+</products>
+
+
+
+
+
+
+
+
+jQuery에서 선택자 설명
+<order list> </ol>
+<order list>
+   <li>스프링</li>
+   <li id="sm">여름 <ul> 항목 </ul> </li>
+      
+   <li>가을</li>
+   <li>겨울</li>
+</ol>
+
+부모선택 $('#sm').parent()
+상위선택 $('#sm').parents()
+
+자식선택 $("#sm > ul")
+하위선택 $("#sm  ul1 ul2")
+자식들   $("#sm").chidren()
+
+항목이전선택    $("#sm").prev()
+항목이전들선택  $("#sm").prevAll()  //prevs()아닙니다
+
+동생요소     $("#sm").next()
+동생요소들   $("#sm").nextAll()
+
+<script>
+  $( function() {
+      $('.second').parent().css("border", "3px solid red")
+     //$('#empTemplate>tbody.contents td').filter(":last-child").css("background","pink")
+
+     대상.filter(":first").css("color", "red") ;
+     대상.filter(":last").css("color", "red") ;
+     대상.filter(":first-child").css("color", "red") ;
+     대상.filter(":last-child").css("color", "red") ;
+     대상.filter(":odd").css("color", "red") ;
+     대상.filter(":even").css("color", "red") ;
+
+     필터에 적용될 대상을 명시
+     대상.filter(":eq(n번째)").css("color", "red") ;
+     대상.filter(":gt(n번째)").css("color", "red") ;  
+     대상.filter(":lt(n번째)").css("color", "red") ;  
+     대상.filter(":not(n번째)").css("color", "red") ;  아니면 
+     대상.filter(":has(n번째)").css("color", "red") ;  있으면
+     대상.filter(":contains(n번째)").css("color", "red") ;  포함
+     대상.filter(":nth-child(3n)").css("color", "red") ;  3 6 9
+     대상.filter(":only-child('p')").css("color", "red") ;  p태그포함  
+  });
+</script>
+
+   필수항목 속성=attribute
+   옵션항목 속성=attribute  width height alt
+   jQuery에서 옵션항목접근  attr({ }) 
+
+
+<script>
+ jQuery(document).ready( function( ){  } ); //www.w3schools.com
+ $(document).ready( function( ){  } ); //www.w3schools.com
+ $(function( ){  코스기술 } ); //jquery.org사이트에서 접근
+
+
+ $(function( ){ 우리는 수업중 접근 권장 } );   
+
+
+
+ $( function( ){
+     스타일및 이벤트 화면효과
+     $('#mydiv').click(function(){ });
+     $('.tisdiv').click(function(){ });    
+ });
+</script>
+
+
+태그속성  <div  id="mydiv">
+태그속성  <div  class="tisdiv">
+
+css및 jquery에서 접근할때
+ id는     #mydiv
+ class는  .tisdiv 
+
+<image source ="images/bbb.gif">
+<img src ="images/bbb.gif">
+<img src ="images/bbb.gif" width=500 height=350>
+<img src ="images/bbbb.gif" width=500 height=350 alt="가을">
+
+필수항목 속성 src 꼭필요
+옵션항목 속성=attribute  width height alt
+ jQuery에서 옵션항목접근 [width]
+
+
+
+ 자바스크립트 배열
+ 배열의내용을 jQuery 코드 응용 
+  자바스크립트에서 배열에 내용을 입력후 jQuery에서 접근 
+  배열을 여러개 데이터를 jQuery접근하려면 반복문으로 접근
+   |- while, for, do~while
+   |- each  
+
+ 
+  attr( )함수    <img src="aaa.gif"  width  height>  <a href="그림"> 
+  find( )함수    <div id="empTemlate">  <div class="jobTemplate">
+  append( )함수  항목을 추가 
+ 
+  class 사람  {
+      성격  무난,예민, ==>속성 = attribute => jQuery에서 attr( )
+      머리스타일 긴머리,짧은머리, 펌, 생머리, 컷트 ==>속성= attribute => jQuery에서 attr( )
+      자동차 칼라 ===>속성=attribute  => jQuery에서 attr( )
+     휴식을위한수면 sleep( ) {  함수 }
+     휴식후작업을위한수면 work( ) { 함수 }
+     에너지근원 eat( ){ 함수 }
+ 
+  }
+
+
+  	myjumsu("홍길동", 90, 80 ) { }
+  	myjumsu(String name, int kor, int eng ) { }
+  	myjumsu(name, kor, eng) {  자바스크립트에서 접근방법 }
+
+
+자바스크립트 배열내용 항목item
+$.each(array,function(index, item) {
+  $("#sList").append("<li><a href='"+item.link +"'>"+item.name+"</a></li>");
+});
+
+
+Ajax설명 
+
+===================================================================================
+test05.html문서 삭제에 red색적용
+
+
+ 
+jQuery를 자바스크립트에서 기술할때 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 
+<script>
+ jQuery(document).ready( function( ){  } );
+ jQuery( function( ){ 코스기술 } );
+ $(function( ){  코스기술 } );    //예외jsp에서 EL태그 ${ }
+
+ $(function( ){  코스기술 } );   
+
+ $( function( ){
+     스타일및 이벤트 화면효과
+     $('#mydiv').click(function(){ });
+     $('.tisdiv').click(function(){ });    
+ });
+</script>
+
+
+태그속성  <div  id="mydiv">
+태그속성  <div  class="tisdiv">
+
+css및 jquery에서 접근할때
+ id는     #mydiv
+ class는  .tisdiv 
+
+
+자바스크립트단점
+ 크로스라이징어렵다 
+   |-브라우저종류,버젼 필드가 다른것을 cross browser지원 
+   |-jQuery에서는 cross browsing지원를 90%이상 지원
+ 중첩되는 태그선택이 jQuery에서는 쉽게 지원 (나열식으로 기술)
+ <table> <tr> <td> ~~~</td></tr> </table>
+
+ <div id="large"> 
+   <div id="middle">
+      <div id="inner">  </div>
+   </div>
+ <div>
+
+
+
+
+
+bookDaum.html
+bookOpenID.html
+
+모든컴퓨터언어에서 
+반복문탈출 보조제어문 break; 
+
+
+throw "에러이유메세지" ;
+
+try{
+
+}catch(exception){ 에러이유 + exception출력  }
+
+
+부트스트랩
+https://startbootstrap.com/
+
+
+
+자바스크립트 DOM
+ |- 내장객체 - Math수학, 날짜Date, 문자열객체
+     841231-2746153 나이계산 2019-(1900+84)
+     841231-2****** 
+ |- domain=Document  object model 
+ |- window,document,history,location,screen
+ |- Date, Image ===>오브젝트사용시 객체화
+    자바스크립트에서 객체 new Date( )
+    var data = new Date() ; 권장
+
+    모든컴퓨터언어에서 특수문자
+    모든컴퓨터언어에서 escape문자 \n라인개행  \t탭  
+ 		문자메세지 h'ello
+		alert("h\"ello");
+		alert('hello');
+		alert('h\'ello');
+		c:\Mtest  c:\\Mtest
+		          
+
+    first.html 그림출력
+    two.html 간단하게 자바스크립트
+
+    html태그에서 라인개행 <br> <p> <hr> 
+    three.html 다른이름저장 test01.html
+    test01.html  가장간단한 계산처리 
+    test02.html  var data = new Date() ; 권장
+    test03.html  제어문
+    test04.html  제어문 , 반복문, 함수 , 객체생성 
+
+
+자바스크립트
+ |-변수, 연산, 제어문 , 반복문-while,for
+   제어문 - if, switch
+    if(조건){  }
+    else { } 
+
+  while(true){ 1~10 합계: 55  }
+  for(1시작; 2최종조건; 증분){ 1~10 합계: 55  }
+  보조제어문 
+   |- break반복문탈출, continue반복문으로복귀
+
+
+	★
+	★★
+	★★★
+	★★★★
+	★★★★★
+
+ 자바,C#, 자바스크립트에서 객체지향언어
+ 객체지향언어 = Object Orientied Programming
+ 객체 - 내장객체, 수작업으로 직접생성
+ 객체는 기능과 속성을 가지고 있습니다
+
+  Car개체
+   |-속성==> 칼라, 회사, 년도  ==>속성
+   |-기능==> 속도올리고,내리고,parking, drive, 일시정지
+
+  사람개체
+   |- 성격, 스타일, 
+   |- 운동,공부, 움직
+
+
+ var  사람 = {  //자바스크립트는객체 = json=map=dic
+    id: sky  ,
+    pw: 1234  ,
+   성별: true ,
+   주소: 당산
+ }
+
+ 어떤방식으로 출력하겠느냐? ===>자바스크립트 in키워드 
+ for, while  
+
+
+ 자바스크립트에도 예외처리 
+ try{
+
+ }catch(변수){ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

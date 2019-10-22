@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> testArealength.html</title>
+
+    <style>
+        *{font-size:16pt; font-weight:bold; }
+        a{font-size:16pt; text-decoration:none; color:blue;}
+        a:hover{font-size:16pt; text-decoration:underline; color:blue;}
+    </style>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<script>
+    $( function() {
+        $('textarea').keyup(function () {
+            let len=$(this).val().length;
+            let remain=50-len;
+
+            if(remain<=0){
+                $('h1').css('color', 'red');
+                //$('textarea').isEnabled(); //disabled
+                $('textarea').prop('readonly',true);
+            }else{
+                $('h1').css('color', 'black');
+            }
+            var info='남은글자수 : ' + remain;
+            $('h1').html(info);
+        });
+    });
+</script>
+
+    <h1>최대글자수 50자릿수 허용</h1>
+    <textarea cols="40" rows="3"></textarea>
+</body>
+</html>
