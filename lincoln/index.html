@@ -14,6 +14,13 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <style>
+          .carousel-inner img {
+            width: 100%;
+            height: 100%;
+            }
+        
+    </style>
 </head>
 <body>
     <div id="demo" class="carousel slide" data-ride="carousel">
@@ -22,18 +29,30 @@
           <li data-target="#demo" data-slide-to="0" class="active"></li>
           <li data-target="#demo" data-slide-to="1"></li>
           <li data-target="#demo" data-slide-to="2"></li>
+          <li data-target="#demo" data-slide-to="3"></li>
+          <li data-target="#demo" data-slide-to="4"></li>
         </ul>
       
         <!-- The slideshow -->
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="la.jpg" alt="aviator">
+            <img src="./img/1.jpg" alt="aviator">
+            <div class="carousel-caption">
+                    <h3>Los Angeles</h3>
+                    <p>We had such a great time in LA!</p>
+                  </div>
           </div>
           <div class="carousel-item">
-            <img src="chicago.jpg" alt="Chicago">
+            <img src="./img/2.jpg" alt="nautilus">
           </div>
           <div class="carousel-item">
-            <img src="ny.jpg" alt="New York">
+            <img src="./img/3.jpg" alt="mkc">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/4.jpg" alt="continental">
+          </div>
+          <div class="carousel-item">
+            <img src="./img/5.jpg" alt="mkz">
           </div>
         </div>
       
