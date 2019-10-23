@@ -19,19 +19,55 @@
      <link rel="stylesheet" href="C:\Users\1class-014\Desktop\etc\HTML\font-mfizz-2.4.1/font-mfizz.css">
 
      <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
+     <script>
+            $(document).ready(function(){
+              // Add smooth scrolling to all links in navbar + footer link
+              $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+            
+               // Make sure this.hash has a value before overriding default behavior
+              if (this.hash !== "") {
+            
+                // Prevent default anchor click behavior
+                event.preventDefault();
+            
+                // Store hash
+                var hash = this.hash;
+            
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                  scrollTop: $(hash).offset().top
+                }, 900, function(){
+            
+                  // Add hash (#) to URL when done scrolling (default click behavior)
+                  window.location.hash = hash;
+                  });
+                } // End if
+              });
+            })
+            </script>
      <style>
          p {font-family: 'Jua', sans-serif;
             font-size: 18px;}
+
+        .navbar{
+            background: #f4511e !important;
+            }
+
          .jumbotron {
         background-color: #f4511e; /* Orange */
         color: #ffffff;
         padding: 100px 25px;
         border-radius: 0 !important;
+        padding-top: 100px;
         }
+        
         .bg-grey {
             background-color: #cccccc;
         }
+
         .form-inline{width: 300px; margin: auto;}
+        .container{margin-top: 15px;}
         .container-fluid{padding: 50px 0;}
         .logo {color: #f4511e !important; font-size: 200px; color: #000;}
         .logo:hover{transform: scale(1.2);}
@@ -41,34 +77,74 @@
             font-size: 50px;
         }
         .logo-small:hover{transform: scale(1.2);}
-
+      
         /* width가 작아지면 로고가 이쁘게 나오게하기위해 조절해줘야함, */
         @media screen and (max-width: 768px) {
-            .jumbotron{padding: 30px 10px}
+            .jumbotron{padding: 30px 10px;
+                        margin-top: 30px;}
             .col-sm-4 {text-align: center;
                         margin: 50px 0;
             }
        }
+       h2,h4 {padding-bottom: 20px;}
      </style>
 </head>
-<body>
+
+<!-- body -->
+<body id="myPage">
+        
+    <!-- nav -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        <a class="navbar-brand" href="#">TIS EDU</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"  data-toggle="collapse" data-target=".navbar-collapse">
+                    <a class="nav-link" href="#introduce">회사소개</a>
+                </li>
+                <li class="nav-item"  data-toggle="collapse" data-target=".navbar-collapse"></li> 
+                    <a class="nav-link" href="#vision">회사비전</a>
+                </li>
+                <li class="nav-item"  data-toggle="collapse" data-target=".navbar-collapse">
+                    <a class="nav-link" href="#curriculumn">과정소개</a>
+                </li>
+                <li class="nav-item"  data-toggle="collapse" data-target=".navbar-collapse">
+                    <a class="nav-link" href="#map">위치</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+          <!--  -->
     <!-- Jumbotron Text Page -->
     <div class="jumbotron text-center">
         <h1>TIS 정보기술교육센터</h1>
         <p>정부지원 IT 전문 교육기관</p>
+
         <form class="form-inline" action="search.jsp">
+
             <div class="input-group">
                 <input type="text" class="form-control" size="20" placeholder="검색어를 입력하세요" style="width: 200px !important;">
+                
                 <div class="input-group-btn">
                     <button class="btn btn-danger">검색</button>
                 </div>
+
             </div>
+
         </form>
+
     </div>
     <!--  -->
 
     <!-- About Company Page -->
-    <div class="container-fluid">
+    <div id="introduce" class="container-fluid">
         <div class="container">
             <div class="row">
                 <div class="col-sm-8">
@@ -86,12 +162,13 @@
         </div>
     </div>
     
-    <div class="container-fluid bg-grey">
+    <div id="vision" class="container-fluid bg-grey">
         <div class="container">
             <div class="row">
                 <div class="col-sm-4">
                     <i class="fas fa-globe logo"></i>
                 </div>
+
                 <div class="col-sm-8">
                     <h2>교육센터 비전</h2>
                     <h4>MISSION: Our mission lorem ipsum..</h4>
@@ -101,8 +178,9 @@
         </div>
     </div>
 
-    <div class="container-fluid text-center">
-        <h2>개설 과목</h2>
+    <div id="curriculumn" class="container-fluid text-center">
+        <div class="container">
+        <h2>과정 소개</h2>
         <h4>What we teach</h4>
         <br>
         <div class="row">
@@ -142,9 +220,44 @@
             </div>
         </div>
     </div>
+    </div>
     <!--  -->
-    
-    <!-- Grid Container-fluid -->
+    <div id="map" class="container-fluid bg-grey text-center">
+        <h2>찾아오시는 길</h2>
+        <div class="container">
+        <!-- 카카오맵 ----------------------------------------------->
+            <div id="kakaomap" style="width: 80%;height: 500px; margin: auto;"></div>
+        <script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=ba41ce6149f9a8820bb69e5c83ea82f6"></script>
+        <script> 
+        $(document).ready(function () {
+            var mapContainer = document.getElementById('kakaomap'), // 지도를 표시할 div 
+             mapOption = { 
+                    center: new daum.maps.LatLng(37.534479,126.8985834), // 지도의 중심좌표
+                    level: 2 // 지도의 확대 레벨
+                };
 
+            var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+            // 마커가 표시될 위치입니다 
+            var markerPosition  = new daum.maps.LatLng(37.534479,126.8985834); 
+
+            // 마커를 생성합니다
+            var marker = new daum.maps.Marker({
+                position: markerPosition
+            });
+
+            // 마커가 지도 위에 표시되도록 설정합니다
+            marker.setMap(map);
+         });
+        </script>
+        <!-- 카카오맵.끝.-->
+        </div>
+        </div>
+        <footer class="container-fluid text-center" style="padding-top: 50px;">
+            <a href="#myPage" title="To Top" style="position: fixed; right: 25px; bottom: 25px; z-index: 10;">
+                <span class="fas fa-chevron-up" style="font-size: 40px; padding: 2px; opacity: 0.6;"></span>
+            </a>
+            <p>&copy; TIS EDU All rights reserved </p>
+        </footer>
 </body>
 </html>
