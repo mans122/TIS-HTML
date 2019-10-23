@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,57 +14,324 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <style>
-          .carousel-inner img {
-            width: 100%;
-            height: 100%;
+        a{text-decoration: none;}
+        .modal {color: black; margin-top: 0; padding: auto; width: 100%;}
+        /* .modal-open{
+            overflow: scroll;
+        } */
+         .modal-backdrop{z-index: 1;}
+         .modal-dialog{ text-align: center;}
+        .modal-content.modal-brosher {
+           height: 1200px;
+           width: 880px;
+           margin: 0px;
+           padding: 0px;
+           left: 50%;
+           margin-left: -440px;
             }
-        
+
+        * {margin: 0;padding: 0;}
+
+        .container {width: 100%;max-width: 1440px;margin: 0 auto;border: 1px solid #d9d9d9;}
+
+        .carousel-inner img {width: 100% !important;height: 780px !important;}
+
+        #demo {width: 100%;}
+
+        .container {padding: 0;overflow: hidden;}
+        .row img {height: 100%;transform: scale(1);transition: 0.5s;}
+        .row img:hover {transform: scale(1.05);}
+
+        .row {margin-top: 10px;}
+        .col-sm-6 {padding: 0;overflow: hidden;}
+        .col-sm-4 {padding: 0;margin: 0;overflow: hidden;}
+        .col-sm-4 img {height: 500px;width: 100%;}
+        .btn {border: 2px solid white;color: white;}
+        .box {float: left;position: relative;}
+        .modal-body img{width: 150px;
+            height: 100px;
+            margin: 0;
+            padding: 0;}
+        .mo-img{width: 170px; height: 185px; ; margin: 0; padding: 0}
+        .mo-img img{box-sizing: border-box; padding: 0; margin-top: 30px;; width: 175px; height: 93px; line-height: 28px;}
+        .mo-img img:hover{transform: none; }
+        .col-sm-3:hover{border: 1px solid orange;}
     </style>
 </head>
+
 <body>
-    <div id="demo" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ul class="carousel-indicators">
-          <li data-target="#demo" data-slide-to="0" class="active"></li>
-          <li data-target="#demo" data-slide-to="1"></li>
-          <li data-target="#demo" data-slide-to="2"></li>
-          <li data-target="#demo" data-slide-to="3"></li>
-          <li data-target="#demo" data-slide-to="4"></li>
-        </ul>
-      
-        <!-- The slideshow -->
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="./img/1.jpg" alt="aviator">
-            <div class="carousel-caption">
+    <div class="container" style="width: 100%;">
+        
+
+        <!-- Carousel 시작 -->
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+                <li data-target="#demo" data-slide-to="3"></li>
+                <li data-target="#demo" data-slide-to="4"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner"">
+                <div class=" carousel-item active">
+                <img src="./img/1.jpg" alt="aviator">
+                <div class="carousel-caption">
                     <h3>Los Angeles</h3>
                     <p>We had such a great time in LA!</p>
-                  </div>
-          </div>
-          <div class="carousel-item">
-            <img src="./img/2.jpg" alt="nautilus">
-          </div>
-          <div class="carousel-item">
-            <img src="./img/3.jpg" alt="mkc">
-          </div>
-          <div class="carousel-item">
-            <img src="./img/4.jpg" alt="continental">
-          </div>
-          <div class="carousel-item">
-            <img src="./img/5.jpg" alt="mkz">
-          </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./img/2.jpg" alt="nautilus">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/3.jpg" alt="mkc">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/4.jpg" alt="continental">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/5.jpg" alt="mkz">
+            </div>
         </div>
-      
+        <!--  -->
+
         <!-- Left and right controls -->
         <a class="carousel-control-prev" href="#demo" data-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
+            <span class="carousel-control-prev-icon"></span>
         </a>
         <a class="carousel-control-next" href="#demo" data-slide="next">
-          <span class="carousel-control-next-icon"></span>
+            <span class="carousel-control-next-icon"></span>
         </a>
-      
-      </div>
+        <!--  -->
+    </div>
+    <!-- Carousel 끝 -->
+
+    <!-- 박스레이아웃 -->
+    <div class="row">
+        <div class="col-sm-6">
+            <img src="./img/homepage-2-1-brand-gallery-712x576.jpg" alt="전체 모델 보기" width="100%">
+            <div class="carousel-caption" style="line-height: 40px;">
+                <h3>See All Lincoln</h3>
+                <p>당신만을 위한 링컨의 모델을 확인해보세요</p>
+                <a href="#" class="btn btn-mute">전체 모델 보기 &gt;</a>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="box" style="width: 50%; height: 66.666666%;">
+                <img src="./img/homepage-2-2-brand-gallery-356x524.jpg" alt="인텔리전트" width="100%">
+                <div class="carousel-caption" style="line-height: 40px;">
+                    <h3>Technology</h3>
+                    <p>링컨 인텔리전트 AWD</p>
+                    <a href="#" class="btn btn-mute">자세히 보기 &gt;</a>
+                </div>
+            </div>
+            <div class="box" style="width: 50%; height: 66.666666%; float: left;">
+                <img src="./img/homepage-2-3-brand-gallery-356x524.jpg" alt="프리미엄서비스" width="100%">
+                <div class="carousel-caption" style="line-height: 40px;">
+                    <h3>Pick up & Delivery</h3>
+                    <p>직접 찾아가는프리미엄서비스</p>
+                    <a href="#" class="btn btn-mute">자세히 보기</a>
+                </div>
+            </div>
+            <div class="box" style="width: 100%; height: 33.333333%; float: left;">
+                <img src="./img/homepage-2-4-brand-gallery-712x247.jpg" alt="프로모션" width="100%"
+                    style="box-sizing: border-box; padding: 0; margin: 0;">
+                <div class="carousel-caption" style="line-height: 40px;">
+                    <h3>Sales Promotion</h3>
+                    <p>진행 중인 세일즈 프로모션</p>
+                    <a href="#" class="btn btn-mute">자세히 보기 &gt;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 박스레이아웃 끝 -->
+
+    <!-- 박스2 ------------------------------>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <img src="./img/overview-continental-kba-7-1-480x500.jpg" alt="전시장및서비스센터찾기">
+            <div class="carousel-caption" style="line-height: 40px;">
+                <h3>전시장 및 서비스 센터 찾기</h3>
+                <!-- 모달 바로가기 버튼 추가 -->
+                <a href="#" class="btn btn-mute" data-toggle="modal" data-target="#myModal">바로 가기</a>
+                
+                <!-- Modal -------------------------------------------------------------->
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">전시장 위치</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                    <div id="kakaomap" style="width: 100%; height: 500px"></div>
+                                <script type="text/javascript"
+                                    src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=ba41ce6149f9a8820bb69e5c83ea82f6"></script>
+                                <script>
+                                    $("#myModal").on("shown.bs.modal", function () {
+                                        var mapContainer = document.getElementById('kakaomap'), // 지도를 표시할 div 
+                                        mapOption = {
+                                            center: new kakao.maps.LatLng(37.501566, 127.026300), // 지도의 중심좌표
+                                            level: 3 // 지도의 확대 레벨
+                                        };
+                                        var map = new kakao.maps.Map(mapContainer, mapOption);
+                                        
+                                        // // 마커가 표시될 위치입니다 
+                                        var markerPosition = new kakao.maps.LatLng(37.501566, 127.026300);
+                                        // // 마커를 생성합니다
+                                        var marker = new kakao.maps.Marker({
+                                            position: markerPosition
+                                        });
+                                        // 마커가 지도 위에 표시되도록 설정합니다
+                                        marker.setMap(map);
+                                        map.relayout();
+                                    });
+                                    
+                                </script>
+                                </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal 끝 -->
+            </div>
+        </div>
+
+
+        <div class="col-sm-4">
+            <img src="./img/overview-continental-kba-7-2-480x500.jpg" alt="브로셔다운로드">
+            <div class="carousel-caption" style="line-height: 40px;">
+                <h3>브로셔 다운로드</h3>
+                <a href="#" class="btn btn-mute" data-toggle="modal" data-target="#brosher">바로 가기</a>
+                <!-- Modal  ----------------------------------------------------------->
+                <div class="modal modal-center" id="brosher">
+                        <div class="modal-dialog modal-fullsize modal-center">
+                            <div class="modal-content modal-brosher modal-center">
+                
+                                <!-- Modal Header -->
+                                <div class="modal-header" style="margin: 0; padding: 0; width: 100%; height: 550px; display: block;" >
+                                    <div style="height: 55px; width: 100%; display: block;">
+                                        <button type="button" class="close" data-dismiss="modal" style="position: absolute; right: 0;margin: auto; width: auto; height: auto;">&times;</button>
+                                    </div>
+                                
+                                    <div>
+                                     <img src="./img/1492058790366.jpg" alt="이미지" class="modal-main-img" style="transform: none; margin: 0;">
+                                    </div>
+                                </div>
+                                <!-- Modal body -->
+                                <div class="modal-body" style="width: 100%;margin: 0; margin-top: 30px;">
+                                   <h2>브로셔 다운로드</h2>
+                                   <div>
+                                       <!-- container fluid -->
+                                       <div class="container-fluid" style="margin-top: 100px;">
+                                       <div class="row" style="transform: scale(0.8);" >
+                                           <div class="col-sm-3 mo-img">
+                                               <a href="https://www.lincoln-korea.com/content/dam/lincoln/sk/nameplate/brochure/19MY-Nautilus.pdf">
+                                               <img src="./img/nautilus-updated.jpg" alt="nautilus">
+                                               <p>mkz</p>
+                                            </a>
+                                            </div>
+                                            <div class="col-sm-3 mo-img">
+                                                <a href="https://www.lincoln-korea.com/content/dam/lincoln/sk/nameplate/brochure/19MY%20MKZ%20.pdf">
+                                                    <img src="./img/mkz.jpg" alt="MKZ">
+                                                    <p>mkz</p>
+                                                </a>
+                                                 </div>
+                                           <div class="col-sm-3 mo-img">
+                                               <a href="https://www.lincoln.com/services/assets/Brochure?make=Lincoln&model=MKC&year=2019">
+                                               <img src="./img/mkc.jpg" alt="MKC">
+                                               <p>mkz</p>
+                                            </a>
+                                            </div>
+                                           
+                                           <div class="col-sm-3 mo-img">
+                                               <a href="https://www.lincoln-korea.com/content/dam/lincoln/sk/nameplate/brochure/19MY-Continental.pdf">
+                                               <img src="./img/continental-model.jpg" alt="continental">
+                                               <p>mkz</p>
+                                            </a>
+                                            </div>
+                                       </div>
+                                    </div>
+                                    <!--  -->
+                                   </div>
+                                </div>
+                                
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                </div>
+                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- modal 끝 -->
+            </div>
+        </div>
+
+
+        <div class="col-sm-4"><img src="./img/overview-continental-kba-7-3-480x500.jpg" alt="시승신청">
+            <div class="carousel-caption" style="line-height: 40px;">
+                <h3>시승신청</h3>
+                <a href="#" class="btn btn-mute" data-toggle="modal" data-target="#request">바로 가기</a>
+                <!-- Modal  ----------------------------------------------------------->
+                <div class="modal" id="request">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">시승신청</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                   브로셔
+                                </div>
+                                
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                </div>
+                
+                            </div>
+                        </div>
+                    </div>
+                    <!-- modal 끝 -->
+            </div>
+        </div>
+    </div>
+    <!-- 박스2 끝  -->
+
+<div class="footer" style="width: 100%; bottom: 0; text-align: center; height: 50px; background: #000000; color: #A5A5A5; " >
+    <div class="row" style="margin: 0; padding: 0;">
+    <div class="col-rm-6" style="width: 50%; height: 50px; letter-spacing: -3; padding: 0; margin: 0; line-height: 50px;">
+        <p>링컨 고객센터:1600-6003 긴급출동서비스 : 080-300-3676</p>
+    </div>
+    <div class="col-rm-6" style="width: 50%; height: 50px; letter-spacing: -3; padding: 0; margin: 0; line-height: 50px;">
+            <p>Copyright&copy;2017 Ford Motor Company <a href="#">Site Map</a> | <a href="#">Global Site</a> | <a href="#">Privacy</a></p>
+    </div>
+</div>
+</div>
+
+    </div> <!-- container -->
+
 </body>
+
 </html>

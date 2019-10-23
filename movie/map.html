@@ -36,7 +36,7 @@
         <script type="text/javascript"
             src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=ba41ce6149f9a8820bb69e5c83ea82f6"></script>
         <script>
-            // $(document).ready(function () {
+            $(document).ready(function () {
                 var mapContainer = document.getElementById('kakaomap'), // 지도를 표시할 div 
                 mapOption = {
                     center: new kakao.maps.LatLng(37.501566, 127.026300), // 지도의 중심좌표
@@ -52,7 +52,7 @@
                 });
                 // 마커가 지도 위에 표시되도록 설정합니다
                 marker.setMap(map);
-            // });
+            });
         </script>
         <!-- 카카오맵.끝.-->
         <!-- footer -->
