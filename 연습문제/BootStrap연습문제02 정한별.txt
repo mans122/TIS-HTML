@@ -1,0 +1,44 @@
+링컨데모사이트에서
+
+1. 가로 768px이하에서
+
+caption을 정중앙으로 오게하기
+
+2. 가로 768px이하에서
+
+박스1의 각 이미지 높이 320px로 조정하기
+
+
+        @media screen and (max-width: 768px){
+            #bomttom-menu h4{
+                padding-top:30px;
+                padding-left: 30px;
+            }
+            
+            .carousel-caption {margin-bottom: 100px;}
+            .carousel-caption h4 {font-size: 0.9em; line-height: 15px;}
+            .carousel-caption h3 {font-size: 0.9em; line-height: 15px;}
+            .carousel-caption a, .carousel-caption p{font-size: 0.7em; line-height: 13px; letter-spacing: -1px;}
+            .box-h {height: 320px;}
+            /* .box-h img{height: 320px;} */
+            #box-bottom-1 {margin-bottom: 20px !important;}
+            .col-sm-4{display: none;}
+            .footer{height: 300px !important;}
+        };
+
+3. company에 문의사항 게시판 달기
+<script type="text/javascript">
+        //  iframe resize 
+        function autoResize(i)
+        {
+            (i).height=0;
+            var iframeHeight= 
+            (i).contentWindow.document.body.scrollHeight;
+            (i).height=iframeHeight+20;
+        }
+    </script>
+
+<div class="row" id="board" style="padding: 0 30px; margin-bottom: 30px;">
+                <h3 class="text-center" style="margin-top: 20px; margin-bottom: 20px;">문 의 사 항</h3>
+                <iframe id="iframe1" src="http://mans122.dothome.co.kr/g5/bbs/board.php?bo_table=exam02" width="100%" onload="autoResize(this)" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+            </div>

@@ -19,6 +19,16 @@
      <link rel="stylesheet" href="C:\Users\1class-014\Desktop\etc\HTML\font-mfizz-2.4.1/font-mfizz.css">
 
      <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+        //  iframe resize 
+        function autoResize(i)
+        {
+            (i).height=0;
+            var iframeHeight= 
+            (i).contentWindow.document.body.scrollHeight;
+            (i).height=iframeHeight+20;
+        }
+    </script>
      <script>
             $(document).ready(function(){
               // Add smooth scrolling to all links in navbar + footer link
@@ -253,6 +263,11 @@
         <!-- 카카오맵.끝.-->
         </div>
         </div>
+        <div class="row" id="board" style="padding: 0 30px; margin-bottom: 30px;">
+                <h3 class="text-center" style="margin-top: 20px; margin-bottom: 20px;">문 의 사 항</h3>
+                <iframe id="iframe1" src="http://mans122.dothome.co.kr/g5/bbs/board.php?bo_table=exam02" width="100%" onload="autoResize(this)" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+            </div>
+
         <footer class="container-fluid text-center" style="padding-top: 50px;">
             <a href="#myPage" title="To Top" style="position: fixed; right: 25px; bottom: 25px; z-index: 10;">
                 <span class="fas fa-chevron-up" style="font-size: 25px; padding: 2px; opacity: 0.6;"></span>
