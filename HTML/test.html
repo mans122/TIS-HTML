@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+         var score = new Array(
+        prompt("국어점수를 입력하세요","kor"),
+        prompt("수학점수를 입력하세요","math"),
+        prompt("영어점수를 입력하세요","eng")
+        );
+
+
+        function avg(){
+            return arguments[0]+arguments[1]+arguments[2];
+        }
+
+        document.write(avg(score[0],score[1],score[2]));
+        document.write(avg(Number(score[0]),Number(score[1]),Number(score[2])));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

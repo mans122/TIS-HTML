@@ -1,0 +1,160 @@
+0. 소나타 객체를 생성하고 모든 변수값을
+출력하시오
+
+소나타{
+	색상,가격,년식
+}
+
+1. 국어,수학,영어점수를 입력받아서 
+배열에 저장하시오. prompt사용. new Array()사용
+
+2. 1번에 저장한 값을 
+모두 출력하시오.(for문 사용)
+
+3. 1번에 저장한 점수의 평균을 구하시오.	
+
+4. 두개의 값을 전달받아서 곱을 구하는 함수를 작성하시오.
+(parameter, return 모두사용)
+	
+5. ID의 길이를 구하시오.
+var id="hongkildong";
+
+6. 주민등록번호에서 생년월일만 추출하시오.
+
+7. 전화번호 010-1234-5678에서 '-'기준으로 분리해서
+출력하시오.
+
+8. 전화번호 010-1234-5678에서 '-'를 제거하시오.
+
+9. id,pw,name을 prompt로 입력받아 ','붙여 변수에 
+저당했다가 다시 ','를 기준으로 분리해서 출력하시오.
+
+10. 학생 객체를 생성하고 평균학점을 구하시오.
+학생{
+	이름,국어,영어,수학,학점()
+}
+홍길동:A학점
+
+11. 사용자 브라우저가 IE이면 'IE를 지원하지 않습니다'를
+출력하시오. 구글링을 통해서 찾아서 작성해보세요.
+
+12. 현재 시간을 구해서, 19시전에는 네이버로 이동하고, 
+19시 이후에는 구글로 이동하게 하시오.
+
+13. 검색어를 입력하고 버튼을 누르면,
+네이버북 사이트(https://book.naver.com/)에서 검색결과 나오게 하기.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 0번문제
+        var car={color:"red",
+                price:50000000,
+                year:2018};
+        document.write(car.color+"<br>");
+        document.write(car.price+"<br>");
+        document.write(car.year+"<br>");
+
+        // 1번문제
+        var score = new Array(
+        prompt("국어점수를 입력하세요","kor"),
+        prompt("수학점수를 입력하세요","math"),
+        prompt("영어점수를 입력하세요","eng")
+        );
+        
+        //2번문제
+        var sum=0;
+        for(i in score){
+            document.write(score[i]+"<br>");
+            sum+=Number(score[i]);
+        }
+
+        //3번문제
+        document.write("평균 : "+(sum/3)+"<br>");
+
+        //4번문제
+        function math(a,b){
+            return a*b;
+        }
+
+        //5번문제
+        var id="hongkildong";
+        document.write("아이디 길이 : "+id.length+"<br>");
+
+        //6번문제
+        var num = "970415-1555444";
+        document.write(num.substr(0,6)+"<br>");
+
+        //7번문제
+        var phone="010-1234-5678";
+        var arr=phone.split("-");
+        document.write(arr[0]+"<br>");
+        document.write(arr[1]+"<br>");
+        document.write(arr[2]+"<br>");
+        
+        //8번문제
+        var newphone=phone.replace(/-/gi,"");
+        document.write(newphone+"<br>");
+
+        //9번문제
+        var info=[prompt("아이디를 입력하세요",""),
+                prompt("비밀번호를 입력하세요",""),
+                prompt("이름을 입력하세요","")];
+
+        var result = info.join(",");
+        document.write("result : "+result+"<br>");
+
+        var result2 = result.split(",");
+        for(i in result2){
+            document.write(result2[i]+"<br>");
+        }
+
+        //10번문제
+        var student={name:"홍길동",
+                    kor:Number(score[0]),
+                    math:Number(score[1]),
+                    eng:Number(score[2]),
+                    avg:sum/3}
+        document.write("이름 : "+student.name+"<br>");
+        document.write("국어 : "+student.kor+"<br>");
+        document.write("수학 : "+student.math+"<br>");
+        document.write("수학 : "+student.eng+"<br>");
+        document.write("평균 : "+student.avg+"<br>");
+
+        //11번문제
+        document.write(navigator.userAgent);
+        function iecheck(){
+            if(navigator.userAgent.match(/wow/gi)){
+                document.write("IE를 지원하지 않습니다.");
+            }
+        }
+
+        //12번 문제
+        // time();
+        // function time(){
+        //     var now = new Date();
+        //     if(now.getHours()<19){
+        //         location.href="http://www.naver.com";
+        //     }else{
+        //         location.href="http://www.google.com";
+        //     }
+        // }
+
+        //13번 문제
+        function wsearch(){
+            var keyword=document.getElementById("keyword").value;
+            console.log(keyword);
+            location.href="https://book.naver.com/search/search.nhn?sm=sta_hty.book&sug=&where=nexearch&query="+keyword+"";
+        };
+    </script>
+</head>
+<body onload="iecheck()">
+        <input type="text" id="keyword" />
+        <input type="button" value="검색" onclick="wsearch()" />
+</body>
+</html>

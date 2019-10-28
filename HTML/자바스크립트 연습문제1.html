@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 0번문제
+        var car={color:"red",
+                price:50000000,
+                year:2018};
+        document.write(car.color+"<br>");
+        document.write(car.price+"<br>");
+        document.write(car.year+"<br>");
+
+        // 1번문제
+        var score = new Array(
+        prompt("국어점수를 입력하세요","kor"),
+        prompt("수학점수를 입력하세요","math"),
+        prompt("영어점수를 입력하세요","eng")
+        );
+        
+        //2번문제
+        var sum=0;
+        for(i in score){
+            document.write(score[i]+"<br>");
+            sum+=Number(score[i]);
+        }
+
+        //3번문제
+        document.write("평균 : "+(sum/3)+"<br>");
+
+        //4번문제
+        function math(a,b){
+            return a*b;
+        }
+
+        //5번문제
+        var id="hongkildong";
+        document.write("아이디 길이 : "+id.length+"<br>");
+
+        //6번문제
+        var num = "970415-1555444";
+        document.write(num.substr(0,6)+"<br>");
+
+        //7번문제
+        var phone="010-1234-5678";
+        var arr=phone.split("-");
+        document.write(arr[0]+"<br>");
+        document.write(arr[1]+"<br>");
+        document.write(arr[2]+"<br>");
+        
+        //8번문제
+        var newphone=phone.replace(/-/gi,"");
+        document.write(newphone+"<br>");
+
+        //9번문제
+        var info=[prompt("아이디를 입력하세요",""),
+                prompt("비밀번호를 입력하세요",""),
+                prompt("이름을 입력하세요","")];
+
+        var result = info.join(",");
+        document.write("result : "+result+"<br>");
+
+        var result2 = result.split(",");
+        for(i in result2){
+            document.write(result2[i]+"<br>");
+        }
+
+        //10번문제
+        var student={name:"홍길동",
+                    kor:Number(score[0]),
+                    math:Number(score[1]),
+                    eng:Number(score[2]),
+                    avg:sum/3}
+        document.write("이름 : "+student.name+"<br>");
+        document.write("국어 : "+student.kor+"<br>");
+        document.write("수학 : "+student.math+"<br>");
+        document.write("수학 : "+student.eng+"<br>");
+        document.write("평균 : "+student.avg+"<br>");
+
+        //11번문제
+        document.write(navigator.userAgent);
+        function iecheck(){
+            if(navigator.userAgent.match(/wow/gi)){
+                document.write("IE를 지원하지 않습니다.");
+            }
+        }
+
+        //12번 문제
+        // time();
+        // function time(){
+        //     var now = new Date();
+        //     if(now.getHours()<19){
+        //         location.href="http://www.naver.com";
+        //     }else{
+        //         location.href="http://www.google.com";
+        //     }
+        // }
+
+        //13번 문제
+        function wsearch(){
+            var keyword=document.getElementById("keyword").value;
+            console.log(keyword);
+            location.href="https://book.naver.com/search/search.nhn?sm=sta_hty.book&sug=&where=nexearch&query="+keyword+"";
+        };
+    </script>
+</head>
+<body onload="iecheck()">
+        <input type="text" id="keyword" />
+        <input type="button" value="검색" onclick="wsearch()" />
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+       var fileName="a.b.c.js" ;
+       document.write(fileName.length+"<br>");
+       document.write(fileName.length-fileName.lastIndexOf("."));
+       document.write(fileName.indexOf(".")+"<br>");
+       document.write(fileName.lastIndexOf(".")+"<br>");
+       document.write(fileName.substr(fileName.lastIndexOf("."),fileName.length));
+       document.write("<br>");
+
+       var data="hkd,gas,www,zaa,waz,adw";
+       var sData=data.split(",");
+       for(var i=0;i<sData.length;i++){
+           document.write(sData[i]+"<br>");
+       }
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

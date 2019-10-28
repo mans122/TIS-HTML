@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function sum(a,b){
+            return a+b;
+        }
+        // document.write(sum(20,50)+"<br>");
+        var sum2=function(a,b){
+            document.write(a+b+"<br>");
+            // return a+b;
+        }   
+        // document.write(sum2(10,20)+"<br>")
+        function sum3(){
+            return arguments[0]+arguments[1]+arguments[2];
+        }
+        document.write(sum3(10,100,1000));
+    </script>
+</head>
+<body>
+    <input type="button" value="Click" onclick="" />
+</body>
+</html>

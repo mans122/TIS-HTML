@@ -60,13 +60,14 @@
     <style>
         ul{list-style-type: none;}
         a {text-decoration: none; color: black;}
-        a:link{text-decoration: none;}
-        a:visited{text-decoration: none;}
-        a:active{text-decoration: none;}
+        a:link{text-decoration: none ;}
+        a:visited{text-decoration: none ;}
+        a:active{text-decoration: none ;}
+        a:hover{text-decoration: none; color: black;}
         button {text-decoration: none !important;}
 
 
-        .modal {color: black;margin-top: 0;padding: auto;width: 100%;}
+        .modal {color: black;margin-top: 80px;padding: auto;width: 100%;}
         .modal-backdrop {z-index: 1;}
         .modal-dialog {text-align: center;}
         .modal-content {height: 1200px;width: 880px;margin: 0px;padding: 0px;left: 50%;margin-left: -440px;}
@@ -80,7 +81,7 @@
             margin: 0 auto;
             padding: 0 !important;
             border: 1px solid #d9d9d9;
-
+            overflow: hidden;
         }
          /* #board {width: 70%;max-width: 1440px;  margin: 1; padding: 0;} */ */
         .wrap {
@@ -101,9 +102,7 @@
         .row img {height: 100%;transform: scale(1);transition: 0.5s;}
         .row img:hover {transform: scale(1.05);}
 
-        .carousel-caption {font-size: 1em;            padding-top: 20px;
-            padding-bottom: 0;
-        }
+        .carousel-caption {font-size: 1em; padding-top: 20px;padding-bottom: 0;}
         .carousel-caption p {margin: 0;padding-bottom: 10px;}
         .carousel-caption h4 {transform: scale(1.1);}
         .row {margin-top: 10px;}
@@ -132,7 +131,10 @@
         .booking .col-md-6 {width: 100%;margin: 0;}
         .booking div {width: 240px;margin: 15px auto;}
         .booking p {font-size: 0.1em;width: 100%;letter-spacing: -1;}
-        #bottom-menu{padding: 0 150px; font-size: 0.8em; }
+        #bottom-menu{padding: 0 250px; font-size: 0.8em; }
+        #bottom-menu .col-md-3 {margin: 0; padding: 20px 0; text-align: center;}
+        #bottom-menu h4{border-bottom: 1px solid #ccc; padding-bottom: 30px;margin-bottom: 20px; color: #554C43 !important;}
+        #bottom-menu div{color: #A5A5A5; font-size: 1.1em;}
 
         .navbar {background: white !important; padding: 0 40px; height: 80px; z-index: 1000 !important;}
         .navbar li{margin-left: 50px;}
@@ -151,9 +153,24 @@
         .card-body div:hover {color: #B65F07;}
         .card .btn{color: black; width: 100%; text-align: left; border: none; height: 55px; padding: 0;}
 
+        #disclosures{width: 100%; margin: 0; padding: 30px 50px; background: rgba(0, 0, 0, 0.05);  border-top: 1px solid rgba(0, 0, 0, 0.13);}
+        #dcrow {padding: 0 !important;}
         .carousel-control-prev, .carousel-control-next {
              width: 100px; height: 200px; top: 45%;}
-         
+        #dc { text-align: center; color: #B65F07;} 
+        .card-header{background-color: rgba(0, 0, 0, 0); border-bottom: 1px solid rgba(0, 0, 0, 0.13);}
+        /* .mobilegnb {display: none !important;} */
+
+        
+            .webgnb{display: none;}
+        /* .webgnb{width: 100%; margin: 0; padding: 20px 80px 0px 80px; height: 110px; position: relative;}
+        .webgnb .navbar-brand{padding: 0; margin: 0; width: 130px; height: 55px; float: left;}
+        .main-nav .collapse {font-size: 1.3em;}
+        .navbar-right {width:400px;height: 20px; padding: 0; right: 80px;top: 20px; position: absolute; line-height: 20px;}
+        .navbar-right li{height: 20px; margin: 0; float: left;margin-left: 20px; font-size: 0.9em;}
+        .navbar-nav{position: absolute; margin: 0 !important; right: 10%; bottom: 10px;}
+        .navbar-nav li{margin-left: 80px; font-size: 0.9em;} */
+
         @media screen and (max-width: 768px){
             #bomttom-menu h4{
                 padding-top:30px;
@@ -164,7 +181,7 @@
             .col-md-6 {width: 100% !important;}
 
             .carousel-caption {margin-bottom: 20px;}
-            .carousel-caption h4 {font-size: 1.5em; line-height: 2em;}
+            .carousel-caption h4,.carousel-caption h3 {font-size: 1.5em; line-height: 2em;}
             .carousel-caption h3 {font-size: 1.5em; line-height: 2em;}
             .carousel-caption a, .carousel-caption p{font-size: 1em; line-height: 1em; letter-spacing: -1px;}
             .box-h {height: 400px;}
@@ -182,8 +199,16 @@
             #caption3{display: none;}
 
             .carousel-control-prev, .carousel-control-next {top: 70%;}
+            #dc{text-align: left; color: black; font-size: 1.3em !important;}
+            #dcrow {padding-left: 25px !important;}
+            .card {border-bottom: 1px solid rgba(0, 0, 0, 0.13) !important; margin-left: 10px;}
+            .card-header{padding:5px 0; line-height: 1.3em;}
+            .card-header h2{padding-left: 30px;}
+            .mobilegnb {padding: 0;}
+            .webgnb{display: none;}
+            .navbar-brand{padding-left: 40px;}
+            .navbar-toggler{margin-right: 30px;}
         };
-        
         
     </style>
 </head>
@@ -191,9 +216,8 @@
 <body id="body">
     <div class="container wrap" style="width: 100%;">
         <!-- 메뉴바 제작 ------------------------------------------------------->
-        <!-- <div class="row" style="height: 110px;"> -->
-        <!-- <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top"> -->
-        <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        <!-- mobilegnb ---------------------------------------------------------------------------------------->
+        <nav class="gnb mobilegnb navbar navbar-expand-md bg-dark navbar-dark fixed-top">
             <!-- <div class="clearFix"> -->
             <a class="navbar-brand" href="#body">
                 <img src="./img/logo.jpg" alt="로고">
@@ -203,7 +227,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
     
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <div class="collapse navbar-collapse" id="collapsibleNavbar" style="width: 100%; background: #B45F1A;">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse">
                         <a class="nav-link anchor" href="#allmodel">전체모델</a>
@@ -219,9 +243,49 @@
             </div>
     <!-- </div> -->
     </nav>
-    
-            <!-- </div> -->
-            <!--  -->
+    <!--  -->
+
+    <!-- Web GNB ----------------------------------------------->
+    <nav class="gnb webgnb navbar navbar-expand-md">
+        <ul class="navbar-right">
+            <li><a href="#" data-toggle="modal" data-target="#requst"><span><div>시승 신청</div></span></a></li>
+            <li><a href="#" data-toggle="modal" data-target="#requst"><span><div>브로셔 다운로드</div></span></a></li>
+            <li><a href="#" data-toggle="modal" data-target="#requst"><span><div>전시장 및 서비스센터 찾기</div></span></a></li>
+        </ul>
+
+        <div class="main-nav" style="width: 100%;">
+            <div style="position: absolute; bottom: 5px; width: 130px; height: 55px; padding: 0;">
+            <a class="navbar-brand" href="#">
+                <img src="./img/logo.jpg" alt="로고" style="width: 130px; height: 45px; bottom: 0;">
+            </a>
+        </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar" style="display: inline-block; text-align: center;">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse">
+                    <a class="nav-link" href="#introduce">Vehicles</a>
+                </li>
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse">
+                    <a class="nav-link" href="#vision">Technology</a>
+                </li>
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse">
+                    <a class="nav-link" href="#curriculumn">Shopping</a>
+                </li> 
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse">
+                    <a class="nav-link" href="#map">Owners</a>
+                </li>   
+                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse">
+                        <a class="nav-link" href="#map">About LINCOLN</a>
+                    </li>   
+                </ul>
+            </div> 
+        </div> 
+        </nav>
+        <!--  -->
+
+
         <!-- 슬라이드 이미지 구역 ------------------------------------->
         <div class="row" style="margin-top: 0;">
             <!-- Carousel 시작 -->
@@ -361,7 +425,7 @@
                 <!-- Modal -------------------------------------------------------------->
                 <div class="modal" id="myModal">
                     <div class="modal-dialog">
-                        <div class="modal-content" style="height: 600px;">
+                        <div class="modal-content">
 
                             <!-- Modal Header -->
                             <div class="modal-header" style="height: 55px;">
@@ -635,10 +699,10 @@
     <!-- 게시판 끝 -->
 
     <!-- disclosures -->
-    <div class="row" style="width: 100; margin: 0; padding: 0 0 0 10px;border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;" >
+    <div class="row" id="dcrow" style="width: 100; margin: 0 !important; padding: 0 0 0 10px;border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;" >
     <!-- <button class="btn btn-dark" data-toggle="collapse" data-target="#disclosures" style="margin: 0 auto; height: 55px;">disclosures</button> -->
-           <a href="#"  data-toggle="collapse" data-target="#disclosures" style="width: 100%; margin: 0;padding: 0; line-height: 55px; font-size: 1.2rem; font-weight: 700;"><span>DISCLOSURES</span></a>
-        <div id="disclosures" class="collapse" style="padding: 20px 100px; ">
+           <a href="#" id="dc"  data-toggle="collapse" data-target="#disclosures" style="width: 100%; margin: 0;padding: 0; line-height: 55px; font-size: 1rem; font-weight: 500;"><span>DISCLOSURES</span></a>
+        <div id="disclosures" class="collapse"">
         ※ 본 사이트의 차량 이미지, 사양 등에 대한 정보는 고객의 이해를 돕기 위한 참고용 자료로 실제 판매 모델과 다를 수 있습니다. 정확한 정보는 가까운 전시장의 영업직원에게 문의 바랍니다.
         </div>
     </div>
