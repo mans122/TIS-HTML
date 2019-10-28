@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script>
+        // var tv = new Object();
+        // tv.color="white";
+        // tv.price=30000;
+        // tv.info=function(){
+        //     document.write("tv색상 : "+this.color+"<br>");
+        //     document.write("tv가격 : "+this.price+"<br>");
+        // };
+        // tv.info();
+
+        // var car={
+        //     color:"black",
+        //     price:500000,
+        //     info:function(){
+        //         document.write("car색상 : "+this.color+"<br>");
+        //         document.write("tv가격 : "+this.price+"<br>");
+        //     }
+        // };
+        // car.info();
+
+        // var today=new Date();
+        // document.write(today.getFullYear()+"년 ");
+        // document.write(today.getMonth()+1+"월 ");
+        // document.write(today.getDate()+"일 ");
+        // document.write(today.getDay()+"요일 ");
+        // document.write(today.getHours()+" ");
+        // document.write(today.getMinutes()+"<br>");
+        // document.write(today.getSeconds()+"<br>");
+        // document.write(today.getMilliseconds()+"<br>");
+
+        // var num=2.1234;
+        // document.write(Math.max(10,5,8,30)+"<br>");
+        // document.write(Math.min(10,5,8,30)+"<br>");
+        // document.write(Math.round(num)+"<br>");
+        // document.write(Math.floor(num)+"<br>");
+        // document.write(Math.ceil(num)+"<br>");
+        // document.write(Math.random()+"<br>");
+        // document.write(Math.PI+"<br>");
+
+        // document.write("<h1>컴 가위 바위 보 맞추기</h1>");
+
+        // var game= prompt("가 바 보 중 선택","가위");
+        // var gameNum;
+        // switch(game){
+        //     case "가위":
+        //     gameNum=1; break;
+        //     case "바위":
+        //     gameNum=2; break;
+        //     case "보":
+        //     gameNum=3; break;
+        //     default:alert("잘못 작성");
+        //         location.reload();
+        // }
+
+        // var com= Math.ceil(Math.random()*3);
+        // document.write("<img src=\"../img/doit/math_img_"+com+".jpg\">");
+
+        // if(gameNum == com){
+        //     document.write("<img src=\"../img/doit/game_1.jpg\">");
+        // }
+        // else{
+        //     document.write("<img src=\"../img/doit/game_2.jpg\">");
+        // }
+        // console.log(gameNum);
+        // console.log(com);
+
+        var arr=[30,"따르릉",true];
+        var arr1 = new Array(70,"따ㄹㅇ르릉",false);
+
+        document.write("<h3> 배열값 가져오기 -1 </h3>");
+        document.write(arr[0],arr1[0],"<br>");
+        document.write(arr[1],arr1[1],"<br>");
+        document.write(arr[2],arr1[2],"<br>");
+
+        for(var i=0;i<arr.length;i++){
+            document.write(arr[i],arr1[i]+"<br>");
+        }
+        for(i in arr){
+            document.write(arr[i],arr1[i],"<br>"); 
+        }        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
