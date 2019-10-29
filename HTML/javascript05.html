@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var num=0;
+        function f1(){
+            num++;
+            console.log(num);
+        }
+        function f2(){
+            num--;
+            console.log(num);
+        }
+        function myFnc(){
+            var a=100;
+            function myFnc2(){
+                console.log(a,a);
+                console.log(a+" "+a);
+                a++;
+            }
+            myFnc2();
+        }
+ 
+    </script>
+</head>
+<body>
+    <button type="button" onclick="f1()">증가</button>
+    <button type="button" onclick="f2()">감소</button>
+    <button type="button" onclick="myFnc()">호출</button>
+</body>
+</html>

@@ -105,6 +105,35 @@
         result = arr_2.reverse();
         console.log(result);
 
+        function myCar(color,price){
+            this.color = color;
+            this.price = price;
+            this.info=function(){
+                document.write("car색상 : "+this.color+"<br>");
+                document.write("tv가격 : "+this.price+"<br>");
+            };
+        }
+        
+        var park = new myCar("black",50000000);
+        park.info();
+
+        /*
+            ECMAScript 6
+            : Javascript를 유럽국가 중심으로 만든 script 
+
+        */
+        class Mycar2{
+            constructor(color,price){
+                this.color = color;
+                this.price = price;
+            }
+            info=function(){
+                document.write("car색상 : "+this.color+"<br>");
+                document.write("tv가격 : "+this.price+"<br>");
+            };
+        }
+        const mc = new Mycar2("red",2000000);
+        mc.info();
     </script>
 </head>
 <body>

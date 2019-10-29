@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script>
+        
         // 0번문제
         var car={color:"red",
                 price:50000000,
@@ -69,16 +70,21 @@
         }
 
         //10번문제
-        var student={name:"홍길동",
-                    kor:Number(score[0]),
-                    math:Number(score[1]),
-                    eng:Number(score[2]),
-                    avg:sum/3}
+        var student={
+            name:"dd",
+            kor:prompt("국어점수를 입력하세요",""),
+            math:prompt("수학점수를 입력하세요",""),
+            eng:prompt("영어점수를 입력하세요",""),
+            avg:function(){
+                return (Number(this.kor)+Number(this.math)+Number(this.eng))/3;
+            }
+        };
+
         document.write("이름 : "+student.name+"<br>");
         document.write("국어 : "+student.kor+"<br>");
         document.write("수학 : "+student.math+"<br>");
         document.write("수학 : "+student.eng+"<br>");
-        document.write("평균 : "+student.avg+"<br>");
+        document.write("평균 : "+student.avg()+"<br>");
 
         //11번문제
         document.write(navigator.userAgent);
@@ -89,7 +95,6 @@
         }
 
         //12번 문제
-        // time();
         // function time(){
         //     var now = new Date();
         //     if(now.getHours()<19){
@@ -98,6 +103,8 @@
         //         location.href="http://www.google.com";
         //     }
         // }
+        
+        // time();
 
         //13번 문제
         function wsearch(){
@@ -105,6 +112,7 @@
             console.log(keyword);
             location.href="https://book.naver.com/search/search.nhn?sm=sta_hty.book&sug=&where=nexearch&query="+keyword+"";
         };
+        
     </script>
 </head>
 <body onload="iecheck()">

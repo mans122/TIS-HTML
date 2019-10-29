@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+
+    <script>
+        // $(document).ready(function(){
+        //     $("#tit1").css("background-color","red");
+        //     $(".tit2").css("background-color","blue");
+        //     $("h1").css("color","green");
+        // });
+        $(function(){
+            $("#tit1").css("background-color","red");
+            $(".tit2").css("background-color","blue");
+            $("h1").css("color","green");
+
+            var obj=[{"area":"서울"},
+                    {"area":"부산"},
+                    {"area":"전주"}]
+            $(obj).each(function(i,o){
+                console.log(i+":"+o.area+"<br>");
+            });
+            console.log("=======The End1========");
+
+            // $.each(배열,function(i,o){});
+            $.each(obj,function(i,o){
+                console.log(i+":"+o.area+"<br>");
+            });
+
+            $(".content").each(function(i,o){
+                // console.log(i+":"+o.area+"<br>");
+                if(i==0){
+                o.innerHTML="자바스크립트";
+                }
+            })
+        });
+
+    </script>
+</head>
+<body>
+    <h1>jquery</h1>
+    <h2 id="tit1">제이꿔리</h2>
+    <h3 class="tit2">제이쿼리</h3>
+    <h3 class="tit2">제이쿼리</h3>
+    <h3 class="tit2">제이쿼리</h3>
+    <h3 class="tit2">제이쿼리</h3>
+
+    <div class="content">Javascript</div>
+    <div class="content">JQuery</div>
+    <div class="content">HTML</div>
+
+</body>
+</html>

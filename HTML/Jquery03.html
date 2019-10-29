@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+
+    <script>
+        // $(document).ready(function(){
+        //     $("#tit1").css("background-color","red");
+        //     $(".tit2").css("background-color","blue");
+        //     $("h1").css("color","green");
+        // var h2=document.getElementById("tit1");
+        // h2.setAttribute("width","200")
+        // console.log(h2);
+        // });
+
+        window.onload=function(){
+            var h2=document.getElementById("tit1");
+            h2.setAttribute("width","200px");
+            h2.setAttribute("height","200px");
+            h2.setAttribute("background-color","red")
+            console.log(h2);    
+        }
+    </script>
+</head>
+<body>
+    <h1>jquery</h1>
+    <h2 id="tit1" width="100">제이꿔리</h2>
+    <h3 class="tit2">제이쿼리</h3>
+    <h3 class="tit2">제이쿼리</h3>
+    <h3 class="tit2">제이쿼리</h3>
+    <h3 class="tit2">제이쿼리</h3>
+    
+    <!-- <script>
+    var h2=document.getElementById("tit1");
+        console.log(h2);
+        </script> -->
+</body>
+</html>

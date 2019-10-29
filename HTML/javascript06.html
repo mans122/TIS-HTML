@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript 내장함수</title>
+    <script>
+        function f1(){
+            var url="http://www.naver.com?query=자바스크립트";
+            location.href=encodeURI(url); //url을 인코딩해서 전송
+        }
+        var a="100";
+
+        document.write(parseInt(a)+200+"<br>");
+
+        var b="abcd";
+        document.write(isNaN(b)+"<br>");
+
+        var code="document.write('테스트')";
+        eval(code);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

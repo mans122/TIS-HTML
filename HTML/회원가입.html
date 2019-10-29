@@ -13,14 +13,47 @@
 	
 	<!--[if lt IE 7]>
 	<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script>
-	<![endif]-->
+    <![endif]-->
+    
+    <script>
+        function checkbox(){
+            if(document.joinForm.id.value==""){
+                alert("ID를 입력하세요");
+                document.joinForm.id.focus();
+                return false;
+            }
+
+            if(document.joinForm.password.value==""){
+                alert("PASSWORD를 입력하세요");
+                document.joinForm.password.focus();
+                return false;
+            }
+            if(document.joinForm.name.value==""){
+                alert("이름을 입력하세요");
+                document.joinForm.name.focus();
+                return false;
+            }
+            if(document.joinForm.email.value==""){
+                alert("이메일을 입력하세요");
+                document.joinForm.email.focus();
+                return false;
+            }
+            var emailRule = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;//이메일 정규식
+            if(!emailRule.test(document.joinForm.email.value)) {            
+                alert("이메일 형식이 잘못되었습니다.");
+                document.joinForm.email.select();
+                return false;
+            }
+        
+        }
+    </script>
 </head>
 
 <body>
     <h1>회원가입</h1>
-    <form action="join.jsp" method="get">
-        id<input type="text" name="id" required placeholder="id"><br>
-        pw<input type="password" name="password" required placeholder="pw"><br>
+    <form name="joinForm" action="join.jsp" method="get" onsubmit="return checkbox();">
+        id<input type="text" name="id"><br>
+        pw<input type="password" name="password"><br>
         name<input type="text" name="name"><br>
         email<input type="text" name="email"><br>
         address<input type="text" name="address"><br>
@@ -37,14 +70,16 @@
             </select>   
         <br>
         자기소개
+        <br>
         <textarea name="introduce" id="" cols="50" rows="10"></textarea>
         <br>
         <input type="file" name="picture">
         <br><br>
 
-        <input type="submit" value="등록"><br>
-        <input type="image" src="./img/img00.jpg" width="50" height="50"><br>
+        <input type="submit" value="등록" ><br>
         <input type="reset" value="취소">
+        
+        <input type="image" src="../img/img00.jpg" width="50" height="50"><br>
         
 
     </form>

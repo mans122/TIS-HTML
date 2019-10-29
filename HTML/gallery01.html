@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var num=1; //이미지번호
+        function gallery(direct){
+            //direct가 1이면 다음, 0이면 이전 (true 적용))
+            if(direct){
+                if(num==7){
+                    num=0;
+                }
+                num++;
+            }
+            else{
+                if(num==1){
+                    num=8;
+                }
+                num--;
+            }
+            //id가 photo인 엘리먼트를 찾기
+            var imgTag=document.getElementById("photo");
+            imgTag.setAttribute("src","../img/ex2img/pic"+num+".jpg");
+        };
+    </script>
+</head>
+<body>
+    <img id="photo" src="../img/ex2img/pic1.jpg" alt="" width="400" height="300"><br>
+    <button onclick="gallery(0)">이전</button>
+    <button onclick="gallery(1)">다음</button>
+</body>
+</html>
