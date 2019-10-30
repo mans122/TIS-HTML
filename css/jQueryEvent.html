@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function(){
+            $("#btn1").click(function(){
+                $(".box1").css("background","red")
+            });
+            $("#btn1").click();
+            $("#btn2").on("click",function(){
+                $(".box1").css("background","green")
+            });
+            $("#btn3").on({
+                "click":function(){$(".box1").css("background","blue")}
+            });
+            $(".btn1").on("click",function(e){
+                e.preventDefault(); //링크클릭넘어가는거 방지
+                $(".box1").css({"background":"#ff0"});
+            })
+            $(".btn2").click(function(){
+                location.href="http://www.naver.com";
+            })
+            $("#btn4").mouseover(function(){
+                alert("식맛");
+            });
+            $("#btn5").on({
+                "mouseover":function(){alert("식맛");},
+                "mouseout":function(){alert("식맛2");}
+            });
+            $("#btn6").hover(function(){
+                $("body").css("background","olive");
+            },function(){
+                $("body").css("background","white");
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="box1">
+        <h1>box1</h1>
+        <button type="button" id="btn1">클릭</button>
+        <button type="button" id="btn2">클릭</button>
+        <button type="button" id="btn3">클릭</button>
+        <button type="button" id="btn4">버튼4</button>
+        <button type="button" id="btn5">버튼5</button>
+        <button type="button" id="btn6">버튼6</button>
+    </div>
+
+    <p>
+        <a href="http://www.naver.com" class="btn1">버튼1</a>
+        <a href="#" class="btn2">버튼2</a>
+    </p>
+</body>
+</html>

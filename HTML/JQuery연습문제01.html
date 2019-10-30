@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <link rel="stylesheet" href="../css/animate.css" />
+    <script>
+        $(function(){
+            // 1번
+            $("#btn1").on("click",function(){
+                $("body").css("background","green");
+            });
+            // 2번 - odd:짝수 even:홀수
+            $("tr:odd").css("background","orange");
+
+            // 3번
+            $("#btn3").on("click",function(){
+                $("#img1").addClass("shadow");
+            });
+
+            // 4번문제
+            $("#btn4").on("click",function(){
+                $("tr:first").addClass("four");
+            });
+
+            // 5번문제
+            $("#btn5").on("click",function(){
+                $("#img1").addClass("five");
+            });
+
+            //6번문제
+            $("#gnb div").click(function(){
+                $("#gnb div").not(this).removeClass("on")
+                $("#gnb div").eq($(this).index()).toggleClass("on");
+            });
+        });
+    </script>
+    <style>
+        img{position: relative;}
+        .shadow {box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);}
+
+        .four {background: black; color: white;}
+        .five {left: 500px;}
+
+        ul, li{list-style: none; margin: 0; padding: 0;}
+        #gnb p{display: none;}
+        #gnb div.on p {display: block;}
+
+        
+    </style>
+</head>
+<body>
+    <button type="button" id="btn1">연습문제1</button>
+    <table border="1" width="50%">
+            <tr><td>이름</td><td>주소</td></tr>
+            <tr><td>홍길동</td><td>서울시</td></tr>
+            <tr><td>이순신</td><td>제주시</td></tr>
+            <tr><td>왕건</td><td>경기도</td></tr>
+    </table>
+
+    <button type="button" id="btn3">연습문제3</button>
+    <img id="img1" src="../img/img00.jpg" alt="" width="200" height="200">
+
+    <button type="button" id="btn4">연습문제4</button>
+    <button type="button" id="btn5">연습문제5</button>
+
+        <ul id="gnb">
+                <div>
+                <li><a href="#">section1</a></li>
+                <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+
+                <div>
+                <li><a href="#">section2</a></li>
+                <p>Lorem, ipsum dolor.</p>
+                </div>
+                
+                <div>
+                <li><a href="#">section3</a></li>
+                <p>Lorem ipsum dolor sit.</p>
+                </div>
+        </ul>
+</body>
+</html>

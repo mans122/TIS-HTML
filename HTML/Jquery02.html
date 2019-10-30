@@ -12,6 +12,21 @@
             $("#tit1").css("background-color","red");
             $(".tit2").css("background-color","blue");
             $("h1").css("color","green");
+
+            $("#inner_1").find(".txt1").css("color","red");
+
+            console.log($("#sec_1").html());
+            console.log($("#sec_1").text());
+
+            $("#sec_1").html("<h1 style="+"font-size:1em"+";>JQuery</h1>");
+            $("#sec_2 h2").text("<h6>JQuery</h6>");
+
+            console.log($("#img_1").attr("src"));
+            // document.write($("#img_1").attr("src"));
+            $("#img_1").attr("src","../img/img01.jpg");
+            console.log($("#name").val());
+            $("#name").val("이순신");
+            console.log($("#name").val());
         });
     </script>
 </head>
@@ -19,8 +34,25 @@
     <h1>jquery</h1>
     <h2 id="tit1">제이꿔리</h2>
     <h3 class="tit2">제이쿼리</h3>
-    <h3 class="tit2">제이쿼리</h3>
-    <h3 class="tit2">제이쿼리</h3>
-    <h3 class="tit2">제이쿼리</h3>
+
+    <section id="inner_1">
+        <p class="txt1">내용1</p>
+        <div>
+            <p class="txt1">내용1</p>
+        </div>
+    </section>
+
+    <section id="sec_1">
+        <h2>html()</h2>
+        <p>ddd</p>
+    </section>
+    <section id="sec_2">
+        <h2>html2()</h2>
+        <p>ddd2</p>
+    </section>  
+
+    <img src="../img/img00.jpg" alt="img" id="img_1" width="200" height="200">
+    <input type="text" value="홍길동" id="name">
+    
 </body>
 </html>

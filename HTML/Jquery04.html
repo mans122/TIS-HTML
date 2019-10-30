@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#wrap").before("before");
+            $("#wrap").after("after");
+            $("#wrap").append("append");
+            $("#wrap").prepend("prepend");
+            
+            var h1 = $(".box1 h1").clone();
+            $(".box1").prepend(h1);
+
+            $("#box2").empty();
+            $("#box2").html("dddd");
+
+            $("#box3").remove();
+        })
+    </script>
+
+    <style>
+        #wrap {background: green;
+            width: 300px;
+            margin: 0 50px;
+            display: inline-block;
+        }
+        /* #wrap2 {background: red;} */
+        #wrap span{
+            background: lightcoral;
+        }
+        #box2{background: black;
+        width: 200px;
+         height: 200px;
+        color: white;}
+         #box3{background: black;
+        width: 200px;
+         height: 200px;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <span>내용1</span>
+    </div>
+
+    <div class="box1">
+        <h1>복제복제</h1>
+        <p>내용1</p>
+        <p>내용2</p>
+    </div>
+
+    <div id="box2">
+        지울거에유
+    </div>
+
+    <div id="box3">
+        Remove
+    </div>
+</body>
+</html>

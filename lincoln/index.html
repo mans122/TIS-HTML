@@ -58,21 +58,24 @@
     
      
     <style>
+        *:focus{box-shadow: none !important; border: none;}
         ul{list-style-type: none;}
         a {text-decoration: none; color: black;}
         a:link{text-decoration: none ;}
         a:visited{text-decoration: none ;}
         a:active{text-decoration: none ;}
         a:hover{text-decoration: none; color: black;}
-        button {text-decoration: none !important;}
+        button {text-decoration: none !important; z-index: -10 !important;}
 
 
-        .modal {color: black;margin-top: 80px;padding: auto;width: 100%;}
-        .modal-backdrop {z-index: 1;}
+        .modal {color: black;padding: auto;width: 100%;}
+        .modal-backdrop {z-index: -1;}
         .modal-dialog {text-align: center;}
-        .modal-content {height: 1200px;width: 880px;margin: 0px;padding: 0px;left: 50%;margin-left: -440px;}
+        .modal-content {height: 1000px;width: 880px;margin: 0px;padding: 0px;left: 50%;margin-left: -440px;}
         .modal-header {margin: 0;padding: 0;width: 100%;height: 355px;display: block;}
         .modal-header img {height: 300px !important;}
+        .modal-footer {z-index: 1;}
+        .modal p{color: #000000 !important;}
         * {margin: 0;padding: 0;}
 
         .container {
@@ -94,6 +97,10 @@
         .carousel-inner img {
             width: 100% !important;
             height: 780px !important;}
+        .carousel-caption {font-size: 1em; padding-top: 20px;padding-bottom: 0; z-index: auto;}
+        .carousel-caption .btn{color: white !important;}
+        .carousel-caption p {margin: 0;padding-bottom: 10px; color: white;}
+        .carousel-caption h4 {transform: scale(1.1);}
 
         #demo {width: 100%;}
         #demo img{transform: none !important;}
@@ -101,26 +108,17 @@
         .row {margin-top: 10px;}
         .row img {height: 100%;transform: scale(1);transition: 0.5s;}
         .row img:hover {transform: scale(1.05);}
-
-        .carousel-caption {font-size: 1em; padding-top: 20px;padding-bottom: 0;}
-        .carousel-caption p {margin: 0;padding-bottom: 10px;}
-        .carousel-caption h4 {transform: scale(1.1);}
-        .row {margin-top: 10px;}
         .col-md-6 {padding: 0;overflow: hidden;}
+        .col-md-4 {padding: 0;margin: 0;overflow: hidden;}
+        .col-md-4 img {height: 500px;width: 100%;}
 
         #caption2{top: 250px;}
         #caption3{width: 100%; max-width: 700px; height: 250px;left: 45%;  top: 15%; margin: 0; padding: 0; color: black;}
         #caption3 h4{font-size: 3em;letter-spacing: 10px;}
         #caption3 p{font-size: 2em;}
         #caption3 a{margin-top: 20px; width: 150px; height: 40px; line-height: 40px; padding: 0;  font-size: 1em; margin-top: 0; box-sizing: border-box;}
-
-        .col-md-6 {padding: 0;overflow: hidden;}
-        .col-md-4 {padding: 0;margin: 0;overflow: hidden;}
-        .col-md-4 img {height: 500px;width: 100%;}
-
-        .btn {border: 2px solid  white;color: white;}
+        
         .box {float: left;position: relative;}
-
         .modal-body img {width: 150px;height: 100px;margin: 0;padding: 0;}
         .mo-img {width: 170px;height: 185px;margin: 0;padding: 0;}
         .mo-img img {box-sizing: border-box;padding: 0;margin-top: 30px;width: 175px;height: 93px;line-height: 28px;}
@@ -138,38 +136,41 @@
 
         .navbar {background: white !important; padding: 0 40px; height: 80px; z-index: 1000 !important;}
         .navbar li{margin-left: 50px;}
-        /* .container{top: 150px !important;} */
-        
         .navbar a{color: black !important;}
-        #collapsibleNavbar {line-height: 30px; margin: 10px 0;}
-        #s-img-2{display: none;}
-        
         .navbar-toggler{background: #ccc !important;}
 
+        /* #collapsibleNavbar {line-height: 30px; margin: 10px 0;} */
+        #s-img-2{display: none;}
+
         .accordion {display: none; padding-left: 10px; background: #FFFFFF;}
-        .card {border: none; background: none;}
+        .card{border: none; background: none;}
+        .card-header{background-color: rgba(0, 0, 0, 0); border-bottom: 1px solid rgba(0, 0, 0, 0.13);}
         .card-body{padding-left: 50px;}
-        .card-body div{color: #A5A5A5;}
-        .card-body div:hover {color: #B65F07;}
-        .card .btn{color: black; width: 100%; text-align: left; border: none; height: 55px; padding: 0;}
+        .card .btn{color: black !important; width: 100%; text-align: left; border: none; height: 55px; padding: 0;}
 
         #disclosures{width: 100%; margin: 0; padding: 30px 50px; background: rgba(0, 0, 0, 0.05);  border-top: 1px solid rgba(0, 0, 0, 0.13);}
         #dcrow {padding: 0 !important;}
+
         .carousel-control-prev, .carousel-control-next {
              width: 100px; height: 200px; top: 45%;}
         #dc { text-align: center; color: #B65F07;} 
-        .card-header{background-color: rgba(0, 0, 0, 0); border-bottom: 1px solid rgba(0, 0, 0, 0.13);}
-        /* .mobilegnb {display: none !important;} */
-
         
-            .webgnb{display: none;}
-        /* .webgnb{width: 100%; margin: 0; padding: 20px 80px 0px 80px; height: 110px; position: relative;}
-        .webgnb .navbar-brand{padding: 0; margin: 0; width: 130px; height: 55px; float: left;}
-        .main-nav .collapse {font-size: 1.3em;}
-        .navbar-right {width:400px;height: 20px; padding: 0; right: 80px;top: 20px; position: absolute; line-height: 20px;}
-        .navbar-right li{height: 20px; margin: 0; float: left;margin-left: 20px; font-size: 0.9em;}
-        .navbar-nav{position: absolute; margin: 0 !important; right: 10%; bottom: 10px;}
-        .navbar-nav li{margin-left: 80px; font-size: 0.9em;} */
+
+        .mobile-gnb {display: none !important;}
+        .web-gnb{width: 100%; height: 110px; position: relative;}
+        
+        .accordion-web {margin-left: 300px;}
+        .accordion-web .card{width: 150px; float: left; margin-left: 50px;}
+        .card-header-web {margin-left: 20px;}        
+
+        .web-navbar-right{position: absolute; width: 400px; height: 30px; top: 10px; right: 150px;float: left;}
+        .web-navbar-right li{margin: 0; float: left; margin-left: 20px; font-size: 0.9em;}
+
+
+        .web-main-nav {position: absolute;width: 100%; height: 80px; display: block; bottom: 0; padding: 20px 0 10px 0;}
+        .web-main-nav .navbar-brand{padding: 0; margin: 0; width: 130px; height: 55px; float: left; padding-left: 50px;}
+        .footer a{margin: 0 10px; color: #A5A5A5;}
+        #allmodel {visibility: hidden; position: absolute; top: -80px;}
 
         @media screen and (max-width: 768px){
             #bomttom-menu h4{
@@ -188,7 +189,7 @@
             /* .box-h img{height: 320px;} */
             #box-bottom-1 {margin-bottom: 50px !important;}
             .col-md-4{display: none;}
-            .footer{height: 200px !important;}
+            
             
             #s-img-1{display: none;}
             #s-img-2{display: block;}
@@ -204,10 +205,21 @@
             .card {border-bottom: 1px solid rgba(0, 0, 0, 0.13) !important; margin-left: 10px;}
             .card-header{padding:5px 0; line-height: 1.3em;}
             .card-header h2{padding-left: 30px;}
-            .mobilegnb {padding: 0;}
-            .webgnb{display: none;}
-            .navbar-brand{padding-left: 40px;}
-            .navbar-toggler{margin-right: 30px;}
+
+            .web-gnb{display: none !important;}
+            .mobile-gnb {display:block !important; padding: 10px 0px; width: 100%;margin: 0;}
+            .mobile-gnb .navbar-toggler{margin-top: 10px; margin-left: 40px;}
+            .mobile-gnb .navbar-brand{float: left; right: 15px;bottom: 10px; position: absolute;}
+            
+            .footer{max-width:80%; width: 80%; height: 450px; margin: 0 auto; padding: 25px;}
+            #footer-box1{margin: 20px;}
+            #footer-box2{width: 80%; padding: 15px; margin: 0 auto; border-bottom: 1px solid #A5A5A5; border-top: 1px solid #A5A5A5; line-height: 2rem;}
+            #footer-box3{padding: 40px;}
+            #footer-box3 span{display: block; padding-bottom: 30px;}
+            #footer-box3 a{display: block; line-height: 0.3em;}
+
+            #collapsibleNavbar{width: 100%; background: white;margin: 20px auto;}
+            .nav-item{margin: 15px 0;}
         };
         
     </style>
@@ -217,23 +229,21 @@
     <div class="container wrap" style="width: 100%;">
         <!-- 메뉴바 제작 ------------------------------------------------------->
         <!-- mobilegnb ---------------------------------------------------------------------------------------->
-        <nav class="gnb mobilegnb navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-            <!-- <div class="clearFix"> -->
+        <nav class="gnb mobile-gnb navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+
             <a class="navbar-brand" href="#body">
                 <img src="./img/logo.jpg" alt="로고">
             </a>
-    
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-    
-            <div class="collapse navbar-collapse" id="collapsibleNavbar" style="width: 100%; background: #B45F1A;">
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse">
                         <a class="nav-link anchor" href="#allmodel">전체모델</a>
                     </li>
                     <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse">
-                    <a class="nav-link anchor" href="#store">전시장</a>
+                        <a class="nav-link anchor" href="#store">전시장</a>
                     </li>
                     <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse">
                         <a class="nav-link anchor" href="#board">문의사항</a>
@@ -242,47 +252,69 @@
     
             </div>
     <!-- </div> -->
-    </nav>
-    <!--  -->
+       </nav>
+         <!--  -->
 
     <!-- Web GNB ----------------------------------------------->
-    <nav class="gnb webgnb navbar navbar-expand-md">
-        <ul class="navbar-right">
-            <li><a href="#" data-toggle="modal" data-target="#requst"><span><div>시승 신청</div></span></a></li>
-            <li><a href="#" data-toggle="modal" data-target="#requst"><span><div>브로셔 다운로드</div></span></a></li>
-            <li><a href="#" data-toggle="modal" data-target="#requst"><span><div>전시장 및 서비스센터 찾기</div></span></a></li>
-        </ul>
-
-        <div class="main-nav" style="width: 100%;">
-            <div style="position: absolute; bottom: 5px; width: 130px; height: 55px; padding: 0;">
-            <a class="navbar-brand" href="#">
-                <img src="./img/logo.jpg" alt="로고" style="width: 130px; height: 45px; bottom: 0;">
-            </a>
+    <nav class="gnb web-gnb navbar navbar-expand-md">
+        <div class="navbar-right web-navbar-right">
+            <ul>
+                <li><a href="#" data-toggle="modal" data-target="#requst"><span><div>시승 신청</div></span></a></li>
+                <li><a href="#" data-toggle="modal" data-target="#requst"><span><div>브로셔 다운로드</div></span></a></li>
+                <li><a href="#" data-toggle="modal" data-target="#requst"><span><div>전시장 및 서비스센터 찾기</div></span></a></li>
+            </ul>
         </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar" style="display: inline-block; text-align: center;">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse">
-                    <a class="nav-link" href="#introduce">Vehicles</a>
-                </li>
-                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse">
-                    <a class="nav-link" href="#vision">Technology</a>
-                </li>
-                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse">
-                    <a class="nav-link" href="#curriculumn">Shopping</a>
-                </li> 
-                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse">
-                    <a class="nav-link" href="#map">Owners</a>
-                </li>   
-                <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse">
-                        <a class="nav-link" href="#map">About LINCOLN</a>
-                    </li>   
-                </ul>
-            </div> 
+        <div class="main-nav web-main-nav">
+            <div>
+                <a class="navbar-brand web-navbar-brand" href="#">
+                    <img src="./img/logo.jpg" alt="로고"">
+                </a>
+             </div>
+        <!-- accordion1 ---------------->
+        <div id="accordion1" class="accordion-web">
+                <div class="card">
+                  <div class="card-header-web">
+                        <h2><button type="button" class="btn web-btn" data-toggle="collapse" data-target="#vehicles">Vehicles</button></h2>
+                  </div>
+                  <div id="vehicles" class="collapse" data-parent="#accordion1">
+                    <div class="card-body-web">
+                      aaa
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header-web">
+                        <h2><button type="button" class="btn web-btn" data-toggle="collapse" data-target="#Technology">Technology</button></h2>
+                  </div>
+                  <div id="Technology" class="collapse" data-parent="#accordion1">
+                    <div class="card-body-web">
+                            Technologyaa
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header-web">
+                        <h2><button type="button" class="btn web-btn" data-toggle="collapse" data-target="#Shopping">Shopping</button></h2>
+                  </div>
+                  <div id="Shopping" class="collapse" data-parent="#accordion1">
+                    <div class="card-body-web">
+                            Shoppingaaa
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                        <div class="card-header-web">
+                            <h2><button type="button" class="btn web-btn" data-toggle="collapse" data-target="#AboutLINCOLN">AboutLINCOLN</button></h2>
+                        </div>
+                        <div id="AboutLINCOLN" class="collapse" data-parent="#accordion1">
+                          <div class="card-body-web">
+                                About LINCOLNaaa
+                          </div>
+                        </div>
+                      </div>
+              </div>
         </div> 
-        </nav>
+    </nav>
         <!--  -->
 
 
@@ -343,17 +375,14 @@
                 </div>
             </div> 
         </div>
-            </div> 
-           
-      
+        </div> 
         <!--  -->
     
-          
         <!--  -->
 
     <!-- 박스레이아웃 -->
     <div class="row img" style="position: relative;">
-        <div id="allmodel" style="visibility: hidden; position: absolute; top: -80px;"></div>
+        <div id="allmodel"></div>
         <!-- LeftBox ------------------------------------>
         <div class="col-md-6 box-h">
             <img src="./img/homepage-2-1-brand-gallery-712x576.jpg" alt="전체 모델 보기" width="100%" id="s-img-1">
@@ -425,7 +454,7 @@
                 <!-- Modal -------------------------------------------------------------->
                 <div class="modal" id="myModal">
                     <div class="modal-dialog">
-                        <div class="modal-content">
+                        <div class="modal-content" style="height: 800px;">
 
                             <!-- Modal Header -->
                             <div class="modal-header" style="height: 55px;">
@@ -434,15 +463,14 @@
                                         <h3 style="line-height: 50px;">전시장 찾기</h3>
                                     </div>
                                     <div class="col-md-1" style="padding: 0;">
-                                        <button type="button" class="close" data-dismiss="modal"
-                                            style="width: 50px; height: 50px; margin: 0; padding: 0;">&times;</button>
+                                        <button type="button" class="close" data-dismiss="modal" style="width: 50px; height: 50px; margin: 0; padding: 0;">&times;</button>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Modal body -->
-                            <div class="modal-body">
-                                <div id="kakaomap" style="width: 100%; height: 500px"></div>
+                            <div class="modal-body" style="height: 600px;">
+                                <div id="kakaomap" style="width: 100%; height:500px"></div>
                                 <script type="text/javascript"
                                     src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=ba41ce6149f9a8820bb69e5c83ea82f6"></script>
                                 <script>
@@ -461,7 +489,6 @@
                                         });
                                         // 마커가 지도 위에 표시되도록 설정합니다
                                         marker.setMap(map);
-                                        map.relayout();
                                     });
                                 </script>
                             </div>
@@ -483,7 +510,7 @@
             <img src="./img/overview-continental-kba-7-2-480x500.jpg" alt="브로셔다운로드">
             <div class="carousel-caption" style="line-height: 40px;">
                 <h3>브로셔 다운로드</h3>
-                <a href="#" class="btn btn-mute btn-outline-secondary" data-toggle="modal" data-target="#brosher">바로
+                <a href="#" class="btn btn-mute btn-outline-secondary" data-toggle="modal" data-target="#brosher" style="z-index: 0;">바로
                     가기</a>
                 <!-- Modal  ----------------------------------------------------------->
                 <div class="modal modal-center" id="brosher">
@@ -591,7 +618,7 @@
                                 </div>
                                 <!-- <div style="height: 55px; width: 100%; display: block;">
                                                 <button type="button" class="close" data-dismiss="modal" style="position: absolute; right: 0;margin: auto; width: auto; height: auto;">&times;</button>
-                                            </div> -->
+                                </div> -->
 
                                 <div>
                                     <img src="./img/1484734227305.jpg" alt="이미지" class="modal-main-img"
@@ -675,7 +702,6 @@
                                     </div>
                                 </form>
                             </div>
-                        </div>
 
                         <!-- Modal footer -->
                         <div class="modal-footer">
@@ -686,6 +712,7 @@
                 </div>
             </div>
             <!-- modal 끝 -->
+        </div>
         </div>
     </div>
     <!-- 박스2 끝  -->
@@ -831,15 +858,32 @@
 
     <!-- footer 시작 -------------------------------------->
     <div class="row" style="margin-top: 30px;">
-        <div class="footer" style="width: 100%;max-width: 1440px; bottom: 0; text-align: center; height: 50px; background: #000000; color: #A5A5A5; ">
-            <div class="row" style="margin: 0; padding: 0;">
-                <div class="col-rm-6" style="width: 50%; height: 50px; letter-spacing: -3; padding: 0; margin: 0; line-height: 50px;">
+        <div class="footer" style="width: 100%;max-width: 1440px; bottom: 0; text-align: center; background: #000000; color: #A5A5A5; ">
+            <!-- web footer ------------------------>
+            <div class="row" id="s-img-1" style="margin: 0; padding: 0;">
+                <div class="col-dm-6" style="width: 50%; height: 50px; letter-spacing: -3; padding: 0; margin: 0; line-height: 50px;">
                     <img src="./img/facebook-sk-64x64.jpg" alt="페이스북" style="width: 35px; height: 35px; margin: 0 50px; padding: 0; display: inline-block;">
                     <p style="display: inline-block;">링컨 고객센터:1600-6003 긴급출동서비스 : 080-300-3676</p>
                 </div>
-                <div class="col-rm-6" style="width: 50%; height: 50px; letter-spacing: -3; padding: 0; margin: 0; line-height: 50px;">
-                    <p>Copyright&copy;2017 Ford Motor Company <a href="#">Site Map</a> | <a href="#">Global Site</a> |
-                        <a href="#">Privacy</a></p>
+                <div class="col-dm-6" style="width: 50%; height: 50px; letter-spacing: -3; padding: 0; margin: 0; line-height: 50px;">
+                    <p>Copyright&copy;2017 Ford Motor Company <a href="#">Site Map</a> | <a href="#">Global Site</a> | <a href="#">Privacy</a></p>
+                </div>
+            </div>
+
+            <!-- mobile footer ---------------------->
+            <div class="row" id="s-img-2" style="margin: 0; padding: 0; width: 100%;">
+                <div id="footer-box1">
+                    <img src="./img/facebook-sk-64x64.jpg" alt="페이스북" style="width: 35px; height: 35px; margin: 0 50px; padding: 0; display: inline-block;">
+                </div>
+                <div id="footer-box2">
+                    <p style="display: inline-block;">링컨 고객센터:1600-6003 <br>긴급출동서비스 : 080-300-3676</p>
+                </div>
+                <div id="footer-box3">
+                    <p><span>Copyright&copy;2017 Ford Motor Company</span>
+                        <a href="#">Site Map</a><br>
+                        <a href="#">Global Site</a><br>
+                        <a href="#">Privacy</a>
+                    </p>
                 </div>
             </div>
         </div>

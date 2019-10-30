@@ -1,0 +1,58 @@
+1. 디지털시계를 구현하시오.
+- h1태그에 17:10:55 형식으로 출력
+- setInterval(함수명,밀리세컨드)활용
+
+
+2. 검색어를 입력하고 검색엔진을 선택해서 검색버튼을 누르면,
+ 검색결과 나오게 하기.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //1번문제
+        window.onload=function(){
+            var auto=document.getElementById("clock");
+
+            setInterval(function(){
+                var now= new Date();
+                auto.innerHTML=""+now.getHours()+":"+now.getMinutes()+":"+now.getSeconds()+"";
+            }, 100);
+        }
+        
+        //2번문제
+        function wsearch(){
+            var keyword=document.getElementById("keyword").value;
+            var engine = document.getElementById("engine");
+            if(engine.options[engine.selectedIndex].value=="google"){
+                console.log("구글");
+                location.href="http://google.com/search?hl=ko&souce=hp&ei=EOi3XfbbNorth-AaPtqmwDw&q="+keyword+"";
+            }            
+            if(engine.options[engine.selectedIndex].value=="naver"){
+                console.log("네이버");
+                location.href="https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query="+keyword+"";
+            }            
+            if(engine.options[engine.selectedIndex].value=="daum"){
+                console.log("다음");
+                location.href="https://search.daum.net/search?w=tot&DA=YZR&t__nil_searchbox=btn&sug=&sugo=&q="+keyword+"";
+            }            
+        };
+    </script>
+</head>
+<body>
+    <h1 id="clock">s</h1>
+    <input type="text" id="keyword" />
+    검색엔진  <select name="engine" id="engine">
+            <option value="google">구글</option>
+            <option value="naver">네이버</option>
+            <option value="daum">다음</option>
+            </select>   
+
+    <input type="button" value="검색" onclick="wsearch()" />
+
+</body>
+</html>
