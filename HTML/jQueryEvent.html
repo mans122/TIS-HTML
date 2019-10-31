@@ -38,6 +38,42 @@
                 $("body").css("background","white");
             });
 
+            $("#id,#pw").on("focus",function(){
+                $(this).css("background","gray");
+            })
+            $("#id,#pw").on("blur",function(){
+                $(this).css("background","white");
+            })
+            $("#introduce").on("keydown",function(){
+                console.log($("#introduce").val());
+                if($("#introduce").val().length>=100){
+                    alert("죽는다");
+                }
+            })
+            $("#title").on("change",function(){
+                console.log($(this).val());
+            })
+            // 검색사이트 바꾸기
+            $("#rel_site").on("chagne",function(){
+                
+                var keyword=$("#keyword").val();
+                if(keyword!="")
+                {
+                location.href=$(this).val()+keyword;
+                }
+            });
+            // $("#btnDynamic").click(function(){
+            //     console.log("클릭");
+            // })
+            // $("#box2").on("click","#btnDynamic",function(){
+            //     console.log("클릭");
+            // });
+            $("#box2").delegate("#btnDynamic","click",function(){
+                console.log("클릭");
+            });
+
+            $("#box2").append("<button id='btnDynamic'>버튼</button>")
+            
         });
     </script>
 </head>
@@ -56,5 +92,27 @@
         <a href="http://www.naver.com" class="btn1">버튼1</a>
         <a href="#" class="btn2">버튼2</a>
     </p>
+
+    id
+    <input type="text" id="id"><br>
+    pw
+    <input type="text" id="pw"><br>
+    자기소개 - 최대 100자<br>
+    <textarea id="introduce" cols="50" rows="10"></textarea><br>
+    title<input type="text" id="title">
+    <br>
+
+    <input type="text" id="keyword">
+    <select id="rel_site">
+        <option value="">선택</option>
+        <option value="http://google.com/search?hl=ko&souce=hp&ei=EOi3XfbbNorth-AaPtqmwDw&q=">Google</option>
+        <option value="https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query=">Naver</option>
+        <option value="https://search.daum.net/search?w=tot&DA=YZR&t__nil_searchbox=btn&sug=&sugo=&q=">Daum</option>
+    </select>
+
+
+    <div id="box2">
+
+    </div>
 </body>
 </html>

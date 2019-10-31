@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function(){
+            $("#btn1").click(function(){
+                $("#box1").hide();
+            });
+            $("#btn2").click(function(){
+                $("#box1").show();
+            });
+            $("#btn3").click(function(){
+                $("#box1").toggle();
+            });
+            $("#btn4").click(function(){
+                $("#box1").fadeOut();
+            });
+            $("#btn5").click(function(){
+                $("#box1").fadeIn();
+            });
+            $("#btn6").click(function(){
+                $("#box1").fadeToggle();
+            });
+            $("#btn7").click(function(){
+                $("#box1").slideToggle();
+            });
+        });
+    </script>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+        <button type="button" id="btn1">클릭</button>
+        <button type="button" id="btn2">클릭</button>
+        <button type="button" id="btn3">클릭</button>
+        <button type="button" id="btn4">버튼4</button>
+        <button type="button" id="btn5">버튼5</button>
+        <button type="button" id="btn6">버튼6</button>
+        <button type="button" id="btn7">버튼7</button>
+        <div id="box1">
+                <h1 style="position: absolute;">box1</h1>
+            </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scroll Event</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <link rel="stylesheet" href="../css/animate.css" />
+    <script>
+        $(document).ready(function(){
+            $(window).on("scroll",function(){
+                var sc_top=$(this).scrollTop();
+                // $("h1>span").text(sc_top);
+                console.log(sc_top);
+                if(sc_top>=800){
+                    $("#content1").css("display","block");
+                    $("#content1").addClass("slideInLeft animated");
+                }
+                if(sc_top>=1200){
+                    $("#content2").css("display","block");
+                    $("#content2").addClass("slideInUp animated");
+                }
+            })
+        });
+    </script>
+    <style>
+        div { height: 500px;}
+        #content1{
+            display: none;
+            width: 300px;
+            height: 300px;
+            background: red;
+        }
+        #content2{
+            display: none;
+            width: 100%;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box1">
+        box1
+    </div>
+    
+    <div id="box2">
+        box2
+    </div>
+    
+    <div id="box3">
+        box3
+        <div id="content1">
+            content1
+        </div>
+    </div>
+    
+    <div id="box4">
+        box4
+        <div id="content2">
+                content
+            </div>
+    </div>
+    
+    <div id="box5">
+        box5
+    </div>
+</body>
+</html>

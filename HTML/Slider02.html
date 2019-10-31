@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slider</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <style>
+        #sliderBox{position: relative; width: 600px; height: 400px; overflow: hidden; margin: 0; padding: 0;}
+        #imgBox{position: relative; width: 3000px; height: 400px; margin: 0; padding: 0;}
+        img {margin: 0; padding: 0; width: 600px; height: 400px; float: left;}
+        #dotBox{position: absolute; left: 40%; bottom: 10px; color: white; z-index: 10;}
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            var now = 0;
+            $("#dotBox a").click(function(){
+                now = -($(this).index()*600) ;
+                console.log(now);
+                $("#imgBox").animate({left: now },1000);
+                // $(this).index()
+            });
+
+            setInterval(function(){
+                now-=600;
+                if(now==-3000){
+                    now=0;
+                    $("#imgBox").animate({left: now },1500);
+                }
+                if(now>-3000){
+                $("#imgBox").animate({left: now },1500);
+            }
+            }, 3000);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="sliderBox" >
+        <div id="imgBox">
+            <img src="../img/ex2img/pic1.jpg" />
+            <img src="../img/ex2img/pic2.jpg" />
+            <img src="../img/ex2img/pic3.jpg" />
+            <img src="../img/ex2img/pic4.jpg" />
+            <img src="../img/ex2img/pic5.jpg" />
+        </div>
+
+        <div id="dotBox">
+            <a href="#" style="text-decoration: none; color: white;"><span class="dot">ㅁ</span></a>
+            <a href="#" style="text-decoration: none; color: white;"><span class="dot">ㅁ</span></a>
+            <a href="#" style="text-decoration: none; color: white;"><span class="dot">ㅁ</span></a>
+            <a href="#" style="text-decoration: none; color: white;"><span class="dot">ㅁ</span></a>
+            <a href="#" style="text-decoration: none; color: white;"><span class="dot">ㅁ</span></a>
+        </div>
+    </div>
+</body>
+</html>
