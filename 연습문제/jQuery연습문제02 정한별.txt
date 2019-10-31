@@ -1,3 +1,20 @@
+1. join2.html¿¡¼­ textarea¿¡ 150ÀÚ ÀÌ»óÀÔ·ÂµÇ¸é
+´õÀÌ»ó ÀÔ·ÂµÇÁö ¾Ê°ÔÇÏ±â.
+
+2. https://www.jaguar.com/build-yours/index.htmlÃ³·³ 
+ÀÏÁ¤¾çÀ» scrollÇÒ ¶§ ¸Ş´º°¡ »ó´Ü¿¡ °íÁ¤µÇµµ·Ï ±¸ÇöÇÏ½Ã¿À.
+
+1) menuTop1À» ¾Èº¸ÀÌ°Ô.
+2) menuTop2Àº »ó´Ü¿¡ °íÁ¤. position:fixed »ç¿ë
+
+<div id="menuTop1">facebook twitter google++</div>
+<div id="menuTop2">product | contact | map </div>
+
+3. µÎ°³ÀÇ ¹Ú½º°¡ ½ºÅ©·Ñ½Ã ÇÏ³ª´Â ¿ŞÂÊ, ´Ù¸¥ ÇÏ³ª´Â ¿À¸¥ÂÊ¿¡¼­
+³ªÅ¸³ª°Ô ÇÏ½Ã¿À. Ä«Ä«¿À ¿Àºì Âü°í. animate.css »ç¿ë.
+
+4. slider¿¡¼­ < , > ±â´É ±¸ÇöÇÏ±â
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,15 +26,15 @@
     <link rel="stylesheet" href="../css/animate.css" />
     <script>
            $(document).ready(function(){
-            //   1ë²ˆë¬¸ì œ
+            //   1¹ø¹®Á¦
             $("#introduce").on("keyup",function(){
                 if($("#introduce").val().length>=150){
                     $("#introduce").val($("#introduce").val().substring(0,150));
-                    alert("150ê¸€ìë¥¼ ë„˜ê¸¸ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
+                    alert("150±ÛÀÚ¸¦ ³Ñ±æ¼ö ¾ø½À´Ï´Ù.");
                 }
             });
 
-            // 2ë²ˆë¬¸ì œ
+            // 2¹ø¹®Á¦
             $(window).on("scroll",function(){
                 var sc_top=$(this).scrollTop();
                 $("h1>span").text(sc_top);
@@ -25,21 +42,15 @@
                     $("#menuTop1").css("display","none");
                     $("#menuTop2").addClass("fixed");
                 }
-                else{
-                    $("#menuTop1").css("display","block");
-                    $("#menuTop2").removeClass("fixed");
-                }
-
             })
-            
 
-            //3ë²ˆë¬¸ì œ
+            //3¹ø¹®Á¦
             // $("#left").animate({left:"0"},2000)
             // $("#right").animate({left:"50%"},2000)
             $("#left").addClass("fadeInLeft animated");
             $("#right").addClass("fadeInRight animated");
             
-            // 4ë²ˆë¬¸ì œ
+            // 4¹ø¹®Á¦
             var now = 0;
             $("#dotBox a").click(function(){
                 now = -($(this).index()*600) ;
@@ -81,21 +92,21 @@
     </script>
 
     <style>
-        /* 2ë²ˆë¬¸ì œ */
+        /* 2¹ø¹®Á¦ */
         #wrap {height: 3000px; overflow: hidden;}
         #menuTop1{width: 100%; height: 50px; background: lightblue; margin: 0; padding: 0;}
         #menuTop2{width: 100%; height: 50px; background: purple; margin: 0; padding: 0;}
         .fixed{position: fixed; top: 0; z-index: 100;}
 
 
-        /* 3ë²ˆë¬¸ì œ */
+        /* 3¹ø¹®Á¦ */
         #three{width: 100%; position: relative; height: 100px;}
         /* #left{width: 50%; height: 100%; padding: 0; margin: 0; background: lightcoral;position: absolute; left: -100%;}
         #right{width: 50%; height: 100%; padding: 0; margin: 0; background: blue;position: absolute; left: 150%;} */
         #left{width: 50%; height: 100%; padding: 0; margin: 0; background: lightcoral;position: absolute;}
         #right{width: 50%; height: 100%; padding: 0; margin: 0; background: blue;position: absolute; left: 50%;}
 
-        /* 4ë²ˆë¬¸ì œ */
+        /* 4¹ø¹®Á¦ */
         #sliderBox{position: relative; width: 600px; height: 400px; overflow: hidden; margin: 0; padding: 0;}
         #imgBox{position: relative; width: 3000px; height: 400px; margin: 0; padding: 0;}
         img {margin: 0; padding: 0; width: 600px; height: 400px; float: left;}
@@ -110,7 +121,7 @@
 </head>
 <body>
     <div id="wrap">
-            ìê¸°ì†Œê°œ<br>
+            ÀÚ±â¼Ò°³<br>
             <textarea id="introduce" rows="10" cols="50"></textarea>    
 
         <div id="menuTop1">facebook twitter google++</div>
@@ -119,8 +130,8 @@
         <h1>ScrollTop : <span>0</span></h1>
 
         <div id="three">
-            <div id="left">ì™¼ìª½ë°•ìŠ¤</div>
-            <div id="right">ì˜¤ë¥¸ìª½ë°•ìŠ¤</div>
+            <div id="left">¿ŞÂÊ¹Ú½º</div>
+            <div id="right">¿À¸¥ÂÊ¹Ú½º</div>
         </div>
 
         <div id="sliderBox" >
@@ -133,11 +144,11 @@
                 </div>
         
                 <div id="dotBox">
-                    <a href="#" style="text-decoration: none; color: white;"><span class="dot">ã…</span></a>
-                    <a href="#" style="text-decoration: none; color: white;"><span class="dot">ã…</span></a>
-                    <a href="#" style="text-decoration: none; color: white;"><span class="dot">ã…</span></a>
-                    <a href="#" style="text-decoration: none; color: white;"><span class="dot">ã…</span></a>
-                    <a href="#" style="text-decoration: none; color: white;"><span class="dot">ã…</span></a>
+                    <a href="#" style="text-decoration: none; color: white;"><span class="dot">¤±</span></a>
+                    <a href="#" style="text-decoration: none; color: white;"><span class="dot">¤±</span></a>
+                    <a href="#" style="text-decoration: none; color: white;"><span class="dot">¤±</span></a>
+                    <a href="#" style="text-decoration: none; color: white;"><span class="dot">¤±</span></a>
+                    <a href="#" style="text-decoration: none; color: white;"><span class="dot">¤±</span></a>
                 </div>
 
                 <div id="prev" class="arrow"><a href="#"><span>&lt;</span></a></div>
