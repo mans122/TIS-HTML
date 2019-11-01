@@ -1,0 +1,10 @@
+1. company데모페이지에 notice 구현하기
+
+1) notice 테이블 생성
+   title, wdate
+
+2) notice 테이블에서 select해서 xml생성하는 php생성
+
+3) ajax처리하는 html작성
+
+

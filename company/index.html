@@ -54,9 +54,36 @@
                   });
                 } // End if
               });
+
+            //   ajax
+            $.ajax({
+                    url: "ajaxDB.php",
+                    // url:"ajaxDB.php?keyword="+태그입력값
+                    dataType: "xml",
+                    success: function (data) {
+                        var tb = $("<table border='1' />");
+                        var productArray = $(data).find("product");
+                        $.each(productArray, function (i, v) {
+                            var title = $(v).find("title").text();
+                            var date = $(v).find("date").text();
+                            //행에 컬럼추가
+                            var row = $("<tr/>").append(
+                                // $("<a href=\"#\"/>").append(
+                                // $("<td />").text(title)),
+                                $("<td />").append(
+                                $("<a href=\"#\"/>").text(title)),
+                                $("<td />").text(date)
+                            );
+                            tb.append(row);//테이블에 행 추가
+                        });
+                        $("#notice").append(tb);
+                    }
+                });
             })
             </script>
      <style>
+         a{text-decoration: none; color: black; border: none;}
+         a:hover{text-decoration: none; color: black;}
          p {font-family: 'Jua', sans-serif;
             font-size: 18px;}
 
@@ -186,7 +213,13 @@
         </div>
     </div>
 
-    <div id="curriculumn" class="container-fluid text-center">
+    <div class="container-fluid">
+        <div id="notice" class="container table" style="width: 800px;height: 300px;">
+            <div class="row"><h2>공지사항</h2></div>
+        </div>
+    </div>
+
+    <div id="curriculumn" class="container-fluid text-center  bg-grey">
         <div class="container">
         <h2>과정 소개</h2>
         <h4>What we teach</h4>
@@ -230,7 +263,7 @@
     </div>
     </div>
     <!--  -->
-    <div id="map" class="container-fluid bg-grey text-center">
+    <div id="map" class="container-fluid text-center">
         <h2>찾아오시는 길</h2>
         <div class="container">
         <!-- 카카오맵 ----------------------------------------------->
@@ -260,10 +293,12 @@
         </script>
         <!-- 카카오맵.끝.-->
         </div>
-        </div>
-        <div class="row" id="board" style="padding: 0 30px; margin-bottom: 30px;">
+    </div>
+        <div class="row  bg-grey container-fluid" id="board" style="padding: 0 30px; margin-bottom: 30px;">
+            <div class="container" style="padding: 0;">
                 <h3 class="text-center" style="margin-top: 20px; margin-bottom: 20px;">문 의 사 항</h3>
                 <iframe id="iframe1" src="http://mans122.dothome.co.kr/g5/bbs/board.php?bo_table=exam02" width="100%" onload="autoResize(this)" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+            </div>
             </div>
 
         <footer class="container-fluid text-center" style="padding-top: 50px;">

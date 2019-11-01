@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax - jQuery, json</title>
+    <!-- jQuery -------------------------------->
+    <script
+    src="https://code.jquery.com/jquery-1.12.4.min.js"
+    ></script>
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                url:"ajaxDB.php",
+                // url:"ajaxDB.php?keyword="+태그입력값
+                dataType:"xml",
+                success:function(data){
+                    var tb=$("<table border='1' />");
+                    var productArray=$(data).find("product");
+                    $.each(productArray,function(i,v){
+                       var name=$(v).find("name").text();
+                       var price=$(v).find("price").text();
+                        //행에 컬럼추가
+                       var row=$("<tr/>").append(
+                           $("<td/>").text(name),
+                           $("<td/>").text(price)
+                       ); 
+                        tb.append(row);//테이블에 행 추가
+                    });
+                    $("#drink").append(tb);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="drink"></div>
+</body>
+</html>
