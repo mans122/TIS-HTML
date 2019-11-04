@@ -24,10 +24,9 @@ function showHint(str) {
             $.getJSON("http://mans122.dothome.co.kr/test/suggestionJson.php?q="+encodeURI(str),function(data){
                 console.log("test");
                 $.each(data,function(key,value){
-                    
+                    console.log("test2");
                     keyword=value.keyword;
-                    
-                    output+="<li><a href='#' onClick='setKeyword(\""+keyword+"\")'>"+keyword+"</a></li>";
+                    // output+="<li><a href='#' onClick='setKeyword(\""+keyword+"\")'>"+keyword+"</a></li>";
                 });
                 
                  output+="</ul>";

@@ -7,69 +7,51 @@
 </style>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script>
-    // 336p
-    function setKeyword(keyword){
-    document.form1.keyword.value=keyword;
-    document.getElementById("txtHint").style.display="none";
-}    
-    
-function showHint(str) {
-    console.log(str.length);
-    if (str.length == 0) { 
-        document.getElementById("txtHint").innerHTML = "";
-        return;
-    } else {
-            var output="<ul>";
-            var href="http://mans122.dothome.co.kr/test/suggestionJson2.php?callback=myFnc&q="+encodeURI(str);
-
-            $.ajax({
-                url:href,
-                dataType: "jsonp"
-            }).done(function myFnc(data){
-                console.log("dd");
-                if(data.length>0){
-                    $keyword= data.keyword;
-                }
-                output+="<li><a href='#' onClick='setKeyword(\""+keyword+"\")'>"+keyword+"</a></li>";
-            }).done(function(){
-                output+="</ul>";
-                $("#txtHint").show();
-                $("#txtHint").html(output); 
-            });
-                
-            // $.getJSON("http://mans122.dothome.co.kr/test/suggestionJson.php?&q="+encodeURI(str),function(data){
-            //     console.log("test");
-            //     $.each(data,function(key,value){
-                    
-            //         keyword=value.keyword;
-                    
-            //         output+="<li><a href='#' onClick='setKeyword(\""+keyword+"\")'>"+keyword+"</a></li>";
-            //     });
-                
-            //      output+="</ul>";
-                    
-            //      $("#txtHint").show();
-            //      $("#txtHint").html(output); 
-            // });
-    }
-}
-    
-$(document).ready(function(){
-      $("#search").keyup(function(){
-          showHint($(this).val());
-      });      
-
-});
+    $(document).ready(function () {
+        $("#txtHint").delegate(".kc","click",function(){
+            $("#search").val($(this).text());
+            $("#txtHint").hide();
+        })
+        $("#search").keyup(function () {
+            str = $(this).val();
+            console.log(str);
+            if (str.length == 0) {
+                document.getElementById("txtHint").innerHTML = "";
+                return;
+            } else {
+                var href = "http://mans122.dothome.co.kr/test/suggestionJson2.php?callback=myFnc&q=" + encodeURI(str);
+                $.ajax({
+                    url: href,
+                    dataType: "jsonp"
+                }).done(function myFnc(data) {
+                    if (data.length > 0) {
+                        var $ul = $("<ul/>");
+                        data.forEach(function (o) {
+                            $keyword = o.keyword;
+                            var li = $("<li/>");
+                            li.append($("<a href='#' class='kc' />").text($keyword));
+                            $ul.append(li);
+                        })
+                        $("#txtHint").show();
+                        $("#txtHint").append($ul);
+                    }
+                });
+            }
+        });
+    });
     
     
 </script>
+<style>
+    #txtHint{position: fixed; left: 200px; top: 0;}
+</style>
 </head>
 <body>
-
-
-<form name="form1"> 
-<input type="text" id="search" name="keyword" placeholder="검색어를 입력하세요" onkeyup="showHint(this.value)">
-</form>
-<div id="txtHint" style="display:none;"></div>
+    <form name="form1"> 
+    <!-- <input type="text" id="search" name="keyword" placeholder="검색어를 입력하세요" onkeyup="showHint(this.value)"> -->
+    <input type="text" id="search" name="keyword" placeholder="검색어를 입력하세요">
+    </form>
+    
+    <div id="txtHint" style="display:none;"></div>
 </body>
 </html>
