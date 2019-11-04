@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Datepicker - Default functionality</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+  <script>
+	$(function() {
+		$("#datepicker").datepicker({
+	dateFormat: "yy-mm-dd"
+	});
+
+	$('.bxslider').bxSlider({
+		mode: 'fade',
+		captions: true,
+		slideWidth: 600,
+		auto: true,
+		pause:1000
+	});
+	});
+
+  </script>
+
+  <style>
+	  img{width: 600px;
+	  height: 400px;}
+  </style>
+</head>
+<body>
+ 
+<p>Date: <input type="text" id="datepicker"></p>
+<div class="bxslider">
+		<div><img src="../etc/HTML/img/ex2img/pic1.jpg" title="Funky roots"></div>
+		<div><img src="../etc/HTML/img/ex2img/pic2.jpg" title="The long and winding road"></div>
+		<div><img src="../etc/HTML/img/ex2img/pic3.jpg" title="Happy trees"></div>
+	  </div>
+</body>
+</html>

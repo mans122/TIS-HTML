@@ -1,3 +1,12 @@
+--bxslider --
+https://bxslider.com/examples/image-slideshow-captions/
+
+-- jquery source
+https://www.jqueryscript.net/
+//fullpage
+//parallax
+//slider
+
 
 https://tympanus.net/Tutorials/GooeyImageHoverEffects/
 

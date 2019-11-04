@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery Plugin</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+        $(function(){
+            $.fn.open = function(eventType,message){
+                var ts=$(this);
+                $.each(ts,function(i,o){
+                    $(o).on(eventType,function(){
+                        alert(message);
+                    });
+                });
+            }
+            $(".btn1").open("mouseover","welcome!");
+            $(".btn2").open("click","hello!");
+        })
+    </script>
+</head>
+<body>
+    <p><button class="btn1">btn1</button></p>
+    <p><button class="btn2">btn1</button></p>
+    <p><button class="btn3">btn1</button></p>
+</body>
+</html>

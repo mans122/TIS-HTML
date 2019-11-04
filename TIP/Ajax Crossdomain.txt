@@ -1,0 +1,31 @@
+ajax는 cross domain 허용하지 않음
+
+해결법
+1. 서버에서 cross domain 허용
+-- php파일에 다음코드 추가 --
+header("access-control-allow-origin: *");
+>>html파일에 getJson > php주소도 변경
+
+2. 우회기술 jsonp 등 이용
+Jsonp
+
+-- html --
+href = "~~~.php?callback=[함수명]"
+
+함수명 : ajax코드안에 들어가는 함수 이름
+
+
+-- php -- requet | get | post 
+$echo $_REQUET["callback"]."(".변수")";
+
+
+rest방식
+
+1.get		select
+2.post		insert
+=>form태그에서 지원
+------------------------
+3.put		update
+4.delete	delete
+=>form태그에서 미지원 
+=>javascript  or Jquery로 처리
