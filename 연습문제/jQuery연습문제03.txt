@@ -1,0 +1,2 @@
+1.https://www.w3schools.com/howto/howto_css_modals.asp
+코드를 jQuery로 바꿔서 작성하시오. html,css는 그대로 사용.

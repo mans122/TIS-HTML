@@ -22,26 +22,26 @@
 	}
 	//console.log(deviceSize.pc);
 
-	$(win).on("resize", function() {
-		var w_size = $(win).width();
-		if(w_size >= deviceSize.pc 
-		&& !$("html").hasClass("pc")) {
-			$html.removeClass("mobile tablet").addClass("pc");
-			scrollShowHide("scroll");
-		} else if(w_size < deviceSize.pc 
-		&& w_size >= deviceSize.tablet 
-		&& !$("html").hasClass("tablet")) {
-			$html.removeClass("mobile pc").addClass("tablet");
-			scrollShowHide("scroll");
-		} else if(w_size <= deviceSize.mobile 
-		&& !$html.hasClass("mobile")) {
-			$html.removeClass("pc tablet").addClass("mobile");
-			var menu_pos = parseInt($(".mobile-menu-wrap").css("left"));
-			if(menu_pos >= 0) {
-							scrollShowHide("hidden");
-						}
-		}
-	});
+	// $(win).on("resize", function() {
+	// 	var w_size = $(win).width();
+	// 	if(w_size >= deviceSize.pc 
+	// 	&& !$("html").hasClass("pc")) {
+	// 		$html.removeClass("mobile tablet").addClass("pc");
+	// 		scrollShowHide("scroll");
+	// 	} else if(w_size < deviceSize.pc 
+	// 	&& w_size >= deviceSize.tablet 
+	// 	&& !$("html").hasClass("tablet")) {
+	// 		$html.removeClass("mobile pc").addClass("tablet");
+	// 		scrollShowHide("scroll");
+	// 	} else if(w_size <= deviceSize.mobile 
+	// 	&& !$html.hasClass("mobile")) {
+	// 		$html.removeClass("pc tablet").addClass("mobile");
+	// 		var menu_pos = parseInt($(".mobile-menu-wrap").css("left"));
+	// 		if(menu_pos >= 0) {
+	// 						scrollShowHide("hidden");
+	// 					}
+	// 	}
+	// });
 
 	$(function(){
 					$(win).trigger("resize");
