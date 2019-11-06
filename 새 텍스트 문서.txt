@@ -1,7 +1,0 @@
---vue
-https://kr.vuejs.org/
->>CDN
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
-
---react
-https://velopert.com/

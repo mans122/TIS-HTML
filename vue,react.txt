@@ -1,0 +1,26 @@
+==gist token ==
+21367619e30d77d6777f7bbbaa1b0bf5a47319f1
+================
+--vue
+https://kr.vuejs.org/
+>>CDN
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+https://joshua1988.github.io/web-development/vuejs/boost-productivity/
+ESLint
+Formatting Toggle
+jumpy
+indent-rainbow 
+vscode-icons
+#3 Debbuger for chrome
+1) View-in-browser : html 파일을 기본 브라우져로 볼 수 있도록 한다.
+2) vetur : Vue.js 코드에 대한 문법 강조, 코드 자동완성, 디버깅, 린팅 기능들을 제공한다.
+3) html snippets : html 태그 조작을 빠륵 ㅔ작성할 수 있도록 도와준다.
+4) js-css-html formmatters : js, css html의 코드 자동완 성기능을 제공한다. 에디터 창에서 ctrl+sapce
+/5) vue 2 snippets : vue.js 2.0의 콛 ㅡ조작 지원과 문법 강조 기능을 제공한다.
+/6) vue-beautify : vue.js 코드에 대한 정리 배치 기능을 제공한다.
+7) ESLint : 자바 스크립트 코드 스타일, 문법 체크 기능을 제공한다.
+
+--react
+https://velopert.com/
+
