@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,59 +8,66 @@
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
     <script>
-        $(function(){
-            $("#btn1").click(function(){
-                $(".box1").css("background","red")
+        $(function() {
+            $("#btn1").click(function() {
+                $(".box1").css("background", "red")
             });
             $("#btn1").click();
-            $("#btn2").on("click",function(){
-                $(".box1").css("background","green")
+            $("#btn2").on("click", function() {
+                $(".box1").css("background", "green")
             });
             $("#btn3").on({
-                "click":function(){$(".box1").css("background","blue")}
+                "click": function() {
+                    $(".box1").css("background", "blue")
+                }
             });
-            $(".btn1").on("click",function(e){
+            $(".btn1").on("click", function(e) {
                 e.preventDefault(); //링크클릭넘어가는거 방지
-                $(".box1").css({"background":"#ff0"});
+                $(".box1").css({
+                    "background": "#ff0"
+                });
             })
-            $(".btn2").click(function(){
-                location.href="http://www.naver.com";
+            $(".btn2").click(function() {
+                location.href = "http://www.naver.com";
             })
-            $("#btn4").mouseover(function(){
+            $("#btn4").mouseover(function() {
                 alert("식맛");
             });
             $("#btn5").on({
-                "mouseover":function(){alert("식맛");},
-                "mouseout":function(){alert("식맛2");}
+                "mouseover": function() {
+                    alert("식맛");
+                },
+                "mouseout": function() {
+                    alert("식맛2");
+                }
             });
-            $("#btn6").hover(function(){
-                $("body").css("background","olive");
-            },function(){
-                $("body").css("background","white");
+            $("#btn6").hover(function() {
+                $("body").css("background", "olive");
+            }, function() {
+                $("body").css("background", "white");
             });
 
-            $("#id,#pw").on("focus",function(){
-                $(this).css("background","gray");
+            $("#id,#pw").on("focus", function() {
+                $(this).css("background", "gray");
             })
-            $("#id,#pw").on("blur",function(){
-                $(this).css("background","white");
+            $("#id,#pw").on("blur", function() {
+                $(this).css("background", "white");
             })
-            $("#introduce").on("keydown",function(){
+            $("#introduce").on("keydown", function() {
                 console.log($("#introduce").val());
-                if($("#introduce").val().length>=100){
+                if ($("#introduce").val().length >= 100) {
                     alert("죽는다");
                 }
             })
-            $("#title").on("change",function(){
-                console.log($(this).val());
-            })
-            // 검색사이트 바꾸기
-            $("#rel_site").on("chagne",function(){
-                
-                var keyword=$("#keyword").val();
-                if(keyword!="")
-                {
-                location.href=$(this).val()+keyword;
+            $("#title").on("change", function() {
+                    console.log($(this).val());
+                })
+                // 검색사이트 바꾸기
+            $("#rel_site").on("chagne", function() {
+
+                var keyword = $("#keyword").val();
+                if (keyword != "") {
+                    location.href = $(this).val() + keyword;
                 }
             });
             // $("#btnDynamic").click(function(){
@@ -68,15 +76,16 @@
             // $("#box2").on("click","#btnDynamic",function(){
             //     console.log("클릭");
             // });
-            $("#box2").delegate("#btnDynamic","click",function(){
+            $("#box2").delegate("#btnDynamic", "click", function() {
                 console.log("클릭");
             });
 
             $("#box2").append("<button id='btnDynamic'>버튼</button>")
-            
+
         });
     </script>
 </head>
+
 <body>
     <div class="box1">
         <h1>box1</h1>
@@ -94,12 +103,10 @@
     </p>
 
     id
-    <input type="text" id="id"><br>
-    pw
-    <input type="text" id="pw"><br>
-    자기소개 - 최대 100자<br>
-    <textarea id="introduce" cols="50" rows="10"></textarea><br>
-    title<input type="text" id="title">
+    <input type="text" id="id"><br> pw
+    <input type="text" id="pw"><br> 자기소개 - 최대 100자<br>
+    <textarea id="introduce" cols="50" rows="10"></textarea><br> title
+    <input type="text" id="title">
     <br>
 
     <input type="text" id="keyword">
@@ -115,4 +122,5 @@
 
     </div>
 </body>
+
 </html>
