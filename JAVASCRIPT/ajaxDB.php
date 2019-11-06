@@ -1,5 +1,5 @@
 <?php
-header("Content-type:text/xml; charset=utf-8"); 
+header("Content-type:text/html; charset=utf-8"); 
 
 $mysql_hostname = 'localhost';
 $mysql_username = 'mans122';

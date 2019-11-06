@@ -1,58 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
-    <link rel="stylesheet" href="../css/animate.css" />
-    <script>
-        $(function(){
-            $("#btn1").on("click",function(){
-                $("#box1").addClass("on");
-            });
-            $("#btn2").on("click",function(){
-                $("#box1").removeClass("on");
-            });
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+		<link rel="stylesheet" href="../css/animate.css" />
+		<script>
+			$(function() {
+				$("#btn1").on("click", function() {
+					$("#box1").addClass("on");
+				});
+				$("#btn2").on("click", function() {
+					$("#box1").removeClass("on");
+				});
 
-            $("#btn3").on("click",function(){
-                $("#box2").toggleClass("on");
-            });
-            $("#btn4").on("click",function(){
-                // $("#box3").toggleClass("bounce animated");
-                $("#box3").toggleClass("fadeIn animated");
-            });
-        })
-    </script>
-    <style>
-        #box1{
-            transition: 2s;
-            width: 150px;
-            height: 150px;
-            background: red;
-            position: relative;
-        }
-        #box1.on{left: 300px;}
+				$("#btn3").on("click", function() {
+					$("#box2").toggleClass("on");
+				});
+				$("#btn4").on("click", function() {
+					// $("#box3").toggleClass("bounce animated");
+					$("#box3").toggleClass("fadeIn animated");
+				});
+			});
+		</script>
+		<style>
+			#box1 {
+				transition: 2s;
+				width: 150px;
+				height: 150px;
+				background: red;
+				position: relative;
+			}
+			#box1.on {
+				left: 300px;
+			}
 
-        #box2{
-            opacity: 0;
-            transition: 2s;
-        }
-        #box2.on{opacity: 1;}
+			#box2 {
+				opacity: 0;
+				transition: 2s;
+			}
+			#box2.on {
+				opacity: 1;
+			}
 
-        #box3{opacity: 0;}
-        
-    </style>
-</head>
-<body>
-    <div id="box1">dd</div>
-    <button type="button" id="btn1">버튼1</button>
-    <button type="button" id="btn2">버튼2</button>
-    <button type="button" id="btn3">공지사항</button>
-    <div id="box2">jQuery는 공지사항 어쭈구 저쭈구</div>
-    <button type="button" id="btn4">공지사항2</button>
-    <div id="box3">asdjlaskjdlkajklajsd는 공지사항 어쭈구 저쭈구</div>
-    
-</body>
+			#box3 {
+				opacity: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1">dd</div>
+		<button type="button" id="btn1">버튼1</button>
+		<button type="button" id="btn2">버튼2</button>
+		<button type="button" id="btn3">공지사항</button>
+		<div id="box2">jQuery는 공지사항 어쭈구 저쭈구</div>
+		<button type="button" id="btn4">공지사항2</button>
+		<div id="box3">asdjlaskjdlkajklajsd는 공지사항 어쭈구 저쭈구</div>
+	</body>
 </html>

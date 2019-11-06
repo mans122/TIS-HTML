@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
 
-    <script>
-        // $(document).ready(function(){
-        // });
-        $(function(){
-            $("#btn").click(function(){
-                $("h1").addClass("on");
-            });
-            $("#btn2").click(function(){
-                $("h1").removeClass("on");
-            });
-            $("#btn3").click(function(){
-                $("h1").toggleClass("on");
-            });
-        })
-    </script>
-    <style>
-        .on{background: green;}
-    </style>
-</head>
-<body>
-    <h1>jquery</h1>
-    <input type="button" value="add" id="btn">
-    <input type="button" value="remove" id="btn2">
-    <input type="button" value="click" id="btn3">
-</body>
+		<script>
+			// $(document).ready(function(){
+			// });
+			$(function() {
+				$("#btn").click(function() {
+					$("h1").addClass("on");
+				});
+				$("#btn2").click(function() {
+					$("h1").removeClass("on");
+				});
+				$("#btn3").click(function() {
+					$("h1").toggleClass("on");
+				});
+			});
+		</script>
+		<style>
+			.on {
+				background: green;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>jquery</h1>
+		<input type="button" value="add" id="btn" />
+		<input type="button" value="remove" id="btn2" />
+		<input type="button" value="click" id="btn3" />
+	</body>
 </html>

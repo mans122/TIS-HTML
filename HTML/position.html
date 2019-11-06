@@ -1,80 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Position</title>
     <style>
-        *{
-            margin :0;
+        * {
+            margin: 0;
             padding: 0;
         }
-        div{
+
+        div {
             width: 300px;
             height: 300px;
         }
-        #box1{
+
+        #box1 {
             background: red;
         }
-        #box2{
+
+        #box2 {
             background: blue;
             position: absolute;
-            top:20%;
+            top: 20%;
             left: 20%;
         }
-        #box3{
+
+        #box3 {
             background: green;
             position: relative;
             left: 100px;
         }
-        #box4{
+
+        #box4 {
             background: lime;
             position: relative;
             left: 200px;
         }
-        #box5{
+
+        #box5 {
             background: orange;
             position: absolute;
             left: 20px;
             width: 150px;
             height: 150px;
         }
-        #box6{
+
+        #box6 {
             background: purple;
             width: 100%;
             height: 30px;
             position: fixed;
             bottom: 0;
-            right:0;
+            right: 0;
         }
-        #box7{
+
+        #box7 {
             width: 100%;
             height: 50px;
             background: cyan;
             position: sticky;
             top: 0;
         }
-        #box8{
+
+        #box8 {
             width: 100%;
             height: 4000px;
         }
-        div.sticky{
+
+        div.sticky {
             position: sticky;
             top: 0;
             background: powderblue;
         }
     </style>
 </head>
+
 <body>
-        
+
 
     <div id="box1">box1 </div>
     <div id="box2">box2</div>
     <div id="box3">box3</div>
 
     <!-- box grouping -->
-    
+
     <div id="box4">
         box4
         <div id="box5">box5</div>
@@ -85,4 +97,5 @@
     <div id="box8"></div>
     <div id="box9"></div>
 </body>
+
 </html>
