@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>JHB's portfolio</title>
+		<meta name="author" content="Matthew Howell" />
+		<meta name="description" content="fullPage continuous scrolling demo." />
+		<meta name="keywords" content="fullpage,jquery,demo,scroll,loop,continuous" />
+		<meta name="Resource-type" content="Document" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="reset.css" />
+
+		<!-- font awesome CDN-->
+		<script src="https://kit.fontawesome.com/0eb5e3b5fa.js" crossorigin="anonymous"></script>
+		<!-- JQuery -->
+		<script>
+			$(document).ready(function() {
+				// modal
+				$("#modal").click(function() {
+					$(".modal").css("display", "block");
+				});
+				$(".close").click(function() {
+					$(".modal").css("display", "none");
+				});
+
+				$("#menuModal").click(function(event) {
+					if ($(event.target).is("#menuModal")) {
+						$(".modal").css("display", "none");
+					}
+				});
+
+				$(".navbar-toggler").click(function() {});
+
+				// $(window).resize(function() {
+				// 	var width = $(window).width();
+				// 	console.log(width);
+				// 	if (width > 992) {
+				// 	} else if (width <= 768) {
+				// 	}
+				// });
+			});
+		</script>
+
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			ul,
+			li {
+				list-style: none;
+			}
+			.show {
+				display: block;
+			}
+			.hide {
+				display: none;
+			}
+			/* .fullMenu {
+
+			} */
+			/* nav  */
+			.navbar-toggler {
+				left: 10px;
+				top: 10px;
+				display: block !important;
+				font-size: 1.4em;
+			}
+
+			/* full Menu */
+			.modal {
+				display: none; /* Hidden by default */
+				position: fixed; /* Stay in place */
+				z-index: 1; /* Sit on top */
+				left: 0;
+				top: 0;
+				width: 100%; /* Full width */
+				height: 100%; /* Full height */
+				overflow: auto; /* Enable scroll if needed */
+				background-color: rgb(0, 0, 0); /* Fallback color */
+				background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+			}
+			/* Modal Content */
+			.modal-content {
+				background-color: black;
+				color: white;
+				margin: auto;
+				padding: 20px;
+				top: 15%;
+				border: 1px solid #888;
+				width: 300px;
+				font-size: 3em;
+				line-height: 2em;
+			}
+			.modal /* The Close Button */ /* .close {
+				color: #aaaaaa;
+				float: right;
+				font-size: 28px;
+				font-weight: bold;
+			}
+			.close:hover,
+			.close:focus {
+				color: #000;
+				text-decoration: none;
+				cursor: pointer;
+			} */ ;;
+		</style>
+	</head>
+	<body>
+		<!-- nav ---------------------------------------------->
+		<nav class="navbar navbar-expand-md fixed-top">
+			<button id="modal" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+				<span class="fas fa-bars"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav hide">
+					<li class="nav-item"><a class="nav-link" href="#1page">Intro</a></li>
+					<li class="nav-item"><a class="nav-link" href="#2page">Skill</a></li>
+					<li class="nav-item"><a class="nav-link" href="#3page">About</a></li>
+					<li class="nav-item"><a class="nav-link" href="#4page">Projects</a></li>
+					<li class="nav-item"><a class="nav-link" href="#5page">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!--  -->
+		<div id="menuModal" class="modal hide">
+			<div class="modal-content">
+				<ul>
+					<li class="menu">Intro</li>
+					<li class="menu">Skill</li>
+					<li class="menu">About</li>
+					<li class="menu">Projects</li>
+					<li class="menu">Contact</li>
+				</ul>
+			</div>
+		</div>
+		<!-- main contents -->
+		<div id="wrap" style="height: 10000px;">
+			<div id="1page"></div>
+			<div id="2page"></div>
+			<div id="3page"></div>
+			<div id="4page"></div>
+			<div id="5page"></div>
+		</div>
+	</body>
+</html>

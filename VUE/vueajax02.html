@@ -3,15 +3,15 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>webpos-do</title>
+		<title>vueajax03</title>
 		<script src="https://unpkg.com/vue/dist/vue.js"></script>
 	</head>
 
 	<body>
 		<div id="app">
-			<div v-for="products in products">
-				<h3>{{ products.name }}</h3>
-				<p>{{ products.price }}</p>
+			<div v-for="product in products">
+				<h3>{{ product.name }}</h3>
+				<p>{{ product.price }}</p>
 			</div>
 		</div>
 
@@ -24,7 +24,7 @@
 				},
 
 				created() {
-					fetch("http://mans122.dothome.co.kr/test/ajaxDB_2.php")
+					fetch("http://mans122.dothome.co.kr/test/vueajax03DB.php")
 						.then(response => {
 							if (response.ok) {
 								return response.json();
@@ -34,6 +34,7 @@
 						.then(json => {
 							this.products = json;
 							console.log(json);
+							// r객체일때는 push 배열일때는 덮어씌운다
 							// this.posts.push({
 							// 	userId: json.userId,
 							// 	title: json.title,

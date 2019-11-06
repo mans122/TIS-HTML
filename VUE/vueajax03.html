@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>axios</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script>
+			window.onload = function() {
+				var app = new Vue({
+					el: "#app",
+					data: {
+						products: []
+					},
+					methods: {
+						getData: function() {
+							axios
+								.get("http://mans122.dothome.co.kr/test/vueajax03DB.php")
+								.then(response => {
+									this.products = response.data;
+								})
+								.catch(function(e) {
+									console.error(e);
+								});
+						}
+					}
+				});
+				app.getData();
+			};
+		</script>
+	</head>
+
+	<body>
+		<div id="app">
+			<div v-for="product in products">
+				<h3>{{ product.name }}</h3>
+				<p>{{ product.price }}</p>
+			</div>
+		</div>
+		<!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script>
+			var app = new Vue({
+				el: "#app",
+				data: {
+					products: []
+				},
+				methods: {
+					getData: function() {
+						axios
+							.get("http://mans122.dothome.co.kr/test/vueajax03DB.php")
+							.then(response => {
+								this.products = response.data;
+							})
+							.catch(function(e) {
+								console.error(e);
+							});
+					}
+				}
+			});
+			app.getData();
+		</script> -->
+	</body>
+</html>
