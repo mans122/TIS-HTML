@@ -1,56 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-<style>
-    li{list-style: none;}    
-</style>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script>
-function setKeyword(zipcode, address){
-    document.form1.zipcode.value=zipcode;
-    document.form1.address.value=address;
-    // document.getElementById("txtHint").style.display="none";
-}    
-    
-function showHint(str) {
-    console.log(str.length);
-    if (str.length == 0) { 
-        document.getElementById("txtHint").innerHTML = "";
-        return;
-    } else {
-            var output="<table>";
-            var zipcode;
-            var address;
-        
-            $.getJSON("http://mans122.dothome.co.kr/test/addressJson.php?q="+encodeURI(str),function(data){
-                $.each(data,function(key,value){
-                    zipcode=value.zipcode;
-                    address=value.address;
-                    output+="<tr><td>"+zipcode+"</td><td><a href='#' onClick='setKeyword(\""+zipcode+"\",\""+address+"\")'>"+address+"</a></td></tr>";
-                });
-                 output+="</table>";
-                 $("#txtHint").show();
-                 $("#txtHint").html(output); 
-            });
-            
-    }
-}
-    
-$(document).ready(function(){
-      $("#search").keyup(function(){
-          showHint($(this).val());
-      });      
-});
-    
-    
-</script>
-</head>
-<body>
-<form name="form1"> 
-우편번호<input type="text" id="zipcod" name="zipcode"> <br>
-** 주소**<input type="text" id="search" name="address" placeholder="주소를 입력하세요" onkeyup="showHint(this.value)">
-</form>
-<div id="txtHint"></div>
-</body>
+	<head>
+		<meta charset="utf-8" />
+		<style>
+			li {
+				list-style: none;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script>
+			function setKeyword(zipcode, address) {
+				document.form1.zipcode.value = zipcode;
+				document.form1.address.value = address;
+				// document.getElementById("txtHint").style.display="none";
+			}
+
+			function showHint(str) {
+				console.log(str.length);
+				if (str.length == 0) {
+					document.getElementById("txtHint").innerHTML = "";
+					return;
+				} else {
+					var output = "<table>";
+					var zipcode;
+					var address;
+
+					$.getJSON("http://mans122.dothome.co.kr/test/addressJson.php?q=" + encodeURI(str), function(data) {
+						$.each(data, function(key, value) {
+							zipcode = value.zipcode;
+							address = value.address;
+							output += "<tr><td>" + zipcode + "</td><td><a href='#' onClick='setKeyword(\"" + zipcode + '","' + address + "\")'>" + address + "</a></td></tr>";
+						});
+						output += "</table>";
+						$("#txtHint").show();
+						$("#txtHint").html(output);
+					});
+				}
+			}
+
+			$(document).ready(function() {
+				$("#search").keyup(function() {
+					showHint($(this).val());
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<form name="form1">
+			우편번호<input type="text" id="zipcod" name="zipcode" /> <br />
+			** 주소**<input type="text" id="search" name="address" placeholder="주소를 입력하세요" onkeyup="showHint(this.value)" />
+		</form>
+		<div id="txtHint"></div>
+	</body>
 </html>

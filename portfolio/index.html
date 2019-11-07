@@ -17,20 +17,102 @@
 		<!-- JQuery -->
 		<script>
 			$(document).ready(function() {
-				// modal
-				$("#modal").click(function() {
-					$(".modal").css("display", "block");
+				// var scrollTopInfo = $("div").scrollTop();
+				// console.log(scrollTopInfo);
+				$(window).resize(function() {
+					var wwidth = $(window).width();
+					// var wheight = $(window).height();
+					var wheight = $(window).innerHeight();
+					$(".modal")
+						.css("width", wwidth)
+						.css("height", wheight);
+					$(".modal-content").css("height", wheight);
+					$(".page").css("height", wheight);
+					// $("#4page").get(0).scrollIntoView(true);
 				});
-				$(".close").click(function() {
-					$(".modal").css("display", "none");
+				$(window).on("scroll", function() {
+					var sc_top = $(this).scrollTop();
+					console.log(sc_top);
+				});
+
+				// scroll 막기 ===================================================
+				// $("html, body").css({ overflow: "hidden", height: "100%" });
+				// $("#element").on("scroll touchmove mousewheel", function(event) {
+				// 	event.preventDefault();
+				// 	event.stopPropagation();
+				// 	return false;
+				// });
+
+				var elm = ".page";
+				$(elm).each(function(index) {
+					// 개별적으로 Wheel 이벤트 적용
+					$(this).on("mousewheel DOMMouseScroll", function(e) {
+						e.preventDefault();
+						var delta = 0;
+						if (!event) event = window.event;
+						if (event.wheelDelta) {
+							delta = event.wheelDelta / 120;
+							if (window.opera) delta = -delta;
+						} else if (event.detail) delta = -event.detail / 3;
+						var moveTop = $(window).scrollTop();
+						var elmSelecter = $(elm).eq(index);
+						// 마우스휠을 위에서 아래로
+						if (delta < 0) {
+							if ($(elmSelecter).next() != undefined) {
+								try {
+									moveTop = $(elmSelecter)
+										.next()
+										.offset().top;
+								} catch (e) {}
+							}
+							// 마우스휠을 아래에서 위로
+						} else {
+							if ($(elmSelecter).prev() != undefined) {
+								try {
+									moveTop = $(elmSelecter)
+										.prev()
+										.offset().top;
+								} catch (e) {}
+							}
+						}
+						// 화면 이동 0.8초(800)
+						$("html,body")
+							.stop()
+							.animate(
+								{
+									scrollTop: moveTop + "px"
+								},
+								{
+									duration: 800,
+									complete: function() {}
+								}
+							);
+					});
+				});
+				// modal==========================================================================
+				$(".menu span").click(function() {
+					$(this).addClass("active");
+					$(".menu span")
+						.not(this)
+						.removeClass("active");
+				});
+				$("#modal").click(function() {
+					$("#menuModal").css("display", "block");
+					// var wwidth = $(window).width();
+					// var wheight = $(window).height();
+					// $(".modal")
+					// 	.css("width", wwidth)
+					// 	.css("height", wheight);
+					// $(".modal-content").css("height", wheight);
 				});
 
 				$("#menuModal").click(function(event) {
-					if ($(event.target).is("#menuModal")) {
-						$(".modal").css("display", "none");
+					if ($(event.target).is(".menu a") || $(event.target).is("#menuModal")) {
+						$("#menuModal").css("display", "none");
 					}
 				});
 
+				// nav =============================================================================
 				$(".navbar-toggler").click(function() {});
 
 				// $(window).resize(function() {
@@ -40,6 +122,8 @@
 				// 	} else if (width <= 768) {
 				// 	}
 				// });
+
+				$(window).trigger("resize");
 			});
 		</script>
 
@@ -47,6 +131,16 @@
 			* {
 				padding: 0;
 				margin: 0;
+			}
+			button:focus {
+				outline: none;
+				border: none;
+			}
+			a,
+			a:hover,
+			a:link,
+			a:visited {
+				text-decoration: none;
 			}
 			ul,
 			li {
@@ -58,9 +152,13 @@
 			.hide {
 				display: none;
 			}
-			/* .fullMenu {
 
-			} */
+			/* page */
+			.page {
+				margin: 0;
+				padding: 0;
+			}
+
 			/* nav  */
 			.navbar-toggler {
 				left: 10px;
@@ -68,44 +166,59 @@
 				display: block !important;
 				font-size: 1.4em;
 			}
+			.navbar-nav {
+				display: none;
+			}
 
 			/* full Menu */
 			.modal {
-				display: none; /* Hidden by default */
+				/* display: none;  */
+				/* Hidden by default */
+				opacity: 0.9;
 				position: fixed; /* Stay in place */
 				z-index: 1; /* Sit on top */
 				left: 0;
-				top: 0;
 				width: 100%; /* Full width */
 				height: 100%; /* Full height */
 				overflow: auto; /* Enable scroll if needed */
-				background-color: rgb(0, 0, 0); /* Fallback color */
-				background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+				/* background-color: rgb(0, 0, 0);  */
+				/* Fallback color */
+				background-color: rgb(0, 0, 0); /* Black w/ opacity */
 			}
 			/* Modal Content */
 			.modal-content {
+				text-align: center;
 				background-color: black;
+				opacity: 0.9;
 				color: white;
-				margin: auto;
-				padding: 20px;
-				top: 15%;
-				border: 1px solid #888;
-				width: 300px;
+				margin: 0 auto;
+				padding: 0;
+				/* border: 1px solid #888; */
+				width: 30%;
 				font-size: 3em;
 				line-height: 2em;
 			}
-			.modal /* The Close Button */ /* .close {
-				color: #aaaaaa;
-				float: right;
-				font-size: 28px;
-				font-weight: bold;
+			.modal-content ul {
+				margin: auto 0;
 			}
-			.close:hover,
-			.close:focus {
-				color: #000;
-				text-decoration: none;
-				cursor: pointer;
-			} */ ;;
+			.modal-content a {
+				color: white;
+			}
+			.modal span:hover {
+				text-decoration: line-through;
+			}
+			.active {
+				text-decoration: line-through;
+			}
+
+			@media screen and (max-width: 980px) {
+				#menuModal {
+					display: none !important;
+				}
+				.navbar-nav {
+					display: block;
+				}
+			}
 		</style>
 	</head>
 	<body>
@@ -116,7 +229,8 @@
 			</button>
 
 			<div class="collapse navbar-collapse" id="collapsibleNavbar">
-				<ul class="navbar-nav hide">
+				<!-- <ul class="navbar-nav hide"> -->
+				<ul class="navbar-nav">
 					<li class="nav-item"><a class="nav-link" href="#1page">Intro</a></li>
 					<li class="nav-item"><a class="nav-link" href="#2page">Skill</a></li>
 					<li class="nav-item"><a class="nav-link" href="#3page">About</a></li>
@@ -126,24 +240,38 @@
 			</div>
 		</nav>
 		<!--  -->
-		<div id="menuModal" class="modal hide">
+
+		<!-- Web menu modal -->
+		<div id="menuModal" class="modal">
 			<div class="modal-content">
 				<ul>
-					<li class="menu">Intro</li>
-					<li class="menu">Skill</li>
-					<li class="menu">About</li>
-					<li class="menu">Projects</li>
-					<li class="menu">Contact</li>
+					<li class="menu">
+						<span><a href="#1page">Intro</a></span>
+					</li>
+					<li class="menu">
+						<span><a href="#2page">Skill</a></span>
+					</li>
+					<li class="menu">
+						<span><a href="#3page">About</a></span>
+					</li>
+					<li class="menu">
+						<span><a href="#4page">Projects</a></span>
+					</li>
+					<li class="menu">
+						<span><a href="#5page">Contact</a></span>
+					</li>
 				</ul>
 			</div>
 		</div>
+		<!--  -->
+
 		<!-- main contents -->
-		<div id="wrap" style="height: 10000px;">
-			<div id="1page"></div>
-			<div id="2page"></div>
-			<div id="3page"></div>
-			<div id="4page"></div>
-			<div id="5page"></div>
+		<div id="wrap">
+			<div id="1page" class="page">안녕하세요 정한별 입니다.</div>
+			<div id="2page" class="page"><h1>page2</h1></div>
+			<div id="3page" class="page"><h1>page3</h1></div>
+			<div id="4page" class="page"><h1>page4</h1></div>
+			<div id="5page" class="page"><h1>page5</h1></div>
 		</div>
 	</body>
 </html>

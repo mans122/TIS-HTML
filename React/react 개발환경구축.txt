@@ -1,0 +1,24 @@
+https://velopert.com/3621
+
+-- node.js 다운
+https://nodejs.org/ko/download/
+-- yarn 다운
+https://yarnpkg.com/en/docs/install#windows-stable
+
+
+1. node.js 설치
+
+2. yarn 설치
+ npm install -g yarn
+
+3. create-react-app 설치
+ npm install -g create-react-app
+
+4. 프로젝트 생성
+ create-react-app "프로젝트 이름"
+
+5. 프로젝트 실행
+ cd "프로젝트 이름"
+ yarn start
+
+6. editor 설치 visual code 사용
