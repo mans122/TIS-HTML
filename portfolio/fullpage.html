@@ -16,109 +16,178 @@
 
 		<script>
 			$(document).ready(function() {
-				var myFullpage = new fullpage("#fullpage", {
-					sectionsColor: ["#1bbc9b", "#4BBFC3", "#7BAABE", "whitesmoke", "#ccddff"],
-					anchors: ["firstPage", "secondPage", "3rdPage", "4thpage", "lastPage"],
-					menu: "#menu",
+				var myFullpage = new fullpage('#fullpage', {
+					sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+					anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+					menu: '#menu',
 					lazyLoad: true
 				});
-				$("#fullpage").fullpage({
+				$('#fullpage').fullpage({
 					//options here
-					licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
+					licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
 					autoScrolling: true,
 					scrollHorizontally: true
 				});
 				$(window).resize(function() {
+					s;
 					var wwidth = $(window).width();
-					// var wheight = $(window).height();
 					var wheight = $(window).innerHeight();
-					$(".modal")
-						.css("width", wwidth)
-						.css("height", wheight);
-					$(".modal-content").css("height", wheight);
+					$('.modal')
+						.css('width', wwidth)
+						.css('height', wheight);
+					$('.modal-content').css('height', wheight);
 				});
 
-				$(window).trigger("resize");
+				// modal==========================================================================
+				$('.menu span').click(function() {
+					$(this).addClass('on');
+					$('.menu span')
+						.not(this)
+						.removeClass('on');
+				});
+				$('#modal').click(function() {
+					$('#menuModal').css('display', 'block');
+					$('#menu').css('display', 'none');
+				});
+
+				$('#menuModal').click(function(event) {
+					if ($(event.target).is('.menu a') || $(event.target).is('#menuModal')) {
+						$('#menuModal').css('display', 'none');
+						$('#menu').css('display', 'block');
+					}
+				});
+
+				$(window).trigger('resize');
 			});
 		</script>
-		<!-- <script type="text/javascript" src="js/fullpage.js"></script>
-		<script type="text/javascript" src="js/examples.js"></script> -->
-		<!-- <script type="text/javascript">
-			var myFullpage = new fullpage("#fullpage", {
-				sectionsColor: ["#1bbc9b", "#4BBFC3", "#7BAABE", "whitesmoke", "#ccddff"],
-				anchors: ["firstPage", "secondPage", "3rdPage", "4thpage", "lastPage"],
-				menu: "#menu",
-				lazyLoad: true
-			});
-		</script> -->
+
+		<style>
+			/* full Menu */
+			.modal {
+				display: none;
+				/* Hidden by default */
+				opacity: 0.9;
+				position: fixed; /* Stay in place */
+				z-index: 1; /* Sit on top */
+				left: 0;
+				width: 100%; /* Full width */
+				height: 100%; /* Full height */
+				overflow: auto; /* Enable scroll if needed */
+				background-color: rgb(0, 0, 0); /* Black w/ opacity */
+			}
+			/* Modal Content */
+			.modal-content {
+				text-align: center;
+				background-color: black;
+				opacity: 0.9;
+				color: white;
+				margin: 0 auto;
+				padding: 0;
+				/* border: 1px solid #888; */
+				width: 30%;
+				font-size: 3em;
+				line-height: 2em;
+			}
+			.modal-content ul {
+				margin: auto 0 !important;
+			}
+			.modal-content a {
+				color: white;
+			}
+			.modal span:hover {
+				text-decoration: line-through;
+			}
+			.on {
+				text-decoration: line-through;
+			}
+			#fullmenu {
+				margin: auto 0;
+			}
+			button:focus {
+				outline: none;
+				border: none;
+			}
+		</style>
 	</head>
 
 	<body>
 		<!-- Web Nav ----------------------------------->
-		<div id="menuModal" class="modal">
+		<div id="menuModal" class="modal gnb">
 			<div class="modal-content">
-				<ul>
-					<li class="menu">
-						<span><a href="#section0">Intro</a></span>
+				<ul id="fullmenu" class="menu">
+					<li data-menuanchor="firstPage">
+						<span><a href="#firstPage">Intro</a></span>
 					</li>
-					<li class="menu">
-						<span><a href="#section1">Skill</a></span>
+					<li data-menuanchor="secondPage">
+						<span><a href="#secondPage">Skill</a></span>
 					</li>
-					<li class="menu">
-						<span><a href="#section2">About</a></span>
+					<li data-menuanchor="3rdPage">
+						<span><a href="#3rdPage">About</a></span>
 					</li>
-					<li class="menu">
-						<span><a href="#section3">Projects</a></span>
+					<li data-menuanchor="4thPage">
+						<span><a href="#4thpage">Projects</a></span>
 					</li>
-					<li class="menu">
-						<span><a href="#section4">Contact</a></span>
+					<li data-menuanchor="lastPage">
+						<span><a href="#lastPage">Contact</a></span>
 					</li>
 				</ul>
 			</div>
 		</div>
+
 		<!-- Mobile Nav -->
 		<ul id="menu">
-			<button id="modal" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-				<span class="fas fa-bars"></span>
-			</button>
-			<li data-menuanchor="firstPage" class="active"><a href="#firstPage">First slide</a></li>
-			<li data-menuanchor="secondPage"><a href="#secondPage">2nd slide</a></li>
-			<li data-menuanchor="3rdPage"><a href="#3rdPage">3rd slide</a></li>
-			<li data-menuanchor="4thPage"><a href="#4thpage">4th slide</a></li>
-			<li data-menuanchor="lastPage"><a href="#lastPage">5th slide</a></li>
+			<!-- <button id="modal" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+<span class="fas fa-bars"></span>
+</button> -->
+			<li data-menuanchor="firstPage" class="active"><a href="#firstPage">Intro</a></li>
+			<li data-menuanchor="secondPage"><a href="#secondPage">Skill</a></li>
+			<li data-menuanchor="3rdPage"><a href="#3rdPage">About</a></li>
+			<li data-menuanchor="4thPage"><a href="#4thpage">Projects</a></li>
+			<li data-menuanchor="lastPage"><a href="#lastPage">Contact</a></li>
 		</ul>
 
+		<!-- Content ----------------------------------------------------------------------------->
 		<div id="fullpage">
+			<!-- section0 -->
 			<div class="section " id="section0">
 				<h1>Section 1</h1>
 			</div>
-			<div class="section active" id="section1">
+
+			<!-- section1 -->
+			<div class="section" id="section1">
 				<div class="slide" id="slide1">
 					<div class="intro">
 						<h1>Slide 2.1</h1>
 						<iframe data-src="auto-height.html"></iframe>
 					</div>
 				</div>
-				<div class="slide active" id="slide2">
+
+				<div class="slide" id="slide2">
 					<div class="intro">
 						<h1>Slide 2.2</h1>
 					</div>
 				</div>
+
 				<div class="slide" id="slide3">
 					<h1>Slide 2.3</h1>
 				</div>
 			</div>
 
+			<!-- section2 -->
 			<div class="section" id="section2">
 				<div class="intro">
 					<h1>Section 3</h1>
 				</div>
 			</div>
+
+			<!-- section3 -->
 			<div class="section" id="section3">
 				<div class="intro">
 					<h1>Section 4</h1>
 				</div>
 			</div>
+
+			<!-- section4 -->
 			<div class="section" id="section4">
 				<div class="intro">
 					<h1>Section 5</h1>
