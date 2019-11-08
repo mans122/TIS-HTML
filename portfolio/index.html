@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>JHB's portfolio</title>
@@ -37,13 +37,13 @@
 
 				// scroll 막기 ===================================================
 				// $("html, body").css({ overflow: "hidden", height: "100%" });
-				// $("#element").on("scroll touchmove mousewheel", function(event) {
+				// $("body").on("scroll touchmove mousewheel", function(event) {
 				// 	event.preventDefault();
 				// 	event.stopPropagation();
 				// 	return false;
 				// });
 
-				var elm = ".page";
+				var elm = ".section";
 				$(elm).each(function(index) {
 					// 개별적으로 Wheel 이벤트 적용
 					$(this).on("mousewheel DOMMouseScroll", function(e) {
@@ -266,12 +266,12 @@
 		<!--  -->
 
 		<!-- main contents -->
-		<div id="wrap">
-			<div id="1page" class="page">안녕하세요 정한별 입니다.</div>
-			<div id="2page" class="page"><h1>page2</h1></div>
-			<div id="3page" class="page"><h1>page3</h1></div>
-			<div id="4page" class="page"><h1>page4</h1></div>
-			<div id="5page" class="page"><h1>page5</h1></div>
+		<div id="fullpage">
+			<div class="section">안녕하세요 정한별입니다.</div>
+			<div class="section">SKILL</div>
+			<div class="section">ABOUT</div>
+			<div class="section">PROJECTS</div>
+			<div class="section">CONTANCT</div>
 		</div>
 	</body>
 </html>
