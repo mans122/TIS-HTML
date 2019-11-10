@@ -56,7 +56,6 @@
 					$('.modal')
 						.css('width', wwidth)
 						.css('height', wheight);
-
 					// $('.modal-content').css('height', wheight);
 				});
 
@@ -120,14 +119,18 @@
 			.on {
 				text-decoration: line-through;
 			}
-
+			button {
+				margin-left: 15px;
+				margin-top: 15px;
+				width: 50px;
+				height: 50px;
+				z-index: 10;
+			}
 			button:focus {
 				outline: none;
 				border: none;
 			}
-			#menu li {
-				display: none;
-			}
+
 			#section0 {
 				background-image: url(imgs/bg1.jpg);
 			}
@@ -138,7 +141,8 @@
 			}
 			#section1 {
 				/* background-image: url(imgs/bg2.jpg); */
-				padding: 6% 0 0 0;
+				font-size: 1em;
+				padding: 0;
 			}
 			#section2 {
 				background-image: url(imgs/bg3.jpg);
@@ -162,12 +166,22 @@
 				height: 200px !important;
 			}
 
+			/* section 1 */
+
 			@media screen and (max-width: 768px) {
 				#menu li {
 					display: inline-block;
 				}
 				#menu button {
 					display: none;
+				}
+				#section1 h1 {
+					margin-bottom: 50px;
+				}
+				#section1 .row .col-md-4 {
+					margin: 0 auto;
+					width: 30%;
+					margin-bottom: 10px;
 				}
 			}
 		</style>
@@ -221,49 +235,49 @@
 			<div class="section" id="section1">
 				<div class="intro">
 					<h1>저는 이런걸 할줄 압니다.</h1>
-					<div id="curriculumn" class="container-fluid text-center  bg-grey">
+					<div id="curriculumn" class="container-fluid text-center">
 						<div class="container">
 							<div class="row">
-								<div class="col-sm-4">
+								<div class="col-md-4">
 									<i class="fab fa-html5 logo-small"></i>
 									<h4>HTML5</h4>
 								</div>
 
-								<div class="col-sm-4">
+								<div class="col-md-4">
 									<i class="fab fa-css3 logo-small"></i>
 									<h4>CSS3</h4>
 								</div>
-								<div class="col-sm-4">
+								<div class="col-md-4">
 									<i class="fab fa-java logo-small"></i>
 									<h4>Java</h4>
 								</div>
 							</div>
 							<br /><br />
 							<div class="row">
-								<div class="col-sm-4">
+								<div class="col-md-4">
 									<i class="fab fa-js logo-small"></i>
 									<h4>JavaScript</h4>
 								</div>
-								<div class="col-sm-4">
-									<i class="fab fa-node logo-small"></i>
+								<div class="col-md-4">
+									<i class="fab fa-node-js logo-small"></i>
 									<h4>JQuery</h4>
 								</div>
-								<div class="col-sm-4">
+								<div class="col-md-4">
 									<i class="fas fa-database logo-small"></i>
 									<h4>Oracle</h4>
 								</div>
 							</div>
 							<br /><br />
 							<div class="row">
-								<div class="col-sm-4">
+								<div class="col-md-4">
 									<i class="fab fa-vuejs logo-small"></i>
 									<h4>vue.js</h4>
 								</div>
-								<div class="col-sm-4">
+								<div class="col-md-4">
 									<i class="fab fa-react logo-small"></i>
 									<h4>React</h4>
 								</div>
-								<div class="col-sm-4">
+								<div class="col-md-4">
 									<i class="fab fa-node logo-small"></i>
 									<h4>Node.js</h4>
 								</div>
