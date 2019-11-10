@@ -1,41 +1,59 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="ko">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Active Slide - fullPage.js</title>
+		<title>JHB's portfolio</title>
 		<!-- jquery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<!-- bootstrap -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		<!-- font awsome -->
 		<script src="https://kit.fontawesome.com/0eb5e3b5fa.js" crossorigin="anonymous"></script>
+
 		<link rel="stylesheet" type="text/css" href="js/fullpage.css" />
 		<link rel="stylesheet" type="text/css" href="js/examples.css" />
 		<script type="text/javascript" src="js/fullpage.js"></script>
-		<script type="text/javascript" src="js/examples.js"></script>
+		<!-- <script type="text/javascript" src="js/fullpage.extensions.min.js"></script> -->
+		<!-- <script type="text/javascript" src="js/examples.js"></script> -->
 
 		<script>
 			$(document).ready(function() {
-				var myFullpage = new fullpage('#fullpage', {
-					sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
-					anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
-					menu: '#menu',
-					lazyLoad: true
-				});
 				$('#fullpage').fullpage({
 					//options here
 					licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
 					autoScrolling: true,
-					scrollHorizontally: true
+					scrollHorizontally: true,
+					sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#ccdddd', '#ccddff'],
+					anchors: ['intro', 'skill', 'about', 'projects', 'contact'],
+					menu: '#menu',
+					lazyLoad: true,
+					afterLoad: function() {
+						console.log('afterload active: ' + $('.active').index());
+						var index = $('.active').index() - 1;
+						console.log(
+							'span : ' +
+								$('span')
+									.eq(index)
+									.val()
+						);
+						$('.menu span').removeClass('on');
+						$('.menu span')
+							.eq(index)
+							.addClass('on');
+					}
 				});
+				$('.modal').hide();
+				$('#menu li').hide();
 				$(window).resize(function() {
-					s;
 					var wwidth = $(window).width();
 					var wheight = $(window).innerHeight();
+					var height = wheight - $('.modal-content').height();
+					console.log(height);
+
 					$('.modal')
 						.css('width', wwidth)
 						.css('height', wheight);
-					$('.modal-content').css('height', wheight);
+					// $('.modal-content').css('height', wheight);
 				});
 
 				// modal==========================================================================
@@ -46,14 +64,16 @@
 						.removeClass('on');
 				});
 				$('#modal').click(function() {
-					$('#menuModal').css('display', 'block');
-					$('#menu').css('display', 'none');
+					$('.modal').show();
+					// $('#menuModal').css('display', 'block');
+					// $('#menu').css('display', 'none');
+					// $('#menu').hide();
 				});
 
 				$('#menuModal').click(function(event) {
 					if ($(event.target).is('.menu a') || $(event.target).is('#menuModal')) {
 						$('#menuModal').css('display', 'none');
-						$('#menu').css('display', 'block');
+						// $('#menu').show();
 					}
 				});
 
@@ -62,9 +82,20 @@
 		</script>
 
 		<style>
-			/* full Menu */
-			.modal {
+			/* .modal {
 				display: none;
+				opacity: 0.7;
+				position: fixed;
+				z-index: 1;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+				background-color: rgb(0, 0, 0);
+				padding: auto;
+			} */
+			.modal {
+				/* display: none;  */
 				/* Hidden by default */
 				opacity: 0.9;
 				position: fixed; /* Stay in place */
@@ -73,26 +104,32 @@
 				width: 100%; /* Full width */
 				height: 100%; /* Full height */
 				overflow: auto; /* Enable scroll if needed */
+				/* background-color: rgb(0, 0, 0);  */
+				/* Fallback color */
 				background-color: rgb(0, 0, 0); /* Black w/ opacity */
+				/* Modal Content */
 			}
-			/* Modal Content */
 			.modal-content {
 				text-align: center;
 				background-color: black;
 				opacity: 0.9;
 				color: white;
-				margin: 0 auto;
-				padding: 0;
-				/* border: 1px solid #888; */
+				margin: auto;
+				margin-top: 10%;
+				padding: auto;
 				width: 30%;
-				font-size: 3em;
+				height: 400px !important;
+				font-size: 2.3em;
 				line-height: 2em;
+				background: blue;
 			}
-			.modal-content ul {
-				margin: auto 0 !important;
-			}
+
 			.modal-content a {
 				color: white;
+			}
+			#fullmenu {
+				margin: 0 auto;
+				background: red;
 			}
 			.modal span:hover {
 				text-decoration: line-through;
@@ -100,13 +137,19 @@
 			.on {
 				text-decoration: line-through;
 			}
-			#fullmenu {
-				margin: auto 0;
-			}
+
 			button:focus {
 				outline: none;
 				border: none;
 			}
+			/* @media screen and (max-width: 768px) {
+				#menu li {
+					display: inline-block;
+				}
+				#menu button {
+					display: none;
+				}
+			} */
 		</style>
 	</head>
 
@@ -114,21 +157,22 @@
 		<!-- Web Nav ----------------------------------->
 		<div id="menuModal" class="modal gnb">
 			<div class="modal-content">
+				<!-- <ul id="fullmenu" class="menu"> -->
 				<ul id="fullmenu" class="menu">
-					<li data-menuanchor="firstPage">
-						<span><a href="#firstPage">Intro</a></span>
+					<li data-menuanchor="intro">
+						<span class="on"><a href="#intro">Intro</a></span>
 					</li>
-					<li data-menuanchor="secondPage">
-						<span><a href="#secondPage">Skill</a></span>
+					<li data-menuanchor="skill">
+						<span><a href="#skill">Skill</a></span>
 					</li>
-					<li data-menuanchor="3rdPage">
-						<span><a href="#3rdPage">About</a></span>
+					<li data-menuanchor="about">
+						<span><a href="#about">About</a></span>
 					</li>
-					<li data-menuanchor="4thPage">
-						<span><a href="#4thpage">Projects</a></span>
+					<li data-menuanchor="projects">
+						<span><a href="#projects">Projects</a></span>
 					</li>
-					<li data-menuanchor="lastPage">
-						<span><a href="#lastPage">Contact</a></span>
+					<li data-menuanchor="contact">
+						<span><a href="#contact">Contact</a></span>
 					</li>
 				</ul>
 			</div>
@@ -136,20 +180,20 @@
 
 		<!-- Mobile Nav -->
 		<ul id="menu">
-			<!-- <button id="modal" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-<span class="fas fa-bars"></span>
-</button> -->
-			<li data-menuanchor="firstPage" class="active"><a href="#firstPage">Intro</a></li>
-			<li data-menuanchor="secondPage"><a href="#secondPage">Skill</a></li>
-			<li data-menuanchor="3rdPage"><a href="#3rdPage">About</a></li>
-			<li data-menuanchor="4thPage"><a href="#4thpage">Projects</a></li>
-			<li data-menuanchor="lastPage"><a href="#lastPage">Contact</a></li>
+			<button id="modal" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+				<span class="fas fa-bars"></span>
+			</button>
+			<li data-menuanchor="intro" class="active"><a href="#intro">Intro</a></li>
+			<li data-menuanchor="skill"><a href="#skill">Skill</a></li>
+			<li data-menuanchor="about"><a href="#about">About</a></li>
+			<li data-menuanchor="projects"><a href="#projects">Projects</a></li>
+			<li data-menuanchor="contact"><a href="#contact">Contact</a></li>
 		</ul>
 
 		<!-- Content ----------------------------------------------------------------------------->
 		<div id="fullpage">
 			<!-- section0 -->
-			<div class="section " id="section0">
+			<div class="section active" id="section0">
 				<h1>Section 1</h1>
 			</div>
 
@@ -158,7 +202,6 @@
 				<div class="slide" id="slide1">
 					<div class="intro">
 						<h1>Slide 2.1</h1>
-						<iframe data-src="auto-height.html"></iframe>
 					</div>
 				</div>
 
