@@ -29,34 +29,27 @@
 					anchors: ['intro', 'skill', 'about', 'projects', 'contact'],
 					menu: '#menu',
 					lazyLoad: true,
+					navigation: true, //우측 dot nav
+					navigationTooltips: ['Intro', 'Skill', 'About', 'Projects', 'Contact'], //dot nav list name
+					showActiveTooltip: true, //actived dot name show
 					afterLoad: function() {
-						console.log('afterload active: ' + $('.active').index());
 						var index = $('.active').index() - 1;
-						console.log(
-							'span : ' +
-								$('span')
-									.eq(index)
-									.val()
-						);
 						$('.menu span').removeClass('on');
 						$('.menu span')
 							.eq(index)
 							.addClass('on');
 					}
 				});
+
 				$('.modal').hide();
-				// $('.modal').css('display', 'none');
 
 				$(window).resize(function() {
 					var wwidth = $(window).width();
 					var wheight = $(window).innerHeight();
-					var height = wheight - $('.modal-content').height();
-					console.log(height);
 
 					$('.modal')
 						.css('width', wwidth)
 						.css('height', wheight);
-					// $('.modal-content').css('height', wheight);
 				});
 
 				// modal==========================================================================
@@ -68,14 +61,17 @@
 				});
 				$('#modal').click(function() {
 					$('.modal').show();
-					// $('#menu').hide();
+					$('#fp-nav').hide();
+					$('#modal .fas').removeClass('fa-bars');
+					$('#modal .fas').addClass('fa-times');
 				});
 
 				$('#menuModal').click(function(event) {
 					if ($(event.target).is('.menu a') || $(event.target).is('#menuModal')) {
-						// $('#menuModal').css('display', 'none');
-						$('#menuModal').hide();
-						// $('#menu').show();
+						$('#modal .fas').addClass('fa-bars');
+						$('#modal .fas').removeClass('fa-times');
+						$('.modal').hide();
+						$('#fp-nav').show();
 					}
 				});
 
@@ -119,19 +115,26 @@
 			.on {
 				text-decoration: line-through;
 			}
-			button {
-				margin-left: 15px;
-				margin-top: 15px;
-				width: 50px;
-				height: 50px;
+			/* modal Button */
+			#modal {
+				margin-left: 25px;
+				margin-top: 25px;
+				width: 70px;
+				height: 70px;
 				z-index: 10;
+				color: white;
 			}
-			button:focus {
+			#modal span {
+				font-size: 1.5em;
+				z-index: 100;
+			}
+			#modal:focus {
 				outline: none;
 				border: none;
 			}
 
 			#section0 {
+				background-size: cover;
 				background-image: url(imgs/bg1.jpg);
 			}
 			#section0 h1 {
@@ -145,6 +148,7 @@
 				padding: 0;
 			}
 			#section2 {
+				background-size: cover;
 				background-image: url(imgs/bg3.jpg);
 				padding: 6% 0 0 0;
 			}
@@ -153,14 +157,17 @@
 				color: #000;
 			} */
 			#slide1 {
+				background-size: cover;
 				background-image: url(imgs/bg2.jpg);
 				padding: 6% 0 0 0;
 			}
 			#slide2 {
+				background-size: cover;
 				background-image: url(imgs/bg5.jpg);
 				padding: 6% 0 0 0;
 			}
 			#section4 {
+				background-size: cover;
 				background-image: url(imgs/bg5.jpg);
 				color: #000;
 				height: 200px !important;
@@ -179,9 +186,13 @@
 					margin-bottom: 50px;
 				}
 				#section1 .row .col-md-4 {
+					font-size: 0.7em;
 					margin: 0 auto;
 					width: 30%;
 					margin-bottom: 10px;
+				}
+				.col-md-4 h4 {
+					font-size: 0.7em;
 				}
 			}
 		</style>
@@ -190,6 +201,9 @@
 	<body>
 		<!-- Web Nav ----------------------------------->
 		<div id="menuModal" class="modal gnb">
+			<button class="navbar-toggler" type="button">
+				<span class="fas fa-times"></span>
+			</button>
 			<div class="modal-content">
 				<!-- <ul id="fullmenu" class="menu"> -->
 				<ul id="fullmenu" class="menu">
@@ -236,49 +250,53 @@
 				<div class="intro">
 					<h1>저는 이런걸 할줄 압니다.</h1>
 					<div id="curriculumn" class="container-fluid text-center">
-						<div class="container">
+						<div class="container" style="background: lightcoral;">
 							<div class="row">
 								<div class="col-md-4">
-									<i class="fab fa-html5 logo-small"></i>
+									<!-- <i class="fab fa-html5"></i> -->
+									<img src="./imgs/html5.png" alt="HTML5">
 									<h4>HTML5</h4>
 								</div>
 
 								<div class="col-md-4">
-									<i class="fab fa-css3 logo-small"></i>
+									<!-- <i class="fab fa-css3"></i> -->
+									<img src="./imgs/css3.png" alt="HTML5">
 									<h4>CSS3</h4>
 								</div>
 								<div class="col-md-4">
-									<i class="fab fa-java logo-small"></i>
+									<!-- <i class="fab fa-java"></i> -->
+									<img src="./imgs/java.png" alt="HTML5">
 									<h4>Java</h4>
 								</div>
 							</div>
 							<br /><br />
 							<div class="row">
 								<div class="col-md-4">
-									<i class="fab fa-js logo-small"></i>
+									<i class="fab fa-js"></i>
 									<h4>JavaScript</h4>
 								</div>
 								<div class="col-md-4">
-									<i class="fab fa-node-js logo-small"></i>
+									<i class="fab fa-node-jsp"></i>
 									<h4>JQuery</h4>
 								</div>
 								<div class="col-md-4">
-									<i class="fas fa-database logo-small"></i>
+									<i class="fas fa-database"></i>
 									<h4>Oracle</h4>
 								</div>
 							</div>
 							<br /><br />
 							<div class="row">
 								<div class="col-md-4">
-									<i class="fab fa-vuejs logo-small"></i>
+									<!-- <i class="fab fa-vuejs"></i> -->
+									<i class="fab fa-java"></i>
 									<h4>vue.js</h4>
 								</div>
 								<div class="col-md-4">
-									<i class="fab fa-react logo-small"></i>
+									<i class="fab fa-react"></i>
 									<h4>React</h4>
 								</div>
 								<div class="col-md-4">
-									<i class="fab fa-node logo-small"></i>
+									<i class="fab fa-node"></i>
 									<h4>Node.js</h4>
 								</div>
 							</div>
