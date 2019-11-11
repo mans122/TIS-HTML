@@ -51,7 +51,18 @@
 						.css('width', wwidth)
 						.css('height', wheight);
 				});
+				$('#fp-nav ul li a span').click(function(){
+					// $('#fp-nav ul li a.active span')
+					$(this).hide();
+					$('#fp-nav ul li a span').not(this).show();
+				});
+				$('#fp-nav ul li a span').mouseover(function(){
+					// $('#fp-nav ul li a.active span')
+					$(this).hide();
+					$('#fp-nav ul li a span').not(this).show();
+				});
 
+				
 				// modal==========================================================================
 				$('.menu span').click(function() {
 					$(this).addClass('on');

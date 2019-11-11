@@ -103,13 +103,16 @@ html.fp-enabled,
     opacity: 1;
     -webkit-transform: translate3d(0,0,0);
 }
+/* dot nav 위치 */
 #fp-nav.fp-right {
-    right: 17px;
+    /* right: 17px; */
+    left:250px;
+    top: 200px;
 }
 #fp-nav.fp-left {
     left: 17px;
 }
-.fp-slidesNav{
+/* .fp-slidesNav{
     position: absolute;
     z-index: 4;
     opacity: 1;
@@ -119,13 +122,13 @@ html.fp-enabled,
     left: 0 !important;
     right: 0;
     margin: 0 auto !important;
-}
-.fp-slidesNav.fp-bottom {
+} */
+/* .fp-slidesNav.fp-bottom {
     bottom: 17px;
 }
 .fp-slidesNav.fp-top {
     top: 17px;
-}
+} */
 #fp-nav ul,
 .fp-slidesNav ul {
   margin: 0;
@@ -187,6 +190,7 @@ html.fp-enabled,
 #fp-nav ul li .fp-tooltip {
     position: absolute;
     top: -2px;
+    /* left:10px; */
     color: #fff;
     font-size: 14px;
     font-family: arial, helvetica, sans-serif;
