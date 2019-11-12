@@ -23,25 +23,44 @@
 				$('#fullpage').fullpage({
 					//options here
 					licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
+					scrollingSpeed:1100, //스크롤 속도 기본 700
 					autoScrolling: true,
+					// easing:,
+					// fitToSectionDelay:2000,
 					scrollHorizontally: true,
-					sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#ccdddd', '#ccddff'],
+					sectionsColor: ['#000', '#4BBFC3', '#7BAABE', '#ccdddd', '#ccddff'],
 					anchors: ['intro', 'skill', 'about', 'projects', 'contact'],
 					menu: '#menu',
 					lazyLoad: true,
 					navigation: true, //우측 dot nav
 					navigationTooltips: ['Intro', 'Skill', 'About', 'Projects', 'Contact'], //dot nav list name
 					showActiveTooltip: true, //actived dot name show
+					onLeave: function(origin,destination){
+						console.log(destination.index);
+						var origin = origin.index;
+						var index2 = destination.index;
+						$('#fp-nav ul li a').eq(index2).css('opacity','0');
+						$('#fp-nav ul li a').not(':eq(index2)').css('opacity','1');
+						$('.section').eq(index2).css('opacity','1')
+						$('.section').eq(origin).css('opacity','0.3');
+					},
 					afterLoad: function() {
 						var index = $('.active').index() - 1;
+						
 						$('.menu span').removeClass('on');
 						$('.menu span')
 							.eq(index)
 							.addClass('on');
+						// $('#fp-nav ul li a').eq(index).css('opacity','0');
+						// $('#fp-nav ul li a').not(':eq('+index+')').css('opacity','1');
+
+						// $('#fp-nav ul li a').not(eq(index)).css('opacity','1');
+						// $('#fp-nav ul li a.active').not(eq(index)).show();
 					}
 				});
 
 				$('.modal').hide();
+				$('#fp-nav ul li a:active').css('opacity','0');
 
 				$(window).resize(function() {
 					var wwidth = $(window).width();
@@ -51,15 +70,15 @@
 						.css('width', wwidth)
 						.css('height', wheight);
 				});
-				$('#fp-nav ul li a span').click(function(){
-					// $('#fp-nav ul li a.active span')
-					$(this).hide();
-					$('#fp-nav ul li a span').not(this).show();
+				$('#fp-nav ul li a').click(function(){
+					$('#fp-nav ul li').eq($(this)).css('opacity','0');
+					$('#fp-nav ul li').not(this).css('opacity','1');
 				});
-				$('#fp-nav ul li a span').mouseover(function(){
-					// $('#fp-nav ul li a.active span')
-					$(this).hide();
-					$('#fp-nav ul li a span').not(this).show();
+				$('#fp-nav ul li').mouseover(function(){
+					$('#fp-nav ul li a').eq($(this).index()).css('opacity','0');
+				});
+				$('#fp-nav ul li').mouseout(function(){
+					$('#fp-nav ul li a').eq($(this).index()).css('opacity','1');
 				});
 
 				
@@ -73,25 +92,31 @@
 				$('#modal').click(function() {
 					$('.modal').show();
 					$('#fp-nav').hide();
-					$('#modal .fas').removeClass('fa-bars');
-					$('#modal .fas').addClass('fa-times');
+					$("#modal").css("background-image", "url(imgs/timess.png)"); 
+					
 				});
 
 				$('#menuModal').click(function(event) {
 					if ($(event.target).is('.menu a') || $(event.target).is('#menuModal')) {
-						$('#modal .fas').addClass('fa-bars');
-						$('#modal .fas').removeClass('fa-times');
+						$("#modal").css("background-image", "url(imgs/btn_allmenu.png)"); 
 						$('.modal').hide();
 						$('#fp-nav').show();
 					}
 				});
-
+				
 				$(window).trigger('resize');
 			});
 		</script>
 
 		<style>
 			/* Web menu */
+			
+			.section{
+			-webkit-transition: opacity 0.2s ease-in;
+    		transition: opacity 0.8s ease-in;
+			opacity: 0.3;
+			}
+			#section0 {opacity: 1;}
 			.modal {
 				opacity: 0.9;
 				position: fixed; /* Stay in place */
@@ -128,12 +153,23 @@
 			}
 			/* modal Button */
 			#modal {
-				margin-left: 25px;
-				margin-top: 25px;
-				width: 70px;
-				height: 70px;
+				line-height: 1;
+				border: 1px solid transparent;
+				background: url(imgs/btn_allmenu.png);
+				background-position: 0px 0px;
+				margin-left: 40px;
+				margin-top: 35px;
+				width: 39px;
+				height: 50px;
 				z-index: 10;
 				color: white;
+				padding: 0;
+			}
+			#modal:focus{
+				outline: 0;
+				border: none;
+				box-shadow: none;
+				text-decoration: none;
 			}
 			#modal span {
 				font-size: 1.5em;
@@ -144,10 +180,7 @@
 				border: none;
 			}
 
-			#section0 {
-				background-size: cover;
-				background-image: url(imgs/bg1.jpg);
-			}
+			/* #section0 {} */
 			#section0 h1 {
 				top: 10%;
 				transform: translateY(-50%);
@@ -187,12 +220,8 @@
 			/* section 1 */
 
 			@media screen and (max-width: 768px) {
-				#menu li {
-					display: inline-block;
-				}
-				#menu button {
-					display: none;
-				}
+				/* #menu li {display: inline-block;} */
+				/* #menu button {display: none;} */
 				#section1 h1 {
 					margin-bottom: 50px;
 				}
@@ -239,8 +268,10 @@
 
 		<!-- Mobile Nav -->
 		<ul id="menu">
-			<button id="modal" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-				<span class="fas fa-bars"></span>
+			<!-- <button id="modal" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> -->
+			<button id="modal">
+				<!-- <span class="fas fa-bars"></span> -->
+				<!-- <span><i id="menuimg"></i></span> -->
 			</button>
 			<li data-menuanchor="intro" class="active"><a href="#intro">Intro</a></li>
 			<li data-menuanchor="skill"><a href="#skill">Skill</a></li>
@@ -253,15 +284,16 @@
 		<div id="fullpage">
 			<!-- section0 -->
 			<div class="section active" id="section0">
-				<h1>메인화면</h1>
+				<h1>JUNG HAN BYUL's <br>
+					<b>PORTFOLIO</b></h1>
 			</div>
 
 			<!-- section1 -->
 			<div class="section" id="section1">
 				<div class="intro">
-					<h1>저는 이런걸 할줄 압니다.</h1>
+					<h1>활용 능력</h1>
 					<div id="curriculumn" class="container-fluid text-center">
-						<div class="container" style="background: lightcoral;">
+						<div class="container">
 							<div class="row">
 								<div class="col-md-4">
 									<!-- <i class="fab fa-html5"></i> -->

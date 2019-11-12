@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Layout04</title>
+    <style>
+        *{margin:0;padding:0;}
+        body{
+            background-color: #4C320D;
+        }
+        #wrap{
+            width: 800px;
+            margin: auto;
+        }
+        #top{
+            width:800px;
+            height:10px;
+            background-image: url("img/top.jpg");
+        }
+        #header{
+            width: 800px;
+            height: 100px;
+            background-image: url("img/header.jpg");
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        #menu{
+            width: 800px;
+            height: 30px;
+            background-image: url("img/menu.jpg");
+            padding-left: 15px;
+            
+        }
+        #content{
+            width: 800px;
+            height: 500px;
+            background-image: url("img/content.jpg");
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #bottom{
+            width: 800px;
+            height: 20px;
+            background-image: url("img/bottom.jpg");
+        }
+        #left{
+            width: 650px;
+            float: left;
+        }
+        #footer{
+            width: 800px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="top"></div>
+        <div id="header">
+            <h1>TIS정보기술교육센터</h1>
+        </div>
+        <div id="menu">
+            회사소개 | 회사연혁 | 과정소개 | Contact
+        </div>
+        <div id="content">
+            <div id="left">
+                <h3>TIS정보기술센터 소개</h3>
+                <img src="img/title.png" alt="교육원소개">
+            </div>
+            <div id="right">
+                <ul>
+                    <li>E-mail</li>
+                    <li>Board</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+        <div id="bottom"></div>
+        <div id="footer">
+            &copy;TIS.EDU All rights reserved
+        </div>
+    </div>
+</body>
+</html>
