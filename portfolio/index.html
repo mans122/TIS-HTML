@@ -1,455 +1,552 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>JHB's portfolio</title>
-    <!-- jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- bootstrap -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <!-- font awsome -->
-    <script
-      src="https://kit.fontawesome.com/0eb5e3b5fa.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://fonts.googleapis.com/css?family=Jua&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Photorama -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="js/fullpage.css" />
-    <link rel="stylesheet" type="text/css" href="js/examples.css" />
-    <script type="text/javascript" src="js/fullpage.js"></script>
-    <!-- <script type="text/javascript" src="js/fullpage.extensions.min.js"></script> -->
-    <!-- <script type="text/javascript" src="js/examples.js"></script> -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>JHB's portfolio</title>
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <!-- font awsome -->
+  <script src="https://kit.fontawesome.com/0eb5e3b5fa.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet" />
+  <!-- carousel -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
-    <script>
-      $(document).ready(function() {
-        $("#fullpage").fullpage({
-          //options here
-          licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
-          scrollingSpeed: 1100, //스크롤 속도 기본 700
-          autoScrolling: true,
-          // easing:,
-          // fitToSectionDelay:2000,
-          scrollHorizontally: false,
-          sectionsColor: ["#000", "#4BBFC3", "#7BAABE", "#ccdddd", "#ccddff"],
-          anchors: ["intro", "skill", "about", "projects", "contact"],
-          menu: "#menu",
-          lazyLoad: true,
-          navigation: true, //우측 dot nav
-          navigationTooltips: [
-            "Intro",
-            "Skill",
-            "About",
-            "Projects",
-            "Contact"
-          ], //dot nav list name
-          showActiveTooltip: true, //actived dot name show
-          onLeave: function(origin, destination) {
-            console.log(destination.index);
-            var origin = origin.index;
-            var index2 = destination.index;
-            $("#fp-nav ul li a")
-              .eq(index2)
-              .css("opacity", "0");
-            $("#fp-nav ul li a")
-              .not(":eq(index2)")
-              .css("opacity", "1");
-            $(".section")
-              .eq(index2)
-              .css("opacity", "1");
-            $(".section")
-              .eq(origin)
-              .css("opacity", "0.3");
-          },
-          afterLoad: function() {
-            var index = $(".active").index() - 1;
+  <!-- fullpage -->
+  <link rel="stylesheet" type="text/css" href="js/fullpage.css" />
+  <link rel="stylesheet" type="text/css" href="js/examples.css" />
+  <script type="text/javascript" src="js/fullpage.js"></script>
+  <!-- <script type="text/javascript" src="js/fullpage.extensions.min.js"></script> -->
+  <!-- <script type="text/javascript" src="js/examples.js"></script> -->
 
-            $(".menu span").removeClass("on");
-            $(".menu span")
-              .eq(index)
-              .addClass("on");
-            // $('#fp-nav ul li a').eq(index).css('opacity','0');
-            // $('#fp-nav ul li a').not(':eq('+index+')').css('opacity','1');
-
-            // $('#fp-nav ul li a').not(eq(index)).css('opacity','1');
-            // $('#fp-nav ul li a.active').not(eq(index)).show();
-          }
-        });
-
-        $(".modal").hide();
-        $("#fp-nav ul li a:active").css("opacity", "0");
-
-        $(window).resize(function() {
-          var wwidth = $(window).width();
-          var wheight = $(window).innerHeight();
-
-          $(".modal")
-            .css("width", wwidth)
-            .css("height", wheight);
-        });
-        $("#fp-nav ul li a").click(function() {
-          $("#fp-nav ul li")
-            .eq($(this))
-            .css("opacity", "0");
-          $("#fp-nav ul li")
-            .not(this)
-            .css("opacity", "1");
-        });
-        $("#fp-nav ul li").mouseover(function() {
+  <script>
+    $(document).ready(function () {
+      $("#fullpage").fullpage({
+        //options here
+        licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
+        scrollingSpeed: 1100, //스크롤 속도 기본 700
+        autoScrolling: true,
+        // easing:,
+        // fitToSectionDelay:2000,
+        scrollHorizontally: false,
+        sectionsColor: ["#000", "#FFF", "#7BAABE", "#ccdddd", "#ccddff"],
+        anchors: ["intro", "skill", "about", "projects", "contact"],
+        menu: "#menu",
+        lazyLoad: true,
+        navigation: true, //우측 dot nav
+        navigationTooltips: [
+          "Intro",
+          "Skill",
+          "About",
+          "Projects",
+          "Contact"
+        ], //dot nav list name
+        showActiveTooltip: true, //actived dot name show
+        onLeave: function (origin, destination) {
+          var origin = origin.index;
+          var index2 = destination.index;
           $("#fp-nav ul li a")
-            .eq($(this).index())
+            .eq(index2)
             .css("opacity", "0");
-        });
-        $("#fp-nav ul li").mouseout(function() {
           $("#fp-nav ul li a")
-            .eq($(this).index())
+            .not(":eq(index2)")
             .css("opacity", "1");
-        });
+          $(".section")
+            .eq(index2)
+            .css("opacity", "1");
+          $(".section")
+            .eq(origin)
+            .css("opacity", "0.3");
+        },
+        afterLoad: function () {
+          var index = $(".active").index() - 1;
 
-        // modal==========================================================================
-        $(".menu span").click(function() {
-          $(this).addClass("on");
+          $(".menu span").removeClass("on");
           $(".menu span")
-            .not(this)
-            .removeClass("on");
-        });
-        $("#modal").click(function() {
-          $(".modal").show();
-          $("#fp-nav").hide();
-          $("#modal").css("background-image", "url(imgs/timess.png)");
-        });
-
-        $("#menuModal").click(function(event) {
-          if (
-            $(event.target).is(".menu a") ||
-            $(event.target).is("#menuModal")
-          ) {
-            $("#modal").css("background-image", "url(imgs/btn_allmenu.png)");
-            $(".modal").hide();
-            $("#fp-nav").show();
-          }
-        });
-
-        $(window).trigger("resize");
+            .eq(index)
+            .addClass("on");
+        }
       });
-    </script>
 
-    <style>
-      /* Web menu */
+      $(".modal").hide();
+      $("#fp-nav ul li a:active").css("opacity", "0");
 
-      .section {
-        -webkit-transition: opacity 0.2s ease-in;
-        transition: opacity 0.8s ease-in;
-        opacity: 0.3;
-      }
-      #section0 {
-        opacity: 1;
-      }
-      .modal {
-        opacity: 0.9;
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        left: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0, 0, 0); /* Black w/ opacity */
-      }
-      .modal-content {
-        text-align: center;
-        background-color: black;
-        opacity: 0.9;
-        color: white;
-        margin: auto;
-        margin-top: 10%;
-        padding: auto;
+      $(window).resize(function () {
+        var wwidth = $(window).width();
+        var wheight = $(window).innerHeight();
+
+        $(".modal")
+          .css("width", wwidth)
+          .css("height", wheight);
+
+
+        console.log(wwidth);
+
+      });
+      $("#fp-nav ul li a").click(function () {
+        $("#fp-nav ul li")
+          .eq($(this))
+          .css("opacity", "0");
+        $("#fp-nav ul li")
+          .not(this)
+          .css("opacity", "1");
+      });
+      $("#fp-nav ul li").mouseover(function () {
+        $("#fp-nav ul li a")
+          .eq($(this).index())
+          .css("opacity", "0");
+      });
+      $("#fp-nav ul li").mouseout(function () {
+        $("#fp-nav ul li a")
+          .eq($(this).index())
+          .css("opacity", "1");
+      });
+
+      // modal==========================================================================
+      $(".menu span").click(function () {
+        $(this).addClass("on");
+        $(".menu span")
+          .not(this)
+          .removeClass("on");
+      });
+      $("#modal").click(function () {
+        $(".modal").show();
+        $("#fp-nav").hide();
+        $("#modal").css("background-image", "url(imgs/timess.png)");
+      });
+
+      $("#menuModal").click(function (event) {
+        if (
+          $(event.target).is(".menu a") ||
+          $(event.target).is("#menuModal")
+        ) {
+          $("#modal").css("background-image", "url(imgs/btn_allmenu.png)");
+          $(".modal").hide();
+          $("#fp-nav").show();
+        }
+      });
+
+      $(window).trigger("resize");
+    });
+  </script>
+
+  <style>
+    /* Web menu */
+
+    .section {
+      -webkit-transition: opacity 0.2s ease-in;
+      transition: opacity 0.8s ease-in;
+      opacity: 0.5;
+    }
+    #section0 {
+      opacity: 1;
+    }
+
+    .modal {
+      opacity: 0.9;
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      left: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Black w/ opacity */
+    }
+
+    .modal-content {
+      text-align: center;
+      background-color: black;
+      opacity: 0.9;
+      color: white;
+      margin: auto;
+      margin-top: 10%;
+      padding: auto;
+      width: 30%;
+      height: 400px !important;
+      font-size: 2.8em;
+      line-height: 2em;
+    }
+
+    .modal-content a {
+      color: white;
+      text-decoration-line: none;
+    }
+
+    .modal span:hover {
+      text-decoration: line-through;
+    }
+
+    .on {
+      text-decoration: line-through;
+    }
+
+    /* modal Button */
+    #modal {
+      line-height: 1;
+      border: 1px solid transparent;
+      background: url(imgs/btn_allmenu.png);
+      background-position: 0px 0px;
+      margin-left: 50px;
+      margin-top: 70px;
+      width: 39px;
+      height: 50px;
+      z-index: 10;
+      color: white;
+      padding: 0;
+    }
+
+    #modal:focus {
+      outline: 0;
+      border: none;
+      box-shadow: none;
+      text-decoration: none;
+    }
+
+    #modal span {
+      font-size: 1.5em;
+      z-index: 100;
+    }
+
+    #modal:focus {
+      outline: none;
+      border: none;
+    }
+
+    /* Section 설정 */
+
+
+    /* #section0 {} */
+    #section0 h1 {
+      opacity: 0.7;
+      color: white;
+      top: 10%;
+      transform: translateY(-50%);
+      position: relative;
+    }
+
+    #section0 h1 b {
+      font-size: 1.6em;
+    }
+
+    /* section1 */
+    #section1 {
+      /* background-image: url(imgs/bg2.jpg); */
+      font-size: 1em;
+      padding: 0;
+    }
+    #section1 h1{
+      margin-bottom: 5%;
+      
+    }
+    #section1 .col-md-4 img {
+      max-width: 128px;
+      max-height: 128px;
+
+    }
+    /* #section1 .col-md-3 {width: 22% !important;} */
+    #section1 .col-md-3 img {
+      max-width: 100px;
+      max-height: 100px;
+
+    }
+
+    #section2 {
+      /* background-size: cover; */
+      /* background-image: url(imgs/bg3.jpg); */
+      padding: 6% 0 0 0;
+    }
+
+    /* #section3 {} */
+
+    #section3 .container-fluid {
+      /* background: pink; */
+      height: 100%;
+      padding-top: 0px;
+      padding-bottom: 0;
+    }
+
+    #section3 .container {
+      /* background: green; */
+      margin: 0 auto;
+      width: 80%;
+      height: 100%;
+      padding-bottom: 5%;
+    }
+
+    .carousel-inner img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .carousel-indicators { margin-bottom: 20%; }
+
+    .pjname {
+      width: 100%;
+      height: 100%;
+      /* background: blue; */
+      font-size: 1.4em;
+    }
+
+    .pjskills {
+      width: 100%;
+      height: 150px;
+      /* background: red; */
+    }
+    .pjskills img { }
+
+    .carousel-control-prev {top: 35%; width: 10%; height: 20%; }
+    .carousel-control-next { top: 35%; width: 10%; height: 20%; }
+
+    /* #slide1 { padding: 6% 0 0 0; }
+    #slide1 div { margin: auto; }
+    #slide2 {padding: 6% 0 0 0;} */
+
+    #section4 {color: #000;height: 400px !important;}
+
+    @media screen and (max-width: 768px) {
+      #section1 h1 { margin-bottom: 50px; }
+
+      #section1 .row .col-md-4 {
+        font-size: 0.7em;
+        margin: 0 auto;
         width: 30%;
-        height: 400px !important;
-        font-size: 2.8em;
-        line-height: 2em;
+        margin-bottom: 10px;
       }
 
-      .modal-content a {
-        color: white;
-        text-decoration-line: none;
-      }
-      .modal span:hover {
-        text-decoration: line-through;
-      }
-      .on {
-        text-decoration: line-through;
-      }
-      /* modal Button */
-      #modal {
-        line-height: 1;
-        border: 1px solid transparent;
-        background: url(imgs/btn_allmenu.png);
-        background-position: 0px 0px;
-        margin-left: 50px;
-        margin-top: 70px;
-        width: 39px;
-        height: 50px;
-        z-index: 10;
-        color: white;
-        padding: 0;
-      }
-      #modal:focus {
-        outline: 0;
-        border: none;
-        box-shadow: none;
-        text-decoration: none;
-      }
-      #modal span {
-        font-size: 1.5em;
-        z-index: 100;
-      }
-      #modal:focus {
-        outline: none;
-        border: none;
-      }
+      .col-md-4 h4 { font-size: 0.7em; }
+    }
+  </style>
+</head>
 
-      /* Section 설정 */
-      .container {
-        margin-top: 100px;
-      }
-      .row {
-        padding: 0 100px;
-        margin-bottom: 0;
-      }
-      .row img {
-        width: 128px;
-        height: 128px;
-      }
+<body>
+  <!-- Web Nav ----------------------------------->
+  <div id="menuModal" class="modal gnb">
+    <button class="navbar-toggler" type="button">
+      <span class="fas fa-times"></span>
+    </button>
+    <div class="modal-content">
+      <!-- <ul id="fullmenu" class="menu"> -->
+      <ul id="fullmenu" class="menu">
+        <li data-menuanchor="intro">
+          <span class="on"><a href="#intro">Intro</a></span>
+        </li>
+        <li data-menuanchor="skill">
+          <span><a href="#skill">Skill</a></span>
+        </li>
+        <li data-menuanchor="about">
+          <span><a href="#about">About</a></span>
+        </li>
+        <li data-menuanchor="projects">
+          <span><a href="#projects">Projects</a></span>
+        </li>
+        <li data-menuanchor="contact">
+          <span><a href="#contact">Contact</a></span>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-      /* #section0 {} */
-      #section0 h1 {
-        opacity: 0.7;
-        color: white;
-        top: 10%;
-        transform: translateY(-50%);
-        position: relative;
-      }
-      #section0 h1 b {
-        font-size: 1.6em;
-      }
-      #section1 {
-        /* background-image: url(imgs/bg2.jpg); */
-        font-size: 1em;
-        padding: 0;
-      }
-      #section2 {
-        /* background-size: cover; */
-        /* background-image: url(imgs/bg3.jpg); */
-        padding: 6% 0 0 0;
-      }
-      #section3 {
-        padding: 6% 0 0 0;
-      }
-      /* 포토라마 */
-      #fotorama {
-      }
-      /* #fotorama img {} */
-      #slide1 {
-        /* background-size: cover;
-        background-image: url(imgs/bg2.jpg); */
-        padding: 6% 0 0 0;
-      }
-      #slide1 div {
-        margin: auto;
-      }
-      #slide2 {
-        /* background-size: cover;
-        background-image: url(imgs/bg5.jpg); */
-        padding: 6% 0 0 0;
-      }
-      #section4 {
-        /* background-size: cover;
-        background-image: url(imgs/bg5.jpg); */
-        color: #000;
-        height: 400px !important;
-      }
+  <!-- Mobile Nav -->
+  <ul id="menu">
+    <!-- <button id="modal" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> -->
+    <button id="modal">
+      <!-- <span class="fas fa-bars"></span> -->
+      <!-- <span><i id="menuimg"></i></span> -->
+    </button>
+    <li data-menuanchor="intro" class="active"><a href="#intro">Intro</a></li>
+    <li data-menuanchor="skill"><a href="#skill">Skill</a></li>
+    <li data-menuanchor="about"><a href="#about">About</a></li>
+    <li data-menuanchor="projects"><a href="#projects">Projects</a></li>
+    <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
+  </ul>
 
-      /* section 1 */
-
-      @media screen and (max-width: 768px) {
-        /* #menu li {display: inline-block;} */
-        /* #menu button {display: none;} */
-        #section1 h1 {
-          margin-bottom: 50px;
-        }
-        #section1 .row .col-md-4 {
-          font-size: 0.7em;
-          margin: 0 auto;
-          width: 30%;
-          margin-bottom: 10px;
-        }
-        .col-md-4 h4 {
-          font-size: 0.7em;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- Web Nav ----------------------------------->
-    <div id="menuModal" class="modal gnb">
-      <button class="navbar-toggler" type="button">
-        <span class="fas fa-times"></span>
-      </button>
-      <div class="modal-content">
-        <!-- <ul id="fullmenu" class="menu"> -->
-        <ul id="fullmenu" class="menu">
-          <li data-menuanchor="intro">
-            <span class="on"><a href="#intro">Intro</a></span>
-          </li>
-          <li data-menuanchor="skill">
-            <span><a href="#skill">Skill</a></span>
-          </li>
-          <li data-menuanchor="about">
-            <span><a href="#about">About</a></span>
-          </li>
-          <li data-menuanchor="projects">
-            <span><a href="#projects">Projects</a></span>
-          </li>
-          <li data-menuanchor="contact">
-            <span><a href="#contact">Contact</a></span>
-          </li>
-        </ul>
-      </div>
+  <!-- Content ----------------------------------------------------------------------------->
+  <div id="fullpage">
+    <!-- section0 -->
+    <div class="section active" id="section0">
+      <h1>
+        JUNG HAN BYUL's <br />
+        <b>PORTFOLIO</b>
+      </h1>
     </div>
 
-    <!-- Mobile Nav -->
-    <ul id="menu">
-      <!-- <button id="modal" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> -->
-      <button id="modal">
-        <!-- <span class="fas fa-bars"></span> -->
-        <!-- <span><i id="menuimg"></i></span> -->
-      </button>
-      <li data-menuanchor="intro" class="active"><a href="#intro">Intro</a></li>
-      <li data-menuanchor="skill"><a href="#skill">Skill</a></li>
-      <li data-menuanchor="about"><a href="#about">About</a></li>
-      <li data-menuanchor="projects"><a href="#projects">Projects</a></li>
-      <li data-menuanchor="contact"><a href="#contact">Contact</a></li>
-    </ul>
-
-    <!-- Content ----------------------------------------------------------------------------->
-    <div id="fullpage">
-      <!-- section0 -->
-      <div class="section active" id="section0">
-        <h1>
-          JUNG HAN BYUL's <br />
-          <b>PORTFOLIO</b>
-        </h1>
-      </div>
-
-      <!-- section1 -->
-      <div class="section" id="section1">
-        <div class="intro">
-          <h1>활용 능력</h1>
-          <div id="curriculumn" class="container-fluid text-center">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-4">
-                  <img src="./imgs/html5.png" alt="html5" />
-                  <h4>HTML5</h4>
-                </div>
-
-                <div class="col-md-4">
-                  <img src="./imgs/css3.png" alt="css3" />
-                  <h4>CSS3</h4>
-                </div>
-                <div class="col-md-4">
-                  <img src="./imgs/java.png" alt="java" />
-                  <h4>Java</h4>
-                </div>
+    <!-- section1 -->
+    <div class="section" id="section1">
+      <div class="intro">
+        <h1>활용 능력</h1>
+        <div id="curriculumn" class="container-fluid text-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-3">
+                <img src="./imgs/html5.png" alt="html5" />
+                <h4>HTML5</h4>
               </div>
-              <br /><br />
-              <div class="row">
-                <div class="col-md-4">
-                  <img src="./imgs/js.png" alt="js" />
-                  <h4>JavaScript</h4>
-                </div>
-                <div class="col-md-4">
-                  <img src="./imgs/jquery.png" alt="js" />
-                  <h4>JQuery</h4>
-                </div>
-                <div class="col-md-4">
-                  <img src="./imgs/database.png" alt="js" />
-                  <h4>Oracle</h4>
-                </div>
+              <div class="col-md-3">
+                <img src="./imgs/css3.png" alt="css3" />
+                <h4>CSS3</h4>
               </div>
-              <br /><br />
-              <div class="row">
-                <div class="col-md-4">
-                  <img src="./imgs/vue.png" alt="vue" />
-                  <h4>vue.js</h4>
-                </div>
-                <div class="col-md-4">
-                  <img src="./imgs/react.png" alt="react" />
-                  <h4>React</h4>
-                </div>
-                <div class="col-md-4">
-                  <img src="./imgs/node.png" alt="react" />
-                  <h4>Node.js</h4>
-                </div>
+              <div class="col-md-3">
+                <img src="./imgs/java.png" alt="java" />
+                <h4>Java</h4>
+              </div>
+              <div class="col-md-3">
+                  <img src="./imgs/jsp2.png" alt="java" />
+                  <h4>JSP</h4>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-md-3">
+                <img src="./imgs/js.png" alt="js" />
+                <h4>JavaScript</h4>
+              </div>
+              <div class="col-md-3">
+                <img src="./imgs/jquery.png" alt="js" />
+                <h4>JQuery</h4>
+              </div>
+              <div class="col-md-3">
+                <img src="./imgs/database.png" alt="js" />
+                <h4>Oracle</h4>
+              </div>
+              <div class="col-md-3">
+                  <img src="./imgs/spring.png" alt="js" />
+                  <h4>spring</h4>
+              </div>
+            </div>
+            <br /><br />
+            <div class="row">
+              <div class="col-md-3">
+                <img src="./imgs/vue.png" alt="vue" />
+                <h4>vue.js</h4>
+              </div>
+              <div class="col-md-3">
+                <img src="./imgs/react.png" alt="react" />
+                <h4>React</h4>
+              </div>
+              <div class="col-md-3">
+                <img src="./imgs/node.png" alt="react" />
+                <h4>Node.js</h4>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- section2 -->
-      <div class="section" id="section2">
-        <div class="intro">
-          <h1>About</h1>
-        </div>
-      </div>
-
-      <!-- section3 -->
-      <div class="section" id="section3">
-        <!-- <div class="slide" id="slide1"> -->
-        <!-- <div class="intro"> -->
-        <!-- <h1>Projects</h1> -->
-        <!-- Add images to <div class="fotorama"></div> -->
-        <div
-          class="fotorama"
-          style="width:50%; height: 500px; position: absolute;"
-        >
-          <img src="./imgs/bg1.jpg" />
-          <img src="./imgs/bg2.jpg" />
-        </div>
-        <!-- </div> -->
-      </div>
-
-      <!-- <div class="slide" id="slide2">
-          <div class="intro">
-            <h1>Slide 2.2</h1>
-          </div>
-        </div>
-
-        <div class="slide" id="slide3">
-          <h1>Slide 2.3</h1>
-        </div>
-      </div> -->
-
-      <!-- section4 -->
-      <div class="section fp-auto-height" id="section4">
-        <div class="intro">
-          <h1>Contact</h1>
-        </div>
+    <!-- section2 -->
+    <div class="section" id="section2">
+      <div class="intro">
+        <h1>About</h1>
       </div>
     </div>
-  </body>
+
+    <!-- section3 -->
+    <div class="section" id="section3">
+      <div class="container-fluid">
+        <div class="container">
+          <!-- row  -->
+          <div class="row">
+            <div class="col-md-1" style="height:100% ; background: black;">
+              d
+            </div>
+            <div class="col-md-10">
+              <div id="demo" class="carousel slide" data-ride="carousel">
+
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                    <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                        <li data-target="#demo" data-slide-to="3"></li>
+                        <li data-target="#demo" data-slide-to="4"></li>
+                        <li data-target="#demo" data-slide-to="5"></li>
+                      </ul>
+                  <div class="carousel-item active">
+                    <div class="pjname"><span><h1>LINCOLN 사이트</h1></span></div>
+                    <a href="http://mans122.dothome.co.kr/lincoln" target="_blank"><img src="./imgs/bg2.jpg" alt="LINCOLN DEMO" /></a>
+                    <div class="pjskills">
+                      이곳은 이미지가 올 자리입니다.
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div class="pjname"><span>
+                        <h1>item2</h1>
+                      </span></div>
+                    <img src="./imgs/bg2.jpg" alt="Chicago" />
+                    <div class="pjskills"></div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div class="pjname"><span>
+                        <h1>item3</h1>
+                      </span></div>
+                    <img src="./imgs/bg3.jpg" alt="New York" />
+                    <div class="pjskills"></div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div class="pjname"><span>
+                        <h1>item4</h1>
+                      </span></div>
+                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                    <div class="pjskills"></div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div class="pjname"><span>
+                        <h1>item5</h1>
+                      </span></div>
+                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                    <div class="pjskills"></div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div class="pjname"><span>
+                        <h1>item6</h1>
+                      </span></div>
+                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                    <div class="pjskills"></div>
+                  </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-md-1">d3</div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- section4 -->
+    <div class="section fp-auto-height" id="section4">
+      <div class="intro">
+        <h1>Contact</h1>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
