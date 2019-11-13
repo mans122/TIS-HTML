@@ -144,6 +144,7 @@
       transition: opacity 0.8s ease-in;
       opacity: 0.5;
     }
+
     #section0 {
       opacity: 1;
     }
@@ -246,15 +247,18 @@
       font-size: 1em;
       padding: 0;
     }
-    #section1 h1{
+
+    #section1 h1 {
       margin-bottom: 5%;
-      
+
     }
+
     #section1 .col-md-4 img {
       max-width: 128px;
       max-height: 128px;
 
     }
+
     /* #section1 .col-md-3 {width: 22% !important;} */
     #section1 .col-md-3 img {
       max-width: 100px;
@@ -290,7 +294,29 @@
       height: 100%;
     }
 
-    .carousel-indicators { margin-bottom: 20%; }
+    .col-md-1 {
+      height: 100%;
+      margin: auto;
+      background: green;
+    }
+
+    .carousel-indicators {
+      position: relative;
+      padding: 0;
+      width: 50px;
+      height: 100%;
+    }
+
+    .carousel-indicators li {
+      width: 50px;
+      height: 50px;
+      background: red;
+      margin: 30px auto;
+    }
+
+    .carousel-indicators li.active {
+      background: blue;
+    }
 
     .pjname {
       width: 100%;
@@ -304,19 +330,34 @@
       height: 150px;
       /* background: red; */
     }
-    .pjskills img { }
 
-    .carousel-control-prev {top: 35%; width: 10%; height: 20%; }
-    .carousel-control-next { top: 35%; width: 10%; height: 20%; }
+    .pjskills img {}
+
+    .carousel-control-prev {
+      top: 35%;
+      width: 10%;
+      height: 20%;
+    }
+
+    .carousel-control-next {
+      top: 35%;
+      width: 10%;
+      height: 20%;
+    }
 
     /* #slide1 { padding: 6% 0 0 0; }
     #slide1 div { margin: auto; }
     #slide2 {padding: 6% 0 0 0;} */
 
-    #section4 {color: #000;height: 400px !important;}
+    #section4 {
+      color: #000;
+      height: 400px !important;
+    }
 
     @media screen and (max-width: 768px) {
-      #section1 h1 { margin-bottom: 50px; }
+      #section1 h1 {
+        margin-bottom: 50px;
+      }
 
       #section1 .row .col-md-4 {
         font-size: 0.7em;
@@ -325,7 +366,9 @@
         margin-bottom: 10px;
       }
 
-      .col-md-4 h4 { font-size: 0.7em; }
+      .col-md-4 h4 {
+        font-size: 0.7em;
+      }
     }
   </style>
 </head>
@@ -402,8 +445,8 @@
                 <h4>Java</h4>
               </div>
               <div class="col-md-3">
-                  <img src="./imgs/jsp2.png" alt="java" />
-                  <h4>JSP</h4>
+                <img src="./imgs/jsp2.png" alt="java" />
+                <h4>JSP</h4>
               </div>
             </div>
             <br />
@@ -421,8 +464,8 @@
                 <h4>Oracle</h4>
               </div>
               <div class="col-md-3">
-                  <img src="./imgs/spring.png" alt="js" />
-                  <h4>spring</h4>
+                <img src="./imgs/spring.png" alt="js" />
+                <h4>spring</h4>
               </div>
             </div>
             <br /><br />
@@ -458,25 +501,47 @@
         <div class="container">
           <!-- row  -->
           <div class="row">
-            <div class="col-md-1" style="height:100% ; background: black;">
-              d
+            <div class="col-md-1">
+              <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+              </ul>
+
+              <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="1"></li>
+              </ul>
+
+              <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="2"></li>
+              </ul>
+
+              <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="3"></li>
+              </ul>
+
+              <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="4"></li>
+              </ul>
+
             </div>
             <div class="col-md-10">
               <div id="demo" class="carousel slide" data-ride="carousel">
 
                 <!-- The slideshow -->
                 <div class="carousel-inner">
-                    <ul class="carousel-indicators">
-                        <li data-target="#demo" data-slide-to="0" class="active"></li>
-                        <li data-target="#demo" data-slide-to="1"></li>
-                        <li data-target="#demo" data-slide-to="2"></li>
-                        <li data-target="#demo" data-slide-to="3"></li>
-                        <li data-target="#demo" data-slide-to="4"></li>
-                        <li data-target="#demo" data-slide-to="5"></li>
-                      </ul>
+                  <!-- <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                    <li data-target="#demo" data-slide-to="3"></li>
+                    <li data-target="#demo" data-slide-to="4"></li>
+                    <li data-target="#demo" data-slide-to="5"></li>
+                  </ul> -->
                   <div class="carousel-item active">
-                    <div class="pjname"><span><h1>LINCOLN 사이트</h1></span></div>
-                    <a href="http://mans122.dothome.co.kr/lincoln" target="_blank"><img src="./imgs/bg2.jpg" alt="LINCOLN DEMO" /></a>
+                    <div class="pjname"><span>
+                        <h1>LINCOLN 사이트</h1>
+                      </span></div>
+                    <a href="http://mans122.dothome.co.kr/lincoln" target="_blank"><img src="./imgs/bg2.jpg"
+                        alt="LINCOLN DEMO" /></a>
                     <div class="pjskills">
                       이곳은 이미지가 올 자리입니다.
                     </div>
@@ -521,6 +586,39 @@
                     <img src="./imgs/bg1.jpg" alt="Los Angeles" />
                     <div class="pjskills"></div>
                   </div>
+
+                  <div class="carousel-item">
+                    <div class="pjname"><span>
+                        <h1>item7</h1>
+                      </span></div>
+                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                    <div class="pjskills"></div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div class="pjname"><span>
+                        <h1>item8</h1>
+                      </span></div>
+                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                    <div class="pjskills"></div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div class="pjname"><span>
+                        <h1>item9</h1>
+                      </span></div>
+                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                    <div class="pjskills"></div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div class="pjname"><span>
+                        <h1>item10</h1>
+                      </span></div>
+                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                    <div class="pjskills"></div>
+                  </div>
+
                 </div>
 
                 <!-- Left and right controls -->
@@ -533,7 +631,30 @@
               </div>
             </div>
 
-            <div class="col-md-1">d3</div>
+            <div class="col-md-1">
+
+              <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="5"></li>
+              </ul>
+
+              <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="6"></li>
+              </ul>
+
+              <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="7"></li>
+              </ul>
+
+              <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="8"></li>
+              </ul>
+
+              <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="9"></li>
+              </ul>
+
+
+            </div>
 
           </div>
         </div>
@@ -544,7 +665,9 @@
     <div class="section fp-auto-height" id="section4">
       <div class="intro">
         <h1>Contact</h1>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/pWemV6TiUZE?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe width="560" height="315"
+          src="https://www.youtube.com/embed/pWemV6TiUZE?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1"
+          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
       </div>
     </div>
