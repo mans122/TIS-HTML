@@ -24,7 +24,11 @@
   <script type="text/javascript" src="js/fullpage.js"></script>
   <!-- <script type="text/javascript" src="js/fullpage.extensions.min.js"></script> -->
   <!-- <script type="text/javascript" src="js/examples.js"></script> -->
-
+<!-- [if IE]> -->
+        <script type="text/javascript">
+             var console = { log: function() {} };
+        </script>
+  <!-- <![endif] -->
   <script>
     $(document).ready(function () {
       $("#fullpage").fullpage({
@@ -40,90 +44,72 @@
         menu: "#menu",
         lazyLoad: true,
         navigation: true, //우측 dot nav
-        navigationTooltips: [
-          "Intro",
-          "Skill",
-          "About",
-          "Projects",
-          "Contact"
-        ], //dot nav list name
+        navigationTooltips: ["Intro","Skill","About","Projects","Contact"], //dot nav list name
         showActiveTooltip: true, //actived dot name show
+        afterResize: function(width,height){
+          var width = width;
+        },
         onLeave: function (origin, destination) {
           var origin = origin.index;
           var index2 = destination.index;
-          $("#fp-nav ul li a")
-            .eq(index2)
-            .css("opacity", "0");
-          $("#fp-nav ul li a")
-            .not(":eq(index2)")
-            .css("opacity", "1");
-          $(".section")
-            .eq(index2)
-            .css("opacity", "1");
-          $(".section")
-            .eq(origin)
-            .css("opacity", "0.3");
+          $("#fp-nav ul li a").eq(index2).css("opacity", "0");
+          $("#fp-nav ul li a").not(":eq(index2)").css("opacity", "1");
+          $(".section").eq(index2).css("opacity", "1");
+          $(".section").eq(origin).css("opacity", "0.3");
         },
         afterLoad: function () {
           var index = $(".active").index() - 1;
 
           $(".menu span").removeClass("on");
-          $(".menu span")
-            .eq(index)
-            .addClass("on");
+          $(".menu span").eq(index).addClass("on");
         }
       });
-
-      $(".modal").hide();
-      $("#fp-nav ul li a:active").css("opacity", "0");
-
+      $(".carousel").carousel({
+        interval:false
+      });
       $(window).resize(function () {
         var wwidth = $(window).width();
         var wheight = $(window).innerHeight();
-
-        $(".modal")
-          .css("width", wwidth)
-          .css("height", wheight);
-
-
         console.log(wwidth);
-
+        $('#wrap2').css("width",wwidth).css("height",wheight);
+        $(".modal").css("width", wwidth).css("height", wheight);
       });
+      $(".carousel-inner").change(function(){
+        console.log("dd");
+      })
+      $(".modal").hide();
+      $("#fp-nav ul li a:active").css("opacity", "0");
+
+      
       $("#fp-nav ul li a").click(function () {
-        $("#fp-nav ul li")
-          .eq($(this))
-          .css("opacity", "0");
-        $("#fp-nav ul li")
-          .not(this)
-          .css("opacity", "1");
+        $("#fp-nav ul li").eq($(this)).css("opacity", "0");
+        $("#fp-nav ul li").not(this).css("opacity", "1");
       });
       $("#fp-nav ul li").mouseover(function () {
-        $("#fp-nav ul li a")
-          .eq($(this).index())
-          .css("opacity", "0");
+        $("#fp-nav ul li a").eq($(this).index()).css("opacity", "0");
       });
       $("#fp-nav ul li").mouseout(function () {
-        $("#fp-nav ul li a")
-          .eq($(this).index())
-          .css("opacity", "1");
+        $("#fp-nav ul li a").eq($(this).index()).css("opacity", "1");
       });
 
       // modal==========================================================================
       $(".menu span").click(function () {
         $(this).addClass("on");
-        $(".menu span")
-          .not(this)
-          .removeClass("on");
+        $(".menu span").not(this).removeClass("on");
       });
       $("#modal").click(function () {
         $(".modal").show();
         $("#fp-nav").hide();
-        $("#modal").css("background-image", "url(imgs/timess.png)");
+        // $("#modal").css("background-image", "url(imgs/timess.png)");
       });
 
       // col-md-1
-      $(".col-md-1 ").click(function () {
-        console.log($(".col-md-1 li").index());
+      $(".carousel-indicators>li").click(function () {
+        $(".carousel-indicators>li").removeClass("active");
+        $(this).addClass("active");
+      });
+      $(".carousel-indicator img").change(function(){
+        console.log("change");
       });
 
       $("#menuModal").click(function (event) {
@@ -131,7 +117,7 @@
           $(event.target).is(".menu a") ||
           $(event.target).is("#menuModal")
         ) {
-          $("#modal").css("background-image", "url(imgs/btn_allmenu.png)");
+          // $("#modal").css("background-image", "url(imgs/btn_allmenu.png)");
           $(".modal").hide();
           $("#fp-nav").show();
         }
@@ -280,7 +266,6 @@
     /* #section3 {} */
 
     #section3 .container-fluid {
-      /* background: pink; */
       height: 100%;
       padding-top: 0px;
       padding-bottom: 0;
@@ -291,95 +276,55 @@
       margin: 0 auto;
       width: 80%;
       height: 100%;
-      padding-bottom: 5%;
     }
 
     .carousel-inner img {
-      width: 100%;
-      height: 100%;
+      /* width: 100%;
+      height: 100%; */
+      width: 1000px;
+      height: 600px;
     }
-
-    .col-md-1 {
-      height: 100%;
-      margin: auto;
-      padding: 0;
-      background: green;
-    }
+    .row {margin: 0;}
+    .row div{float: left;}
+    
+    .pj-10{ width: 80%; margin-top: 5%;}
+    .pj-1{ width: 10%; margin-top: 10%;}
+    
+    /* .col-md-10 {padding: 0; }
+    .col-md-1 {height: 100%;margin: 13% 0 0 0;padding: 0;} */
 
     .carousel-indicators {
       position: relative;
       /* margin: 50px 0; */
-      margin: 30px 0;
-      padding: 0;
+      margin: 40% 0;
+      padding: 0 !important;
       width: 100%;
       height: 100px;
-      background: yellow;
+      /* background: yellow; */
     }
 
     .carousel-indicators li {
       width: 80px;
-      height: 50px;
+      height: 60px;
+      border-radius: 50%;
       background: red;
       padding: 0;
-      margin: 0 auto;
+      margin: auto;
     }
 
     .carousel-indicators li.active {
       background: blue;
     }
 
-    .pjname {
-      width: 100%;
-      height: 100%;
-      /* background: blue; */
-      font-size: 1.4em;
-    }
+    .pjname { width: 100%; height: 100%; font-size: 1.4em; }
 
-    .pjskills {
-      width: 100%;
-      height: 150px;
-      background: lightseagreen;
-    }
+    .pjskills { width: 100%;  height: 150px; background: lightseagreen; }
 
-    /* .pjskills img {} */
+    .carousel-control-prev { top: 35%; width: 10%; height: 20%; }
+    .carousel-control-next { top: 35%; width: 10%; height: 20%; }
 
-    .carousel-control-prev {
-      top: 35%;
-      width: 10%;
-      height: 20%;
-    }
-
-    .carousel-control-next {
-      top: 35%;
-      width: 10%;
-      height: 20%;
-    }
-
-    /* #slide1 { padding: 6% 0 0 0; }
-    #slide1 div { margin: auto; }
-    #slide2 {padding: 6% 0 0 0;} */
-
-    #section4 {
-      color: #000;
-      height: 400px !important;
-    }
-
-    @media screen and (max-width: 768px) {
-      #section1 h1 {
-        margin-bottom: 50px;
-      }
-
-      #section1 .row .col-md-4 {
-        font-size: 0.7em;
-        margin: 0 auto;
-        width: 30%;
-        margin-bottom: 10px;
-      }
-
-      .col-md-4 h4 {
-        font-size: 0.7em;
-      }
-    }
+    /* Contact */
+    #section4 { color: #000; height: 400px !important; }
   </style>
 </head>
 
@@ -499,19 +444,34 @@
     </div>
 
     <!-- section2 -->
-    <div class="section" id="section2">
-      <div class="intro">
-        <h1>About</h1>
+    <div class="section" id="section2" style="padding: 0; margin: 0;">
+      <div id="wrap2">
+          <div id="profiletop" style="width: 100%; height: 20%; background: pink;">
+          <h1>Profile</h1></div>
+          
+          <div id="profilebottom" style="width: 100%; height: 80%; background: red;">
+            <div id="profile-bt-left" style="width: 30%; height: 100%; background: green; float: left;"></div>
+            <div id="profile-bt-right" style="width: 70%; height: 100%; background: blue; float: left;">
+              <div id="profile-bt-r-t-l" style="width: 50%; height: 60%; background: lightblue; float: left;"></div>  
+              <div id="profile-bt-r-t-r" style="width: 50%; height: 60%; background: lightseagreen; float: left;"></div>  
+              <div id="profile-bt-r-b" style="width: 100%; height: 40%; background: greenyellow; float: left;"></div>
+            </div>
+
+          </div>
+      </div>
+    <div>
+        
       </div>
     </div>
 
     <!-- section3 -->
     <div class="section" id="section3">
-      <div class="container-fluid">
-        <div class="container">
+      <!-- <div class="container-fluid"> -->
+        <div class="container" style="width: 100%; margin: 0 auto; padding: 0;">
           <!-- row  -->
           <div class="row">
-            <div class="col-md-1">
+            <!-- <div class="col-md-1"> -->
+                <div class="pj-1">
 
               <ul class="carousel-indicators">
                 <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -535,7 +495,8 @@
 
 
             </div>
-            <div class="col-md-10">
+            <!-- <div class="col-md-10"> -->
+                <div class="pj-10">
               <div id="demo" class="carousel slide" data-ride="carousel">
 
                 <!-- The slideshow -->
@@ -552,8 +513,7 @@
                     <div class="pjname"><span>
                         <h1>LINCOLN 사이트</h1>
                       </span></div>
-                    <a href="http://mans122.dothome.co.kr/lincoln" target="_blank"><img src="./imgs/bg2.jpg"
-                        alt="LINCOLN DEMO" /></a>
+                    <a href="http://mans122.dothome.co.kr/lincoln" target="_blank"><img src="./imgs/lincoln-full.PNG" alt="LINCOLN DEMO" /></a>
                     <div class="pjskills">
                       이곳은 이미지가 올 자리입니다.
                     </div>
@@ -634,17 +594,18 @@
                 </div>
 
                 <!-- Left and right controls -->
-                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <!-- <a class="carousel-control-prev" href="#demo" data-slide="prev">
                   <span class="carousel-control-prev-icon"></span>
                 </a>
                 <a class="carousel-control-next" href="#demo" data-slide="next">
                   <span class="carousel-control-next-icon"></span>
-                </a>
+                </a> -->
+
               </div>
             </div>
 
-            <div class="col-md-1">
-
+            <!-- <div class="col-md-1"> -->
+              <div class="pj-1">
               <ul class="carousel-indicators">
                 <li data-target="#demo" data-slide-to="5"></li>
               </ul>
@@ -670,16 +631,13 @@
 
           </div>
         </div>
-      </div>
+      <!-- </div> -->
 
     </div>
     <!-- section4 -->
     <div class="section fp-auto-height" id="section4">
       <div class="intro">
         <h1>Contact</h1>
-        <iframe width="560" height="315"
-          src="https://www.youtube.com/embed/pWemV6TiUZE?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1"
-          frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
       </div>
     </div>
