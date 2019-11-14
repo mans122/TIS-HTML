@@ -24,10 +24,10 @@
   <script type="text/javascript" src="js/fullpage.js"></script>
   <!-- <script type="text/javascript" src="js/fullpage.extensions.min.js"></script> -->
   <!-- <script type="text/javascript" src="js/examples.js"></script> -->
-<!-- [if IE]> -->
-        <script type="text/javascript">
-             var console = { log: function() {} };
-        </script>
+  <!-- [if IE]> -->
+  <script type="text/javascript">
+    var console = { log: function () { } };
+  </script>
   <!-- <![endif] -->
   <script>
     $(document).ready(function () {
@@ -44,9 +44,9 @@
         menu: "#menu",
         lazyLoad: true,
         navigation: true, //우측 dot nav
-        navigationTooltips: ["Intro","Skill","About","Projects","Contact"], //dot nav list name
+        navigationTooltips: ["Intro", "Skill", "About", "Projects", "Contact"], //dot nav list name
         showActiveTooltip: true, //actived dot name show
-        afterResize: function(width,height){
+        afterResize: function (width, height) {
           var width = width;
         },
         onLeave: function (origin, destination) {
@@ -65,22 +65,22 @@
         }
       });
       $(".carousel").carousel({
-        interval:false
+        interval: false
       });
       $(window).resize(function () {
         var wwidth = $(window).width();
         var wheight = $(window).innerHeight();
         console.log(wwidth);
-        $('#wrap2').css("width",wwidth).css("height",wheight);
+        $('#wrap2').css("width", wwidth).css("height", wheight);
         $(".modal").css("width", wwidth).css("height", wheight);
       });
-      $(".carousel-inner").change(function(){
+      $(".carousel-inner").change(function () {
         console.log("dd");
       })
       $(".modal").hide();
       $("#fp-nav ul li a:active").css("opacity", "0");
 
-      
+
       $("#fp-nav ul li a").click(function () {
         $("#fp-nav ul li").eq($(this)).css("opacity", "0");
         $("#fp-nav ul li").not(this).css("opacity", "1");
@@ -108,7 +108,7 @@
         $(".carousel-indicators>li").removeClass("active");
         $(this).addClass("active");
       });
-      $(".carousel-indicator img").change(function(){
+      $(".carousel-indicator img").change(function () {
         console.log("change");
       });
 
@@ -284,12 +284,25 @@
       width: 1000px;
       height: 600px;
     }
-    .row {margin: 0;}
-    .row div{float: left;}
-    
-    .pj-10{ width: 80%; margin-top: 5%;}
-    .pj-1{ width: 10%; margin-top: 10%;}
-    
+
+    .row {
+      margin: 0;
+    }
+
+    .row div {
+      float: left;
+    }
+
+    .pj-10 {
+      width: 80%;
+      margin-top: 5%;
+    }
+
+    .pj-1 {
+      width: 10%;
+      margin-top: 10%;
+    }
+
     /* .col-md-10 {padding: 0; }
     .col-md-1 {height: 100%;margin: 13% 0 0 0;padding: 0;} */
 
@@ -316,15 +329,35 @@
       background: blue;
     }
 
-    .pjname { width: 100%; height: 100%; font-size: 1.4em; }
+    .pjname {
+      width: 100%;
+      height: 100%;
+      font-size: 1.4em;
+    }
 
-    .pjskills { width: 100%;  height: 150px; background: lightseagreen; }
+    .pjskills {
+      width: 100%;
+      height: 150px;
+      background: lightseagreen;
+    }
 
-    .carousel-control-prev { top: 35%; width: 10%; height: 20%; }
-    .carousel-control-next { top: 35%; width: 10%; height: 20%; }
+    .carousel-control-prev {
+      top: 35%;
+      width: 10%;
+      height: 20%;
+    }
+
+    .carousel-control-next {
+      top: 35%;
+      width: 10%;
+      height: 20%;
+    }
 
     /* Contact */
-    #section4 { color: #000; height: 400px !important; }
+    #section4 {
+      color: #000;
+      height: 400px !important;
+    }
   </style>
 </head>
 
@@ -446,62 +479,63 @@
     <!-- section2 -->
     <div class="section" id="section2" style="padding: 0; margin: 0;">
       <div id="wrap2">
-          <div id="profiletop" style="width: 100%; height: 20%; background: pink;">
-          <h1>Profile</h1></div>
-          
-          <div id="profilebottom" style="width: 100%; height: 80%; background: red;">
-            <div id="profile-bt-left" style="width: 30%; height: 100%; background: green; float: left;"></div>
-            <div id="profile-bt-right" style="width: 70%; height: 100%; background: blue; float: left;">
-              <div id="profile-bt-r-t-l" style="width: 50%; height: 60%; background: lightblue; float: left;"></div>  
-              <div id="profile-bt-r-t-r" style="width: 50%; height: 60%; background: lightseagreen; float: left;"></div>  
-              <div id="profile-bt-r-b" style="width: 100%; height: 40%; background: greenyellow; float: left;"></div>
-            </div>
+        <div id="profiletop" style="width: 100%; height: 20%; background: pink;">
+          <h1>Profile</h1>
+        </div>
 
+        <div id="profilebottom" style="width: 100%; height: 80%; background: red;">
+          <div id="profile-bt-left" style="width: 30%; height: 100%; background: green; float: left;"></div>
+          <div id="profile-bt-right" style="width: 70%; height: 100%; background: blue; float: left;">
+            <div id="profile-bt-r-t-l" style="width: 50%; height: 60%; background: lightblue; float: left;"></div>
+            <div id="profile-bt-r-t-r" style="width: 50%; height: 60%; background: lightseagreen; float: left;"></div>
+            <div id="profile-bt-r-b" style="width: 100%; height: 40%; background: greenyellow; float: left;"></div>
           </div>
+
+        </div>
       </div>
-    <div>
-        
+      <div>
+
       </div>
     </div>
 
     <!-- section3 -->
     <div class="section" id="section3">
       <!-- <div class="container-fluid"> -->
-        <div class="container" style="width: 100%; margin: 0 auto; padding: 0;">
-          <!-- row  -->
-          <div class="row">
-            <!-- <div class="col-md-1"> -->
-                <div class="pj-1">
+      <div class="container" style="width: 100%; margin: 0 auto; padding: 0;">
+        <!-- row  -->
+        <div class="row">
+          <!-- <div class="col-md-1"> -->
+          <div class="pj-1">
 
-              <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="0" class="active"></li>
-              </ul>
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+            </ul>
 
-              <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="1"></li>
-              </ul>
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="1"></li>
+            </ul>
 
-              <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="2"></li>
-              </ul>
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
 
-              <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="3"></li>
-              </ul>
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="3"></li>
+            </ul>
 
-              <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="4"></li>
-              </ul>
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="4"></li>
+            </ul>
 
 
-            </div>
-            <!-- <div class="col-md-10"> -->
-                <div class="pj-10">
-              <div id="demo" class="carousel slide" data-ride="carousel">
+          </div>
+          <!-- <div class="col-md-10"> -->
+          <div class="pj-10">
+            <div id="demo" class="carousel slide" data-ride="carousel">
 
-                <!-- The slideshow -->
-                <div class="carousel-inner">
-                  <!-- <ul class="carousel-indicators">
+              <!-- The slideshow -->
+              <div class="carousel-inner">
+                <!-- <ul class="carousel-indicators">
                     <li data-target="#demo" data-slide-to="0" class="active"></li>
                     <li data-target="#demo" data-slide-to="1"></li>
                     <li data-target="#demo" data-slide-to="2"></li>
@@ -509,128 +543,129 @@
                     <li data-target="#demo" data-slide-to="4"></li>
                     <li data-target="#demo" data-slide-to="5"></li>
                   </ul> -->
-                  <div class="carousel-item active">
-                    <div class="pjname"><span>
-                        <h1>LINCOLN 사이트</h1>
-                      </span></div>
-                    <a href="http://mans122.dothome.co.kr/lincoln" target="_blank"><img src="./imgs/lincoln-full.PNG" alt="LINCOLN DEMO" /></a>
-                    <div class="pjskills">
-                      이곳은 이미지가 올 자리입니다.
-                    </div>
+                <div class="carousel-item active">
+                  <div class="pjname"><span>
+                      <h1>LINCOLN 사이트</h1>
+                    </span></div>
+                  <a href="http://mans122.dothome.co.kr/lincoln" target="_blank"><img src="./imgs/lincoln-full.PNG"
+                      alt="LINCOLN DEMO" /></a>
+                  <div class="pjskills">
+                    이곳은 이미지가 올 자리입니다.
                   </div>
-
-                  <div class="carousel-item">
-                    <div class="pjname"><span>
-                        <h1>item2</h1>
-                      </span></div>
-                    <img src="./imgs/bg2.jpg" alt="Chicago" />
-                    <div class="pjskills"></div>
-                  </div>
-
-                  <div class="carousel-item">
-                    <div class="pjname"><span>
-                        <h1>item3</h1>
-                      </span></div>
-                    <img src="./imgs/bg3.jpg" alt="New York" />
-                    <div class="pjskills"></div>
-                  </div>
-
-                  <div class="carousel-item">
-                    <div class="pjname"><span>
-                        <h1>item4</h1>
-                      </span></div>
-                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
-                    <div class="pjskills"></div>
-                  </div>
-
-                  <div class="carousel-item">
-                    <div class="pjname"><span>
-                        <h1>item5</h1>
-                      </span></div>
-                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
-                    <div class="pjskills"></div>
-                  </div>
-
-                  <div class="carousel-item">
-                    <div class="pjname"><span>
-                        <h1>item6</h1>
-                      </span></div>
-                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
-                    <div class="pjskills"></div>
-                  </div>
-
-                  <div class="carousel-item">
-                    <div class="pjname"><span>
-                        <h1>item7</h1>
-                      </span></div>
-                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
-                    <div class="pjskills"></div>
-                  </div>
-
-                  <div class="carousel-item">
-                    <div class="pjname"><span>
-                        <h1>item8</h1>
-                      </span></div>
-                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
-                    <div class="pjskills"></div>
-                  </div>
-
-                  <div class="carousel-item">
-                    <div class="pjname"><span>
-                        <h1>item9</h1>
-                      </span></div>
-                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
-                    <div class="pjskills"></div>
-                  </div>
-
-                  <div class="carousel-item">
-                    <div class="pjname"><span>
-                        <h1>item10</h1>
-                      </span></div>
-                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
-                    <div class="pjskills"></div>
-                  </div>
-
                 </div>
 
-                <!-- Left and right controls -->
-                <!-- <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <div class="carousel-item">
+                  <div class="pjname"><span>
+                      <h1>item2</h1>
+                    </span></div>
+                  <img src="./imgs/bg2.jpg" alt="Chicago" />
+                  <div class="pjskills"></div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="pjname"><span>
+                      <h1>item3</h1>
+                    </span></div>
+                  <img src="./imgs/bg3.jpg" alt="New York" />
+                  <div class="pjskills"></div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="pjname"><span>
+                      <h1>item4</h1>
+                    </span></div>
+                  <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                  <div class="pjskills"></div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="pjname"><span>
+                      <h1>item5</h1>
+                    </span></div>
+                  <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                  <div class="pjskills"></div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="pjname"><span>
+                      <h1>item6</h1>
+                    </span></div>
+                  <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                  <div class="pjskills"></div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="pjname"><span>
+                      <h1>item7</h1>
+                    </span></div>
+                  <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                  <div class="pjskills"></div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="pjname"><span>
+                      <h1>item8</h1>
+                    </span></div>
+                  <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                  <div class="pjskills"></div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="pjname"><span>
+                      <h1>item9</h1>
+                    </span></div>
+                  <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                  <div class="pjskills"></div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="pjname"><span>
+                      <h1>item10</h1>
+                    </span></div>
+                  <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                  <div class="pjskills"></div>
+                </div>
+
+              </div>
+
+              <!-- Left and right controls -->
+              <!-- <a class="carousel-control-prev" href="#demo" data-slide="prev">
                   <span class="carousel-control-prev-icon"></span>
                 </a>
                 <a class="carousel-control-next" href="#demo" data-slide="next">
                   <span class="carousel-control-next-icon"></span>
                 </a> -->
 
-              </div>
             </div>
+          </div>
 
-            <!-- <div class="col-md-1"> -->
-              <div class="pj-1">
-              <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="5"></li>
-              </ul>
+          <!-- <div class="col-md-1"> -->
+          <div class="pj-1">
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="5"></li>
+            </ul>
 
-              <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="6"></li>
-              </ul>
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="6"></li>
+            </ul>
 
-              <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="7"></li>
-              </ul>
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="7"></li>
+            </ul>
 
-              <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="8"></li>
-              </ul>
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="8"></li>
+            </ul>
 
-              <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="9"></li>
-              </ul>
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="9"></li>
+            </ul>
 
-
-            </div>
 
           </div>
+
         </div>
+      </div>
       <!-- </div> -->
 
     </div>
