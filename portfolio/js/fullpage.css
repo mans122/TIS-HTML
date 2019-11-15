@@ -106,7 +106,8 @@ html.fp-enabled,
 }
 /* dot nav 위치 */
 #fp-nav.fp-right {
-  top: 250px;
+  top: 45%;
+  left: 30px;
 }
 #fp-nav.fp-left {
   left: 17px;
@@ -121,7 +122,6 @@ html.fp-enabled,
   display: block;
   /* width: 100px; */
   width: 100%;
-  left: 60px;
   height: 30px;
   margin: 7px;
   position: relative;

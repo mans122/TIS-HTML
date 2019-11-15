@@ -241,56 +241,75 @@
       padding: 6% 0 0 0;
     }
 
+    /* #section3 {} */
+
+    #section2 .container-fluid {
+      height: 100%;
+      padding-top: 0px;
+      padding-bottom: 0;
+    }
+
     #section2 .container {
       /* background: green; */
       margin: 0 auto;
-      padding: 0;
-      width: 100%;
+      width: 80%;
       height: 100%;
     }
-    .carousel-inner {height: 100%; margin-top: 10%;}
+
     .carousel-inner img {
-      width: 100%;
+      /* width: 100%;
+      height: 100%; */
+      width: 1000px;
       height: 600px;
-      max-height: 600px;
     }
-    .pjname { width: 100%; height: 100%; font-size: 1.4em;}
-    .pjskills { width: 100%;  height: 150px; background: rgb(178, 248, 245); }
-    .row {width: 100%;  margin: 0; padding:0;}
-    .row-top {width: 100%; height: 85%;}
-    .row-bottom {width: 100%; height: 15%;}
+    .row {margin: 0;}
+    .row div{float: left;}
     
-    .pj-10{ width: 100%;  margin-top: 0%;}
+    .pj-10{ width: 80%; margin-top: 5%;}
+    .pj-1{ width: 10%; margin-top: 10%;}
+    
+    /* .col-md-10 {padding: 0; }
+    .col-md-1 {height: 100%;margin: 13% 0 0 0;padding: 0;} */
 
     .carousel-indicators {
+      position: relative;
+      /* margin: 50px 0; */
+      margin: 40% 0;
       padding: 0;
-      margin: 0 auto 0 auto;
-      width: 100%;
-      height: 150px;
-      max-width: 1440px;
-      /* background: purple; */
+      width: 100px;
+      height: 100px;
+      /* background: yellow; */
     }
-
+    .c-i-left{margin-right: 150px;}
+    .c-i-right{margin-left: 10%;}
+    .carousel-indicators:hover {
+      transform: scale(1.2);
+    }
     .carousel-indicators li {
-      width: 80px;
-      height: 60px;
+      width: 100%;
+      height: 80%;
       border-radius: 50%;
       background: red;
       padding: 0;
-      margin:20px 3%;
+      margin: 0;
     }
 
     .carousel-indicators li.active {
       background-size: cover;
       background: blue;
-      width: 80px;
-      height: 80px;
+      height: 100%;
       border: 2px solid blue;
       transform: scale(1.2);
     }
 
+    .pjname { width: 100%; height: 100%; font-size: 1.4em; }
+    .pjskills { width: 100%;  height: 150px; background: lightseagreen; }
+
     /* .carousel-control-prev { top: 35%; width: 10%; height: 20%; }
     .carousel-control-next { top: 35%; width: 10%; height: 20%; } */
+
+    /* Contact */
+    #section4 { color: #000; height: 400px !important; }
   </style>
 </head>
 
@@ -363,11 +382,38 @@
     <!-- section3 -->
     <div class="section" id="section2">
       <!-- <div class="container-fluid"> -->
-        <div class="container">
+        <div class="container" style="width: 100%; margin: 0 auto; padding: 0;">
           <!-- row  -->
-          <div class="row row-top">
-                <div id="demo" class="carousel slide" data-ride="carousel">
-                  
+          <div class="row">
+            <!-- <div class="col-md-1"> -->
+                <div class="pj-1">
+
+              <ul class="carousel-indicators c-i-left">
+                <li data-target="#demo" data-slide-to="0" class="active" style="background: url(./imgs/lincoln-full.PNG);"></li>
+              </ul>
+
+              <ul class="carousel-indicators c-i-left">
+                <li data-target="#demo" data-slide-to="1" style="background: url(./imgs/vue.png); background-size: cover;"></li>
+              </ul>
+
+              <ul class="carousel-indicators c-i-left">
+                <li data-target="#demo" data-slide-to="2"></li>
+              </ul>
+
+              <ul class="carousel-indicators c-i-left">
+                <li data-target="#demo" data-slide-to="3"></li>
+              </ul>
+
+              <ul class="carousel-indicators c-i-left">
+                <li data-target="#demo" data-slide-to="4"></li>
+              </ul>
+
+
+            </div>
+            <!-- <div class="col-md-10"> -->
+                <div class="pj-10">
+              <div id="demo" class="carousel slide" data-ride="carousel">
+
                 <!-- The slideshow -->
                 <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -419,6 +465,39 @@
                     <img src="./imgs/bg1.jpg" alt="Los Angeles" />
                     <div class="pjskills"></div>
                   </div>
+
+                  <div class="carousel-item">
+                    <div class="pjname"><span>
+                        <h1>item7</h1>
+                      </span></div>
+                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                    <div class="pjskills"></div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div class="pjname"><span>
+                        <h1>item8</h1>
+                      </span></div>
+                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                    <div class="pjskills"></div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div class="pjname"><span>
+                        <h1>item9</h1>
+                      </span></div>
+                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                    <div class="pjskills"></div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div class="pjname"><span>
+                        <h1>item10</h1>
+                      </span></div>
+                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                    <div class="pjskills"></div>
+                  </div>
+
                 </div>
 
                 <!-- Left and right controls -->
@@ -428,26 +507,40 @@
                 <a class="carousel-control-next" href="#demo" data-slide="next">
                   <span class="carousel-control-next-icon"></span>
                 </a> -->
-              </div>
 
+              </div>
             </div>
 
-            <div class="row row-bottom">
-              <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="0" class="active" style="background: url(./imgs/lincoln-full.PNG);"></li>
-                <li data-target="#demo" data-slide-to="1"></li>
-                <li data-target="#demo" data-slide-to="2"></li>
-                <li data-target="#demo" data-slide-to="3"></li>
-                <li data-target="#demo" data-slide-to="4"></li>
+            <!-- <div class="col-md-1"> -->
+              <div class="pj-1" >
+              <ul class="carousel-indicators c-i-right">
                 <li data-target="#demo" data-slide-to="5"></li>
               </ul>
-            </div>
 
+              <ul class="carousel-indicators c-i-right">
+                <li data-target="#demo" data-slide-to="6"></li>
+              </ul>
+
+              <ul class="carousel-indicators c-i-right">
+                <li data-target="#demo" data-slide-to="7"></li>
+              </ul>
+
+              <ul class="carousel-indicators c-i-right">
+                <li data-target="#demo" data-slide-to="8"></li>
+              </ul>
+
+              <ul class="carousel-indicators c-i-right">
+                <li data-target="#demo" data-slide-to="9"></li>
+              </ul>
+
+
+            </div>
 
           </div>
         </div>
       <!-- </div> -->
 
+    </div>
     <!-- section4 -->
   </div>
 </body>
