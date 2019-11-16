@@ -24,10 +24,10 @@
   <script type="text/javascript" src="js/fullpage.js"></script>
   <!-- <script type="text/javascript" src="js/fullpage.extensions.min.js"></script> -->
   <!-- <script type="text/javascript" src="js/examples.js"></script> -->
-<!-- [if IE]> -->
-        <script type="text/javascript">
-             var console = { log: function() {} };
-        </script>
+  <!-- [if IE]> -->
+  <script type="text/javascript">
+    var console = { log: function () { } };
+  </script>
   <!-- <![endif] -->
   <script>
     $(document).ready(function () {
@@ -40,13 +40,13 @@
         // fitToSectionDelay:2000,
         scrollHorizontally: false,
         sectionsColor: ["#000", "#FFF", "#ccdddd"],
-        anchors: ["intro",  "profile", "projects"],
+        anchors: ["intro", "profile", "projects"],
         menu: "#menu",
         lazyLoad: true,
         navigation: true, //우측 dot nav
-        navigationTooltips: ["Intro","Profile","Projects"], //dot nav list name
+        navigationTooltips: ["Intro", "Profile", "Projects"], //dot nav list name
         showActiveTooltip: true, //actived dot name show
-        afterResize: function(width,height){
+        afterResize: function (width, height) {
           var width = width;
         },
         onLeave: function (origin, destination) {
@@ -65,22 +65,30 @@
         }
       });
       $(".carousel").carousel({
-        interval:false
+        interval: false
       });
       $(window).resize(function () {
         var wwidth = $(window).width();
         var wheight = $(window).innerHeight();
+        var imgheight = wheight * 0.62;
+        var skillheight = wheight * 0.04;
         console.log(wwidth);
-        $('#wrap2').css("width",wwidth).css("height",wheight);
+        $('.row-top').css("height", wheight * 0.85);
+        $('.row-bottom').css("height", wheight * 0.15);
+        $('#wrap2').css("width", wwidth).css("height", wheight);
         $(".modal").css("width", wwidth).css("height", wheight);
+        $(".pjcontents img").css("height", imgheight);
+        // $(".pjskills img").css("height", skillheight);
+
+
       });
-      $(".carousel-inner").change(function(){
+      $(".carousel-inner").change(function () {
         console.log("dd");
       })
       $(".modal").hide();
       $("#fp-nav ul li a:active").css("opacity", "0");
 
-      
+
       $("#fp-nav ul li a").click(function () {
         $("#fp-nav ul li").eq($(this)).css("opacity", "0");
         $("#fp-nav ul li").not(this).css("opacity", "1");
@@ -108,7 +116,7 @@
         $(".carousel-indicators>li").removeClass("active");
         $(this).addClass("active");
       });
-      $(".carousel-indicator img").change(function(){
+      $(".carousel-indicator img").change(function () {
         console.log("change");
       });
 
@@ -176,18 +184,18 @@
     }
 
     .modal span:hover {
-      text-decoration: line-through;
+      text-decoration: underline;
     }
 
     .on {
-      text-decoration: line-through;
+      text-decoration: underline;
     }
 
     /* modal Button */
     #modal {
       line-height: 1;
       border: 1px solid transparent;
-      background: url(imgs/btn_allmenu.png);
+      background: url(imgs/btn_allmenu_copy.png);
       background-repeat: no-repeat;
       background-position: 0px 0px;
       margin-left: 1.5%;
@@ -233,7 +241,7 @@
     }
 
     /* section1 */
-  
+
 
     #section1 {
       /* background-size: cover; */
@@ -245,46 +253,94 @@
       /* background: green; */
       margin: 0 auto;
       padding: 0;
-      width: 100%;
       height: 100%;
     }
-    .carousel-inner {height: 100%; margin-top: 10%;}
-    .carousel-inner img {
-      width: 100%;
-      height: 600px;
-      max-height: 600px;
+
+    #demo {
+      height: 100%;
+      padding: 0;
+      margin: 0;
     }
-    .pjname { width: 100%; height: 100%; font-size: 1.4em;}
-    .pjskills { width: 100%;  height: 150px; background: rgb(178, 248, 245); }
-    .row {width: 100%;  margin: 0; padding:0;}
-    .row-top {width: 100%; height: 85%;}
-    .row-bottom {width: 100%; height: 15%;}
-    
-    .pj-10{ width: 100%;  margin-top: 0%;}
+
+    .carousel-item {
+      border: 1px solid black;
+      overflow: hidden;
+    }
+
+    .carousel-inner {
+      width: 100%;
+      height: 100%;
+      margin-top: 7%;
+    }
+
+    .carousel-inner .pjcontents img {
+      width: 100%;
+    }
+
+    .pjname {
+      width: 100%;
+      height: 100%;
+      font-size: 1em;
+      margin: 0;
+    }
+
+    .pjcontents {
+      border: 1px solid black;
+      border-left: 0;
+      border-right: 0;
+      height: 100%;
+      margin: 0;
+    }
+
+    .pjskills {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .pjskills img {
+      width: 80px;
+      height: 80px;
+      margin: 10px 3%;
+    }
+
+    .row {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .row-top {
+      width: 100%;
+      height: 80%;
+    }
+
+    .row-bottom {
+      position: relative;
+      width: 100%;
+      height: 15%;
+    }
 
     .carousel-indicators {
-      padding: 0;
-      margin: 0 auto 0 auto;
+      /* padding-top: 40px; */
+      margin: 0;
       width: 100%;
-      height: 150px;
+      height: 100%;
       max-width: 1440px;
       /* background: purple; */
     }
 
     .carousel-indicators li {
-      width: 80px;
-      height: 60px;
+      width: 90px;
+      height: 90px;
       border-radius: 50%;
-      background: red;
+      border: 0;
       padding: 0;
-      margin:20px 3%;
+      margin: 20px auto;
     }
 
     .carousel-indicators li.active {
-      background-size: cover;
-      background: blue;
-      width: 80px;
-      height: 80px;
       border: 2px solid blue;
       transform: scale(1.2);
     }
@@ -338,115 +394,150 @@
       </h1>
     </div>
 
-    
+
     <!-- section2 -->
     <div class="section" id="section1" style="padding: 0; margin: 0;">
       <div id="wrap2">
-          <div id="profiletop" style="width: 100%; height: 20%; background: pink;">
-          <h1>Profile</h1></div>
-          
-          <div id="profilebottom" style="width: 100%; height: 80%; background: red;">
-            <div id="profile-bt-left" style="width: 30%; height: 100%; background: green; float: left;"></div>
-            <div id="profile-bt-right" style="width: 70%; height: 100%; background: blue; float: left;">
-              <div id="profile-bt-r-t-l" style="width: 50%; height: 60%; background: lightblue; float: left;"></div>  
-              <div id="profile-bt-r-t-r" style="width: 50%; height: 60%; background: lightseagreen; float: left;"></div>  
-              <div id="profile-bt-r-b" style="width: 100%; height: 40%; background: greenyellow; float: left;"></div>
-            </div>
+        <div id="Profile-header" style="width: 100%; height: 15%; background: pink;">
+          <h1>Profile-header</h1>
+        </div>
 
+        <div id="profilebottom" style="width: 100%; height: 85%;">
+          <div id=" profile-section1" style="width: 30%; height: 100%; float: left;">profile-section1</div>
+          <div id="profile-bt-right" style="width: 70%; height: 100%;float: left;">
+            <div id="profile-section2" style="width: 50%; height: 60%;  float: left;">
+              profile-section2</div>
+            <div id="profile-section3" style="width: 50%; height: 60%;  float: left;">
+              profile-section3</div>
+            <div id="profile-section4" style="width: 100%; height: 40%;  float: left;">
+              profile-section4</div>
           </div>
+
+        </div>
       </div>
-    <div>
-        
+      <div>
+
       </div>
     </div>
 
     <!-- section3 -->
     <div class="section" id="section2">
       <!-- <div class="container-fluid"> -->
-        <div class="container">
-          <!-- row  -->
-          <div class="row row-top">
-                <div id="demo" class="carousel slide" data-ride="carousel">
-                  
-                <!-- The slideshow -->
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div class="pjname"><span>
-                        <h1>LINCOLN 사이트</h1>
-                      </span></div>
-                    <a href="http://mans122.dothome.co.kr/lincoln" target="_blank"><img src="./imgs/lincoln-full.PNG" alt="LINCOLN DEMO" /></a>
-                    <div class="pjskills">
-                      이곳은 이미지가 올 자리입니다.
-                    </div>
-                  </div>
+      <div class="container">
+        <!-- row  -->
+        <div class="row row-top">
+          <div id="demo" class="carousel slide" data-ride="carousel">
 
-                  <div class="carousel-item">
-                    <div class="pjname"><span>
-                        <h1>item2</h1>
-                      </span></div>
-                    <img src="./imgs/bg2.jpg" alt="Chicago" />
-                    <div class="pjskills"></div>
-                  </div>
+            <!-- The slideshow -->
+            <div class="carousel-inner">
 
-                  <div class="carousel-item">
-                    <div class="pjname"><span>
-                        <h1>item3</h1>
-                      </span></div>
-                    <img src="./imgs/bg3.jpg" alt="New York" />
-                    <div class="pjskills"></div>
-                  </div>
-
-                  <div class="carousel-item">
-                    <div class="pjname"><span>
-                        <h1>item4</h1>
-                      </span></div>
-                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
-                    <div class="pjskills"></div>
-                  </div>
-
-                  <div class="carousel-item">
-                    <div class="pjname"><span>
-                        <h1>item5</h1>
-                      </span></div>
-                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
-                    <div class="pjskills"></div>
-                  </div>
-
-                  <div class="carousel-item">
-                    <div class="pjname"><span>
-                        <h1>item6</h1>
-                      </span></div>
-                    <img src="./imgs/bg1.jpg" alt="Los Angeles" />
-                    <div class="pjskills"></div>
-                  </div>
+              <!-- Projects 1 -->
+              <div class="carousel-item active">
+                <div class="pjname">
+                  <span>
+                    <h1>LINCOLN 사이트</h1>
+                  </span>
                 </div>
 
-                <!-- Left and right controls -->
-                <!-- <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <div class="pjcontents">
+                  <!-- <a href="http://mans122.dothome.co.kr/lincoln" target="_blank"> -->
+                  <img src="./imgs/lincoln-full.PNG" alt="LINCOLN DEMO">
+                  <!-- </a> -->
+                </div>
+
+                <div class="pjskills">
+                  <img src="./imgs/html5.png" alt="HTML5">
+                  <img src="./imgs/css3.png" alt="HTML5">
+                  <img src="./imgs/bs1.png" alt="HTML5">
+                  <img src="./imgs/jquery.png" alt="HTML5">
+                </div>
+              </div>
+              <!--  -->
+
+              <!-- Projects 2 -->
+              <div class="carousel-item">
+                <div class="pjname">
+                  <span>
+                    <h1>학사관리 프로그램</h1>
+                  </span>
+                </div>
+
+                <div class="pjcontents">
+                  <!-- <a href="http://mans122.dothome.co.kr/lincoln" target="_blank"> -->
+                  <img src="./imgs/bg1.jpg" alt="LINCOLN DEMO">
+                  <!-- </a> -->
+                </div>
+
+                <div class="pjskills">
+                  <img src="./imgs/html5.png" alt="HTML5">
+                  <img src="./imgs/css3.png" alt="HTML5">
+                  <img src="./imgs/bs1.png" alt="HTML5">
+                  <img src="./imgs/jquery.png" alt="HTML5">
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="pjname"><span>
+                    <h1>item3</h1>
+                  </span></div>
+                <img src="./imgs/bg3.jpg" alt="New York" />
+                <div class="pjskills"></div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="pjname"><span>
+                    <h1>item4</h1>
+                  </span></div>
+                <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                <div class="pjskills"></div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="pjname"><span>
+                    <h1>item5</h1>
+                  </span></div>
+                <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                <div class="pjskills"></div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="pjname"><span>
+                    <h1>item6</h1>
+                  </span></div>
+                <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                <div class="pjskills"></div>
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <!-- <a class="carousel-control-prev" href="#demo" data-slide="prev">
                   <span class="carousel-control-prev-icon"></span>
                 </a>
                 <a class="carousel-control-next" href="#demo" data-slide="next">
                   <span class="carousel-control-next-icon"></span>
                 </a> -->
-              </div>
-
-            </div>
-
-            <div class="row row-bottom">
-              <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="0" class="active" style="background: url(./imgs/lincoln-full.PNG);"></li>
-                <li data-target="#demo" data-slide-to="1"></li>
-                <li data-target="#demo" data-slide-to="2"></li>
-                <li data-target="#demo" data-slide-to="3"></li>
-                <li data-target="#demo" data-slide-to="4"></li>
-                <li data-target="#demo" data-slide-to="5"></li>
-              </ul>
-            </div>
-
-
           </div>
         </div>
-      <!-- </div> -->
+
+        <div class="row row-bottom">
+          <ul class="carousel-indicators">
+            <!-- <li data-target="#demo" data-slide-to="0" class="active" style="background: url('./imgs/lincoln-full.png'); background-size: cover;"></li> -->
+            <li data-target="#demo" data-slide-to="0" class="active"
+              style="background:url('imgs/lincoln-full.png'); background-size: cover;">
+
+            </li>
+            <li data-target=" #demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+            <li data-target="#demo" data-slide-to="3"></li>
+            <li data-target="#demo" data-slide-to="4"></li>
+            <li data-target="#demo" data-slide-to="5"></li>
+          </ul>
+        </div>
+
+
+      </div>
+    </div>
+    <!-- </div> -->
 
     <!-- section4 -->
   </div>
