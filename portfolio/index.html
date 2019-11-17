@@ -105,10 +105,20 @@
         $(this).addClass("on");
         $(".menu span").not(this).removeClass("on");
       });
+
       $("#modal").click(function () {
-        $(".modal").show();
-        $("#fp-nav").hide();
-        // $("#modal").css("background-image", "url(imgs/timess.png)");
+        if ($(".modal").is(":visible") == true) {
+          $(".modal").hide();
+          $("#fp-nav").show();
+          $("#modal").css("background-image", "url(imgs/btn_allmenu_copy.png)");
+        } else {
+          $(".modal").show();
+          $("#fp-nav").hide();
+          $("#modal").css("background-image", "url(imgs/x_menu.png)");
+        }
+        // $(".modal").show();
+        // $("#fp-nav").hide();
+        // $("#modal").css("background-image", "url(imgs/x_menu.png)");
       });
 
       // col-md-1
@@ -125,7 +135,7 @@
           $(event.target).is(".menu a") ||
           $(event.target).is("#menuModal")
         ) {
-          // $("#modal").css("background-image", "url(imgs/btn_allmenu.png)");
+          $("#modal").css("background-image", "url(imgs/btn_allmenu_copy.png)");
           $(".modal").hide();
           $("#fp-nav").show();
         }
@@ -147,21 +157,19 @@
       opacity: 1;
     }
 
+    #fullmenu {
+      margin-top: auto;
+    }
+
     .modal {
       opacity: 0.9;
       position: fixed;
-      /* Stay in place */
       z-index: 1;
-      /* Sit on top */
       left: 0;
       width: 100%;
-      /* Full width */
       height: 100%;
-      /* Full height */
       overflow: auto;
-      /* Enable scroll if needed */
       background-color: rgb(0, 0, 0);
-      /* Black w/ opacity */
     }
 
     .modal-content {
@@ -198,8 +206,10 @@
       background: url(imgs/btn_allmenu_copy.png);
       background-repeat: no-repeat;
       background-position: 0px 0px;
-      margin-left: 1.5%;
-      margin-top: 2%;
+      /* margin-left: 1.5%;
+      margin-top: 2%; */
+      margin: 2% 1.5%;
+      padding: 1%;
       width: 40px;
       height: 50px;
       z-index: 10;
@@ -480,7 +490,11 @@
                 <div class="pjname"><span>
                     <h1>item3</h1>
                   </span></div>
-                <img src="./imgs/bg3.jpg" alt="New York" />
+                <div class="pjcontents">
+                  <!-- <a href="http://mans122.dothome.co.kr/lincoln" target="_blank"> -->
+                  <img src="./imgs/bg1.jpg" alt="LINCOLN DEMO">
+                  <!-- </a> -->
+                </div>
                 <div class="pjskills"></div>
               </div>
 
@@ -488,7 +502,11 @@
                 <div class="pjname"><span>
                     <h1>item4</h1>
                   </span></div>
-                <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                <div class="pjcontents">
+                  <!-- <a href="http://mans122.dothome.co.kr/lincoln" target="_blank"> -->
+                  <img src="./imgs/bg1.jpg" alt="LINCOLN DEMO">
+                  <!-- </a> -->
+                </div>
                 <div class="pjskills"></div>
               </div>
 
@@ -496,7 +514,11 @@
                 <div class="pjname"><span>
                     <h1>item5</h1>
                   </span></div>
-                <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                <div class="pjcontents">
+                  <!-- <a href="http://mans122.dothome.co.kr/lincoln" target="_blank"> -->
+                  <img src="./imgs/bg1.jpg" alt="LINCOLN DEMO">
+                  <!-- </a> -->
+                </div>
                 <div class="pjskills"></div>
               </div>
 
@@ -504,7 +526,11 @@
                 <div class="pjname"><span>
                     <h1>item6</h1>
                   </span></div>
-                <img src="./imgs/bg1.jpg" alt="Los Angeles" />
+                <div class="pjcontents">
+                  <!-- <a href="http://mans122.dothome.co.kr/lincoln" target="_blank"> -->
+                  <img src="./imgs/bg1.jpg" alt="LINCOLN DEMO">
+                  <!-- </a> -->
+                </div>
                 <div class="pjskills"></div>
               </div>
             </div>
