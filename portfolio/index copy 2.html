@@ -57,19 +57,10 @@
           $("#fp-nav ul li a").not(":eq(index2)").css("opacity", "1");
           $(".section").eq(index2).css("opacity", "1");
           $(".section").eq(origin).css("opacity", "0.3");
-
-          if(index2==0){
-            $(".fp-tooltip").css("color","white");
-            $("#fp-nav ul li:hover .fp-tooltip").css("color","white");
-            $("#fp-nav.fp-show-active a.active + .fp-tooltip").css("color","white");
-            }else{
-            $(".fp-tooltip").css("color","black");
-            $("#fp-nav ul li:hover .fp-tooltip").css("color","black");
-            $("#fp-nav.fp-show-active a.active + .fp-tooltip").css("color","black");
-            }
         },
         afterLoad: function () {
           var index = $(".active").index() - 1;
+
           $(".menu span").removeClass("on");
           $(".menu span").eq(index).addClass("on");
         }
@@ -77,12 +68,15 @@
       $(".carousel").carousel({
         interval: false
       });
+      // $("#demo").on('slide.bs.carousel',function(event){alert(event.relatedTarget);})
       $('carousel-control-prev').click(function(event){
         $("#demo").carousel("prev");
       });
       $("#demo").on('slide.bs.carousel', function(event){
+        // alert("The index number I am about to slide to is : " + event.to);
         $(".carousel-indicators li").removeClass("active");
         $(".carousel-indicators li").eq(event.to).addClass("active");
+
     });
       $(window).resize(function () {
         var wwidth = $(window).width();
@@ -249,6 +243,7 @@
     #section0 h1 {
       color: white;
       top: 10%;
+      transform: translateY(-50%);
       position: relative;
     }
 
@@ -465,14 +460,12 @@
 
             <div id="profile-section2" style="border: 1px solid blue;width: 50%; height: 60%;  float: left;">
               profile-section2
-
             </div>
             <div id="profile-section3" style="border: 1px solid blue;width: 50%; height: 60%;  float: left;">
-              
+              profile-section3
             </div>
-            <div id="profile-section4" style="border: 1px solid blue;width: 100%; height: 40%;  float: left; text-align: center;">
-              <h3>skills</h3>
-              
+            <div id="profile-section4" style="border: 1px solid blue;width: 100%; height: 40%;  float: left;">
+              profile-section4
             </div>
 
           </div>
@@ -512,7 +505,7 @@
                 <div class="pjskills">
                   <img src="./imgs/html5.png" alt="HTML5">
                   <img src="./imgs/css3.png" alt="HTML5">
-                  <img src="./imgs/bootstrap.png" alt="HTML5">
+                  <img src="./imgs/bs1.png" alt="HTML5">
                   <img src="./imgs/jquery.png" alt="HTML5">
                 </div>
               </div>

@@ -165,6 +165,7 @@ html.fp-enabled,
   width: 18px;
   margin: -9px 0 0 -9px;
   border-radius: 100%;
+  
 }
 #fp-nav ul li a.active span {
   width: 100%;
@@ -229,11 +230,7 @@ html.fp-enabled,
 #fp-nav ul li .fp-tooltip.fp-right {
   top: -5px;
   left: -5px;
-  /* left: 265px; */
 }
-/* #fp-nav ul li .fp-tooltip.fp-right {
-    right: 20px;
-} */
 #fp-nav ul li .fp-tooltip.fp-left {
   left: 20px;
 }
