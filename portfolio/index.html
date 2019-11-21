@@ -74,16 +74,20 @@
           $(".menu span").eq(index).addClass("on");
         }
       });
+
       $(".carousel").carousel({
         interval: false
       });
+
       $('carousel-control-prev').click(function(event){
         $("#demo").carousel("prev");
       });
+
       $("#demo").on('slide.bs.carousel', function(event){
         $(".carousel-indicators li").removeClass("active");
         $(".carousel-indicators li").eq(event.to).addClass("active");
-    });
+      });
+
       $(window).resize(function () {
         var wwidth = $(window).width();
         var wheight = $(window).innerHeight();
@@ -95,10 +99,8 @@
         $('#wrap2').css("width", wwidth).css("height", wheight);
         $(".modal").css("width", wwidth).css("height", wheight);
         $(".pjcontents img").css("height", imgheight);
-        // $(".pjskills img").css("height", skillheight);
-
-
       });
+
       $(".carousel-inner").change(function () {
         console.log("dd");
       })
@@ -275,7 +277,7 @@
     #profile-section4 {padding-right: 5%;}
     #profile-section4 h3{ width: 100%; height: 20%; font-size: 3rem;} 
     #profile-section4 ul {width: 100%; height: 40%;} 
-    #profile-section4 li {width: 13%;height: 90%; background: blue; float: left; margin: 0 0 1% 1%;}
+    #profile-section4 li {width: 13%;height: 90%; float: left; margin: 0 0 1% 1%;}
     /*  */
 
     /*  */
@@ -506,7 +508,16 @@
               <h3>skills</h3>
 
               <ul>
-                <li></li>
+                <li style="position: relative;">
+                  <img src="./imgs/html5.png" alt="HTML5" style="width: 100%; height: 85%; position: absolute; left: 0;">
+                  <!-- <div style="width: 80%; height: 15%; background: #00ced1; position: absolute; left: 0;bottom: 0;"></div>
+                  <div style="border: 1px solid black; width: 100%; height: 15%; position: absolute; left: 0;bottom: 0;"></div> -->
+                  <div style="border: 1px solid black; width: 80%; height: 10%; position: absolute;left: 10%; bottom: 0;">
+                    <div style="width: 80%; height: 100%; background: #00ced1; position: absolute; left: 0;bottom: 0;line-height: 10px; font-size:5px;"><span>80%</span></div>
+                  </div>
+                  
+                  
+                </li>
                 <li></li>
                 <li></li>
                 <li></li>
