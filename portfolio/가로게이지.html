@@ -163,26 +163,109 @@
 
   <style>
     /* Web menu */
-    .section {-webkit-transition: opacity 0.2s ease-in;transition: opacity 0.8s ease-in;opacity: 0.5;}
-    #fullmenu {margin-top: auto;}
-    .modal {opacity: 0.9;position: fixed;z-index: 1;left: 0;width: 100%;height: 100%;overflow: auto;background-color: rgb(0, 0, 0);}
-    .modal-content {text-align: center;background-color: black;opacity: 0.9;color: white;margin: auto;margin-top: 10%;padding: auto;width: 30%;height: 400px !important;font-size: 2.8em;line-height: 2em;}
-    .modal-content a {color: white;text-decoration-line: none;}
-    .modal span:hover {text-decoration: underline;}
-    .on {text-decoration: underline;}
+    .section {
+      -webkit-transition: opacity 0.2s ease-in;
+      transition: opacity 0.8s ease-in;
+      opacity: 0.5;
+    }
+
+
+    #fullmenu {
+      margin-top: auto;
+    }
+
+    .modal {
+      opacity: 0.9;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0, 0, 0);
+    }
+
+    .modal-content {
+      text-align: center;
+      background-color: black;
+      opacity: 0.9;
+      color: white;
+      margin: auto;
+      margin-top: 10%;
+      padding: auto;
+      width: 30%;
+      height: 400px !important;
+      font-size: 2.8em;
+      line-height: 2em;
+    }
+
+    .modal-content a {
+      color: white;
+      text-decoration-line: none;
+    }
+
+    .modal span:hover {
+      text-decoration: underline;
+    }
+
+    .on {
+      text-decoration: underline;
+    }
 
     /* modal Button */
-    #modal {line-height: 1;border: 1px solid transparent;background: url(imgs/btn_allmenu_copy.png);background-repeat: no-repeat;background-position: 0px 0px;margin: 2% 1.5%;padding: 1%;width: 40px;height: 50px;z-index: 10;color: white;padding: 0;}
-    #modal:focus {outline: 0;border: none;box-shadow: none;text-decoration: none;}
-    #modal span {font-size: 1.5em;z-index: 100;}
-    #modal:focus {outline: none;border: none;}
-    #section0 {opacity: 1;}
-    #section0 h1 {color: white;top: 10%;position: relative;}
-    #section0 h1 b {font-size: 1.6em;}
+    #modal {
+      line-height: 1;
+      border: 1px solid transparent;
+      background: url(imgs/btn_allmenu_copy.png);
+      background-repeat: no-repeat;
+      background-position: 0px 0px;
+      margin: 2% 1.5%;
+      padding: 1%;
+      width: 40px;
+      height: 50px;
+      z-index: 10;
+      color: white;
+      padding: 0;
+    }
+
+    #modal:focus {
+      outline: 0;
+      border: none;
+      box-shadow: none;
+      text-decoration: none;
+    }
+
+    #modal span {
+      font-size: 1.5em;
+      z-index: 100;
+    }
+
+    #modal:focus {
+      outline: none;
+      border: none;
+    }
+    
+    #section0 {
+      opacity: 1;
+    }
+    #section0 h1 {
+      color: white;
+      top: 10%;
+      position: relative;
+    }
+
+    #section0 h1 b {
+      font-size: 1.6em;
+    }
 
     /* Profile */
-    /* #section1 {padding: 6% 0 0 0;} */
-    #profilebottom {width: 100%; height: 90%;}
+    #section1 {
+      /* background-size: cover; */
+      /* background-image: url(imgs/bg3.jpg); */
+      padding: 6% 0 0 0;
+    }
+
+    #profilebottom {width: 100%; height: 85%;}
     /* profile-section1 */
     #profile-section1 {width: 30%; height: 100%; float: left; padding-top: 5%; padding-left: 10%; padding-right: 5%;}
     #profile-section1 h1 {font-size: 5em; letter-spacing: 10px; text-align: left; margin-left: 10%;}
@@ -190,23 +273,15 @@
 
     /* #profile-section2 {} */
 
-    /* #profile-section3 {} */
-    #profile-section3 ul { width: 100%; height: 80%; padding-top: 5%;}
-    #profile-section3 li { width: 100%; height: 20%; border: 1px solid green; padding-right: 20%;}
-    #profile-section3 li .top{width: 100%; height: 40%; border-radius: 10px; background: skyblue;}
-    #profile-section3 li .bottom{width: 100%; height: 60%; position: relative;}
-    .personality-left {position: absolute; left: 0;}
-    .personality-right {position: absolute; right: 0;}
     /* profile-section4 */
     #profile-section4 {padding-right: 5%;}
     #profile-section4 h3{ width: 100%; height: 20%; font-size: 3rem;} 
     #profile-section4 ul {width: 100%; height: 40%;} 
     /* #profile-section4 li {width: 13%;height: 90%; float: left; margin: 0 0 1% 1%;} */
-    #profile-section4 li {width: 12%;height: 85%; float: left; margin: 0 0 1% 2%; position: relative;}
-    #profile-section4 li img{width:70%; left: 15%; top: 0; height: 70%; position: absolute;}
-    #profile-section4 li>div {width: 80%;left: 10%; height: 25%; position: absolute; bottom: 0;}
-    #profile-section4 li>div>img {width: 20%; position: relative; margin: 0; padding: 0; left: 0;}
-    /* #profile-section4 li>div>div {width: 80%; height: 100%; background: #00ced1; position: absolute; left: 0;bottom: 0;line-height: 10px; font-size:5px;} */
+    #profile-section4 li {width: 13%;height: 90%; float: left; margin: 0 0 1% 1%; position: relative; border: 1px solid black;}
+    #profile-section4 li img{width:70%; left: 15%; top: 0; height: 80%; position: absolute; border: 1px solid black;}
+    #profile-section4 li>div {border: 1px solid black; width: 70%;left: 15%; height: 10%; position: absolute; bottom: 0;}
+    #profile-section4 li>div>div {width: 80%; height: 100%; background: #00ced1; position: absolute; left: 0;bottom: 0;line-height: 10px; font-size:5px;}
     /*  */
 
     /* section2 */
@@ -231,8 +306,6 @@
     .carousel-indicators {margin: 0;width: 100%;height: 100%;max-width: 1440px;max-height: 200px;}
     .carousel-indicators li {width: 10%;height: 60%;border-radius: 50%;border: 0;padding: 0;margin: 0 auto;}
     .carousel-indicators li.active {border: 2px solid blue;transform: scale(1.2);}
-
-
     @media screen and (max-width: 1440px){
       #profile-section1 {width: 30%; height: 100%; float: left; padding-top: 5%; padding-left: 5%; padding-right: 5%;}
       #profile-section1 h1 {font-size: 4em; letter-spacing: 10px; text-align: left; margin-left: 10%;}
@@ -241,16 +314,13 @@
       
     }
     @media screen and (max-width: 1024px){
-
-      #profile-section1 {width: 100%; height: 30%;}
       #profile-section1 h1 {font-size: 2em;}
       #profile-section1 table{font-size: 0.5em;}
 
-      #profile-section2,#profile-section3 {width: 100%; height:30%;}
       #profile-section4 {padding-right: 1%;}
       #profile-section4 h3{ width: 100%; height: 20%; font-size: 3rem;} 
       #profile-section4 ul {width: 100%; height: 80%; margin: 0;} 
-      #profile-section4 li {width: 30%;height: 30%; float: left; margin: 0 0 1% 1%;}
+      #profile-section4 li {width: 30%;height: 30%; background: blue; float: left; margin: 0 0 1% 1%;}
     }
 
 
@@ -296,20 +366,20 @@
 
   <!-- Content ----------------------------------------------------------------------------->
   <div id="fullpage">
-    <!-- section0 Intro --------------------------------------->
+    <!-- section0 -->
     <div class="section active" id="section0">
       <h1>
         JUNG HAN BYUL's <br />
         <b>PORTFOLIO</b>
       </h1>
     </div>
-    <!--  -->
 
-    <!-- section2 Profile ------------------------------------->
+
+    <!-- section2 -->
     <div class="section" id="section1" style="padding: 0; margin: 0;">
       <div id="wrap2">
-        <div id="Profile-header" style="width: 100%; height: 10%; background: pink;">
-          <h1>Profile</h1>
+        <div id="Profile-header" style="width: 100%; height: 15%; background: pink;">
+          <h1>Profile-header</h1>
         </div>
 
         <div id="profilebottom">
@@ -353,47 +423,38 @@
 
           <div id="profile-bt-right" style="width: 70%; height: 100%;float: left;">
 
-            <div id="profile-section2" style="width: 50%; height: 60%;  float: left;">
+            <div id="profile-section2" style="border: 1px solid blue;width: 50%; height: 60%;  float: left;">
+              profile-section2
 
             </div>
-            <div id="profile-section3" style="width: 50%; height: 60%;  float: left;">
-              <div style="width: 100%; height: 20%; text-align: left; padding-left: 10%; padding-top: 5%;"><h3>Personality</h3></div>
-              <ul>
-                <li><div class="top"></div><div class="bottom"><span class="personality-left">내향적</span><span class="personality-right">외향적</span></div></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
+            <div id="profile-section3" style="border: 1px solid blue;width: 50%; height: 60%;  float: left;">
               
             </div>
-
-            <!-- Skills ---------->
-            <div id="profile-section4" style="width: 100%; height: 40%;  float: left; text-align: center;">
-              <h3>Skills</h3>
+            <div id="profile-section4" style="border: 1px solid blue;width: 100%; height: 40%;  float: left; text-align: center;">
+              <h3>skills</h3>
 
               <ul>
-                <li><img src="./imgs/html5.png" alt="HTML5"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li>
-                <li><img src="./imgs/css3.png" alt="css3"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"></div></li>
-                <li><img src="./imgs/java.png" alt="java"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li>
-                <li><img src="./imgs/js.png" alt="javascript"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li>
-                <li><img src="./imgs/jquery.png" alt="jquery"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li>
-                <li><img src="./imgs/vuejs.png" alt="vuejs"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li>
-                <li><img src="./imgs/react.png" alt="react"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li>
+                <li><img src="./imgs/html5.png" alt="HTML5"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/css3.png" alt="css3"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/java.png" alt="java"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/js.png" alt="javascript"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/jquery.png" alt="jquery"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/vuejs.png" alt="vuejs"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/react.png" alt="react"><div><div><span></span></div></div></li>
               </ul>
 
               <ul>
-                  <li><img src="./imgs/bootstrap.png" alt="bootstrap"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li>
-                <li><img src="./imgs/oracle.png" alt="database"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li>
-                <li><img src="./imgs/c.png" alt="c"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li>
-                <li><img src="./imgs/node.png" alt="nodejs"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li>
-                <li><img src="./imgs/spring.png" alt="spring"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li>
-                <li><img src="./imgs/android.png" alt="android"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li>
-                <li><img src="./imgs/jsp.png" alt="jsp"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li>
+                  <li><img src="./imgs/bootstrap.png" alt="bootstrap"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/oracle.png" alt="database"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/c.png" alt="c"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/node.png" alt="nodejs"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/spring.png" alt="spring"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/android.png" alt="android"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/jsp.png" alt="jsp"><div><div><span></span></div></div></li>
               </ul>
 
             </div>
-            <!-- Skills -->
+
           </div>
 
         </div>
@@ -403,7 +464,7 @@
       </div>
     </div>
 
-    <!-- section3 Projects ---------------------------------------->
+    <!-- section3 -->
     <div class="section" id="section2">
       <!-- <div class="container-fluid"> -->
       <div class="container">
@@ -536,9 +597,9 @@
 
       </div>
     </div>
-    <!-- section3 -->
+    <!-- </div> -->
 
-  
+    <!-- section4 -->
   </div>
 </body>
 

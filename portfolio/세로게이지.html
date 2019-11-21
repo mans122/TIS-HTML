@@ -57,27 +57,37 @@
           $("#fp-nav ul li a").not(":eq(index2)").css("opacity", "1");
           $(".section").eq(index2).css("opacity", "1");
           $(".section").eq(origin).css("opacity", "0.3");
+
+          if(index2==0){
+            $(".fp-tooltip").css("color","white");
+            $("#fp-nav ul li:hover .fp-tooltip").css("color","white");
+            $("#fp-nav.fp-show-active a.active + .fp-tooltip").css("color","white");
+            }else{
+            $(".fp-tooltip").css("color","black");
+            $("#fp-nav ul li:hover .fp-tooltip").css("color","black");
+            $("#fp-nav.fp-show-active a.active + .fp-tooltip").css("color","black");
+            }
         },
         afterLoad: function () {
           var index = $(".active").index() - 1;
-
           $(".menu span").removeClass("on");
           $(".menu span").eq(index).addClass("on");
         }
       });
+
       $(".carousel").carousel({
         interval: false
       });
-      // $("#demo").on('slide.bs.carousel',function(event){alert(event.relatedTarget);})
+
       $('carousel-control-prev').click(function(event){
         $("#demo").carousel("prev");
       });
+
       $("#demo").on('slide.bs.carousel', function(event){
-        // alert("The index number I am about to slide to is : " + event.to);
         $(".carousel-indicators li").removeClass("active");
         $(".carousel-indicators li").eq(event.to).addClass("active");
+      });
 
-    });
       $(window).resize(function () {
         var wwidth = $(window).width();
         var wheight = $(window).innerHeight();
@@ -89,10 +99,8 @@
         $('#wrap2').css("width", wwidth).css("height", wheight);
         $(".modal").css("width", wwidth).css("height", wheight);
         $(".pjcontents img").css("height", imgheight);
-        // $(".pjskills img").css("height", skillheight);
-
-
       });
+
       $(".carousel-inner").change(function () {
         console.log("dd");
       })
@@ -243,7 +251,6 @@
     #section0 h1 {
       color: white;
       top: 10%;
-      transform: translateY(-50%);
       position: relative;
     }
 
@@ -258,103 +265,64 @@
       padding: 6% 0 0 0;
     }
 
-    #section2 .container {
-      /* background: green; */
-      margin: 0 auto;
-      padding: 0;
-      height: 100%;
-    }
+    #profilebottom {width: 100%; height: 85%;}
+    /* profile-section1 */
+    #profile-section1 {width: 30%; height: 100%; float: left; padding-top: 5%; padding-left: 10%; padding-right: 5%;}
+    #profile-section1 h1 {font-size: 5em; letter-spacing: 10px; text-align: left; margin-left: 10%;}
+    #profile-section1 table{width: 100%;height: 40%; margin: 0 auto; font-size: 1.4em; text-align: left; margin-top: 100px;}
+
+    /* #profile-section2 {} */
+
+    /* profile-section4 */
+    #profile-section4 {padding-right: 5%;}
+    #profile-section4 h3{ width: 100%; height: 20%; font-size: 3rem;} 
+    #profile-section4 ul {width: 100%; height: 40%;} 
+    /* #profile-section4 li {width: 13%;height: 90%; float: left; margin: 0 0 1% 1%;} */
+    #profile-section4 li {width: 13%;height: 90%; float: left; margin: 0 0 1% 1%; position: relative;}
+    #profile-section4 li img{width:70%; left: 0; top: 0; height: 100%; position: absolute;}
+    #profile-section4 li>div { width: 15%;right: 10%; height: 100%; position: absolute; bottom: 0;}
+    #profile-section4 li>div>div {width: 100%; height: 80%; background: #00ced1; position: absolute; left: 0;bottom: 0;line-height: 10px; font-size:5px;}
+    /*  */
+
+    /* section2 */
+    #section2 .container {margin: 0 auto;padding: 0;height: 100%;}
+
 
 
     /* Projects */
-    #demo {
-      height: 100%;
-      padding: 0;
-      margin: 0;
+    #demo {      height: 100%;padding: 0;margin: 0;}
+    .carousel-item {border: 1px solid black;overflow: hidden;}
+    .carousel-inner {width: 100%;height: 100%;margin-top: 7%;}
+    .carousel-inner .pjcontents img {width: 100%;}
+
+    .pjname {width: 100%;      height: 100%;      font-size: 1em;margin: 0;}
+    .pjcontents {border: 1px solid black;border-left: 0;border-right: 0;height: 100%;margin: 0;}
+    .pjskills {width: 100%;height: 100%;padding: 0;margin: 0;}
+    .pjskills img {width: 5%;height: 100%;margin: 5px 2%;}
+    .row {width: 100%;height: 100%;margin: 0;padding: 0;}
+    .row-top {width: 100%;height: 80%;}
+    .row-bottom {position: relative;width: 100%;height: 15%;}
+
+    .carousel-indicators {margin: 0;width: 100%;height: 100%;max-width: 1440px;max-height: 200px;}
+    .carousel-indicators li {width: 10%;height: 60%;border-radius: 50%;border: 0;padding: 0;margin: 0 auto;}
+    .carousel-indicators li.active {border: 2px solid blue;transform: scale(1.2);}
+    @media screen and (max-width: 1440px){
+      #profile-section1 {width: 30%; height: 100%; float: left; padding-top: 5%; padding-left: 5%; padding-right: 5%;}
+      #profile-section1 h1 {font-size: 4em; letter-spacing: 10px; text-align: left; margin-left: 10%;}
+      #profile-section1 table{width: 100%;height: 40%; margin: 0 auto; text-align: left; margin-top: 50px; font-size: 1em;}
+      #profile-section1 table td{padding-right: 10px;}
+      
+    }
+    @media screen and (max-width: 1024px){
+      #profile-section1 h1 {font-size: 2em;}
+      #profile-section1 table{font-size: 0.5em;}
+
+      #profile-section4 {padding-right: 1%;}
+      #profile-section4 h3{ width: 100%; height: 20%; font-size: 3rem;} 
+      #profile-section4 ul {width: 100%; height: 80%; margin: 0;} 
+      #profile-section4 li {width: 30%;height: 30%; background: blue; float: left; margin: 0 0 1% 1%;}
     }
 
-    .carousel-item {
-      border: 1px solid black;
-      overflow: hidden;
-    }
-
-    .carousel-inner {
-      width: 100%;
-      height: 100%;
-      margin-top: 7%;
-    }
-
-    .carousel-inner .pjcontents img {
-      width: 100%;
-    }
-
-    .pjname {
-      width: 100%;
-      height: 100%;
-      font-size: 1em;
-      margin: 0;
-    }
-
-    .pjcontents {
-      border: 1px solid black;
-      border-left: 0;
-      border-right: 0;
-      height: 100%;
-      margin: 0;
-    }
-
-    .pjskills {
-      height: 100%;
-      padding: 0;
-      margin: 0;
-    }
-
-    .pjskills img {
-      width: 80px;
-      height: 80px;
-      margin: 10px 3%;
-    }
-
-    .row {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
-    .row-top {
-      width: 100%;
-      height: 80%;
-    }
-
-    .row-bottom {
-      position: relative;
-      width: 100%;
-      height: 15%;
-    }
-
-    .carousel-indicators {
-      /* padding-top: 40px; */
-      margin: 0;
-      width: 100%;
-      height: 100%;
-      max-width: 1440px;
-      /* background: purple; */
-    }
-
-    .carousel-indicators li {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      border: 0;
-      padding: 0;
-      margin: 20px auto;
-    }
-
-    .carousel-indicators li.active {
-      border: 2px solid blue;
-      transform: scale(1.2);
-    }
 
     /* .carousel-control-prev { top: 35%; width: 10%; height: 20%; }
     .carousel-control-next { top: 35%; width: 10%; height: 20%; } */
@@ -383,7 +351,7 @@
     </div>
   </div>
 
-  <!-- Mobile Nav -->
+  <!-- Mobile Nav --------------------------------------------------------------->
   <ul id="menu">
     <!-- <button id="modal" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> -->
     <button id="modal">
@@ -394,6 +362,7 @@
     <li data-menuanchor="profile"><a href="#profile">Profile</a></li>
     <li data-menuanchor="projects"><a href="#projects">Projects</a></li>
   </ul>
+  <!-- Mobile nav -->
 
   <!-- Content ----------------------------------------------------------------------------->
   <div id="fullpage">
@@ -413,14 +382,10 @@
           <h1>Profile-header</h1>
         </div>
 
-        <div id="profilebottom" style="width: 100%; height: 85%;">
-
-
-          <div id=" profile-section1" style="width: 30%; height: 100%; float: left; padding-top: 50px;">
-            Profile-section1
-            <h1 style="font-size: 5em;">Jung<br>Han<br>Byul</h1>
-            <table
-              style="width: 60%;height: 40%; margin: 0 auto; font-size: 1.6em; text-align: left; margin-top: 100px;">
+        <div id="profilebottom">
+          <div id="profile-section1">
+            <h1>Jung<br>Han<br>Byul</h1>
+            <table>
               <tr>
                 <td>
                   <h4>Name</h4>
@@ -460,12 +425,34 @@
 
             <div id="profile-section2" style="border: 1px solid blue;width: 50%; height: 60%;  float: left;">
               profile-section2
+
             </div>
             <div id="profile-section3" style="border: 1px solid blue;width: 50%; height: 60%;  float: left;">
-              profile-section3
+              
             </div>
-            <div id="profile-section4" style="border: 1px solid blue;width: 100%; height: 40%;  float: left;">
-              profile-section4
+            <div id="profile-section4" style="border: 1px solid blue;width: 100%; height: 40%;  float: left; text-align: center;">
+              <h3>skills</h3>
+
+              <ul>
+                <li><img src="./imgs/html5.png" alt="HTML5"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/css3.png" alt="css3"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/java.png" alt="java"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/js.png" alt="javascript"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/jquery.png" alt="jquery"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/vuejs.png" alt="vuejs"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/react.png" alt="react"><div><div><span></span></div></div></li>
+              </ul>
+
+              <ul>
+                  <li><img src="./imgs/bootstrap.png" alt="bootstrap"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/oracle.png" alt="database"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/c.png" alt="c"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/node.png" alt="nodejs"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/spring.png" alt="spring"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/android.png" alt="android"><div><div><span></span></div></div></li>
+                <li><img src="./imgs/jsp.png" alt="jsp"><div><div><span></span></div></div></li>
+              </ul>
+
             </div>
 
           </div>
@@ -505,7 +492,7 @@
                 <div class="pjskills">
                   <img src="./imgs/html5.png" alt="HTML5">
                   <img src="./imgs/css3.png" alt="HTML5">
-                  <img src="./imgs/bs1.png" alt="HTML5">
+                  <img src="./imgs/bootstrap.png" alt="HTML5">
                   <img src="./imgs/jquery.png" alt="HTML5">
                 </div>
               </div>
