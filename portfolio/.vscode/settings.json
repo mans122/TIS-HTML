@@ -1,12 +1,1 @@
-{
-  "editor.formatOnSave": false,
-  "prettier.semi": false,
-  "prettier.javascriptEnable": [
-    "javascript",
-    "javascriptreact"
-  ],
-  "prettier.printWidth": 170,
-  "prettier.tabWidth": 4,
-  "prettier.bracketSpacing": true,
-  "prettier.proseWrap": "preserve"
-}
+{}
