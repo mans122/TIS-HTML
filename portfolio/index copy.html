@@ -5,18 +5,27 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>JHB's portfolio</title>
+  <!-- jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- bootstrap -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <!-- font awsome -->
   <script src="https://kit.fontawesome.com/0eb5e3b5fa.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet" />
+  <!-- carousel -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
   
   <!-- fullpage -->
   <link rel="stylesheet" type="text/css" href="js/fullpage.css" />
   <link rel="stylesheet" type="text/css" href="js/examples.css" />
   <script type="text/javascript" src="js/fullpage.js"></script>
-  
+  <!-- <script type="text/javascript" src="js/fullpage.extensions.min.js"></script> -->
+  <!-- <script type="text/javascript" src="js/examples.js"></script> -->
   <!-- [if IE]> -->
   <script type="text/javascript">
     var console = { log: function () { } };
@@ -67,18 +76,38 @@
         }
       });
 
+      $(".carousel").carousel({
+        interval: false
+      });
+
+      $('carousel-control-prev').click(function(event){
+        $("#demo").carousel("prev");
+      });
+
+      $("#demo").on('slide.bs.carousel', function(event){
+        $(".carousel-indicators li").removeClass("active");
+        $(".carousel-indicators li").eq(event.to).addClass("active");
+      });
+
       $(window).resize(function () {
         var wwidth = $(window).width();
         var wheight = $(window).innerHeight();
         var imgheight = wheight * 0.62;
         var skillheight = wheight * 0.04;
+        console.log(wwidth);
+        $('.row-top').css("height", wheight * 0.85);
+        $('.row-bottom').css("height", wheight * 0.15);
         $('#wrap2').css("width", wwidth).css("height", wheight);
-        $("#menuModal").css("width", wwidth).css("height", wheight);
+        $(".modal").css("width", wwidth).css("height", wheight);
       });
 
-  
-      $("#menuModal").hide();
+      $(".carousel-inner").change(function () {
+        console.log("dd");
+      })
+      $(".modal").hide();
       $("#fp-nav ul li a:active").css("opacity", "0");
+
+
       $("#fp-nav ul li a").click(function () {
         $("#fp-nav ul li").eq($(this)).css("opacity", "0");
         $("#fp-nav ul li").not(this).css("opacity", "1");
@@ -96,88 +125,49 @@
         $(".menu span").not(this).removeClass("on");
       });
 
-      $("#modallist").click(function () {
-        if ($("#menuModal").is(":visible") == true) {
-          $("#menuModal").hide();
+      $("#modal").click(function () {
+        if ($(".modal").is(":visible") == true) {
+          $(".modal").hide();
           $("#fp-nav").show();
-          $("#modallist").css("background-image", "url(imgs/btn_allmenu_copy.png)");
+          $("#modal").css("background-image", "url(imgs/btn_allmenu_copy.png)");
         } else {
-          $("#menuModal").show();
+          $(".modal").show();
           $("#fp-nav").hide();
-          $("#modallist").css("background-image", "url(imgs/x_menu.png)");
+          $("#modal").css("background-image", "url(imgs/x_menu.png)");
         }
       });
 
+
       $("#menuModal").click(function (event) {
-        if ($(event.target).is(".menu a") ||$(event.target).is("#menuModal")) {
-          $("#modallist").css("background-image", "url(imgs/btn_allmenu_copy.png)");
-          $("#menuModal").hide();
+        if (
+          $(event.target).is(".menu a") ||
+          $(event.target).is("#menuModal")
+        ) {
+          $("#modal").css("background-image", "url(imgs/btn_allmenu_copy.png)");
+          $(".modal").hide();
           $("#fp-nav").show();
         }
       });
-      $("#contents-container a").click(function(){
-        $('#element').on('scroll touchmove mousewheel', function(event) { // 터치무브와 마우스휠 스크롤 방지
-          event.preventDefault();
-          event.stopPropagation();
-          return false;
-        });
-        //         $('#container').on('scroll touchmove mousewheel', function(event) {
-        //   event.preventDefault();
-        //   event.stopPropagation();
-        //   return false;
-        // });
-      });
-      $("iframe").change(function(){
-        var fBody  = document.frames(name).document.body;
-  // IFRAME 개체
-  var fName  = document.all(name);
-  // IFRAME 내부의 body개체의 넓이를 계산하여 IFRAME의 넓이를 설정해 준다.
-  fName.style.width = fBody.scrollWidth + (fBody.offsetWidth - fBody.clientWidth);
-  // IFRAME 내부의 body개체의 높이를 계산하여 IFRAME의 높이를 설정해 준다.
-  fName.style.height = fBody.scrollHeight + (fBody.offsetHeight - fBody.clientHeight);
-  // 만약 IFRAME의 크기 설정에 실패 하였다면 기본크기로 설정한다.
-  if (Frame_name.style.height == "0px" || Frame_name.style.width == "0px"){
-    fName.style.width = "700px";     //기본 iframe 너비
-    fName.style.height = "300px";    //기본 iframe 높이
-  }
-      });
+
       $(window).trigger("resize");
     });
   </script>
-  <!-- <script>
-     function ResizeFrame(name){
-  // IFRAME 내부의 body 개체
-  var fBody  = document.frames(name).document.body;
-  // IFRAME 개체
-  var fName  = document.all(name);
-  // IFRAME 내부의 body개체의 넓이를 계산하여 IFRAME의 넓이를 설정해 준다.
-  fName.style.width = fBody.scrollWidth + (fBody.offsetWidth - fBody.clientWidth);
-  // IFRAME 내부의 body개체의 높이를 계산하여 IFRAME의 높이를 설정해 준다.
-  fName.style.height = fBody.scrollHeight + (fBody.offsetHeight - fBody.clientHeight);
-  // 만약 IFRAME의 크기 설정에 실패 하였다면 기본크기로 설정한다.
-  if (Frame_name.style.height == "0px" || Frame_name.style.width == "0px"){
-    fName.style.width = "700px";     //기본 iframe 너비
-    fName.style.height = "300px";    //기본 iframe 높이
-  }
-}
-
-  </script> -->
 
   <style>
     /* Web menu */
     .section {-webkit-transition: opacity 0.2s ease-in;transition: opacity 0.8s ease-in;opacity: 0.5;}
     #fullmenu {margin-top: auto;}
-    #menuModal {opacity: 0.9;position: fixed;z-index: 1;left: 0;width: 100%;height: 100%;overflow: auto;background-color: rgb(0, 0, 0);}
-    .menumodal-conetent {text-align: center;background-color: black;opacity: 0.9;color: white;margin: auto;margin-top: 10%;padding: auto;width: 30%;height: 400px !important;font-size: 2.8em;line-height: 2em;}
-    .menumodal-conetent a {color: white;text-decoration-line: none;}
-    #menuModal span:hover {text-decoration: underline;}
+    .modal {opacity: 0.9;position: fixed;z-index: 1;left: 0;width: 100%;height: 100%;overflow: auto;background-color: rgb(0, 0, 0);}
+    .modal-content {text-align: center;background-color: black;opacity: 0.9;color: white;margin: auto;margin-top: 10%;padding: auto;width: 30%;height: 400px !important;font-size: 2.8em;line-height: 2em;}
+    .modal-content a {color: white;text-decoration-line: none;}
+    .modal span:hover {text-decoration: underline;}
     .on {text-decoration: underline;}
 
     /* modal Button */
-    #modallist {line-height: 1;border: 1px solid transparent;background: url(imgs/btn_allmenu_copy.png);background-repeat: no-repeat;background-position: 0px 0px;margin: 2% 1.5%;padding: 1%;width: 40px;height: 50px;z-index: 10;color: white;padding: 0;}
-    #modallist:focus {outline: 0;border: none;box-shadow: none;text-decoration: none;}
-    #modallist span {font-size: 1.5em;z-index: 100;}
-    #modallist:focus {outline: none;border: none;}
+    #modal {line-height: 1;border: 1px solid transparent;background: url(imgs/btn_allmenu_copy.png);background-repeat: no-repeat;background-position: 0px 0px;margin: 2% 1.5%;padding: 1%;width: 40px;height: 50px;z-index: 10;color: white;padding: 0;}
+    #modal:focus {outline: 0;border: none;box-shadow: none;text-decoration: none;}
+    #modal span {font-size: 1.5em;z-index: 100;}
+    #modal:focus {outline: none;border: none;}
     #section0 {opacity: 1;}
     #section0 h1 {color: white;top: 10%;position: relative;}
     #section0 h1 b {font-size: 1.6em;}
@@ -235,7 +225,7 @@
     .projects-contents{width: 28%; height: 50%; float: left; margin: 0 3% 3% 0;}
     .projects-contents .h7{width: 100%; height: 85%; position: relative; overflow: hidden;}
     .projects-contents .h7 .hide{width: 100%; height: 100%; position: absolute; left: 0; top: 90%;  z-index: 1;transition: 0.6s;}
-    .projects-contents .h7 .hide div{width: 100%; height: 100%;background: black; opacity:0.7;}
+    .projects-contents .h7 .hide div{width: 100%; height: 100%;background: black; opacity:0.3;}
     .projects-contents .h7 .hide img {width: 30%; height: 30%; position: absolute; opacity: 1;}
     .projects-contents .h7:hover .hide{top: 0%;}
 
@@ -243,16 +233,8 @@
     .projects-contents .h2{width: 100%; height: 15%; margin: 0; padding: auto auto;}
     .projects-contents .h2 span{height: 100%; line-height: 1.5em; font-size: 1em;}
 
-    /* Modal--------------------------------------------------------------------------------------------------------- */
-    .modal {overflow: hidden;}
-    #content1 .modal {padding-left: 0;}
-    #content1 .modal-dialog {width: 100%; height: 100%; position: relative; max-width: 800px;}
-    #content1 .modal-content {width: 100%; height: 90%; margin: 0 auto; position: absolute;}
-    #content1 .modal-body iframe {width: 100%; height: 100%;}
-
-    #content2 .modal-dialog {width: 500px; height: 80%;}
-    #content2 .modal-body {width: 100%; height: 600px;}
-    /*  */
+    /* .projects-contents .h1{width: 100%; height: 10%; border: 1px solid green;} */
+    
 
     /* @media screen and (max-width: 1440px){
       #profile-section1 {width: 30%; height: 100%; float: left; padding-top: 5%; padding-left: 5%; padding-right: 5%;}
@@ -273,6 +255,9 @@
       #profile-section4 li {width: 30%;height: 30%; float: left; margin: 0 0 1% 1%;}
     } */
 
+
+    /* .carousel-control-prev { top: 35%; width: 10%; height: 20%; }
+    .carousel-control-next { top: 35%; width: 10%; height: 20%; } */
   </style>
 </head>
 
@@ -280,7 +265,7 @@
   <!-- Web Nav ----------------------------------->
   <div id="menuModal" class="modal gnb">
     <button class="navbar-toggler" type="button"><span class="fas fa-times"></span></button>
-    <div class="modal-content menumodal-conetent">
+    <div class="modal-content menu-modal">
       <ul id="fullmenu" class="menu">
         <li data-menuanchor="intro" ><span class="on"><a href="#intro">Intro</a></span></li>
         <li data-menuanchor="profile"><span><a href="#profile">Profile</a></span></li>
@@ -289,32 +274,13 @@
     </div>
   </div>
   <ul id="menu">
-    <button id="modallist"></button>
+    <button id="modal">
+    </button>
     <li data-menuanchor="intro" class="active"><a href="#intro">Intro</a></li>
     <li data-menuanchor="profile"><a href="#profile">Profile</a></li>
     <li data-menuanchor="projects"><a href="#projects">Projects</a></li>
   </ul>
 
-<!-- Content Modal -->
-  <div class="modal" id="content1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header"><h4 class="modal-title">학사관리 프로그램</h4><button type="button" class="close" data-dismiss="modal">&times;</button></div>
-          <div class="modal-body"><iframe src="https://www.youtube.com/embed/jn4x8Ek5q_I?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist&list=jn4x8Ek5q_I,o-gdKEhjO_A" frameborder="0" allowfullscreen></iframe></div>
-          <div class="modal-footer"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></div>
-        </div></div>
-    </div>
-
-    <div class="modal" id="content2">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header"><h4 class="modal-title">영화 예고편</h4><button type="button" class="close" data-dismiss="modal">&times;</button></div>
-          <div class="modal-body">
-            <iframe name="NeBoard" src="http://mans122.dothome.co.kr/movie" frameborder="0" scrolling="no" onload="ResizeFrame(this)"></iframe>
-          </div>
-          <div class="modal-footer"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></div>
-        </div></div>
-    </div>
   <!-- Content ----------------------------------------------------------------------------->
   <div id="fullpage">
     <!-- section0 Intro --------------------------------------->
@@ -328,7 +294,7 @@
 
     <!-- section2 Profile ------------------------------------->
     <div class="section" id="section1" style="padding: 0; margin: 0;">
-      <!-- <div id="wrap2"> -->
+      <div id="wrap2">
         <div id="profile-header">
           <h1>Profile</h1>
         </div>
@@ -350,9 +316,11 @@
             </table>
           </div>
 
+
           <div id="profile-bt-right">
 
             <div id="profile-section2">
+              W
               <div><h3>Comment</h3></div>
                 <ul>
                   <li><div class="sec2-top">안녕하세요</div></li>
@@ -408,7 +376,7 @@
           </div>
 
         </div>
-      <!-- </div> -->
+      </div>
       <div>
 
       </div>
@@ -420,19 +388,29 @@
         <div class="project-title"><h2>Projects</h2></div>
           
         <div id="contents-container">
-          <div class="projects-contents"><div class="h7"><div class="hide"><a data-toggle="modal" href="#content1"><div></div></a><img src="./imgs/java.png" alt="java" style=" left: 10%;bottom:20%;"><img src="./imgs/database.png" alt="java" style="left: 60%; bottom: 20%;"></div><img src="./imgs/graduation.jpg" alt="graduation"></div><div class="h2"><span data-toggle="modal" >학사관리</span></div></div>
-          <div class="projects-contents"><div class="h7"><div class="hide"><a data-toggle="modal" href="#content2"><div></div></a></div><img src="./imgs/joker.jpg" alt="joker"></div><div class="h2"><span>영화예고편</span></div></div>
+          <div class="projects-contents">
+            <div class="h7">
+              <div class="hide">
+                <a href="#" data-toggle="modal" data-target="#content1"><div></div></a>
+                <img src="./imgs/java.png" alt="java" style=" left: 10%;bottom:20%;"><img src="./imgs/database.png" alt="java" style="left: 60%; bottom: 20%;">
+              </div>
+              <img src="./imgs/graduation.jpg" alt="graduation">
+            </div>
+            <div class="h2"><span>학사관리</span></div>
+          </div>
+
+          <div class="projects-contents"><div class="h7"><div class="hide"><div></div></div><img src="./imgs/joker.jpg" alt="joker"></div><div class="h2"><span>영화예고편</span></div></div>
           <div class="projects-contents"><div class="h7"><div class="hide"><div></div></div><img src="./imgs/bg3.jpg" alt=""></div><div class="h2"><span>게시판</span></div></div>
           <div class="projects-contents"><div class="h7"><div class="hide"><div></div></div><img src="./imgs/lincoln.jpg" alt=""></div><div class="h2"><span>LINCOLN DEMO</span></div></div>
           <div class="projects-contents"><div class="h7"><div class="hide"><div></div></div><img src="./imgs/cadillac.jpg" alt=""></div><div class="h2"><span>CADILLAC DEMO</span></div></div>
-          <div class="projects-contents"><div class="h7"><div class="hide"><a href="http://mans122.dothome.co.kr/company/" target="_black"><div></div></a></div><img src="./imgs/bg1.jpg" alt=""></div><div class="h2"><span>DEMO</span></div></div>
+          <div class="projects-contents"><div class="h7"><div class="hide"><div></div></div><img src="./imgs/bg1.jpg" alt=""></div><div class="h2"><span>DEMO</span></div></div>
         </div>
       </div>
 
     </div>
 
   <!-- Modal 구역 ------------------------->
-  <div class="modal" id="content1" >
+  <div class="modal" id="content1">
     <div class="modal-dialog">
       <div class="modal-content">
   
@@ -457,8 +435,4 @@
   </div>
   <!-- 모달 끝 -->
   </div>
-  
-  
-  
-  </body>
 </html>
