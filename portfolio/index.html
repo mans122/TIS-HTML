@@ -27,9 +27,8 @@
       $("#fullpage").fullpage({
         //options here
         licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
-        scrollingSpeed: 1100, //스크롤 속도 기본 700
+        scrollingSpeed: 900, //스크롤 속도 기본 700
         autoScrolling: true,
-        // easing:,
         // fitToSectionDelay:2000,
         scrollHorizontally: false,
         sectionsColor: ["#000", "#eee", "#ccdddd"],
@@ -115,54 +114,19 @@
           $("#fp-nav").show();
         }
       });
-      $("#contents-container a").click(function(){
-        $('#element').on('scroll touchmove mousewheel', function(event) { // 터치무브와 마우스휠 스크롤 방지
-          event.preventDefault();
-          event.stopPropagation();
-          return false;
-        });
-        //         $('#container').on('scroll touchmove mousewheel', function(event) {
-        //   event.preventDefault();
-        //   event.stopPropagation();
-        //   return false;
-        // });
-      });
-      $("iframe").change(function () {
-        var fBody = document.frames(name).document.body;
-        // IFRAME 개체
-        var fName = document.all(name);
-        // IFRAME 내부의 body개체의 넓이를 계산하여 IFRAME의 넓이를 설정해 준다.
-        fName.style.width = fBody.scrollWidth + (fBody.offsetWidth - fBody.clientWidth);
-        // IFRAME 내부의 body개체의 높이를 계산하여 IFRAME의 높이를 설정해 준다.
-        fName.style.height = fBody.scrollHeight + (fBody.offsetHeight - fBody.clientHeight);
-        // 만약 IFRAME의 크기 설정에 실패 하였다면 기본크기로 설정한다.
-        if (Frame_name.style.height == "0px" || Frame_name.style.width == "0px") {
-          fName.style.width = "700px";     //기본 iframe 너비
-          fName.style.height = "300px";    //기본 iframe 높이
-        }
-      });
 
+
+      $(".modal").click(function(event){
+        fullpage_api.setAllowScrolling(true);
+      });
+      $("#contents-container a").click(function(){
+        fullpage_api.setAllowScrolling(false);
+        // if($(".modal").hasClass("show") === false) {fullpage_api.setAllowScrolling(false);}
+      });
+   
       $(window).trigger("resize");
     });
   </script>
-  <!-- <script>
-     function ResizeFrame(name){
-  // IFRAME 내부의 body 개체
-  var fBody  = document.frames(name).document.body;
-  // IFRAME 개체
-  var fName  = document.all(name);
-  // IFRAME 내부의 body개체의 넓이를 계산하여 IFRAME의 넓이를 설정해 준다.
-  fName.style.width = fBody.scrollWidth + (fBody.offsetWidth - fBody.clientWidth);
-  // IFRAME 내부의 body개체의 높이를 계산하여 IFRAME의 높이를 설정해 준다.
-  fName.style.height = fBody.scrollHeight + (fBody.offsetHeight - fBody.clientHeight);
-  // 만약 IFRAME의 크기 설정에 실패 하였다면 기본크기로 설정한다.
-  if (Frame_name.style.height == "0px" || Frame_name.style.width == "0px"){
-    fName.style.width = "700px";     //기본 iframe 너비
-    fName.style.height = "300px";    //기본 iframe 높이
-  }
-}
-
-  </script> -->
 
   <style>
     /* Web menu */
@@ -432,34 +396,5 @@
 
     </div>
 
-  <!-- Modal 구역 ------------------------->
-  <div class="modal" id="content1" >
-    <div class="modal-dialog">
-      <div class="modal-content">
-  
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Modal Heading</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-  
-        <!-- Modal body -->
-        <div class="modal-body">
-          Modal body..
-        </div>
-  
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-  
-      </div>
-    </div>
-  </div>
-  <!-- 모달 끝 -->
-  </div>
-  
-  
-  
   </body>
 </html>
