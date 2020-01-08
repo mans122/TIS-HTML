@@ -12,6 +12,10 @@
   <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Aldrich&display=swap" rel="stylesheet">
+  <!-- End Google Font -->
+  
   <!-- fullpage -->
   <link rel="stylesheet" type="text/css" href="js/fullpage.css" />
   <link rel="stylesheet" type="text/css" href="js/examples.css" />
@@ -146,8 +150,9 @@
     #modallist span {font-size: 1.5em;z-index: 100;}
     #modallist:focus {outline: none;border: none;}
     #section0 {opacity: 1;}
-    #section0 h1 {color: white;top: 10%;position: relative;}
-    #section0 h1 b {font-size: 1.6em;}
+    #section0 h1 {color: white;top: 5%;position: relative;font-family: 'Aldrich', sans-serif;}
+    #section0 h1 b {font-size: 2.5em;}
+    #scrolldown {width: 40px; height: 30px; left: 49%; margin: 0;}
 
     /* Profile */
     #profile-header{width: 100%; height: 10%;position: relative;}
@@ -200,17 +205,17 @@
     #project-wrap .project-title h2{font-size: 5em; top: 45%; right: 5%; position: absolute;}
     #contents-container{width: 75%; height: 100%; float: left; padding: 6% 2% 8% 2%;}
     .projects-contents{width: 23%; height: 50%; float: left; margin: 0 2% 3% 0;}
-    .projects-contents .h7{width: 100%; height: 85%; position: relative; overflow: hidden;}
+    .projects-contents .h7{width: 100%; height: 85%; position: relative; overflow: hidden; border-radius: 10%;}
     /* .projects-contents .h7 .hide{width: 100%; height: 100%; position: absolute; left: 0; top: 100%;  z-index: 1;transition: 0.6s;} */
     .projects-contents .h7 .hide{width: 100%; height: 100%; position: absolute; left: 0; top:92%;  z-index: 1;transition: 0.6s; background-color: rgba(55,64,81,0.7);}
     .projects-contents .h7 .hide img {width: 30%; height: 25%;  float: left !important;}
-    .projects-contents .h7 .hide h4{font-size: 2em; color: white; position: absolute;width: 100%; height: 100%; margin: 0 auto; top: 10%;}
+    .projects-contents .h7 .hide h4{font-size: 2.5em; color: white; position: absolute;width: 100%; height: 100%; margin: 0 auto; top: 10%;}
     .projects-contents .h7:hover .hide{top:0;}
     
     
 
     .projects-contents .h7 img{width: 100%; height: 100%; position: absolute; left: 0; margin: 0;}
-    .projects-contents .h2{width: 100%; height: 15%; margin: 0; padding: auto auto;}
+    .projects-contents .h2{width: 100%; height: 15%; margin: 0; padding: auto auto; }
     .projects-contents .h2 span{height: 100%; line-height: 1.5em; font-size: 1em;}
 
     /* Modal--------------------------------------------------------------------------------------------------------- */
@@ -292,14 +297,14 @@
     #project-wrap .project-title h2{font-size: 5em; top: 45%; left:5%; position: absolute;}
     #contents-container{width: 100%; height: 80%; float: left;}
     #contents-container .h2{font-size: 1.2em;}
-    .projects-contents {margin: 2% 0 2% 5%;}
+    .projects-contents {margin: 2% 0 2% 5%; }
     }
 
   </style>
 </head>
 
 <body>
-  <!-- Web Nav ----------------------------------->
+  <!-- Web Nav ----------------------------------------------------------------------------------------------------------------------------->
   <div id="menuModal" class="modal gnb">
     <button class="navbar-toggler" type="button"><span class="fas fa-times"></span></button>
     <div class="modal-content menumodal-conetent">
@@ -310,6 +315,8 @@
       </ul>
     </div>
   </div>
+  <!-- End Web Nav -->
+
   <ul id="menu">
     <button id="modallist"></button>
     <li data-menuanchor="intro" class="active"><a href="#intro">Intro</a></li>
@@ -317,7 +324,7 @@
     <li data-menuanchor="projects"><a href="#projects">Projects</a></li>
   </ul>
 
-<!-- Content Modal -->
+<!-- Content Modal1 -->
   <div class="modal" id="content1">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -326,7 +333,9 @@
           <div class="modal-footer"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></div>
         </div></div>
     </div>
+    <!-- End Content Modal1 -->
 
+    <!-- Content Modal2 -->
     <div class="modal" id="content2">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -337,7 +346,7 @@
           <div class="modal-footer"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></div>
         </div></div>
     </div>
-  <!-- Content ----------------------------------------------------------------------------->
+    <!-- End Content Modal2 -->
   <div id="fullpage">
     <!-- section0 Intro --------------------------------------->
     <div class="section active" id="section0">
@@ -370,6 +379,7 @@
               <tr><td><h4>H.P</h4></td><td style="padding-left: 5%;">010-8603-XXXX</td></tr>
               <tr><td><h4>Email</h4></td><td style="padding-left: 5%;">ans122@naver.com</td></tr>
               <tr><td><h4>Address</h4></td><td style="padding-left: 5%;">010-8603-XXXX</td></tr>
+              <tr><td><h4>KakaoTalk</h4></td><td style="padding-lfet:5%;">mans122</td></tr>
             </table>
           </div>
 
@@ -378,16 +388,16 @@
             <div id="profile-section2">
               <div><h3>Comment</h3></div>
                 <ul>
-                  <li><div class="sec2-top">안녕하세요</div></li>
+                  <!-- <li><div class="sec2-top">안녕하세요</div></li>
                   <li><div class="sec2-top">디자인은 돈주고</div></li>
-                  <li><div class="sec2-top">맡깁시다</div></li>
+                  <li><div class="sec2-top">맡깁시다</div></li> -->
                 </ul>
 
                 <div><h3>Experience</h3></div>
                 <ul>
-                  <li><div class="sec2-top"><div class="sec2-top-left">17.02</div><div class="sec2-top-right">00대학교 정보보호학과 졸업</div></div></li>
+                  <!-- <li><div class="sec2-top"><div class="sec2-top-left">17.02</div><div class="sec2-top-right">00대학교 정보보호학과 졸업</div></div></li>
                   <li><div class="sec2-top"><div class="sec2-top-left">19.06</div><div class="sec2-top-right">육군 정보통신병과 중위 전역</div></div></li>
-                  <li><div class="sec2-top"><div class="sec2-top-left">20.02</div><div class="sec2-top-right">TIS교육센터 응용S/W개발자 교육 이수</div></div></li>
+                  <li><div class="sec2-top"><div class="sec2-top-left">20.02</div><div class="sec2-top-right">TIS교육센터 응용S/W개발자 교육 이수</div></div></li> -->
                  
                 </ul>
               </div>
@@ -403,15 +413,15 @@
                 </ul>
             </div>
 
-            <!-- Skills ---------->
+            <!-- Skills ------------------------------------------------------------------------------------------------->
             <div id="profile-section4">
               <h3>Skills</h3>
 
               <ul>
                 <li><img src="./imgs/html5.png" alt="HTML5"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div></li>
                 <li><img src="./imgs/css3.png" alt="css3"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div></li>
-                <li><img src="./imgs/java.png" alt="java"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div></li>
-                <li><img src="./imgs/js.png" alt="javascript"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div></li>
+                <li><img src="./imgs/java.png" alt="java"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"></div></li>
+                <li><img src="./imgs/js.png" alt="javascript"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"></div></li>
                 <li><img src="./imgs/jquery.png" alt="jquery"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div></li>
                 <li><img src="./imgs/vuejs.png" alt="vuejs"><div><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div></li>
                 <!-- <li><img src="./imgs/react.png" alt="react"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li> -->
@@ -427,7 +437,7 @@
               </ul>
 
             </div>
-            <!-- Skills -->
+            <!-- End Skills -->
           </div>
 
         </div>
@@ -452,8 +462,8 @@
               <div class="h7">
                 <div class="hide">
                   <h4>skill</h4>
-                  <img src="./imgs/java.png" alt="java" style="left: 10%; top: 40%">
-                  <img src="./imgs/database.png" alt="java" style="left: 60%; top: 40%;">
+                  <img src="./imgs/java.png" alt="java" style="left: 15%; top: 30%">
+                  <img src="./imgs/oracle.png" alt="java" style="left: 55%; top: 30%;">
                 </div>
                 <img src="./imgs/graduation.jpg" alt="graduation">
               </div>
@@ -465,8 +475,12 @@
           <div class="projects-contents">
             <a data-toggle="modal" href="#content2">
               <div class="h7">
+                
                 <img src="./imgs/joker.jpg" alt="joker">
-                <div class="hide"></div>
+                <div class="hide">
+                  <h4>skill</h4>
+                  <img src="./imgs/bootstrap.png" alt="android" style="left: 35%; top: 30%">
+                </div>
               </div>
             </a>
             <div class="h2"><span>영화예고편</span></div>
@@ -498,7 +512,13 @@
           <div class="projects-contents">
             <a href="http://mans122.dothome.co.kr/company/" target="_black">
               <div class="h7">
-                <div class="hide"></div>
+                <div class="hide">
+                  <h4>skill</h4>
+                  <img src="./imgs/html5.png" alt="android" style="left: 15%; top: 30%">
+                  <img src="./imgs/css3.png" alt="android" style="left: 55%; top: 30%">
+                  <img src="./imgs/jquery.png" alt="android" style="left: 15%; top: 65%">
+                  <img src="./imgs/bootstrap.png" alt="android" style="left: 55%; top: 65%">
+                </div>
                 <img src="./imgs/tis.png" alt="">
               </div>
             </a>
@@ -508,7 +528,11 @@
           <!-- Content6 -->
           <div class="projects-contents"><a href="#" target="_black">
               <div class="h7">
-                <div class="hide"></div><img src="./imgs/bg1.jpg" alt="">
+                <div class="hide">
+                  <h4>skill</h4>
+                  <img src="./imgs/android.png" alt="android" style="left: 35%; top: 30%">
+                </div>
+                <img src="./imgs/bg1.jpg" alt="">
               </div>
             </a>
             <div class="h2"><span>Diary</span></div>
