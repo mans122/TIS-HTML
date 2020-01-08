@@ -10,11 +10,20 @@
   <!-- <script src="https://kit.fontawesome.com/0eb5e3b5fa.js" crossorigin="anonymous"></script> -->
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> -->
   <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
   
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css?family=Aldrich&display=swap" rel="stylesheet">
-  <!-- End Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Aldrich|Walter+Turncoat|Codystar|Londrina+Sketch|Bungee+Outline|Poor+Story|Bungee+Shade&display=swap" rel="stylesheet">
+  
+  <!-- 
+    font-family: 'Londrina Sketch', cursive;
+    font-family: 'Bungee Outline', cursive; 
+    font-family: 'Poor Story', cursive;
+    font-family: 'Codystar', cursive;
+    font-family: 'Walter Turncoat', cursive;
+    font-family: 'Bungee Shade', cursive;
+  -->
+ <!-- End Google Font -->
   
   <!-- fullpage -->
   <link rel="stylesheet" type="text/css" href="js/fullpage.css" />
@@ -135,7 +144,7 @@
 
   <style>
     /* Web menu */
-    #fp-nav ul li a span {background: skyblue;}
+    #fp-nav ul li a span {background: rgba(224, 38, 13, 0.897);}
     .section {-webkit-transition: opacity 0.2s ease-in;transition: opacity 0.8s ease-in;opacity: 0.5;}
     #fullmenu {margin-top: auto;}
     #menuModal {opacity: 0.9;position: fixed;z-index: 1;left: 0;width: 100%;height: 100%;overflow: auto;background-color: rgb(0, 0, 0);}
@@ -143,6 +152,11 @@
     .menumodal-conetent a {color: white;text-decoration-line: none;}
     #menuModal span:hover {text-decoration: underline;}
     .on {text-decoration: underline;}
+    #fp-nav ul li .fp-tooltip{
+      font-family: 'Walter Turncoat', cursive;
+      font-size:1.5em;
+    }
+    #menuModal a{font-family: 'Londrina Sketch', cursive; font-weight: 600; font-size: 1.5em;}
 
     /* modal Button */
     #modallist {line-height: 1;border: 1px solid transparent;background: url(imgs/btn_allmenu_copy.png);background-repeat: no-repeat;background-position: 0px 0px;margin: 2% 1.5%;padding: 1%;width: 40px;height: 50px;z-index: 10;color: white;padding: 0;  animation: ani linear 1s 0.5s infinite;}
@@ -150,20 +164,24 @@
     #modallist span {font-size: 1.5em;z-index: 100;}
     #modallist:focus {outline: none;border: none;}
     #section0 {opacity: 1;}
-    #section0 h1 {color: white;top: 5%;position: relative;font-family: 'Aldrich', sans-serif;}
-    #section0 h1 b {font-size: 2.5em;}
+    #section0 h1 {color: white;top: 5%;position: relative;font-family: 'Londrina Sketch', cursive;}
+    #section0 h1 b {font-size: 2.5em; font-weight: 500;}
     #scrolldown {width: 40px; height: 30px; left: 49%; margin: 0;}
 
     /* Profile */
-    #profile-header{width: 100%; height: 10%;position: relative;}
-    #profile-header h1{position: absolute; bottom: 0; left: 10%;}
+    #profile-header{width: 100%; height: 10%;position: relative; border-bottom: 1px solid rgba(0, 0, 0, 0.2);}
+    #profile-header h1{position: absolute; bottom: 10%; left: 10%;}
 
     #profilebottom {width: 100%; height: 90%;}
     #profile-bt-right {width: 70%; height: 100%;float: left; padding-left: 5%;}
+    #profile-bt-right h3{font-family: 'Bungee Shade', cursive;}
+    
     /* profile-section1 */
     #profile-section1 {width: 30%; height: 100%; float: left; padding-top: 5%; padding-left: 12%; padding-right: 0%; position: relative;}
-    #profile-section1 h1 {font-size: 4em; letter-spacing: 10px; text-align: left; margin-left: 10%; position: absolute; bottom: 50%; right: 20%; line-height: 1.5em;}
-    #profile-section1 .section1-bottom{width: 50%;height: 40%; margin: 0 auto; font-size: 1em; text-align: left; position: absolute; right: 10%; bottom: 5%;}
+    #profile-section1 h1 {font-size: 4.0em; letter-spacing: 10px; text-align: left; margin-left: 10%;margin-bottom: 10%; right: 20%; line-height: 1.2em;font-family: 'Bungee Outline', cursive; color: cornflowerblue;}
+    #profile-section1 h1 b{font-size: 1.4em;}
+    #profile-section1 .section1-bottom{width: 50%;height: 40%; margin: 0 auto; font-size: 1.2em; text-align: left; position: absolute; right: 10%; bottom: 5%; font-family: 'Poor Story', cursive; font-weight: 600; color: black;}
+    #profile-section1 .section1-bottom h4{color:cornflowerblue;}
     /* #profile-section1 .section1-top{width: 50%;height: 40%; margin: 0 auto; font-size: 1em; text-align: left; position: absolute; right: 10%; bottom: 55%;} */
 
     /* #profile-section2 {} */
@@ -171,6 +189,7 @@
     #profile-section2>div {width: 100%; height: 10%; text-align: left; padding-left: 15%; padding-top: 3%; margin: 0;}
     #profile-section2 ul{width: 100%;height: 40%; margin: 0; padding: 0; padding: 8% 0 1% 0;}
     #profile-section2 li{width: 100%;height: 33%; margin: 0; padding: 0; text-align: left;}
+    #profile-section2 h3{font-size: 2em; line-height: 1em; margin-top: 1%;}
     .sec2-top {width: 100%; height: 100%; font-size: 1.1em;} 
     .sec2-top-left {width: 20%; height: 100%; float: left;  font-weight: 800; font-size: 1em; line-height: 1.2em;}
     .sec2-top-right{ width: 80%; height: 100%; float: left;  text-align: left; font-size: 0.8em;}
@@ -180,10 +199,11 @@
     #profile-section3>div {width: 100%; height: 20%; text-align: left; padding-left: 5%; padding-top: 3%;}
     #profile-section3 ul { width: 100%; height: 80%; padding-top: 0%;}
     #profile-section3 li { width: 80%; height: 20%;padding: 0 20% 0 0;}
-    #profile-section3 li .top{width: 100%; height: 25%; border-radius: 10px; background: skyblue; position: relative;}
-    #profile-section3 li .top div{width: 8%; height: 100%; position: absolute; background: rgb(9, 79, 209); left: 0; border-radius: 10px;}
+    #profile-section3 li .top{width: 100%; height: 25%; border-radius: 10px; background: rgba(36, 177, 219, 0.3); position: relative;}
+    #profile-section3 li .top div{width: 8%; height: 100%; position: absolute; background: rgb(14, 104, 189); left: 0; border-radius: 10px;}
     #profile-section3 li .bottom{width: 100%; height: 75%; position: relative; line-height: 100%;}
     #profile-section3 li .bottom span{top: 15%;}
+    #profile-section3 h3{font-size: 2em; line-height: 1em; margin-top: 1%;}
     .personality-left {position: absolute; left: 0;}
     .personality-right {position: absolute; right: 0;}
     
@@ -207,7 +227,7 @@
     .projects-contents{width: 23%; height: 50%; float: left; margin: 0 2% 3% 0;}
     .projects-contents .h7{width: 100%; height: 85%; position: relative; overflow: hidden; border-radius: 10%;}
     /* .projects-contents .h7 .hide{width: 100%; height: 100%; position: absolute; left: 0; top: 100%;  z-index: 1;transition: 0.6s;} */
-    .projects-contents .h7 .hide{width: 100%; height: 100%; position: absolute; left: 0; top:92%;  z-index: 1;transition: 0.6s; background-color: rgba(55,64,81,0.7);}
+    .projects-contents .h7 .hide{width: 100%; height: 100%; position: absolute; left: 0; top:92%;  z-index: 1;transition: 0.6s; background-color: rgba(55,64,81,0.7); font-family: 'Codystar', cursive; }
     .projects-contents .h7 .hide img {width: 30%; height: 25%;  float: left !important;}
     .projects-contents .h7 .hide h4{font-size: 2.5em; color: white; position: absolute;width: 100%; height: 100%; margin: 0 auto; top: 10%;}
     .projects-contents .h7:hover .hide{top:0;}
@@ -216,7 +236,7 @@
 
     .projects-contents .h7 img{width: 100%; height: 100%; position: absolute; left: 0; margin: 0;}
     .projects-contents .h2{width: 100%; height: 15%; margin: 0; padding: auto auto; }
-    .projects-contents .h2 span{height: 100%; line-height: 1.5em; font-size: 1em;}
+    .projects-contents .h2 span{height: 100%; line-height: 1.5em; font-size: 1em;font-family: 'Poor Story', cursive; color: black; font-weight: 600;}
 
     /* Modal--------------------------------------------------------------------------------------------------------- */
     .modal {overflow: hidden;}
@@ -362,12 +382,14 @@
     <div class="section" id="section1" style="padding: 0; margin: 0;">
       <!-- <div id="wrap2"> -->
         <div id="profile-header">
-          <h1>Profile</h1>
+          <h1 style="font-family: 'Londrina Sketch', cursive;">Profile</h1>
         </div>
 
         <div id="profilebottom">
           <div id="profile-section1">
-            <h1><b>J</b>ung<br><b>H</b>an<br><b>B</b>yul</h1>
+            <h1><b>J</b>ung</h1>
+            <h1><b>H</b>an</h1>
+            <h1><b>B</b>yul</h1>
             <!-- <table class="section1-top" style="width: 40%; height: 40%; position: absolute; right: 0%; ">
               <tr><td style="text-align: right;"><h2>J</h2></td><td>ung</td></tr>
               <tr><td style="text-align: right;"><h2>H</h2></td><td>han</td></tr>
@@ -379,7 +401,7 @@
               <tr><td><h4>H.P</h4></td><td style="padding-left: 5%;">010-8603-XXXX</td></tr>
               <tr><td><h4>Email</h4></td><td style="padding-left: 5%;">ans122@naver.com</td></tr>
               <tr><td><h4>Address</h4></td><td style="padding-left: 5%;">010-8603-XXXX</td></tr>
-              <tr><td><h4>KakaoTalk</h4></td><td style="padding-lfet:5%;">mans122</td></tr>
+              <tr><td><h4>KakaoTalk</h4></td><td style="padding-left:5%;">mans122</td></tr>
             </table>
           </div>
 
@@ -451,7 +473,7 @@
     <div id="section2" class="section">
       <!-- Left Container -->
       <div id="project-wrap">
-        <div class="project-title"><h2>Projects</h2></div>
+        <div class="project-title"><h2 style="font-family: 'Londrina Sketch', cursive;">Projects</h2></div>
 
       <!-- Right Container -->
         <div id="contents-container">
@@ -478,7 +500,7 @@
                 
                 <img src="./imgs/joker.jpg" alt="joker">
                 <div class="hide">
-                  <h4>skill</h4>
+                  <h4>Skill</h4>
                   <img src="./imgs/bootstrap.png" alt="android" style="left: 35%; top: 30%">
                 </div>
               </div>
@@ -513,7 +535,7 @@
             <a href="http://mans122.dothome.co.kr/company/" target="_black">
               <div class="h7">
                 <div class="hide">
-                  <h4>skill</h4>
+                  <h4>Skill</h4>
                   <img src="./imgs/html5.png" alt="android" style="left: 15%; top: 30%">
                   <img src="./imgs/css3.png" alt="android" style="left: 55%; top: 30%">
                   <img src="./imgs/jquery.png" alt="android" style="left: 15%; top: 65%">
@@ -529,7 +551,7 @@
           <div class="projects-contents"><a href="#" target="_black">
               <div class="h7">
                 <div class="hide">
-                  <h4>skill</h4>
+                  <h4>Skill</h4>
                   <img src="./imgs/android.png" alt="android" style="left: 35%; top: 30%">
                 </div>
                 <img src="./imgs/bg1.jpg" alt="">
