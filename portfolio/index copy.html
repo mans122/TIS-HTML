@@ -14,11 +14,12 @@
   <script src="https://kit.fontawesome.com/0eb5e3b5fa.js" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet" />
   <!-- carousel -->
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
+  
   <!-- fullpage -->
   <link rel="stylesheet" type="text/css" href="js/fullpage.css" />
   <link rel="stylesheet" type="text/css" href="js/examples.css" />
@@ -40,12 +41,12 @@
         // easing:,
         // fitToSectionDelay:2000,
         scrollHorizontally: false,
-        sectionsColor: ["#000", "#FFF", "#ccdddd","#FFF"],
-        anchors: ["intro", "profile", "projects", "projects2"],
+        sectionsColor: ["#000", "#eee", "#ccdddd"],
+        anchors: ["intro", "profile", "projects"],
         menu: "#menu",
         lazyLoad: true,
         navigation: true, //우측 dot nav
-        navigationTooltips: ["Intro", "Profile", "Projects","Projects2"], //dot nav list name
+        navigationTooltips: ["Intro", "Profile", "Projects"], //dot nav list name
         showActiveTooltip: true, //actived dot name show
         afterResize: function (width, height) {
           var width = width;
@@ -98,7 +99,6 @@
         $('.row-bottom').css("height", wheight * 0.15);
         $('#wrap2').css("width", wwidth).css("height", wheight);
         $(".modal").css("width", wwidth).css("height", wheight);
-        $(".pjcontents img").css("height", imgheight);
       });
 
       $(".carousel-inner").change(function () {
@@ -137,14 +137,6 @@
         }
       });
 
-      // col-md-1
-      $(".carousel-indicators>li").click(function () {
-        $(".carousel-indicators>li").removeClass("active");
-        $(this).addClass("active");
-      });
-      $(".carousel-indicator img").change(function () {
-        console.log("change");
-      });
 
       $("#menuModal").click(function (event) {
         if (
@@ -184,24 +176,22 @@
     #profile-header{width: 100%; height: 10%;position: relative;}
     #profile-header h1{position: absolute; bottom: 0; left: 10%;}
 
-    /* #section1 {padding: 6% 0 0 0;} */
     #profilebottom {width: 100%; height: 90%;}
-
+    #profile-bt-right {width: 70%; height: 100%;float: left; padding-left: 5%;}
     /* profile-section1 */
     #profile-section1 {width: 30%; height: 100%; float: left; padding-top: 5%; padding-left: 12%; padding-right: 0%; position: relative;}
-    #profile-section1 h1 {font-size: 5em; letter-spacing: 10px; text-align: left; margin-left: 10%; position: absolute; bottom: 55%; right: 20%;}
-    #profile-section1 table{width: 50%;height: 40%; margin: 0 auto; font-size: 1.4em; text-align: left; position: absolute; right: 10%; bottom: 5%;}
+    #profile-section1 h1 {font-size: 4em; letter-spacing: 10px; text-align: left; margin-left: 10%; position: absolute; bottom: 50%; right: 20%; line-height: 1.5em;}
+    #profile-section1 .section1-bottom{width: 50%;height: 40%; margin: 0 auto; font-size: 1em; text-align: left; position: absolute; right: 10%; bottom: 5%;}
+    /* #profile-section1 .section1-top{width: 50%;height: 40%; margin: 0 auto; font-size: 1em; text-align: left; position: absolute; right: 10%; bottom: 55%;} */
 
     /* #profile-section2 {} */
-    #profile-bt-right {width: 70%; height: 100%;float: left;}
-
-    #profile-section2{width: 50%; height: 60%;  float: left;}
+    #profile-section2{width: 50%; height: 60%;  float: left; padding-left: 5%;}
     #profile-section2>div {width: 100%; height: 10%; text-align: left; padding-left: 15%; padding-top: 3%; margin: 0;}
     #profile-section2 ul{width: 100%;height: 40%; margin: 0; padding: 0; padding: 8% 0 1% 0;}
-    #profile-section2 li{width: 100%;height: 33%; margin: 0; padding: 0;}
-    .sec2-top {width: 100%; height: 100%; font-size: 1.3em;}
-    .sec2-top-left {width: 30%; height: 100%; float: left;  font-weight: 800; font-size: 1.2em; line-height: 1.2em;}
-    .sec2-top-right{ width: 70%; height: 100%; float: left;  text-align: left; font-size: 1em;}
+    #profile-section2 li{width: 100%;height: 33%; margin: 0; padding: 0; text-align: left;}
+    .sec2-top {width: 100%; height: 100%; font-size: 1.1em;} 
+    .sec2-top-left {width: 20%; height: 100%; float: left;  font-weight: 800; font-size: 1em; line-height: 1.2em;}
+    .sec2-top-right{ width: 80%; height: 100%; float: left;  text-align: left; font-size: 0.8em;}
 
     /* #profile-section3 {} */
     #profile-section3 {width: 50%; height: 60%;  float: left; padding-bottom: 5%;}
@@ -216,7 +206,7 @@
     .personality-right {position: absolute; right: 0;}
     
     /* profile-section4  Skills */
-    #profile-section4 {width: 100%; height: 40%;  float: left; text-align: center;padding:0 10% 2% 5%;}
+    #profile-section4 {width: 100%; height: 40%;  float: left; text-align: center;padding:0 10% 2% 0%;}
     #profile-section4 h3{ width: 100%; height: 17%; font-size: 3rem; margin-bottom: 3%;} 
     #profile-section4 ul {width: 100%; height: 40%;} 
     /* #profile-section4 li {width: 13%;height: 90%; float: left; margin: 0 0 1% 1%;} */
@@ -227,40 +217,15 @@
     /* #profile-section4 li>div>div {width: 80%; height: 100%; background: #00ced1; position: absolute; left: 0;bottom: 0;line-height: 10px; font-size:5px;} */
     /*  */
 
-    /* section2 */
-    #section2 .container {margin: 0 auto;padding: 0;height: 100%;}
-
-
-
-    /* Projects */
-    #demo {      height: 100%;padding: 0;margin: 0;}
-    .carousel-item {border: 1px solid black;overflow: hidden;}
-    .carousel-inner {width: 100%;height: 100%;margin-top: 7%;}
-    .carousel-inner .pjcontents img {width: 100%;}
-
-    .pjname {width: 100%;      height: 100%;      font-size: 1em;margin: 0;}
-    .pjcontents {border: 1px solid black;border-left: 0;border-right: 0;height: 100%;margin: 0;}
-    .pjskills {width: 100%;height: 100%;padding: 0;margin: 0;}
-    .pjskills img {width: 5%;height: 100%;margin: 5px 2%;}
-    .row {width: 100%;height: 100%;margin: 0;padding: 0;}
-    .row-top {width: 100%;height: 80%;}
-    .row-bottom {position: relative;width: 100%;height: 15%;}
-
-    .carousel-indicators {margin: 0;width: 100%;height: 100%;max-width: 1440px;max-height: 200px;}
-    .carousel-indicators li {width: 10%;height: 60%;border-radius: 50%;border: 0;padding: 0;margin: 0 auto;}
-    .carousel-indicators li.active {border: 2px solid blue;transform: scale(1.2);}
-/* ------------------------------------------------------------------------------------------------------------------------------------------ */
-    /* projects2 */
+    /* projects */
     #project-wrap {width: 100%; height: 100%; margin: 0; padding: 0;}
     #project-wrap .project-title {width: 30%; height: 100%;position: relative; float: left;}
-    #project-wrap .project-title h2{font-size: 5em; top: 45%; right: 5%; position: absolute;}
+    #project-wrap .project-title h2{font-size: 5em; top: 45%; right: -5%; position: absolute;}
     #contents-container{width: 70%; height: 100%; float: left; padding: 6% 5% 8% 5%;}
     .projects-contents{width: 28%; height: 50%; float: left; margin: 0 3% 3% 0;}
     .projects-contents .h7{width: 100%; height: 85%; position: relative; overflow: hidden;}
-    /* .projects-contents .h7 .hide{width: 100%; height: 100%; position: absolute; left: 0; top: 90%; background: red; z-index: 1; opacity: 0.3; transition: 0.8s;} */
     .projects-contents .h7 .hide{width: 100%; height: 100%; position: absolute; left: 0; top: 90%;  z-index: 1;transition: 0.6s;}
     .projects-contents .h7 .hide div{width: 100%; height: 100%;background: black; opacity:0.3;}
-    /* .projects-contents .h7 .hide img {width: 20%; height: 20%; position: absolute; left: 20%; top: 20%;} */
     .projects-contents .h7 .hide img {width: 30%; height: 30%; position: absolute; opacity: 1;}
     .projects-contents .h7:hover .hide{top: 0%;}
 
@@ -299,40 +264,22 @@
 <body>
   <!-- Web Nav ----------------------------------->
   <div id="menuModal" class="modal gnb">
-    <button class="navbar-toggler" type="button">
-      <span class="fas fa-times"></span>
-    </button>
-    <div class="modal-content">
-      <!-- <ul id="fullmenu" class="menu"> -->
+    <button class="navbar-toggler" type="button"><span class="fas fa-times"></span></button>
+    <div class="modal-content menu-modal">
       <ul id="fullmenu" class="menu">
-        <li data-menuanchor="intro">
-          <span class="on"><a href="#intro">Intro</a></span>
-        </li>
-        <li data-menuanchor="profile">
-          <span><a href="#profile">Profile</a></span>
-        </li>
-        <li data-menuanchor="projects">
-          <span><a href="#projects">Projects</a></span>
-        </li>
-        <li data-menuanchor="projects2">
-          <span><a href="#projects2">Projects2</a></span>
-        </li>
+        <li data-menuanchor="intro" ><span class="on"><a href="#intro">Intro</a></span></li>
+        <li data-menuanchor="profile"><span><a href="#profile">Profile</a></span></li>
+        <li data-menuanchor="projects"><span><a href="#projects">Projects</a></span></li>
       </ul>
     </div>
   </div>
-
-  <!-- Mobile Nav --------------------------------------------------------------->
   <ul id="menu">
-    <!-- <button id="modal" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"> -->
     <button id="modal">
-      <!-- <span class="fas fa-bars"></span> -->
-      <!-- <span><i id="menuimg"></i></span> -->
     </button>
     <li data-menuanchor="intro" class="active"><a href="#intro">Intro</a></li>
     <li data-menuanchor="profile"><a href="#profile">Profile</a></li>
     <li data-menuanchor="projects"><a href="#projects">Projects</a></li>
   </ul>
-  <!-- Mobile nav -->
 
   <!-- Content ----------------------------------------------------------------------------->
   <div id="fullpage">
@@ -354,8 +301,13 @@
 
         <div id="profilebottom">
           <div id="profile-section1">
-            <h1>Jung<br>Han<br>Byul</h1>
-            <table>
+            <h1><b>J</b>ung<br><b>H</b>an<br><b>B</b>yul</h1>
+            <!-- <table class="section1-top" style="width: 40%; height: 40%; position: absolute; right: 0%; ">
+              <tr><td style="text-align: right;"><h2>J</h2></td><td>ung</td></tr>
+              <tr><td style="text-align: right;"><h2>H</h2></td><td>han</td></tr>
+              <tr><td style="text-align: right;"><h2>B</h2></td><td>yul</td></tr>
+            </table> -->
+            <table class="section1-bottom">
               <tr><td><h4>Name</h4></td><td style="padding-left: 5%;">정한별</td></tr>
               <tr><td><h4>Age</h4></td><td style="padding-left: 5%;">26</td></tr>
               <tr><td><h4>H.P</h4></td><td style="padding-left: 5%;">010-8603-XXXX</td></tr>
@@ -368,7 +320,7 @@
           <div id="profile-bt-right">
 
             <div id="profile-section2">
-              
+              W
               <div><h3>Comment</h3></div>
                 <ul>
                   <li><div class="sec2-top">안녕하세요</div></li>
@@ -390,7 +342,7 @@
                 <ul>
                   <li><div class="top"><div style="left: 30%;"></div></div><div class="bottom"><span class="personality-left">내향적</span><span class="personality-right">외향적</span></div></li>
                   <li><div class="top"><div style="left: 80%;"></div></div><div class="bottom"><span class="personality-left">감성적</span><span class="personality-right">이성적</span></div></li>
-                  <li><div class="top"><div style="left: 40%;"></div></div><div class="bottom"><span class="personality-left">자율적</span><span class="personality-right">타율적</span></div></li>
+                  <li><div class="top"><div style="left: 40%;"></div></div><div class="bottom"><span class="personality-left">능동적</span><span class="personality-right">수동적</span></div></li>
                   <li><div class="top"><div style="left: 67%;"></div></div><div class="bottom"><span class="personality-left">직관적</span><span class="personality-right">분석적</span></div></li>
                   <li><div class="top"><div style="left: 70%;"></div></div><div class="bottom"><span class="personality-left">폐쇄적</span><span class="personality-right">개방적</span></div></li>
                 </ul>
@@ -401,59 +353,21 @@
               <h3>Skills</h3>
 
               <ul>
-                <li>
-                  <img src="./imgs/html5.png" alt="HTML5">
-                  <div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"></div>
-                </li>
-                <li>
-                  <img src="./imgs/css3.png" alt="css3">
-                  <div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div>
-                </li>
-                <li>
-                  <img src="./imgs/java.png" alt="java">
-                  <div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div>
-                </li>
-                <li>
-                  <img src="./imgs/js.png" alt="javascript">
-                  <div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div>
-                </li>
-                <li>
-                  <img src="./imgs/jquery.png" alt="jquery">
-                  <div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div>
-                </li>
-                <li>
-                  <img src="./imgs/vuejs.png" alt="vuejs">
-                  <div><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div>
-                </li>
+                <li><img src="./imgs/html5.png" alt="HTML5"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"></div></li>
+                <li><img src="./imgs/css3.png" alt="css3"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div></li>
+                <li><img src="./imgs/java.png" alt="java"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div></li>
+                <li><img src="./imgs/js.png" alt="javascript"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div></li>
+                <li><img src="./imgs/jquery.png" alt="jquery"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div></li>
+                <li><img src="./imgs/vuejs.png" alt="vuejs"><div><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div></li>
                 <!-- <li><img src="./imgs/react.png" alt="react"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li> -->
               </ul>
-
               <ul>
-                  <li>
-                    <img src="./imgs/react.png" alt="react">
-                    <div><img src="./imgs/star2.png"></div>
-                  </li>
-                  <li>
-                    <img src="./imgs/bootstrap.png" alt="bootstrap">
-                    <div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"></div>
-                  </li>
-                  <li>
-                    <img src="./imgs/oracle.png" alt="database">
-                    <div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div>
-                  </li>
+                  <li><img src="./imgs/react.png" alt="react"><div><img src="./imgs/star2.png"></div></li>
+                  <li><img src="./imgs/bootstrap.png" alt="bootstrap"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"></div></li><li><img src="./imgs/oracle.png" alt="database"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div></li>
                   <!-- <li><img src="./imgs/c.png" alt="c"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li> -->
-                  <li>
-                    <img src="./imgs/node.png" alt="nodejs">
-                    <div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div>
-                  </li>
-                  <li>
-                    <img src="./imgs/spring.png" alt="spring">
-                    <div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div>
-                  </li>
-                  <li>
-                    <img src="./imgs/android.png" alt="android">
-                    <div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div>
-                  </li>
+                  <li><img src="./imgs/node.png" alt="nodejs"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li>
+                  <li><img src="./imgs/spring.png" alt="spring"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li>
+                  <li><img src="./imgs/android.png" alt="android"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li>
                 <!-- <li><img src="./imgs/jsp.png" alt="jsp"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li> -->
               </ul>
 
@@ -468,149 +382,8 @@
       </div>
     </div>
 
-    <!-- section3 Projects ---------------------------------------->
-    <div class="section" id="section2">
-      <!-- <div class="container-fluid"> -->
-      <div class="container">
-        <!-- row  -->
-        <div class="row row-top">
-          <div id="demo" class="carousel slide" data-ride="carousel">
 
-            <!-- The slideshow -->
-            <div class="carousel-inner">
-
-              <!-- Projects 1 -->
-              <div class="carousel-item active">
-                <div class="pjname">
-                  <span>
-                    <h1>LINCOLN 사이트</h1>
-                  </span>
-                </div>
-
-                <div class="pjcontents">
-                  <!-- <a href="http://mans122.dothome.co.kr/lincoln" target="_blank"> -->
-                  <img src="./imgs/lincoln-full.PNG" alt="LINCOLN DEMO">
-                  <!-- </a> -->
-                </div>
-
-                <div class="pjskills">
-                  <img src="./imgs/html5.png" alt="HTML5">
-                  <img src="./imgs/css3.png" alt="HTML5">
-                  <img src="./imgs/bootstrap.png" alt="HTML5">
-                  <img src="./imgs/jquery.png" alt="HTML5">
-                </div>
-              </div>
-              <!--  -->
-
-              <!-- Projects 2 -->
-              <div class="carousel-item">
-                <div class="pjname">
-                  <span>
-                    <h1>학사관리 프로그램</h1>
-                  </span>
-                </div>
-
-                <div class="pjcontents">
-                  <!-- <a href="http://mans122.dothome.co.kr/lincoln" target="_blank"> -->
-                  <img src="./imgs/bg1.jpg" alt="LINCOLN DEMO">
-                  <!-- </a> -->
-                </div>
-
-                <div class="pjskills">
-                  <img src="./imgs/html5.png" alt="HTML5">
-                  <img src="./imgs/css3.png" alt="HTML5">
-                  <img src="./imgs/bs1.png" alt="HTML5">
-                  <img src="./imgs/jquery.png" alt="HTML5">
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="pjname"><span>
-                    <h1>item3</h1>
-                  </span></div>
-                <div class="pjcontents">
-                  <!-- <a href="http://mans122.dothome.co.kr/lincoln" target="_blank"> -->
-                  <img src="./imgs/bg1.jpg" alt="LINCOLN DEMO">
-                  <!-- </a> -->
-                </div>
-                <div class="pjskills"></div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="pjname"><span>
-                    <h1>item4</h1>
-                  </span></div>
-                <div class="pjcontents">
-                  <!-- <a href="http://mans122.dothome.co.kr/lincoln" target="_blank"> -->
-                  <img src="./imgs/bg1.jpg" alt="LINCOLN DEMO">
-                  <!-- </a> -->
-                </div>
-                <div class="pjskills"></div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="pjname"><span>
-                    <h1>item5</h1>
-                  </span></div>
-                <div class="pjcontents">
-                  <!-- <a href="http://mans122.dothome.co.kr/lincoln" target="_blank"> -->
-                  <img src="./imgs/bg1.jpg" alt="LINCOLN DEMO">
-                  <!-- </a> -->
-                </div>
-                <div class="pjskills"></div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="pjname"><span>
-                    <h1>item6</h1>
-                  </span></div>
-                <div class="pjcontents">
-                  <!-- <a href="http://mans122.dothome.co.kr/lincoln" target="_blank"> -->
-                  <img src="./imgs/bg1.jpg" alt="LINCOLN DEMO">
-                  <!-- </a> -->
-                </div>
-                <div class="pjskills"></div>
-              </div>
-            </div>
-
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </a>
-            
-          </div>
-        </div>
-
-        <div class="row row-bottom">
-          <ul class="carousel-indicators">
-            <!-- <li data-target="#demo" data-slide-to="0" class="active" style="background: url('./imgs/lincoln-full.png'); background-size: cover;"></li> -->
-            <li data-target="#demo" data-slide-to="0" class="active"
-              style="background:url('imgs/lincoln-full.png'); background-size: cover;">
-
-            </li>
-            <li data-target=" #demo" data-slide-to="1"></li>
-            <li data-target="#demo" data-slide-to="2"></li>
-            <li data-target="#demo" data-slide-to="3"></li>
-            <li data-target="#demo" data-slide-to="4"></li>
-            <li data-target="#demo" data-slide-to="5"></li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-    <!-- section3 -->
-    
-    <!-- <div id="section3" class="section">
-      <div id="project-wrap" style="width: 100%; height: 100%; margin: 0; padding: 0;">
-        <div style="width: 40%; height: 100%; border: 1px solid black; position: relative; float: left;">          
-          <h2 style="background: red; font-size: 5em; top: 45%; right: 20%; position: absolute;">Projects</h2>
-        </div>
-
-        <div id="contents-container" style="width: 60%; height: 100%; border: 1px solid black;float: left;"> -->
-    <div id="section3" class="section">
+    <div id="section2" class="section">
       <div id="project-wrap">
         <div class="project-title"><h2>Projects</h2></div>
           
@@ -618,10 +391,10 @@
           <div class="projects-contents">
             <div class="h7">
               <div class="hide">
-                <div></div>
+                <a href="#" data-toggle="modal" data-target="#content1"><div></div></a>
                 <img src="./imgs/java.png" alt="java" style=" left: 10%;bottom:20%;"><img src="./imgs/database.png" alt="java" style="left: 60%; bottom: 20%;">
               </div>
-              <img src="./imgs/bg1.jpg" alt="">
+              <img src="./imgs/graduation.jpg" alt="graduation">
             </div>
             <div class="h2"><span>학사관리</span></div>
           </div>
@@ -635,8 +408,31 @@
       </div>
 
     </div>
-  
-  </div>
-</body>
 
+  <!-- Modal 구역 ------------------------->
+  <div class="modal" id="content1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  <!-- 모달 끝 -->
+  </div>
 </html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!-- https://webdir.tistory.com/31 -->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>JHB's portfolio</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <!-- <script src="https://kit.fontawesome.com/0eb5e3b5fa.js" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> -->
+  <link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Aldrich|Walter+Turncoat|Codystar|Londrina+Sketch|Bungee+Outline|Poor+Story|Bungee+Shade&display=swap" rel="stylesheet">
+  
+  <!-- 
+    font-family: 'Londrina Sketch', cursive;
+    font-family: 'Bungee Outline', cursive; 
+    font-family: 'Poor Story', cursive;
+    font-family: 'Codystar', cursive;
+    font-family: 'Walter Turncoat', cursive;
+    font-family: 'Bungee Shade', cursive;
+  -->
+ <!-- End Google Font -->
+  
+  <!-- fullpage -->
+  <link rel="stylesheet" type="text/css" href="js/fullpage.css" />
+  <link rel="stylesheet" type="text/css" href="js/examples.css" />
+  <script type="text/javascript" src="js/fullpage.js"></script>
+  
+  <!-- [if IE]> -->
+  <!-- <![endif] -->
+  <script>
+    $(document).ready(function () {
+      $("#fullpage").fullpage({
+        //options here
+        licenseKey: "OPEN-SOURCE-GPLV3-LICENSE",
+        scrollingSpeed: 900, //스크롤 속도 기본 700
+        autoScrolling: true,
+        // fitToSectionDelay:2000,
+        scrollHorizontally: false,
+        sectionsColor: ["#000", "#eee", "#ccdddd"],
+        anchors: ["intro", "profile", "projects"],
+        menu: "#menu",
+        lazyLoad: true,
+        navigation: true, //우측 dot nav
+        navigationTooltips: ["Intro", "Profile", "Projects"], //dot nav list name
+        showActiveTooltip: true, //actived dot name show
+        afterResize: function (width, height) {
+          var width = width;
+        },
+        onLeave: function (origin, destination) {
+          var origin = origin.index;
+          var index2 = destination.index;
+          $("#fp-nav ul li a").eq(index2).css("opacity", "0");
+          $("#fp-nav ul li a").not(":eq(index2)").css("opacity", "1");
+          $(".section").eq(index2).css("opacity", "1");
+          $(".section").eq(origin).css("opacity", "0.3");
+
+          if(index2==0){
+            $(".fp-tooltip").css("color","white");
+            $("#fp-nav ul li:hover .fp-tooltip").css("color","white");
+            $("#fp-nav.fp-show-active a.active + .fp-tooltip").css("color","white");
+            // $("#modallist").css("background-image", "url(imgs/btn_allmenu_copy.png)");
+            }else{
+            $(".fp-tooltip").css("color","black");
+            $("#fp-nav ul li:hover .fp-tooltip").css("color","black");
+            $("#fp-nav.fp-show-active a.active + .fp-tooltip").css("color","black");
+            // $("#modallist").css("background-image", "url(imgs/black_menu.png)");
+            }
+
+        },
+        afterLoad: function () {
+          var index = $(".active").index() - 1;
+          $(".menu span").removeClass("on");
+          $(".menu span").eq(index).addClass("on");
+        }
+      });
+
+      $(window).resize(function () {
+        var wwidth = $(window).width();
+        var wheight = $(window).innerHeight();
+        var imgheight = wheight * 0.62;
+        var skillheight = wheight * 0.04;
+        $('#wrap2').css("width", wwidth).css("height", wheight);
+        $("#menuModal").css("width", wwidth).css("height", wheight);
+      });
+
+  
+      $("#menuModal").hide();
+      $("#fp-nav ul li a:active").css("opacity", "0");
+      $("#fp-nav ul li a").click(function () {
+        $("#fp-nav ul li").eq($(this)).css("opacity", "0");
+        $("#fp-nav ul li").not(this).css("opacity", "1");
+      });
+      $("#fp-nav ul li").mouseover(function () {
+        $("#fp-nav ul li a").eq($(this).index()).css("opacity", "0");
+      });
+      $("#fp-nav ul li").mouseout(function () {
+        $("#fp-nav ul li a").eq($(this).index()).css("opacity", "1");
+      });
+
+      // modal==========================================================================
+      $(".menu span").click(function () {
+        $(this).addClass("on");
+        $(".menu span").not(this).removeClass("on");
+      });
+
+      $("#modallist").click(function () {
+        if ($("#menuModal").is(":visible") == true) {
+          $("#menuModal").hide();
+          $("#fp-nav").show();
+          $("#modallist").css("background-image", "url(imgs/btn_allmenu_copy.png)");
+        } else {
+          $("#menuModal").show();
+          $("#fp-nav").hide();
+          $("#modallist").css("background-image", "url(imgs/x_menu.png)");
+        }
+      });
+
+      $("#menuModal").click(function (event) {
+        if ($(event.target).is(".menu a") ||$(event.target).is("#menuModal")) {
+          $("#modallist").css("background-image", "url(imgs/btn_allmenu_copy.png)");
+          $("#menuModal").hide();
+          $("#fp-nav").show();
+        }
+      });
+
+
+      $(".modal").click(function(event){
+        fullpage_api.setAllowScrolling(true);
+      });
+      $("#contents-container a").click(function(){
+        fullpage_api.setAllowScrolling(false);
+        if($(".modal").hasClass("show") === false) {fullpage_api.setAllowScrolling(false);}
+      });
+   
+      $(window).trigger("resize");
+      $(document).on("contextmenu",function(e){
+            return false;
+        });
+    });
+    
+  </script>
+
+  <style>
+    /* Web menu */
+    #fp-nav ul li a span {background: rgba(224, 38, 13, 0.897);}
+    .section {-webkit-transition: opacity 0.2s ease-in;transition: opacity 0.8s ease-in;opacity: 0.5;}
+    #fullmenu {margin-top: auto;}
+    #menuModal {opacity: 0.9;position: fixed;z-index: 1;left: 0;width: 100%;height: 100%;overflow: auto;background-color: rgb(0, 0, 0);}
+    .menumodal-conetent {text-align: center;background-color: black;opacity: 0.9;color: white;margin: auto;margin-top: 8%;padding: auto;width: 30%;height: 400px !important;font-size: 3.5em;line-height: 2em;}
+    .menumodal-conetent a {color: white;text-decoration-line: none;}
+    #menuModal span:hover {text-decoration: underline;}
+    .on {text-decoration: underline;}
+    #fp-nav ul li .fp-tooltip{
+      font-family: 'Walter Turncoat', cursive;
+      font-size:1.5em;
+    }
+    #menuModal a{font-family: 'Londrina Sketch', cursive; font-weight: 600; font-size: 1.5em;}
+
+    /* modal Button */
+    #modallist {line-height: 1;border: 1px solid transparent;background: url(imgs/btn_allmenu_copy.png);background-repeat: no-repeat;background-position: 0px 0px;margin: 2% 1.5%;padding: 1%;width: 40px;height: 50px;z-index: 10;color: white;padding: 0;  animation: ani linear 1s 0.5s infinite;}
+    #modallist:focus {outline: 0;border: none;box-shadow: none;text-decoration: none;}
+    #modallist span {font-size: 1.5em;z-index: 100;}
+    #modallist:focus {outline: none;border: none;}
+    #section0 {opacity: 1;}
+    #section0 h1 {color: white;top: 5%;position: relative;font-family: 'Londrina Sketch', cursive;}
+    #section0 h1 b {font-size: 2.5em; font-weight: 500;}
+    #scrolldown {width: 40px; height: 30px; left: 49%; margin: 0;}
+
+    /* Profile */
+    #profile-header{width: 100%; height: 10%;position: relative; border-bottom: 1px solid rgba(0, 0, 0, 0.2);}
+    #profile-header h1{position: absolute; bottom: 10%; left: 10%;}
+
+    #profilebottom {width: 100%; height: 90%;}
+    #profile-bt-right {width: 70%; height: 100%;float: left; padding-left: 5%;}
+    #profile-bt-right h3{font-family: 'Bungee Shade', cursive;}
+    
+    /* profile-section1 */
+    #profile-section1 {width: 30%; height: 100%; float: left; padding-top: 5%; padding-left: 12%; padding-right: 0%; position: relative;}
+    #profile-section1 h1 {font-size: 4.0em; letter-spacing: 10px; text-align: left; margin-left: 10%;margin-bottom: 10%; right: 20%; line-height: 1.2em;font-family: 'Bungee Outline', cursive; color: cornflowerblue;}
+    #profile-section1 h1 b{font-size: 1.4em;}
+    #profile-section1 .section1-bottom{width: 50%;height: 40%; margin: 0 auto; font-size: 1.2em; text-align: left; position: absolute; right: 10%; bottom: 5%; font-family: 'Poor Story', cursive; font-weight: 600; color: black;}
+    #profile-section1 .section1-bottom h4{color:cornflowerblue;}
+    /* #profile-section1 .section1-top{width: 50%;height: 40%; margin: 0 auto; font-size: 1em; text-align: left; position: absolute; right: 10%; bottom: 55%;} */
+
+    /* #profile-section2 {} */
+    #profile-section2{width: 50%; height: 60%;  float: left; padding-left: 5%;}
+    #profile-section2>div {width: 100%; height: 10%; text-align: left; padding-left: 15%; padding-top: 3%; margin: 0;}
+    #profile-section2 ul{width: 100%;height: 40%; margin: 0; padding: 0; padding: 8% 0 1% 0;}
+    #profile-section2 li{width: 100%;height: 33%; margin: 0; padding: 0; text-align: left;}
+    #profile-section2 h3{font-size: 2em; line-height: 1em; margin-top: 1%;}
+    .sec2-top {width: 100%; height: 100%; font-size: 1.1em;} 
+    .sec2-top-left {width: 20%; height: 100%; float: left;  font-weight: 800; font-size: 1em; line-height: 1.2em;}
+    .sec2-top-right{ width: 80%; height: 100%; float: left;  text-align: left; font-size: 0.8em;}
+
+    /* #profile-section3 {} */
+    #profile-section3 {width: 50%; height: 60%;  float: left; padding-bottom: 5%;}
+    #profile-section3>div {width: 100%; height: 20%; text-align: left; padding-left: 5%; padding-top: 3%;}
+    #profile-section3 ul { width: 100%; height: 80%; padding-top: 0%;}
+    #profile-section3 li { width: 80%; height: 20%;padding: 0 20% 0 0;}
+    #profile-section3 li .top{width: 100%; height: 25%; border-radius: 10px; background: rgba(36, 177, 219, 0.3); position: relative;}
+    #profile-section3 li .top div{width: 8%; height: 100%; position: absolute; background: rgb(14, 104, 189); left: 0; border-radius: 10px;}
+    #profile-section3 li .bottom{width: 100%; height: 75%; position: relative; line-height: 100%;}
+    #profile-section3 li .bottom span{top: 15%;}
+    #profile-section3 h3{font-size: 2em; line-height: 1em; margin-top: 1%;}
+    .personality-left {position: absolute; left: 0;}
+    .personality-right {position: absolute; right: 0;}
+    
+    /* profile-section4  Skills */
+    #profile-section4 {width: 100%; height: 40%;  float: left; text-align: center;padding:0 10% 2% 0%;}
+    #profile-section4 h3{ width: 100%; height: 17%; font-size: 3rem; margin-bottom: 3%;} 
+    #profile-section4 ul {width: 100%; height: 40%;} 
+    /* #profile-section4 li {width: 13%;height: 90%; float: left; margin: 0 0 1% 1%;} */
+    #profile-section4 li {width: 14%;height: 70%; float: left; margin: 0 0% 1% 2%; position: relative;}
+    #profile-section4 li img{width:50%; left: 25%; top: 0; height: 70%; position: absolute;}
+    #profile-section4 li>div {width: 60%;left: 20%; height: 25%; position: absolute; bottom: 0;}
+    #profile-section4 li>div>img {width: 20%; position: relative; margin: 0; padding: 0; left:0;}
+    /* #profile-section4 li>div>div {width: 80%; height: 100%; background: #00ced1; position: absolute; left: 0;bottom: 0;line-height: 10px; font-size:5px;} */
+    /*  */
+
+    /* projects */
+    #project-wrap {width: 100%; height: 100%; margin: 0; padding: 0;}
+    #project-wrap .project-title {width: 25%; height: 100%;position: relative; float: left;}
+    #project-wrap .project-title h2{font-size: 5em; top: 45%; right: 5%; position: absolute;}
+    #contents-container{width: 75%; height: 100%; float: left; padding: 6% 2% 8% 2%;}
+    .projects-contents{width: 23%; height: 50%; float: left; margin: 0 2% 3% 0;}
+    .projects-contents .h7{width: 100%; height: 85%; position: relative; overflow: hidden; border-radius: 10%;}
+    /* .projects-contents .h7 .hide{width: 100%; height: 100%; position: absolute; left: 0; top: 100%;  z-index: 1;transition: 0.6s;} */
+    .projects-contents .h7 .hide{width: 100%; height: 100%; position: absolute; left: 0; top:92%;  z-index: 1;transition: 0.6s; background-color: rgba(55,64,81,0.7); font-family: 'Codystar', cursive; }
+    .projects-contents .h7 .hide img {width: 30%; height: 25%;  float: left !important;}
+    .projects-contents .h7 .hide h4{font-size: 2.5em; color: white; position: absolute;width: 100%; height: 100%; margin: 0 auto; top: 10%;}
+    .projects-contents .h7:hover .hide{top:0;}
+    
+    
+
+    .projects-contents .h7 img{width: 100%; height: 100%; position: absolute; left: 0; margin: 0;}
+    .projects-contents .h2{width: 100%; height: 15%; margin: 0; padding: auto auto; }
+    .projects-contents .h2 span{height: 100%; line-height: 1.5em; font-size: 1em;font-family: 'Poor Story', cursive; color: black; font-weight: 600;}
+
+    /* Modal--------------------------------------------------------------------------------------------------------- */
+    .modal {overflow: hidden;}
+    #content1 .modal {padding-left: 0;}
+    #content1 .modal-dialog {width: 100%; height: 100%; position: relative; max-width: 800px;}
+    #content1 .modal-content {width: 100%; height: 90%; margin: 0 auto; position: absolute;}
+    #content1 .modal-body iframe {width: 100%; height: 100%;}
+
+    #content2 .modal-dialog {width: 100%; height: 80%; max-width: 500px;}
+    #content2 .modal-body {width: 100%; height: 770px; }
+    #content2 .modal-body iframe {width: 100%;height: 1100px;transform: translateY(-180px) scaleY(0.7);box-sizing: border-box;}
+    /*  */
+
+    @media screen and (max-width: 1440px){
+      #project-wrap .project-title h2 {font-size: 4em;}
+      .h2 {font-size: 1.5em;}
+      
+    }
+    /* .btnContents i:nth-child(1) {animation: ani linear 1.5s 0s infinite;}
+        .btnContents i:nth-child(2) {animation: ani linear 1.5s 0.5s infinite;}
+        .btnContents i:nth-child(3) {animation: ani linear 1.5s 1.0s infinite;}
+        @keyframes ani {
+            0% {right: 0px;transform: scale(1);opacity: 1;}
+            100% {right: 100px;transform: scale(1.2);opacity: 0;}
+        } */
+
+    #scrolldown {position: absolute; bottom: 3%; animation: ani linear 0.8s 0s infinite;}
+    @keyframes ani {
+            0% {bottom: 3%; transform: scale(1);opacity: 1;}
+            100% {bottom: 3%;transform: scale(1.1);opacity: 1; }
+        }
+
+    @media screen and (max-width: 1024px){
+      #profile-header{width: 100%; height: 10%;position: relative; border-bottom: 1px solid black;}
+    #profile-header h1{position: absolute; bottom: 5%; left: 10%;}
+
+    #profilebottom {width: 100%; height: 90%;}
+    #profile-bt-right {width: 100%; height: 70%;float: left; padding-left: 5%;}
+    /* profile-section1 */
+    #profile-section1 {width: 100%; height: 20%; float: left; padding-top: 5%; padding-left: 12%; padding-right: 0%; position: relative;}
+    #profile-section1 h1 {font-size: 1.8em; letter-spacing: 10px; text-align: left; margin-left: 10%; position: absolute; bottom: 3%; left: 5%; line-height: 1.5em;}
+    #profile-section1 .section1-bottom{width: 50%;height: 100%; margin: 0 auto; font-size: 0.8em; text-align: left; position: absolute; right: 10%;top: 2%; bottom: 1%; }
+    #profile-section1 h4{ font-size: 1.3em;}
+
+    /* #profile-section2 {} */
+    #profile-section2{width: 50%; height: 60%;  float: left; padding-left: 5%;}
+    #profile-section2>div {width: 100%; height: 10%; text-align: left; padding-left: 10%; padding-top: 3%; margin: 0;}
+    #profile-section2 ul{width: 100%;height: 40%; margin: 0; padding: 0; padding: 8% 0 1% 0;}
+    #profile-section2 li{width: 100%;height: 33%; margin: 0; padding: 0; text-align: left;}
+    #profile-section2 h3{font-size: 1.5em;}
+    .sec2-top {width: 100%; height: 100%; font-size: 0.8em; margin-left: 15%; margin-top: 1%;} 
+    .sec2-top-left {width: 20%; height: 100%; float: left;  font-weight: 800; font-size: 1em; line-height: 1.2em;}
+    .sec2-top-right{ width: 80%; height: 100%; float: left;  text-align: left; font-size: 0.8em;}
+
+    /* #profile-section3 {} */
+    #profile-section3 {width: 50%; height: 60%;  float: left; padding-bottom: 0%;}
+    #profile-section3>div {width: 100%; height: 20%; text-align: left; padding-left: 10%; padding-top: 3%;}
+    #profile-section3 ul { width: 100%; height: 70%; padding-top: 5%; font-size: 0.3em;}
+    #profile-section3 li { width: 80%; height: 20%;padding: 0 10% 0 10%; margin-bottom:2%;}
+    #profile-section3 h3{font-size: 1.5em;}
+    #profile-section3 li .bottom{width: 100%; height: 75%; position: relative; line-height: 100%;}
+    #profile-section3 li .bottom span{top: 15%;}
+    .personality-left {position: absolute; left: 0;}
+    .personality-right {position: absolute; right: 0;}
+    
+    /* profile-section4  Skills */
+    #profile-section4 {width: 100%; height: 40%;  float: left; text-align: center;padding:0; margin: 0;}
+    #profile-section4 h3{ width: 100%; height: 17%; font-size: 2rem; margin-top: 3%;} 
+    #profile-section4 ul {width: 100%; height: 40%;} 
+    /* #profile-section4 li {width: 13%;height: 90%; float: left; margin: 0 0 1% 1%;} */
+    #profile-section4 li {width: 14%;height: 70%; float: left; margin: 0 0% 1% 2%; position: relative;}
+    #profile-section4 li img{width:50%; left: 25%; top: 0; height: 70%; position: absolute;}
+    #profile-section4 li>div {width: 60%;left: 20%; height: 25%; position: absolute; bottom: 0;}
+    #profile-section4 li>div>img {width: 20%; position: relative; margin: 0; padding: 0; left:0;}
+
+
+    #project-wrap .project-title {width: 100%; height: 20%;position: relative; float: left;}
+    #project-wrap .project-title h2{font-size: 5em; top: 45%; left:5%; position: absolute;}
+    #contents-container{width: 100%; height: 80%; float: left;}
+    #contents-container .h2{font-size: 1.2em;}
+    .projects-contents {margin: 2% 0 2% 5%; }
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- Web Nav ----------------------------------------------------------------------------------------------------------------------------->
+  <div id="menuModal" class="modal gnb">
+    <button class="navbar-toggler" type="button"><span class="fas fa-times"></span></button>
+    <div class="modal-content menumodal-conetent">
+      <ul id="fullmenu" class="menu">
+        <li data-menuanchor="intro" ><span class="on"><a href="#intro">Intro</a></span></li>
+        <li data-menuanchor="profile"><span><a href="#profile">Profile</a></span></li>
+        <li data-menuanchor="projects"><span><a href="#projects">Projects</a></span></li>
+      </ul>
+    </div>
+  </div>
+  <!-- End Web Nav -->
+
+  <ul id="menu">
+    <button id="modallist"></button>
+    <li data-menuanchor="intro" class="active"><a href="#intro">Intro</a></li>
+    <li data-menuanchor="profile"><a href="#profile">Profile</a></li>
+    <li data-menuanchor="projects"><a href="#projects">Projects</a></li>
+  </ul>
+
+<!-- Content Modal1 -->
+  <div class="modal" id="content1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header"><h4 class="modal-title">학사관리 프로그램</h4><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+          <div class="modal-body"><iframe src="https://www.youtube.com/embed/jn4x8Ek5q_I?controls=0&showinfo=0&rel=0&autoplay=0&loop=1&mute=1&playlist&list=jn4x8Ek5q_I,o-gdKEhjO_A" frameborder="0" allowfullscreen></iframe></div>
+          <div class="modal-footer"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></div>
+        </div></div>
+    </div>
+    <!-- End Content Modal1 -->
+
+    <!-- Content Modal2 -->
+    <div class="modal" id="content2">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header"><h4 class="modal-title">영화 예고편</h4><button type="button" class="close" data-dismiss="modal">&times;</button></div>
+          <div class="modal-body">
+            <iframe src="http://mans122.dothome.co.kr/movie" frameborder="0" scrolling="yes"></iframe>
+          </div>
+          <div class="modal-footer"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></div>
+        </div></div>
+    </div>
+    <!-- End Content Modal2 -->
+  <div id="fullpage">
+    <!-- section0 Intro --------------------------------------->
+    <div class="section active" id="section0">
+      <h1>
+        JUNG HAN BYUL's <br/>
+        <b>PORTFOLIO</b>
+      </h1>
+      <img src="./imgs/scroll_down.png" alt="scrolldown" id="scrolldown">
+    </div>
+    <!--  -->
+
+    <!-- section2 Profile ------------------------------------->
+    <div class="section" id="section1" style="padding: 0; margin: 0;">
+      <!-- <div id="wrap2"> -->
+        <div id="profile-header">
+          <h1 style="font-family: 'Londrina Sketch', cursive;">Profile</h1>
+        </div>
+
+        <div id="profilebottom">
+          <div id="profile-section1">
+            <h1><b>J</b>ung</h1>
+            <h1><b>H</b>an</h1>
+            <h1><b>B</b>yul</h1>
+            <!-- <table class="section1-top" style="width: 40%; height: 40%; position: absolute; right: 0%; ">
+              <tr><td style="text-align: right;"><h2>J</h2></td><td>ung</td></tr>
+              <tr><td style="text-align: right;"><h2>H</h2></td><td>han</td></tr>
+              <tr><td style="text-align: right;"><h2>B</h2></td><td>yul</td></tr>
+            </table> -->
+            <table class="section1-bottom">
+              <tr><td><h4>Name</h4></td><td style="padding-left: 5%;">정한별</td></tr>
+              <tr><td><h4>Age</h4></td><td style="padding-left: 5%;">26</td></tr>
+              <tr><td><h4>H.P</h4></td><td style="padding-left: 5%;">010-8603-XXXX</td></tr>
+              <tr><td><h4>Email</h4></td><td style="padding-left: 5%;">ans122@naver.com</td></tr>
+              <tr><td><h4>Address</h4></td><td style="padding-left: 5%;">010-8603-XXXX</td></tr>
+              <tr><td><h4>KakaoTalk</h4></td><td style="padding-left:5%;">mans122</td></tr>
+            </table>
+          </div>
+
+          <div id="profile-bt-right">
+
+            <div id="profile-section2">
+              <div><h3>Comment</h3></div>
+                <ul>
+                  <!-- <li><div class="sec2-top">안녕하세요</div></li>
+                  <li><div class="sec2-top">디자인은 돈주고</div></li>
+                  <li><div class="sec2-top">맡깁시다</div></li> -->
+                </ul>
+
+                <div><h3>Experience</h3></div>
+                <ul>
+                  <!-- <li><div class="sec2-top"><div class="sec2-top-left">17.02</div><div class="sec2-top-right">00대학교 정보보호학과 졸업</div></div></li>
+                  <li><div class="sec2-top"><div class="sec2-top-left">19.06</div><div class="sec2-top-right">육군 정보통신병과 중위 전역</div></div></li>
+                  <li><div class="sec2-top"><div class="sec2-top-left">20.02</div><div class="sec2-top-right">TIS교육센터 응용S/W개발자 교육 이수</div></div></li> -->
+                 
+                </ul>
+              </div>
+
+            <div id="profile-section3">
+                <div><h3>Personality</h3></div>
+                <ul>
+                  <li><div class="top"><div style="left: 30%;"></div></div><div class="bottom"><span class="personality-left">내향적</span><span class="personality-right">외향적</span></div></li>
+                  <li><div class="top"><div style="left: 80%;"></div></div><div class="bottom"><span class="personality-left">감성적</span><span class="personality-right">이성적</span></div></li>
+                  <li><div class="top"><div style="left: 40%;"></div></div><div class="bottom"><span class="personality-left">능동적</span><span class="personality-right">수동적</span></div></li>
+                  <li><div class="top"><div style="left: 67%;"></div></div><div class="bottom"><span class="personality-left">직관적</span><span class="personality-right">분석적</span></div></li>
+                  <li><div class="top"><div style="left: 70%;"></div></div><div class="bottom"><span class="personality-left">폐쇄적</span><span class="personality-right">개방적</span></div></li>
+                </ul>
+            </div>
+
+            <!-- Skills ------------------------------------------------------------------------------------------------->
+            <div id="profile-section4">
+              <h3>Skills</h3>
+
+              <ul>
+                <li><img src="./imgs/html5.png" alt="HTML5"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div></li>
+                <li><img src="./imgs/css3.png" alt="css3"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div></li>
+                <li><img src="./imgs/java.png" alt="java"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"></div></li>
+                <li><img src="./imgs/js.png" alt="javascript"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"></div></li>
+                <li><img src="./imgs/jquery.png" alt="jquery"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div></li>
+                <li><img src="./imgs/vuejs.png" alt="vuejs"><div><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div></li>
+                <!-- <li><img src="./imgs/react.png" alt="react"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li> -->
+              </ul>
+              <ul>
+                  <li><img src="./imgs/react.png" alt="react"><div><img src="./imgs/star2.png"></div></li>
+                  <li><img src="./imgs/bootstrap.png" alt="bootstrap"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"></div></li><li><img src="./imgs/oracle.png" alt="database"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div></li>
+                  <!-- <li><img src="./imgs/c.png" alt="c"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li> -->
+                  <li><img src="./imgs/node.png" alt="nodejs"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"></div></li>
+                  <li><img src="./imgs/spring.png" alt="spring"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"></div></li>
+                  <li><img src="./imgs/android.png" alt="android"><div><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star2.png"><img src="./imgs/star1.png"></div></li>
+                <!-- <li><img src="./imgs/jsp.png" alt="jsp"><div><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"><img src="./imgs/star1.png"></div></li> -->
+              </ul>
+
+            </div>
+            <!-- End Skills -->
+          </div>
+
+        </div>
+      <!-- </div> -->
+      <div>
+
+      </div>
+    </div>
+
+<!-- Project 시작  ----------------------------------------------------------->
+    <div id="section2" class="section">
+      <!-- Left Container -->
+      <div id="project-wrap">
+        <div class="project-title"><h2 style="font-family: 'Londrina Sketch', cursive;">Projects</h2></div>
+
+      <!-- Right Container -->
+        <div id="contents-container">
+
+          <!-- Content1 -->
+          <div class="projects-contents">
+            <a data-toggle="modal" href="#content1">
+              <div class="h7">
+                <div class="hide">
+                  <h4>skill</h4>
+                  <img src="./imgs/java.png" alt="java" style="left: 15%; top: 30%">
+                  <img src="./imgs/oracle.png" alt="java" style="left: 55%; top: 30%;">
+                </div>
+                <img src="./imgs/graduation.jpg" alt="graduation">
+              </div>
+            </a>
+            <div class="h2"><span>학사관리</span></div>
+          </div>
+
+          <!-- Content2 -->
+          <div class="projects-contents">
+            <a data-toggle="modal" href="#content2">
+              <div class="h7">
+                
+                <img src="./imgs/joker.jpg" alt="joker">
+                <div class="hide">
+                  <h4>Skill</h4>
+                  <img src="./imgs/bootstrap.png" alt="android" style="left: 35%; top: 30%">
+                </div>
+              </div>
+            </a>
+            <div class="h2"><span>영화예고편</span></div>
+          </div>
+
+          <!-- Content3 -->
+          <div class="projects-contents">
+            <a href="http://mans122.dothome.co.kr/lincoln/" target="_black">
+              <div class="h7">
+                <div class="hide"></div>
+                <img src="./imgs/lincoln.jpg" alt="">
+              </div>
+            </a>
+            <div class="h2"><span>LINCOLN DEMO</span></div>
+          </div>
+
+          <!-- Content4 -->
+          <div class="projects-contents">
+            <a href="http://mans122.dothome.co.kr/brand" target="_black">
+              <div class="h7">
+                <div class="hide"></div>
+                <img src="./imgs/cadillac.jpg" alt="">
+              </div>
+            </a>
+            <div class="h2"><span>BRAND DEMO</span></div>
+          </div>
+          
+          <!-- Content5 -->
+          <div class="projects-contents">
+            <a href="http://mans122.dothome.co.kr/company/" target="_black">
+              <div class="h7">
+                <div class="hide">
+                  <h4>Skill</h4>
+                  <img src="./imgs/html5.png" alt="android" style="left: 15%; top: 30%">
+                  <img src="./imgs/css3.png" alt="android" style="left: 55%; top: 30%">
+                  <img src="./imgs/jquery.png" alt="android" style="left: 15%; top: 65%">
+                  <img src="./imgs/bootstrap.png" alt="android" style="left: 55%; top: 65%">
+                </div>
+                <img src="./imgs/tis.png" alt="TIS">
+              </div>
+            </a>
+            <div class="h2"><span>TIS DEMO</span></div>
+          </div>
+          
+          <!-- Content6 -->
+          <div class="projects-contents"><a href="#" target="_black">
+              <div class="h7">
+                <div class="hide">
+                  <h4>Skill</h4>
+                  <img src="./imgs/android.png" alt="android" style="left: 35%; top: 30%">
+                </div>
+                <img src="./imgs/bg1.jpg" alt="">
+              </div>
+            </a>
+            <div class="h2"><span>Diary</span></div>
+          </div>
+          
+          <!-- Content7 -->
+          <div class="projects-contents">
+            <div class="h7">
+              <div class="hide"></div><img src="./imgs/bg3.jpg" alt="">
+            </div>
+            <div class="h2"><span>게시판(JSP)</span></div>
+          </div>
+          
+          <!-- Content8 -->
+          <div class="projects-contents"><a href="#" target="_black">
+              <div class="h7">
+                <div class="hide"></div><img src="./imgs/bg1.jpg" alt="">
+              </div>
+            </a>
+            <div class="h2"><span>게시판(SPRING)</span></div>
+          </div>
+          <!-- Content 끝 -->
+        </div>
+        <!-- Right Container끝 -->
+      </div>
+    </div>
+    <!-- Project 끝 -->
+  </body>
+</html>
