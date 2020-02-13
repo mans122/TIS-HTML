@@ -138,9 +138,9 @@
       });
    
       $(window).trigger("resize");
-      // $(document).on("contextmenu",function(e){
-      //       return false;
-      //   });
+      $(document).on("contextmenu",function(e){
+            return false;
+        });
     });
     
   </script>
@@ -172,48 +172,47 @@
     #scrolldown {width: 40px; height: 30px; left: 49%; margin: 0;}
 
     /* Profile */
-    #profile-header{width: 100%; height: 10%;position: relative; border-bottom: 1px solid rgba(0, 0, 0, 0.3);}
-    #profile-header h1{position: absolute; bottom: 10%; left: 13%;}
+    #profile-header{width: 100%; height: 10%;position: relative; border-bottom: 1px solid rgba(0, 0, 0, 0.2);}
+    #profile-header h1{position: absolute; bottom: 10%; left: 10%;}
 
-    #profilebottom {width: 100%; height: 90%; padding: 0 0% 3% 15%;}
-    #profile-bt-right {width: 70%; height: 100%;float: left; padding-left: 0%;}
+    #profilebottom {width: 100%; height: 90%;}
+    #profile-bt-right {width: 70%; height: 100%;float: left; padding-left: 5%;}
     #profile-bt-right h3{font-family: 'Bungee Shade', cursive;}
     
     /* profile-section1 */
-    #profile-section1 {width: 30%; height: 100%; float: left; padding-top: 5%; padding-left: 0%; position: relative;}
-    #profile-section1 h1 {font-size: 4.0em; letter-spacing: 10px; text-align: left; margin-left: 15%; margin-bottom: 8%; line-height: 1.2em;font-family: 'Bungee Outline', cursive; color: cornflowerblue;}
+    #profile-section1 {width: 30%; height: 100%; float: left; padding-top: 5%; padding-left: 12%; padding-right: 0%; position: relative;}
+    #profile-section1 h1 {font-size: 4.0em; letter-spacing: 10px; text-align: left; margin-left: 10%;margin-bottom: 10%; right: 20%; line-height: 1.2em;font-family: 'Bungee Outline', cursive; color: cornflowerblue;}
     #profile-section1 h1 b{font-size: 1.4em;}
-    #profile-section1 .section1-bottom{height: 40%; margin: 0 auto; font-size: 1.2em; text-align: left; position: absolute; left: 10%; bottom: 5%; font-family: 'Poor Story', cursive; font-weight: 600; color: black;}
+    #profile-section1 .section1-bottom{width: 50%;height: 40%; margin: 0 auto; font-size: 1.2em; text-align: left; position: absolute; right: 10%; bottom: 5%; font-family: 'Poor Story', cursive; font-weight: 600; color: black;}
     #profile-section1 .section1-bottom h4{color:cornflowerblue;}
     /* #profile-section1 .section1-top{width: 50%;height: 40%; margin: 0 auto; font-size: 1em; text-align: left; position: absolute; right: 10%; bottom: 55%;} */
 
-    /* #profile-section2 Hobby, Experience */
-    #profile-section2{width: 50%; height: 60%;  float: left; padding-left: 5%; padding-top: 2%;}
+    /* #profile-section2 {} */
+    #profile-section2{width: 50%; height: 60%;  float: left; padding-left: 5%;}
     #profile-section2>div {width: 100%; height: 10%; text-align: left; padding-left: 15%; padding-top: 3%; margin: 0;}
-    #profile-section2 div h3 {color:cornflowerblue;}
     #profile-section2 ul{width: 100%;height: 40%; margin: 0; padding: 0; padding: 8% 0 1% 0;}
     #profile-section2 li{width: 100%;height: 33%; margin: 0; padding: 0; text-align: left;}
     #profile-section2 h3{font-size: 2em; line-height: 1em; margin-top: 1%;}
     .sec2-top {width: 100%; height: 100%; font-size: 1.1em;} 
-    .sec2-top-left {width: 20%; height: 100%; float: left;  font-weight: 800; font-size: 1em; line-height: 1.2em; font-family: 'Poor Story', cursive; font-weight: 600; color: cornflowerblue;}
-    .sec2-top-right{ width: 80%; height: 100%; float: left;  text-align: left; font-size: 0.8em; font-family: 'Poor Story', cursive; font-weight: 600; color:black}
+    .sec2-top-left {width: 20%; height: 100%; float: left;  font-weight: 800; font-size: 1em; line-height: 1.2em;}
+    .sec2-top-right{ width: 80%; height: 100%; float: left;  text-align: left; font-size: 0.8em;}
 
-    /* profile-section3  Personality */
-    #profile-section3 {width: 50%; height: 60%;  float: left; padding-bottom: 3%; padding-top: 2%;}
-    #profile-section3>div {width: 100%; height: 20%; text-align: left; padding-left: 3%; padding-top: 3%; margin-bottom: 2%;}
-    #profile-section3 ul { width: 100%; height: 80%; padding-top: 2%; padding-left: 10%;}
+    /* #profile-section3 {} */
+    #profile-section3 {width: 50%; height: 60%;  float: left; padding-bottom: 5%;}
+    #profile-section3>div {width: 100%; height: 20%; text-align: left; padding-left: 5%; padding-top: 3%;}
+    #profile-section3 ul { width: 100%; height: 80%; padding-top: 0%;}
     #profile-section3 li { width: 80%; height: 20%;padding: 0 20% 0 0;}
     #profile-section3 li .top{width: 100%; height: 25%; border-radius: 10px; background: rgba(36, 177, 219, 0.3); position: relative;}
     #profile-section3 li .top div{width: 8%; height: 100%; position: absolute; background: rgb(14, 104, 189); left: 0; border-radius: 10px;}
-    #profile-section3 li .bottom{width: 100%; height: 50%; position: relative; }
-    #profile-section3 li .bottom span{top: 15%; font-family: 'Poor Story', cursive; font-weight: 600; color: black; }
-    #profile-section3 h3{font-size: 2em; line-height: 1em; margin-top: 1%; color:cornflowerblue;}
+    #profile-section3 li .bottom{width: 100%; height: 75%; position: relative; line-height: 100%;}
+    #profile-section3 li .bottom span{top: 15%;}
+    #profile-section3 h3{font-size: 2em; line-height: 1em; margin-top: 1%;}
     .personality-left {position: absolute; left: 0;}
     .personality-right {position: absolute; right: 0;}
     
     /* profile-section4  Skills */
     #profile-section4 {width: 100%; height: 40%;  float: left; text-align: center;padding:0 10% 2% 0%;}
-    #profile-section4 h3{ width: 100%; height: 17%; font-size: 3rem; margin-bottom: 3%; color:cornflowerblue;} 
+    #profile-section4 h3{ width: 100%; height: 17%; font-size: 3rem; margin-bottom: 3%;} 
     #profile-section4 ul {width: 100%; height: 40%;} 
     /* #profile-section4 li {width: 13%;height: 90%; float: left; margin: 0 0 1% 1%;} */
     #profile-section4 li {width: 14%;height: 70%; float: left; margin: 0 0% 1% 2%; position: relative;}
@@ -225,9 +224,9 @@
 
     /* projects */
     #project-wrap {width: 100%; height: 100%; margin: 0; padding: 0;}
-    #project-wrap .project-title {width: 100%; height: 10%;position: relative; float: left; border-bottom: 1px solid rgba(0, 0, 0, 0.3);}
-    #project-wrap .project-title h2{font-size: 3em !important; bottom: 10%; left: 13%; position: absolute;}
-    #contents-container{width: 100%; height: 90%; float: left; padding: 4% 6% 10% 15%;}
+    #project-wrap .project-title {width: 25%; height: 100%;position: relative; float: left;}
+    #project-wrap .project-title h2{font-size: 5em; top: 45%; right: 5%; position: absolute;}
+    #contents-container{width: 75%; height: 100%; float: left; padding: 6% 2% 8% 2%;}
     .projects-contents{width: 23%; height: 50%; float: left; margin: 0 2% 3% 0;}
     .projects-contents .h7{width: 100%; height: 85%; position: relative; overflow: hidden; border-radius: 10%;}
     /* .projects-contents .h7 .hide{width: 100%; height: 100%; position: absolute; left: 0; top: 100%;  z-index: 1;transition: 0.6s;} */
@@ -240,7 +239,7 @@
 
     .projects-contents .h7 img{width: 100%; height: 100%; position: absolute; left: 0; margin: 0;}
     .projects-contents .h2{width: 100%; height: 15%; margin: 0; padding: auto auto; }
-    .projects-contents .h2 span{height: 100%; line-height: 1.5em; font-size: 1em;font-family: 'Poor Story', cursive; font-weight: 600; color: black;}
+    .projects-contents .h2 span{height: 100%; line-height: 1.5em; font-size: 1em;font-family: 'Poor Story', cursive; color: black; font-weight: 600;}
 
     /* Modal--------------------------------------------------------------------------------------------------------- */
     .modal {overflow: hidden;}
@@ -401,10 +400,10 @@
             </table> -->
             <table class="section1-bottom">
               <tr><td><h4>Name</h4></td><td style="padding-left: 5%;">정한별</td></tr>
-              <tr><td><h4>Age</h4></td><td style="padding-left: 5%;">27</td></tr>
-              <tr><td><h4>H.P</h4></td><td style="padding-left: 5%;">010-8603-4712</td></tr>
-              <tr><td><h4>Email</h4></td><td style="padding-left: 5%;">mans122@naver.com</td></tr>
-              <tr><td><h4>Address</h4></td><td style="padding-left: 5%;">경기도 김포시</td></tr>
+              <tr><td><h4>Age</h4></td><td style="padding-left: 5%;">26</td></tr>
+              <tr><td><h4>H.P</h4></td><td style="padding-left: 5%;">010-8603-XXXX</td></tr>
+              <tr><td><h4>Email</h4></td><td style="padding-left: 5%;">ans122@naver.com</td></tr>
+              <tr><td><h4>Address</h4></td><td style="padding-left: 5%;">010-8603-XXXX</td></tr>
               <tr><td><h4>KakaoTalk</h4></td><td style="padding-left:5%;">mans122</td></tr>
             </table>
           </div>
@@ -412,18 +411,18 @@
           <div id="profile-bt-right">
 
             <div id="profile-section2">
-              <div><h3>Hobby</h3></div>
+              <div><h3>Comment</h3></div>
                 <ul>
-                  <li><div class="sec2-top">#당구  #게임  #축구</div></li>
+                  <!-- <li><div class="sec2-top">안녕하세요</div></li>
                   <li><div class="sec2-top">디자인은 돈주고</div></li>
-                  <li><div class="sec2-top">맡깁시다</div></li>
+                  <li><div class="sec2-top">맡깁시다</div></li> -->
                 </ul>
 
                 <div><h3>Experience</h3></div>
                 <ul>
-                  <li><div class="sec2-top"><div class="sec2-top-left">17.02</div><div class="sec2-top-right">00대학교 정보보호학과 졸업</div></div></li>
+                  <!-- <li><div class="sec2-top"><div class="sec2-top-left">17.02</div><div class="sec2-top-right">00대학교 정보보호학과 졸업</div></div></li>
                   <li><div class="sec2-top"><div class="sec2-top-left">19.06</div><div class="sec2-top-right">육군 정보통신병과 중위 전역</div></div></li>
-                  <li><div class="sec2-top"><div class="sec2-top-left">20.02</div><div class="sec2-top-right">TIS교육센터 JAVA와 프레임워크를 활용한 <br> 응용S/W 및 웹개발자 교육 이수</div></div></li>
+                  <li><div class="sec2-top"><div class="sec2-top-left">20.02</div><div class="sec2-top-right">TIS교육센터 응용S/W개발자 교육 이수</div></div></li> -->
                  
                 </ul>
               </div>
